@@ -42,6 +42,11 @@
       font-weight: 600;
       margin-top: 3em;
     }
+
+  /* Add these accordion styles: */
+  .accordion { background: #e6c264; cursor:pointer; padding:16px; width:100%; border:none; text-align:left; outline:none; font-size:1.09em; margin-bottom:4px; }
+  .active, .accordion:hover { background: #ffd700; }
+  .panel { padding:0 18px; background: #fffbe0; display: none; overflow: hidden; border-left:2px solid #ccb36e; }
   </style>
 </head>
 <body>
@@ -81,7 +86,23 @@
         <li>Thirupparamkunram Murugan Temple, Madurai</li>
       </ul>
     </section>
+ <section id="kongu-region">
+    <h2>Kongu Region Temples</h2>
 
+    <button class="accordion">Sri Ardhanareeswarar Temple, Thiruchengode</button>
+    <div class="panel">
+      <!-- Temple details -->
+    </div>
+
+    <button class="accordion">Sri Sangameshwarar Temple, Bhavani</button>
+    <div class="panel">
+      <!-- Temple details -->
+    </div>
+
+    <!-- Add more accordions here -->
+  </section>
+
+ 
     <section id="kerala">
       <h2>Kerala Temples</h2>
       <h3>Thiruvananthapuram District</h3>
@@ -108,17 +129,29 @@
       </ul>
     </section>
 
+     <!-- Other body content -->
+
+  <script>
+    var acc=document.getElementsByClassName("accordion");
+    for(var i=0;i<acc.length;i++){
+      acc[i].addEventListener("click",function(){
+        this.classList.toggle("active");
+        var panel=this.nextElementSibling;
+        panel.style.display = (panel.style.display === "block") ? "none" : "block";
+      });
+    }
+  </script>
     <section id="booking">
       <h2>Plan Your Spiritual Tour</h2>
       <p>Contact us on WhatsApp or Email to customize your pilgrimage circuit.</p>
       <a href="mailto:your-email@example.com" class="btn">Book Now via Email</a>
-      <p style="margin-top:10px;"><b>WhatsApp:</b> +91-9876543210</p>
+      <p style="margin-top:10px;"><b>WhatsApp:</b> +91-00000 11111</p>
     </section>
 
     <section id="contact">
       <h2>Contact Information</h2>
       <p>Email: your-email@example.com</p>
-      <p>Phone / WhatsApp: +91-9876543210</p>
+      <p>Phone / WhatsApp: +91-00000 11111</p>
     </section>
   </main>
 
