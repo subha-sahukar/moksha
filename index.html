@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Divya Desam & Padal Petra Sthalam Tours</title>
+  <title>Moksha Yatra | Divya Desam & Padal Petra Sthalam Tours</title>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f4ec; color: #4d2614; margin: 0; }
     header { background: #ffe1a8; color: #633f12; padding: 2em 1em; text-align: center; }
@@ -42,105 +42,228 @@
       font-weight: 600;
       margin-top: 3em;
     }
-
     /* Accordion styles */
-    .accordion { background: #e6c264; cursor:pointer; padding:16px; width:100%; border:none; text-align:left; outline:none; font-size:1.09em; margin-bottom:4px; }
-    .active, .accordion:hover { background: #ffd700; }
-    .panel { padding:0 18px; background: #fffbe0; display: none; overflow: hidden; border-left:2px solid #ccb36e; }
+    .accordion {
+      background: #e6c264;
+      cursor: pointer;
+      padding: 16px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.09em;
+      margin-bottom: 4px;
+      transition: background 0.3s ease;
+    }
+    .accordion.active, .accordion:hover {
+      background: #ffd700;
+    }
+    .panel {
+      padding: 0 18px;
+      background: #fffbe0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      border-left: 2px solid #ccb36e;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Spiritual Traveller</h1>
-    <p>108 Divya Desam & Padal Petra Sthalam Tours across India</p>
-    <p>Discover temples, plan pilgrimages by state, district & proximity</p>
+    <h1>Moksha Yatra</h1>
+    <p>Explore 108 Divya Desam & Padal Petra Sthalam Temples across India</p>
+    <p>Plan your spiritual pilgrimage by region, district & proximity</p>
   </header>
 
   <nav>
-    <a href="#tamilnadu">Tamil Nadu</a>
-    <a href="#kerala">Kerala</a>
-    <a href="#andhrapradesh">Andhra Pradesh</a>
+    <a href="#kongu-kumbakonam-tiruchy-tanjore">Temples by Region</a>
     <a href="#booking">Tour Booking</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <main>
-    <section id="tamilnadu">
-      <h2>Tamil Nadu Temples</h2>
-      <h3>Kanchipuram District</h3>
-      <ul>
-        <li>Varadaraja Perumal Temple, Kanchipuram</li>
-        <li>Ekambareswarar Temple, Kanchipuram</li>
-        <li>Kamakshi Amman Temple, Kanchipuram</li>
-      </ul>
-      <h3>Tiruchirappalli District</h3>
-      <ul>
-        <li>Srirangam Ranganathaswamy Temple, Tiruchirappalli</li>
-        <li>Uppiliappan Temple, Tiruchirappalli</li>
-        <li>Jambukeswarar Temple, Tiruchirappalli</li>
-      </ul>
-      <h3>Madurai District</h3>
-      <ul>
-        <li>Koodal Azhagar Temple, Madurai</li>
-        <li>Alagar Koyil Temple, Madurai</li>
-        <li>Thirupparamkunram Murugan Temple, Madurai</li>
-      </ul>
-    </section>
+    <section id="kongu-kumbakonam-tiruchy-tanjore">
+      <h2>Popular Temples of Kongu, Kumbakonam, Tiruchy & Tanjore</h2>
 
-    <section id="kongu-region">
-      <h2>Kongu Region Temples</h2>
+      <!-- Kongu Region Temples -->
+      <h3>Kongu Nadu - Padal Petra Sthalams & Other Temples</h3>
 
       <button class="accordion">Sri Ardhanareeswarar Temple, Thiruchengode</button>
       <div class="panel">
-        <p><b>Location:</b> Thiruchengode, Namakkal<br>
-        <b>Main Deity:</b> Ardhanareeswarar<br>
-        <b>Specialty:</b> Unique Shiva-Parvati form on Nagagiri hill, panoramic views.<br>
-        <b>Legend:</b> Believed to grant marital harmony.<br>
-        <b>Darshan Timings:</b> 6AM–2PM; 3:30PM–6:30PM</p>
+        <p><b>Location:</b> Thiruchengode, Namakkal.<br>
+        <b>Main Deity:</b> Ardhanareeswarar (combined Shiva & Parvati form).<br>
+        <b>Special:</b> Located on Nagagiri hill with steps & serpent carvings.<br>
+        <b>Spiritual Significance:</b> Known for marital harmony blessings.<br>
+        <b>Darshan Timings:</b> 6AM - 2PM & 3:30PM - 6:30PM</p>
       </div>
 
       <button class="accordion">Sri Sangameshwarar Temple, Bhavani</button>
       <div class="panel">
-        <p><b>Location:</b> Bhavani, Erode district<br>
-        <b>Main Deity:</b> Shiva as Sangameshwarar<br>
-        <b>Specialty:</b> Sacred confluence of Kaveri, Bhavani & Amudha rivers.<br>
-        <b>Legend:</b> Bathing here believed to remove sins.<br>
-        <b>Darshan Timings:</b> 5:30AM–1PM, 4PM–9PM</p>
+        <p><b>Location:</b> Bhavani, Erode District.<br>
+        <b>Main Deity:</b> Shiva as Sangameshwarar.<br>
+        <b>Special:</b> Sacred confluence of Kaveri, Bhavani, & Amudha rivers.<br>
+        <b>Spiritual Significance:</b> Site for ancestral rites and sin cleansing.<br>
+        <b>Darshan Timings:</b> 5:30AM - 1PM & 4PM - 9PM</p>
       </div>
 
       <button class="accordion">Sri Kodumudinathar Temple, Kodumudi</button>
       <div class="panel">
-        <p><b>Location:</b> Kodumudi, near Karur<br>
-        <b>Main Deity:</b> Shiva as Magudeswarar, with Brahma & Vishnu shrines<br>
-        <b>Specialty:</b> Rare temple with all three deities and giant Vanni tree.<br>
-        <b>Darshan Timings:</b> 6AM–12PM, 4:30PM–9PM</p>
+        <p><b>Location:</b> Kodumudi, Karur District.<br>
+        <b>Main Deity:</b> Shiva as Magudeswarar, with shrines for Brahma & Vishnu.<br>
+        <b>Special:</b> One of the rare temples worshipping the holy trinity.<br>
+        <b>Darshan Timings:</b> 6AM - 12PM & 4:30PM - 9PM</p>
       </div>
-    </section>
 
-    <section id="kerala">
-      <h2>Kerala Temples</h2>
-      <h3>Thiruvananthapuram District</h3>
-      <ul>
-        <li>Sree Padmanabhaswamy Temple, Thiruvananthapuram</li>
-        <li>Ananthapura Lake Temple, Kasaragod</li>
-      </ul>
-      <h3>Kollam District</h3>
-      <ul>
-        <li>Thirumullavaram Sri Sastha Temple, Kollam</li>
-      </ul>
-    </section>
+      <!-- Add 5 more Kongu temples similarly -->
+      <button class="accordion">Sri Pasupatheeswarar Temple, Karur</button>
+      <div class="panel">
+        <p><b>Location:</b> Karur.<br>
+        <b>Main Deity:</b> Pasupatheeswarar (Shiva).<br>
+        <b>Special:</b> Kamadhenu legend and Siddhar Karuvurar shrine.<br>
+        <b>Darshan Timings:</b> 6AM - 11AM & 4PM - 8PM</p>
+      </div>
 
-    <section id="andhrapradesh">
-      <h2>Andhra Pradesh Temples</h2>
-      <h3>Tirupati District</h3>
-      <ul>
-        <li>Tirumala Venkateswara Temple, Tirupati</li>
-        <li>Padmavathi Temple, Tiruchanur</li>
-      </ul>
-      <h3>Chittoor District</h3>
-      <ul>
-        <li>Govindarajaswamy Temple, Chittoor</li>
-      </ul>
+      <button class="accordion">Sri Vigirthanatheswarar Temple, Venjamaakudal</button>
+      <div class="panel">
+        <p><b>Location:</b> Venjamaakudal, Karur.<br>
+        <b>Main Deity:</b> Shiva.<br>
+        <b>Legend:</b> Worshipped by hunter-king Venjaman.<br>
+        <b>Darshan Timings:</b> 7AM - 12PM & 4PM - 7:30PM</p>
+      </div>
+
+      <button class="accordion">Sri Kundarai Nathar Temple, Kangeyam</button>
+      <div class="panel">
+        <p><b>Location:</b> Kangeyam.<br>
+        <b>Main Deity:</b> Kundarai Nathar (Shiva).<br>
+        <b>Special:</b> Ancient temple with rich history.<br>
+        <b>Darshan Timings:</b> Morning & Evening</p>
+      </div>
+
+      <button class="accordion">Sri Thirumuruganatheeswarar Temple, Thirumuruganpoondi</button>
+      <div class="panel">
+        <p><b>Location:</b> Thirumuruganpoondi.<br>
+        <b>Main Deity:</b> Murugan.<br>
+        <b>Special:</b> Located in lush surroundings.<br>
+        <b>Darshan Timings:</b> Morning & Evening</p>
+      </div>
+
+      <button class="accordion">Sri Jambukeswarar Temple, Tiruvanaikaval</button>
+      <div class="panel">
+        <p><b>Location:</b> Tiruvanaikaval.<br>
+        <b>Main Deity:</b> Jambukeswarar (Shiva).<br>
+        <b>Special:</b> Famous water temple.<br>
+        <b>Darshan Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <!-- Kumbakonam - Divya Desam & Other Temples -->
+      <h3>Kumbakonam Temples - Divya Desam & More</h3>
+
+      <button class="accordion">Sarangapani Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Kumbakonam Town.<br>
+        <b>Main Deity:</b> Vishnu as Sarangapani.<br>
+        <b>Special:</b> Iconic 12-tiered Rajagopuram.<br>
+        <b>Significance:</b> One of 108 Divya Desams.<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <button class="accordion">Chakrapani Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Kumbakonam.<br>
+        <b>Main Deity:</b> Vishnu in discus form.<br>
+        <b>Special:</b> Unique Divya Desam.<br>
+        <b>Timings:</b> 6AM - 7PM</p>
+      </div>
+
+      <button class="accordion">Mahamaham Tank</button>
+      <div class="panel">
+        <p><b>Location:</b> Kumbakonam.<br>
+        <b>Special:</b> Famous for Mahamaham festival once every 12 years.<br>
+        <b>Timings:</b> Open all day</p>
+      </div>
+
+      <button class="accordion">Adi Kumbeswarar Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Kumbakonam.<br>
+        <b>Main Deity:</b> Shiva.<br>
+        <b>Special:</b> Important temple linked to Kumbha legend.<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <button class="accordion">Nageswaran Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Kumbakonam.<br>
+        <b>Main Deity:</b> Shiva in serpent form.<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <!-- Tiruchy Region Temples -->
+      <h3>Tiruchirappalli and Nearby Temples</h3>
+
+      <button class="accordion">Sri Ranganathaswamy Temple, Srirangam</button>
+      <div class="panel">
+        <p><b>Location:</b> Srirangam, Tiruchirappalli.<br>
+        <b>Main Deity:</b> Vishnu as Ranganatha.<br>
+        <b>Special:</b> Largest functioning Hindu temple complex.<br>
+        <b>Timings:</b> 5AM - 9PM</p>
+      </div>
+
+      <button class="accordion">Thiruvanaikaval Jambukeswarar Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Tiruchirappalli.<br>
+        <b>Main Deity:</b> Shiva.<br>
+        <b>Special:</b> One of the Pancha Bhoota Stalas - water.<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <button class="accordion">Thirupparamkunram Murugan Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Tirupurkanrum, Tiruchirappalli.<br>
+        <b>Main Deity:</b> Lord Murugan - One of Arupadai Veedu.<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <button class="accordion">Vayalur Murugan Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Vayalur.<br>
+        <b>Main Deity:</b> Murugan.<br>
+        <b>Special:</b> Unique temple associated with Swami Ramananda.<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <!-- Tanjore Region Temples -->
+      <h3>Thanjavur Temples</h3>
+
+      <button class="accordion">Brihadeeswarar Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Thanjavur.<br>
+        <b>Main Deity:</b> Shiva (Brihadeeswarar).<br>
+        <b>Special:</b> UNESCO World Heritage Site.<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
+
+      <button class="accordion">Neelamegha Perumal Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Thanjavur.<br>
+        <b>Main Deity:</b> Vishnu (Neelamegha Perumal).<br>
+        <b>Special:</b> One of 108 Divya Desams.<br>
+        <b>Timings:</b> 6AM - 7PM</p>
+      </div>
+
+      <button class="accordion">Airavateswara Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Darasuram, near Thanjavur.<br>
+        <b>Main Deity:</b> Shiva (Airavateswara).<br>
+        <b>Special:</b> UNESCO Heritage Site.<br>
+        <b>Timings:</b> 6AM - 6PM</p>
+      </div>
+
+      <button class="accordion">Swamimalai Murugan Temple</button>
+      <div class="panel">
+        <p><b>Location:</b> Swamimalai, near Thanjavur.<br>
+        <b>Main Deity:</b> Murugan (one of Arupadai Veedu).<br>
+        <b>Timings:</b> 6AM - 8PM</p>
+      </div>
     </section>
 
     <section id="booking">
@@ -158,19 +281,22 @@
   </main>
 
   <footer>
-    © 2025 Spiritual Traveller | Divine Journeys Across India
+    © 2025 Moksha Yatra | Pilgrimage Tours Across India
   </footer>
 
   <script>
-    var acc=document.getElementsByClassName("accordion");
-    for(var i=0;i<acc.length;i++){
-      acc[i].addEventListener("click",function(){
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
         this.classList.toggle("active");
-        var panel=this.nextElementSibling;
-        panel.style.display = (panel.style.display === "block") ? "none" : "block";
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
       });
     }
   </script>
-
 </body>
 </html>
