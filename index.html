@@ -43,10 +43,10 @@
       margin-top: 3em;
     }
 
-  /* Add these accordion styles: */
-  .accordion { background: #e6c264; cursor:pointer; padding:16px; width:100%; border:none; text-align:left; outline:none; font-size:1.09em; margin-bottom:4px; }
-  .active, .accordion:hover { background: #ffd700; }
-  .panel { padding:0 18px; background: #fffbe0; display: none; overflow: hidden; border-left:2px solid #ccb36e; }
+    /* Accordion styles */
+    .accordion { background: #e6c264; cursor:pointer; padding:16px; width:100%; border:none; text-align:left; outline:none; font-size:1.09em; margin-bottom:4px; }
+    .active, .accordion:hover { background: #ffd700; }
+    .panel { padding:0 18px; background: #fffbe0; display: none; overflow: hidden; border-left:2px solid #ccb36e; }
   </style>
 </head>
 <body>
@@ -86,23 +86,37 @@
         <li>Thirupparamkunram Murugan Temple, Madurai</li>
       </ul>
     </section>
- <section id="kongu-region">
-    <h2>Kongu Region Temples</h2>
 
-    <button class="accordion">Sri Ardhanareeswarar Temple, Thiruchengode</button>
-    <div class="panel">
-      <!-- Temple details -->
-    </div>
+    <section id="kongu-region">
+      <h2>Kongu Region Temples</h2>
 
-    <button class="accordion">Sri Sangameshwarar Temple, Bhavani</button>
-    <div class="panel">
-      <!-- Temple details -->
-    </div>
+      <button class="accordion">Sri Ardhanareeswarar Temple, Thiruchengode</button>
+      <div class="panel">
+        <p><b>Location:</b> Thiruchengode, Namakkal<br>
+        <b>Main Deity:</b> Ardhanareeswarar<br>
+        <b>Specialty:</b> Unique Shiva-Parvati form on Nagagiri hill, panoramic views.<br>
+        <b>Legend:</b> Believed to grant marital harmony.<br>
+        <b>Darshan Timings:</b> 6AM–2PM; 3:30PM–6:30PM</p>
+      </div>
 
-    <!-- Add more accordions here -->
-  </section>
+      <button class="accordion">Sri Sangameshwarar Temple, Bhavani</button>
+      <div class="panel">
+        <p><b>Location:</b> Bhavani, Erode district<br>
+        <b>Main Deity:</b> Shiva as Sangameshwarar<br>
+        <b>Specialty:</b> Sacred confluence of Kaveri, Bhavani & Amudha rivers.<br>
+        <b>Legend:</b> Bathing here believed to remove sins.<br>
+        <b>Darshan Timings:</b> 5:30AM–1PM, 4PM–9PM</p>
+      </div>
 
- 
+      <button class="accordion">Sri Kodumudinathar Temple, Kodumudi</button>
+      <div class="panel">
+        <p><b>Location:</b> Kodumudi, near Karur<br>
+        <b>Main Deity:</b> Shiva as Magudeswarar, with Brahma & Vishnu shrines<br>
+        <b>Specialty:</b> Rare temple with all three deities and giant Vanni tree.<br>
+        <b>Darshan Timings:</b> 6AM–12PM, 4:30PM–9PM</p>
+      </div>
+    </section>
+
     <section id="kerala">
       <h2>Kerala Temples</h2>
       <h3>Thiruvananthapuram District</h3>
@@ -129,18 +143,6 @@
       </ul>
     </section>
 
-     <!-- Other body content -->
-
-  <script>
-    var acc=document.getElementsByClassName("accordion");
-    for(var i=0;i<acc.length;i++){
-      acc[i].addEventListener("click",function(){
-        this.classList.toggle("active");
-        var panel=this.nextElementSibling;
-        panel.style.display = (panel.style.display === "block") ? "none" : "block";
-      });
-    }
-  </script>
     <section id="booking">
       <h2>Plan Your Spiritual Tour</h2>
       <p>Contact us on WhatsApp or Email to customize your pilgrimage circuit.</p>
@@ -158,5 +160,17 @@
   <footer>
     © 2025 Spiritual Traveller | Divine Journeys Across India
   </footer>
+
+  <script>
+    var acc=document.getElementsByClassName("accordion");
+    for(var i=0;i<acc.length;i++){
+      acc[i].addEventListener("click",function(){
+        this.classList.toggle("active");
+        var panel=this.nextElementSibling;
+        panel.style.display = (panel.style.display === "block") ? "none" : "block";
+      });
+    }
+  </script>
+
 </body>
 </html>
