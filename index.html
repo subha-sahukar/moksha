@@ -1,350 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moksha Yatra | Divya Desam & Padal Petra Sthalam Tours</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f4ec; color: #4d2614; margin: 0; }
-    header { background: #ffe1a8; color: #633f12; padding: 2em 1em; text-align: center; }
-    h1 { margin: 0 0 0.3em; font-size: 2.2em; }
-    nav { background: #f0d395; padding: 0.5em 0; text-align: center; }
-    nav a { color: #b86a16; font-weight: 600; margin: 0 12px; text-decoration: none; font-size: 1.1em; }
-    nav a:hover { text-decoration: underline; }
-    main { max-width: 900px; margin: 2em auto; padding: 0 1em; }
-    section { background: #fffbe0; border-radius: 14px; padding: 2em; margin-bottom: 1.8em; box-shadow: 0 2px 8px #ead2ac; }
-    h2 { color: #b86a16; border-bottom: 2px solid #b86a16; padding-bottom: 0.3em; }
-    h3 { color: #8c5913; margin-top: 1.2em; }
-    ul { columns: 2 250px; margin: 0.5em 0 1em 1.2em; }
-    ul li { margin-bottom: 0.5em; }
-    @media (max-width: 600px) {
-      ul { columns: 1; }
-      nav a { display: inline-block; margin: 8px 12px; }
-    }
-    section#booking, section#contact { text-align: center; }
-    .btn {
-      background: #b86a16;
-      color: #fff;
-      padding: 12px 28px;
-      margin-top: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 7px;
-      display: inline-block;
-      font-size: 1.1em;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      background: #b86a16;
-      color: #fff;
-      padding: 1em 0;
-      font-weight: 600;
-      margin-top: 3em;
-    }
-    /* Accordion styles */
-    .accordion {
-      background: #e6c264;
-      cursor: pointer;
-      padding: 16px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1.09em;
-      margin-bottom: 4px;
-      transition: background 0.3s ease;
-    }
-    .accordion.active, .accordion:hover {
-      background: #ffd700;
-    }
-    .panel {
-      padding: 0 18px;
-      background: #fffbe0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      border-left: 2px solid #ccb36e;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Moksha Yatra | Spiritual Pilgrimage</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f4ec; color: #4d2614; margin: 0; }
+  header { background: #ffe1a8; color: #633f12; padding: 2em 1em; text-align: center; }
+  h1 { margin: 0 0 0.3em; font-size: 2.2em; }
+  nav { background: #f0d395; padding: 0.5em; text-align: center; }
+  nav button { background: #b86a16; color: #fff; border: none; border-radius: 5px; padding: 10px 24px; cursor: pointer; margin: 0 6px; font-weight: 600; transition: background 0.3s ease; font-size: 1em; }
+  nav button:hover, nav button.active { background: #ffcc00; color: #633f12; }
+  main { max-width: 900px; margin: 2em auto; padding: 0 1em; }
+  section { background: #fffbe0; border-radius: 14px; padding: 2em; box-shadow: 0 2px 8px #ead2ac; margin-bottom: 1.8em; }
+  .accordion { background: #e6c264; cursor: pointer; padding: 16px; width: 100%; border: none; text-align: left; outline: none; font-size: 1.09em; margin-bottom: 4px; transition: background 0.3s ease; }
+  .accordion.active, .accordion:hover { background: #ffd700; }
+  .panel { padding: 0 18px; background: #fffbe0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-left: 2px solid #ccb36e; }
+  .hidden { display: none; }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Moksha Yatra</h1>
-    <p>Explore 108 Divya Desam & Padal Petra Sthalam Temples across India</p>
-    <p>Plan your spiritual pilgrimage by region, district & proximity</p>
-  </header>
+<header>
+  <h1>Moksha Yatra - Spiritual Pilgrimage Tours</h1>
+  <p>Explore Southern India's Sacred Temples</p>
+</header>
+<nav>
+  <button id="tab-intro" class="active">Introduction</button>
+  <button id="tab-temples">Temples</button>
+</nav>
+<main>
+  <section id="intro" class="active">
+    <h2>Welcome to Moksha Yatra</h2>
+    <p>
+      Moksha Yatra is your dedicated pilgrimage and spiritual travel platform focusing on the sacred temples of Southern India.
+      We help devotees, seekers, and travelers explore the divine heritage embodied in ancient temples through well-curated temple circuits, rich historical context, and personalized tour plans.
+    </p>
+    <h3>Arupadai Veedu – The Six Sacred Abodes of Lord Murugan</h3>
+    <ul>
+      <li><b>Thiruparankundram:</b> Marriage to Deivayanai; first abode.</li>
+      <li><b>Tiruchendur:</b> Victory over Surapadman – the demon king.</li>
+      <li><b>Palani:</b> Renunciation and wisdom; ascetic hills.</li>
+      <li><b>Swamimalai:</b> Teaching “Om” to Shiva; heavenly knowledge.</li>
+      <li><b>Thiruthani:</b> Homecoming and reunion; peace and devotion.</li>
+      <li><b>Pazhamudircholai:</b> Fertile forest hills; Murugan’s divine bliss with both consorts Valli and Deivayanai.</li>
+    </ul>
+    <h3>Padal Petra Sthalam – 275 Sacred Shaivite Temples</h3>
+    <p>
+      Remarkable ancient temples glorified by the Tamil Saiva saint-poets (Nayanmars) through the Tevaram hymns, celebrated for their history, rituals, and the presence of special “Sthala Viruksham” trees and Tirtham tanks.
+    </p>
+    <h3>Divya Desams – The 108 Sacred Vishnu Temples</h3>
+    <p>
+      Vaishnava canonized sites, sung by the Alwars – each Divya Desam marked by a unique manifestation of Vishnu, magnificent festivals, and deep mythological significance.
+    </p>
+    <h3>Navagraha Sthalams – The Nine Planetary Temples</h3>
+    <ul>
+      <li>Dedicated to the Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, and Ketu.</li>
+      <li>Pilgrimage believed to bring harmony and astrological balance.</li>
+    </ul>
+    <p>
+      <strong>Purpose:</strong> Moksha Yatra’s mission is to make India’s sacred temple journeys accessible, deeply informative, inspiring, and supportive—so every traveler or devotee finds their spiritual circuit, learns the stories, and feels the power of darshan.
+    </p>
+  </section>
+  <section id="temples" class="hidden">
+    <h2>Kumbakonam Temples – Detailed Listing</h2>
+    <button class="accordion">Sarangapani Temple (Divya Desam No.48)</button>
+    <div class="panel">
+      <p>
+        <b>Moolavar:</b> Sarangapani Perumal (Vishnu)<br>
+        <b>Sthala Viruksham:</b> Neem<br>
+        <b>Significance:</b> Largest Vishnu temple in Kumbakonam; 12-tiered gopuram, grand chariot festival.
+      </p>
+    </div>
+    <button class="accordion">Adi Kumbeswarar Temple</button>
+    <div class="panel">
+      <p>
+        <b>Moolavar:</b> Adi Kumbeswarar (Shiva)<br>
+        <b>Sthala Viruksham:</b> Ashoka<br>
+        <b>Significance:</b> Presiding deity of Kumbakonam; legendary origin linked to the cosmic pot (Kumbha).
+      </p>
+    </div>
+    <!-- Add more temples accordion here, per your expanded listings -->
+  </section>
+</main>
+<script>
+  // Tabs script
+  const introBtn = document.getElementById('tab-intro');
+  const templesBtn = document.getElementById('tab-temples');
+  const introSection = document.getElementById('intro');
+  const templesSection = document.getElementById('temples');
 
-  <nav>
-    <a href="#kongu-kumbakonam-tiruchy-tanjore">Temples by Region</a>
-    <a href="#booking">Tour Booking</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  introBtn.addEventListener('click', () => {
+    introBtn.classList.add('active');
+    templesBtn.classList.remove('active');
+    introSection.classList.remove('hidden');
+    templesSection.classList.add('hidden');
+  });
 
-  <main>
-    <section id="kongu-kumbakonam-tiruchy-tanjore">
-      <h2>Popular Temples of Kongu, Kumbakonam, Tiruchy & Tanjore</h2>
+  templesBtn.addEventListener('click', () => {
+    templesBtn.classList.add('active');
+    introBtn.classList.remove('active');
+    templesSection.classList.remove('hidden');
+    introSection.classList.add('hidden');
+  });
 
-      <!-- Kongu Region Temples -->
-      <h3>Kongu Nadu - Padal Petra Sthalams & Other Temples</h3>
-
-      <button class="accordion">Sri Ardhanareeswarar Temple, Thiruchengode</button>
-      <div class="panel">
-        <p><b>Location:</b> Thiruchengode, Namakkal.<br>
-        <b>Main Deity:</b> Ardhanareeswarar (combined Shiva & Parvati form).<br>
-        <b>Special:</b> Located on Nagagiri hill with steps & serpent carvings.<br>
-        <b>Spiritual Significance:</b> Known for marital harmony blessings.<br>
-        <b>Darshan Timings:</b> 6AM - 2PM & 3:30PM - 6:30PM</p>
-      </div>
-
-      <button class="accordion">Sri Sangameshwarar Temple, Bhavani</button>
-      <div class="panel">
-        <p><b>Location:</b> Bhavani, Erode District.<br>
-        <b>Main Deity:</b> Shiva as Sangameshwarar.<br>
-        <b>Special:</b> Sacred confluence of Kaveri, Bhavani, & Amudha rivers.<br>
-        <b>Spiritual Significance:</b> Site for ancestral rites and sin cleansing.<br>
-        <b>Darshan Timings:</b> 5:30AM - 1PM & 4PM - 9PM</p>
-      </div>
-
-      <button class="accordion">Sri Kodumudinathar Temple, Kodumudi</button>
-      <div class="panel">
-        <p><b>Location:</b> Kodumudi, Karur District.<br>
-        <b>Main Deity:</b> Shiva as Magudeswarar, with shrines for Brahma & Vishnu.<br>
-        <b>Special:</b> One of the rare temples worshipping the holy trinity.<br>
-        <b>Darshan Timings:</b> 6AM - 12PM & 4:30PM - 9PM</p>
-      </div>
-
-      <!-- Add 5 more Kongu temples similarly -->
-      <button class="accordion">Sri Pasupatheeswarar Temple, Karur</button>
-      <div class="panel">
-        <p><b>Location:</b> Karur.<br>
-        <b>Main Deity:</b> Pasupatheeswarar (Shiva).<br>
-        <b>Special:</b> Kamadhenu legend and Siddhar Karuvurar shrine.<br>
-        <b>Darshan Timings:</b> 6AM - 11AM & 4PM - 8PM</p>
-      </div>
-
-      <button class="accordion">Sri Vigirthanatheswarar Temple, Venjamaakudal</button>
-      <div class="panel">
-        <p><b>Location:</b> Venjamaakudal, Karur.<br>
-        <b>Main Deity:</b> Shiva.<br>
-        <b>Legend:</b> Worshipped by hunter-king Venjaman.<br>
-        <b>Darshan Timings:</b> 7AM - 12PM & 4PM - 7:30PM</p>
-      </div>
-
-      <button class="accordion">Sri Kundarai Nathar Temple, Kangeyam</button>
-      <div class="panel">
-        <p><b>Location:</b> Kangeyam.<br>
-        <b>Main Deity:</b> Kundarai Nathar (Shiva).<br>
-        <b>Special:</b> Ancient temple with rich history.<br>
-        <b>Darshan Timings:</b> Morning & Evening</p>
-      </div>
-
-      <button class="accordion">Sri Thirumuruganatheeswarar Temple, Thirumuruganpoondi</button>
-      <div class="panel">
-        <p><b>Location:</b> Thirumuruganpoondi.<br>
-        <b>Main Deity:</b> Murugan.<br>
-        <b>Special:</b> Located in lush surroundings.<br>
-        <b>Darshan Timings:</b> Morning & Evening</p>
-      </div>
-
-      <button class="accordion">Sri Jambukeswarar Temple, Tiruvanaikaval</button>
-      <div class="panel">
-        <p><b>Location:</b> Tiruvanaikaval.<br>
-        <b>Main Deity:</b> Jambukeswarar (Shiva).<br>
-        <b>Special:</b> Famous water temple.<br>
-        <b>Darshan Timings:</b> 6AM - 8PM</p>
-      </div>
-
-      <!-- Kumbakonam - Divya Desam & Other Temples -->
-      <section id="kumbakonam-temples">
-  <h2>Kumbakonam Temples – Detailed Listing</h2>
-
-  <button class="accordion">1. Sarangapani Temple (Divya Desam No. 48)</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Sri Sarangapani Perumal (Vishnu)<br>
-       <b>Sthala Viruksham:</b> Neem Tree (Azadirachta indica)<br>
-       <b>Significance:</b> One of the tallest Rajagopurams among Divya Desams, associated with saint Nathamuni and home to one of the largest temple chariots.<br>
-       <b>Location:</b> Kumbakonam Town, on banks of River Kaveri.<br>
-       <b>Unique Details:</b> Includes Potramarai tank; major festivals during Tamil month Chittirai (Apr-May).</p>
-  </div>
-
-  <button class="accordion">2. Chakrapani Temple (Divya Desam No. 43)</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Chakrapani Perumal (Vishnu)<br>
-       <b>Sthala Viruksham:</b> Banyan Tree<br>
-       <b>Significance:</b> Unique Divya Desam with Vishnu worshipped in discus form; boasts temple architecture from Nayak period.<br>
-       <b>Location:</b> Chakrapani Sannathi Street, Kumbakonam.<br>
-       <b>Unique Details:</b> Statue of King Sarfoji II worshipping Vishnu present in temple.</p>
-  </div>
-
-  <button class="accordion">3. Adi Kumbeswarar Temple</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Lord Shiva (Adi Kumbeswarar)<br>
-       <b>Sthala Viruksham:</b> Ashoka Tree (Saraca asoca)<br>
-       <b>Significance:</b> One of the oldest Shiva temples thought to be built in 7th century by Cholas.<br>
-       <b>Location:</b> Thanjavur Main Road, Kumbakonam.<br>
-       <b>Unique Details:</b> Famous for its unique Shiva Lingam and grand Chola style architecture.</p>
-  </div>
-
-  <button class="accordion">4. Airavatesvara Temple (Darasuram)</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Lord Shiva (Airavatesvara)<br>
-       <b>Sthala Viruksham:</b> Margosa Tree (Neem)<br>
-       <b>Significance:</b> UNESCO World Heritage Site; part of Great Living Chola Temples.<br>
-       <b>Location:</b> Gurunathan Pillai Colony, Darasuram.<br>
-       <b>Unique Details:</b> Known for exquisite stone carvings and massive chariot-shaped temple structure.</p>
-  </div>
-
-  <button class="accordion">5. Nageswaran Temple</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Lord Shiva (Nageswaran)<br>
-       <b>Sthala Viruksham:</b> Neem Tree<br>
-       <b>Significance:</b> Iconic Chola architecture built as a chariot; remarkable sunlight phenomena in March-April.<br>
-       <b>Location:</b> Gandhi Adigal Salai, Kumbakonam.<br>
-       <b>Unique Details:</b> Famous for serpent worship and unique annual festivals.</p>
-  </div>
-
-  <button class="accordion">6. Uppiliappan Temple (Divya Desam No. 60)</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Lord Vishnu (Uppiliappan)<br>
-       <b>Sthala Viruksham:</b> Neem Tree<br>
-       <b>Significance:</b> Noted for salt-free prasad; Tamil canon Divya Prabandha glorifies the temple.<br>
-       <b>Location:</b> Thirunageswaram, near Kumbakonam.<br>
-       <b>Unique Details:</b> Place of marriage of Lord Vishnu with Bhoomidevi.</p>
-  </div>
-
-  <button class="accordion">7. Mahalingeswarar Temple (Thiruvidaimaruthur)</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Lord Shiva (Mahalingeswarar)<br>
-       <b>Sthala Viruksham:</b> Peepal Tree<br>
-       <b>Significance:</b> One of seven major Shiva temples featuring the revered Jothimayalingam Lingam.<br>
-       <b>Location:</b> SH 64, Thiruvidaimaruthur.<br>
-       <b>Unique Details:</b> Active celebration of many local festivals and rituals.</p>
-  </div>
-
-  <button class="accordion">8. Ramaswamy Temple</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Lord Rama<br>
-       <b>Sthala Viruksham:</b> Neem Tree<br>
-       <b>Significance:</b> Ancient temple housing idols of Rama’s brothers and Hanuman; coronation pose of Rama.<br>
-       <b>Location:</b> East Street, Kumbakonam.<br>
-       <b>Unique Details:</b> Spectacular wall paintings depicting Ramayana episodes.</p>
-  </div>
-
-  <button class="accordion">9. Brahma Temple</button>
-  <div class="panel">
-    <p><b>Moolavar:</b> Lord Vishnu (Vedanarayanaperumal) and Lord Brahma<br>
-       <b>Sthala Viruksham:</b> Peepal Tree<br>
-       <b>Significance:</b> One of only two temples dedicated to Lord Brahma in the world.<br>
-       <b>Location:</b> Birman Kovil St, Kumbakonam.<br>
-       <b>Unique Details:</b> Co-habitation with Vishnu and Lakshmi shrines.</p>
-  </div>
-
-  <!-- You may continue adding all temples with the same format -->
-
-</section>
-
-
-      <!-- Tiruchy Region Temples -->
-      <h3>Tiruchirappalli and Nearby Temples</h3>
-
-      <button class="accordion">Sri Ranganathaswamy Temple, Srirangam</button>
-      <div class="panel">
-        <p><b>Location:</b> Srirangam, Tiruchirappalli.<br>
-        <b>Main Deity:</b> Vishnu as Ranganatha.<br>
-        <b>Special:</b> Largest functioning Hindu temple complex.<br>
-        <b>Timings:</b> 5AM - 9PM</p>
-      </div>
-
-      <button class="accordion">Thiruvanaikaval Jambukeswarar Temple</button>
-      <div class="panel">
-        <p><b>Location:</b> Tiruchirappalli.<br>
-        <b>Main Deity:</b> Shiva.<br>
-        <b>Special:</b> One of the Pancha Bhoota Stalas - water.<br>
-        <b>Timings:</b> 6AM - 8PM</p>
-      </div>
-
-      <button class="accordion">Thirupparamkunram Murugan Temple</button>
-      <div class="panel">
-        <p><b>Location:</b> Tirupurkanrum, Tiruchirappalli.<br>
-        <b>Main Deity:</b> Lord Murugan - One of Arupadai Veedu.<br>
-        <b>Timings:</b> 6AM - 8PM</p>
-      </div>
-
-      <button class="accordion">Vayalur Murugan Temple</button>
-      <div class="panel">
-        <p><b>Location:</b> Vayalur.<br>
-        <b>Main Deity:</b> Murugan.<br>
-        <b>Special:</b> Unique temple associated with Swami Ramananda.<br>
-        <b>Timings:</b> 6AM - 8PM</p>
-      </div>
-
-      <!-- Tanjore Region Temples -->
-      <h3>Thanjavur Temples</h3>
-
-      <button class="accordion">Brihadeeswarar Temple</button>
-      <div class="panel">
-        <p><b>Location:</b> Thanjavur.<br>
-        <b>Main Deity:</b> Shiva (Brihadeeswarar).<br>
-        <b>Special:</b> UNESCO World Heritage Site.<br>
-        <b>Timings:</b> 6AM - 8PM</p>
-      </div>
-
-      <button class="accordion">Neelamegha Perumal Temple</button>
-      <div class="panel">
-        <p><b>Location:</b> Thanjavur.<br>
-        <b>Main Deity:</b> Vishnu (Neelamegha Perumal).<br>
-        <b>Special:</b> One of 108 Divya Desams.<br>
-        <b>Timings:</b> 6AM - 7PM</p>
-      </div>
-
-      <button class="accordion">Airavateswara Temple</button>
-      <div class="panel">
-        <p><b>Location:</b> Darasuram, near Thanjavur.<br>
-        <b>Main Deity:</b> Shiva (Airavateswara).<br>
-        <b>Special:</b> UNESCO Heritage Site.<br>
-        <b>Timings:</b> 6AM - 6PM</p>
-      </div>
-
-      <button class="accordion">Swamimalai Murugan Temple</button>
-      <div class="panel">
-        <p><b>Location:</b> Swamimalai, near Thanjavur.<br>
-        <b>Main Deity:</b> Murugan (one of Arupadai Veedu).<br>
-        <b>Timings:</b> 6AM - 8PM</p>
-      </div>
-    </section>
-
-    <section id="booking">
-      <h2>Plan Your Spiritual Tour</h2>
-      <p>Contact us on WhatsApp or Email to customize your pilgrimage circuit.</p>
-      <a href="mailto:your-email@example.com" class="btn">Book Now via Email</a>
-      <p style="margin-top:10px;"><b>WhatsApp:</b> +91-00000 11111</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Information</h2>
-      <p>Email: your-email@example.com</p>
-      <p>Phone / WhatsApp: +91-00000 11111</p>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Moksha Yatra | Pilgrimage Tours Across India
-  </footer>
-
-  <script>
-    var acc = document.getElementsByClassName("accordion");
-    for (var i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-  </script>
+  // Accordion script
+  const accordions = document.getElementsByClassName('accordion');
+  for(let acc of accordions) {
+    acc.addEventListener('click', function() {
+      this.classList.toggle('active');
+      let panel = this.nextElementSibling;
+      if(panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  }
+</script>
 </body>
 </html>
