@@ -61,7 +61,43 @@
       <strong>Purpose:</strong> Moksha Yatra’s mission is to make India’s sacred temple journeys accessible, deeply informative, inspiring, and supportive—so every traveler or devotee finds their spiritual circuit, learns the stories, and feels the power of darshan.
     </p>
   </section>
-  <section id="kumbakonam-temples">
+ 
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
+
+  <section id="temples" class="hidden">
+    <h2>Kumbakonam Temples – Detailed Listing</h2>
+    <button class="accordion">Sarangapani Temple (Divya Desam No.48)</button>
+    <div class="panel">
+      <p>
+        <b>Moolavar:</b> Sarangapani Perumal (Vishnu)<br>
+        <b>Sthala Viruksham:</b> Neem<br>
+        <b>Significance:</b> Largest Vishnu temple in Kumbakonam; 12-tiered gopuram, grand chariot festival.
+      </p>
+    </div>
+    <button class="accordion">Adi Kumbeswarar Temple</button>
+    <div class="panel">
+      <p>
+        <b>Moolavar:</b> Adi Kumbeswarar (Shiva)<br>
+        <b>Sthala Viruksham:</b> Ashoka<br>
+        <b>Significance:</b> Presiding deity of Kumbakonam; legendary origin linked to the cosmic pot (Kumbha).
+      </p>
+    </div>
+    <!-- Add more temples accordion here, per your expanded listings -->
+
+<!-- <section id="kumbakonam-temples">-->
   <h2>Kumbakonam Temples – Comprehensive Detailed Listing</h2>
 
   <button class="accordion">1. Sarangapani Temple (Divya Desam No. 48)</button>
@@ -145,43 +181,9 @@
   </div>
 
   <!-- Additional detailed temples would follow in similar format -->
+<!--</section>-->
 
-</section>
-
-<script>
-  var acc = document.getElementsByClassName("accordion");
-  for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-</script>
-
-  <section id="temples" class="hidden">
-    <h2>Kumbakonam Temples – Detailed Listing</h2>
-    <button class="accordion">Sarangapani Temple (Divya Desam No.48)</button>
-    <div class="panel">
-      <p>
-        <b>Moolavar:</b> Sarangapani Perumal (Vishnu)<br>
-        <b>Sthala Viruksham:</b> Neem<br>
-        <b>Significance:</b> Largest Vishnu temple in Kumbakonam; 12-tiered gopuram, grand chariot festival.
-      </p>
-    </div>
-    <button class="accordion">Adi Kumbeswarar Temple</button>
-    <div class="panel">
-      <p>
-        <b>Moolavar:</b> Adi Kumbeswarar (Shiva)<br>
-        <b>Sthala Viruksham:</b> Ashoka<br>
-        <b>Significance:</b> Presiding deity of Kumbakonam; legendary origin linked to the cosmic pot (Kumbha).
-      </p>
-    </div>
-    <!-- Add more temples accordion here, per your expanded listings -->
+    
   </section>
 </main>
 <script>
