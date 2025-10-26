@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Tamil Nadu — Moksha Yatra</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Tamil Nadu circuits</small></header>
+<nav>
+  <button class="main-btn" onclick="location.href='index.html'">Home</button>
+  <button class="main-btn" onclick="location.href='tamilnadu.html'">Tamil Nadu</button>
+  <select class="state-select" onchange="if(this.value) location.href=this.value"><option value="">Jump…</option><option value="andhra.html">Andhra</option><option value="karnataka.html">Karnataka</option><option value="kerala.html">Kerala</option></select>
+</nav>
+<main>
+<section id="tn-hero"><h2 style="text-align:center">Tamil Nadu — Temple Circuits</h2></section>
+
+<section>
+  <h2 id="kumbakonam">Kumbakonam — Divya Desams & Chola Marvels</h2>
+  <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Kumbakonam_Sarangapani_Temple.jpg" alt="Sarangapani">
+  <button class="accordion">Sarangapani Temple (Kumbakonam)</button>
+  <div class="panel"><p>Largest Vishnu temple in Kumbakonam; Rajagopuram and chariot festival.</p></div>
+
+  <button class="accordion">Adi Kumbeswarar Temple (Kumbakonam)</button>
+  <div class="panel"><p>Shaiva center; Chola era complex.</p></div>
+
+  <h2 id="madurai">Madurai & Tiruchendur</h2>
+  <button class="accordion">Meenakshi Amman Temple</button>
+  <div class="panel"><p>Madurai's living temple with vibrant ritual life.</p></div>
+
+  <button class="accordion">Tiruchendur Murugan Temple</button>
+  <div class="panel"><p>One of Arupadai Veedu — seaside Murugan shrine.</p></div>
+
+  <h2 id="navatirupati">Nava Tirupati (Tirunelveli)</h2>
+  <p>The Nava Tirupati cluster near Tirunelveli are nine Divya Desams along the Tamiraparani; great for a compact yatra.</p>
+</section>
+</main>
+<script>
+const accs = document.getElementsByClassName('accordion');
+for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null; } else { p.style.maxHeight = p.scrollHeight + 'px'; } }); }
+</script>
+</body></html>
