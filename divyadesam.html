@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Divya Desam — Moksha Yatra</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Divya Desams — The 108 Sacred Vishnu Temples</small></header>
+<nav>
+  <button class="main-btn" onclick="location.href='index.html'">Home</button>
+  <button class="main-btn" onclick="location.href='tamilnadu.html'">Tamil Nadu</button>
+  <button class="main-btn" onclick="location.href='andhra.html'">Andhra</button>
+  <button class="main-btn" onclick="location.href='karnataka.html'">Karnataka</button>
+  <select class="state-select" onchange="if(this.value) location.href=this.value">
+    <option value="">Jump to state…</option>
+    <option value="tamilnadu.html">Tamil Nadu</option>
+    <option value="andhra.html">Andhra</option>
+    <option value="karnataka.html">Karnataka</option>
+    <option value="kerala.html">Kerala</option>
+  </select>
+</nav>
+
+<main>
+<section id="intro">
+  <h2>What are the Divya Desams?</h2>
+  <p>
+    The <strong>Divya Desams</strong> are 108 temples of Lord Vishnu celebrated in the Tamil Vaishnava canon written by the Alvars (6th–9th centuries CE).
+    Each Divya Desam is associated with sacred hymns (the Nalayira Divya Prabandham), an abiding tradition, and a unique temple form of Vishnu.
+  </p>
+  <p class="small-muted">This page lists the Divya Desams by region, highlights important grouping (e.g., Nava Tirupati), and suggests pilgrimage circuits.</p>
+</section>
+
+<section>
+  <h2>Quick circuits & how to use this page</h2>
+  <ul>
+    <li><b>South Tamil Nadu circuit:</b> Nava Tirupati, Rameswaram nearby temples, Tirunelveli Divya Desams.</li>
+    <li><b>Central circuit (Chennai–Kumbakonam):</b> Kanchipuram, Kumbakonam cluster, Srirangam.</li>
+    <li><b>Pan-India:</b> Tirupati (Tirumala) is part of the Vaishnava pilgrimage circuit and historically visited along with Divya Desams.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Representative Divya Desams (selected highlights)</h2>
+
+  <button class="accordion">Tiruppathi / Tirumala (Tirupati)</button>
+  <div class="panel"><p><b>Deity:</b> Venkateswara — One of the most visited Vaishnava shrines; famous for seva, tons of pilgrims, and ritual tradition.</p></div>
+
+  <button class="accordion">Srirangam — Sri Ranganathaswamy</button>
+  <div class="panel"><p><b>Deity:</b> Ranganatha — Largest functioning temple complex; Divya Desam and Vaikunta Ekadasi is major festival.</p></div>
+
+  <button class="accordion">Sarangapani — Kumbakonam</button>
+  <div class="panel"><p><b>Deity:</b> Sarangapani Perumal — Kumbakonam’s important Divya Desam and chariot festival.</p></div>
+
+  <button class="accordion">Uppiliappan — Thirunageswaram (near Kumbakonam)</button>
+  <div class="panel"><p><b>Deity:</b> Uppiliappan — Divya Desam and unique prasadam rules (salt-free).</p></div>
+
+  <button class="accordion">Nava Tirupati (Tirunelveli cluster)</button>
+  <div class="panel"><p>The Nava Tirupati are nine Divya Desams on the Tamiraparani river; best visited as a circuit with river-side rituals.</p></div>
+</section>
+
+<section>
+  <h2>The full list (grouped)</h2>
+  <p class="small-muted">Below is a condensed grouping. For ease of navigation this is split by region — expand the accordions for short notes. You may later convert this into a searchable table (data.json) for dynamic UI.</p>
+
+  <h3>Tamil Nadu — Key Divya Desams (sample list)</h3>
+  <button class="accordion">Srirangam — Ranganathaswamy (Tiruchirappalli)</button>
+  <div class="panel"><p>Major Vaishnava hub, multiple prakaram (circumambulatory corridors), elaborate festivals.</p></div>
+
+  <button class="accordion">Tiruppathi — Tirumala Venkateswara (Tirupati)</button>
+  <div class="panel"><p>Pan-Indian shrine; heavy pilgrim infrastructure; many charity offerings and sevas.</p></div>
+
+  <button class="accordion">Kumbakonam cluster (Sarangapani, Chakrapani, Uppiliappan)</button>
+  <div class="panel"><p>Historic Chola and later-period temples with Divya Desam significance.</p></div>
+
+  <button class="accordion">Nava Tirupati & Thirunelveli Divya Desams</button>
+  <div class="panel"><p>Nava Tirupati — a coherent small circuit for a 1–2 day pilgrimage.</p></div>
+
+  <p class="small-muted">— Full textual list of 108 can be added here. If you would like, I can generate a CSV/JSON of all 108 Divya Desams with coordinates and Alvar hymn references for your site (recommended for dynamic search).</p>
+</section>
+
+<section>
+  <h2>Suggested pilgrimage templates</h2>
+  <ul>
+    <li><b>3-day Kumbakonam & Thanjavur:</b> Kumbakonam (Sarangapani → Adi Kumbeswarar → Nageswaran) → Darasuram (Airavatesvara) → Thanjavur (Brihadeeswarar).</li>
+    <li><b>4-day South Tamil Nadu:</b> Nava Tirupati circuit → Tirunelveli → Rameswaram (if extending to Ramar Path).</li>
+    <li><b>10-day Vaishnava immersion:</b> Srirangam → Kanchipuram → Kumbakonam → Tirupati → Srirangapatna / Udupi (if extending to Karnataka Vaishnava sites).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Notes & references</h2>
+  <p class="small-muted">The Divya Desam corpus is textured with Alvar literature, regional festival calendars, and local priestly practices. For accuracy of festival dates check local temple boards; many festivals follow traditional lunar calendars (Tamil months, etc.).</p>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>
+const accs = document.getElementsByClassName('accordion');
+for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight = null; } else { p.style.maxHeight = p.scrollHeight + 'px'; } }); }
+</script>
+</body>
+</html>
