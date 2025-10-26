@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Ganesha Stories — Moksha Yatra</title><link rel="stylesheet" href="style.css"/></head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Ganesha — Stories & Rituals</small></header>
+<nav><button class="main-btn" onclick="location.href='index.html'">Home</button></nav>
+
+<main>
+<section>
+  <h2>Introduction to Ganesha</h2>
+  <p>Ganesha is the remover of obstacles and the god of beginnings. Devotees invoke him before major rites. He symbolizes wisdom (elephant head) and human life (the small body).</p>
+</section>
+
+<section>
+  <h2>Selected stories</h2>
+  <button class="accordion">Birth of Ganesha (Parvati's son)</button>
+  <div class="panel"><p>Parvati fashions Ganesha from turmeric paste; Shiva’s misunderstanding leads to the elephant head episode.</p></div>
+
+  <button class="accordion">Writing the Mahabharata</button>
+  <div class="panel"><p>Ganesha serves as Vyasa’s scribe—an emblem of wisdom and literary patronage.</p></div>
+
+  <button class="accordion">Ganesha and the moon (Chandra)</button>
+  <div class="panel"><p>Moon mocked Ganesha; this story explains the reason for avoiding night travel on Ganesh Chaturthi for some.</p></div>
+</section>
+
+<section>
+  <h2>Festivals & observances</h2>
+  <p>Ganesh Chaturthi is the principal festival; family rituals, public processions, and idol immersion on final day are hallmark practices.</p>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>const accs=document.getElementsByClassName('accordion'); for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null;} else{ p.style.maxHeight = p.scrollHeight + 'px'; } }); }</script>
+</body>
+</html>
