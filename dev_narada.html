@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Narada Stories — Moksha Yatra</title><link rel="stylesheet" href="style.css"/></head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Narada — The Divine Sage & Mover of Stories</small></header>
+<nav><button class="main-btn" onclick="location.href='index.html'">Home</button></nav>
+
+<main>
+<section>
+  <h2>Narada in a nutshell</h2>
+  <p>Narada is the celestial sage and devotee, known for his travels, devotion (bhakti) and role in catalyzing events through songs and counsel. His tales cross many Puranic events and are a rich source of devotional lore.</p>
+</section>
+
+<section>
+  <h2>Famous Narada stories</h2>
+  <button class="accordion">Narada and the Mango (lesson on desire)</button>
+  <div class="panel"><p>A story that explores greed, attachment, and the wisdom that cuts through desire.</p></div>
+
+  <button class="accordion">Narada and the kings (counsel and mischief)</button>
+  <div class="panel"><p>Narada’s clever interventions often start events that ultimately yield dharmic outcomes.</p></div>
+</section>
+
+<section>
+  <h2>Why Narada matters for pilgrimages</h2>
+  <p>Narada’s songs (bhajans) and the archetype of a wandering devotee resonate with pilgrimage culture. His stories can be used to create devotional audio/multimedia for your site.</p>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>const accs=document.getElementsByClassName('accordion'); for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null;} else{ p.style.maxHeight = p.scrollHeight + 'px'; } }); }</script>
+</body>
+</html>
