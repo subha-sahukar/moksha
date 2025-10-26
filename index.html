@@ -17,6 +17,17 @@
   .accordion.active, .accordion:hover { background: #ffd700; }
   .panel { padding: 0 18px; background: #fffbe0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-left: 2px solid #ccb36e; }
   .hidden { display: none; }
+  /* === Sticky Navigation === */
+nav {
+  background: linear-gradient(90deg, #eacb85, #f9d57b);
+  padding: 0.5em;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(77, 38, 20, 0.25);
+}
+
 </style>
 </head>
 <body>
@@ -24,6 +35,10 @@
   <h1>Moksha Yatra - Spiritual Pilgrimage Tours</h1>
   <p>Explore Southern India's Sacred Temples</p>
 </header>
+  <section id="hero" style="background:url('https://upload.wikimedia.org/wikipedia/commons/4/41/Brihadeeswarar_Temple_Gopuram.jpg') center/cover no-repeat; height: 320px; display:flex; align-items:center; justify-content:center; color:white; text-shadow:0 0 12px #000; border-bottom:4px solid #b86a16;">
+  <h2 style="background:rgba(0,0,0,0.4); padding:1em 2em; border-radius:20px;">Embark on the Journey to Moksha</h2>
+</section>
+
 <nav>
   <button id="tab-intro" class="active">Introduction</button>
   <button id="tab-temples">Temples</button>
@@ -81,7 +96,7 @@
 </script>
 
   <section id="temples" class="hidden">
-<h2 id="kumbakonam">Kumbakonam Temples – Detailed Listing</h2>
+<h2 id="kumbakonam">Tamilnadu Temples – Detailed Listing</h2>
 
     <!-- Section added 26-10 ============================ -->
 <!-- TEMPLE CATEGORY NAVIGATION -->
@@ -133,7 +148,7 @@
 <!-- ============================ -->
 <!-- NEW TEMPLE SECTIONS ADDED -->
 <!-- ============================ -->
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Nellaiappar_Temple_Tirunelveli.jpg" alt="Nellaiappar Temple" style="width:100%; border-radius:12px; margin-top:1em; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
 <h2 id="tirunelveli">Tirunelveli Temples – Sacred Shaiva & Vaishnava Shrines</h2>
 
 <button class="accordion">Nellaiappar & Kanthimathi Amman Temple</button>
@@ -276,7 +291,7 @@
 </div>
 
 <hr>
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Rameswaram_temple_corridor.jpg" alt="Rameswaran Temple" style="width:100%; border-radius:12px; margin-top:1em; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
 <h2 jyotirlinga>Jyotirlinga Temples – Radiant Shrines of Lord Shiva</h2>
 
 <button class="accordion">Rameshwaram Ramanathaswamy Temple (Tamil Nadu)</button>
