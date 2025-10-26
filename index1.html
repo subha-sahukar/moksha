@@ -4,629 +4,430 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Moksha Yatra | Spiritual Pilgrimage</title>
-
-<!-- === Sandalwood & Sky Theme and layout CSS === -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
-  :root{
-    --bg:#f4f1ec;
-    --stone:#2f3b52;
-    --gold:#c49b3e;
-    --lamp:#f7d774;
-    --panel: rgba(255,255,255,0.95);
-    --muted:#6b7280;
-  }
-  html,body{height:100%}
-  body {
-    font-family: 'Noto Serif', Georgia, serif;
-    background: var(--bg);
-    color: var(--stone);
-    margin: 0;
-    -webkit-font-smoothing:antialiased;
-  }
-  header {
-    background: linear-gradient(135deg, var(--stone) 0%, #4b5f7b 100%);
-    color: var(--lamp);
-    padding: 2.2em 1em;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-  }
-  header small{display:block; color: rgba(247,215,116,0.9); margin-top:8px}
-  h1 { margin: 0 0 .2em; font-size: 2.4em; letter-spacing: 1px; font-weight:700; }
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: linear-gradient(90deg,var(--gold),var(--lamp));
-    box-shadow: 0 2px 8px rgba(0,0,0,0.16);
-    text-align: center;
-    padding: .6em;
-    display:flex;
-    gap:8px;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-  nav .main-btn {
-    background: var(--stone);
-    color: #fffdf5;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 14px;
-    margin: 2px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: .98em;
-    transition: all .28s ease;
-  }
-  nav .main-btn:hover, nav .main-btn.active{
-    background: var(--lamp);
-    color: var(--stone);
-    transform: translateY(-2px);
-  }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f4ec; color: #4d2614; margin: 0; }
+  header { background: #ffe1a8; color: #633f12; padding: 2em 1em; text-align: center; }
+  h1 { margin: 0 0 0.3em; font-size: 2.2em; }
+  nav { background: #f0d395; padding: 0.5em; text-align: center; }
+  nav button { background: #b86a16; color: #fff; border: none; border-radius: 5px; padding: 10px 24px; cursor: pointer; margin: 0 6px; font-weight: 600; transition: background 0.3s ease; font-size: 1em; }
+  nav button:hover, nav button.active { background: #ffcc00; color: #633f12; }
+  main { max-width: 900px; margin: 2em auto; padding: 0 1em; }
+  section { background: #fffbe0; border-radius: 14px; padding: 2em; box-shadow: 0 2px 8px #ead2ac; margin-bottom: 1.8em; }
+  .accordion { background: #e6c264; cursor: pointer; padding: 16px; width: 100%; border: none; text-align: left; outline: none; font-size: 1.09em; margin-bottom: 4px; transition: background 0.3s ease; }
+  .accordion.active, .accordion:hover { background: #ffd700; }
+  .panel { padding: 0 18px; background: #fffbe0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-left: 2px solid #ccb36e; }
+  .hidden { display: none; }
+  /* === Sticky Navigation === */
+nav {
+  background: linear-gradient(90deg, #eacb85, #f9d57b);
+  padding: 0.5em;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(77, 38, 20, 0.25);
+}
 
-  /* State dropdown */
-  .state-select {
-    margin-left: 12px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight:600;
-    background: rgba(47,59,82,0.06);
-    cursor:pointer;
-  }
-
-  main { max-width: 1100px; margin: 1.6em auto; padding: 0 1em 4em; }
-  section {
-    background: var(--panel);
-    border-radius: 18px;
-    padding: 1.6em;
-    box-shadow: 0 2px 8px rgba(47,59,82,0.08);
-    margin-bottom: 1.6em;
-  }
-  #hero {
-    background:
-      linear-gradient(rgba(47,59,82,0.55),rgba(47,59,82,0.55)),
-      url('https://upload.wikimedia.org/wikipedia/commons/4/41/Brihadeeswarar_Temple_Gopuram.jpg') center/cover no-repeat;
-    height: 320px;
-    display:flex; align-items:center; justify-content:center; color:var(--lamp);
-    text-shadow:0 0 12px #000;
-    border-radius: 12px;
-    margin-bottom: 1.6em;
-    border: 4px solid var(--gold);
-  }
-  #hero h2{ background:rgba(0,0,0,0.34); padding:14px 22px; border-radius:20px; font-size:1.8em; margin:0; }
-  h2 { color: var(--stone); border-left:6px solid var(--gold); padding-left:10px; margin-top:12px; }
-
-  /* Accordion */
-  .accordion {
-    background: linear-gradient(180deg,#efe0b1,#e5d3a1);
-    cursor: pointer;
-    padding: 14px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1.05em;
-    margin-bottom: 6px;
-    border-radius:10px;
-    transition: background .25s ease, transform .18s ease;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-  }
-  .accordion .right { font-size:.9em; color:var(--muted); }
-  .accordion.active, .accordion:hover { background: var(--lamp); color: var(--stone); transform: translateY(-2px); }
-
-  .panel {
-    padding: 10px 18px 16px 18px;
-    background: #fffef7;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .32s ease-out;
-    border-left: 3px solid var(--gold);
-    margin-bottom:10px;
-    border-radius:8px;
-  }
-  .panel p{ margin:0; line-height:1.5; }
-
-  /* Temple nav mini buttons */
-  #temple-nav { text-align:center; margin: 14px 0; }
-  .nav-btn {
-    background: linear-gradient(145deg,var(--stone),#4b5f7b);
-    color:#fffdf0;
-    border:none;
-    border-radius:18px;
-    padding:9px 16px;
-    margin:6px;
-    cursor:pointer;
-    font-weight:600;
-    transition: all .25s ease;
-  }
-  .nav-btn:hover { background: var(--lamp); color:var(--stone); transform: translateY(-3px); }
-
-  /* Images */
-  .section-banner { width:100%; border-radius:12px; margin:12px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
-
-  /* back to top lotus */
-  #toTopBtn {
-    position: fixed; bottom:30px; right:30px;
-    z-index:999;
-    font-size:1.6em;
-    background:var(--gold);
-    border:none;
-    border-radius:50%;
-    padding:10px 14px;
-    cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,0.18);
-    transition: all .25s ease;
-  }
-  #toTopBtn:hover { transform: scale(1.08); background:var(--lamp); }
-
-  /* small responsive tweaks */
-  @media (max-width:800px){
-    header { padding:1.6em 1em; }
-    #hero{ height:220px; }
-    nav { padding:.5em; gap:6px; }
-    .accordion { font-size:1em; padding:12px; }
-  }
 </style>
 </head>
 <body>
-
 <header>
-  <h1>Moksha Yatra</h1>
-  <small>Curated pilgrimage circuits — Temples, legends & sacred routes across South India</small>
+  <h1>Moksha Yatra - Spiritual Pilgrimage Tours</h1>
+  <p>Explore Southern India's Sacred Temples</p>
 </header>
+  <section id="hero" style="background:url('https://upload.wikimedia.org/wikipedia/commons/4/41/Brihadeeswarar_Temple_Gopuram.jpg') center/cover no-repeat; height: 320px; display:flex; align-items:center; justify-content:center; color:white; text-shadow:0 0 12px #000; border-bottom:4px solid #b86a16;">
+  <h2 style="background:rgba(0,0,0,0.4); padding:1em 2em; border-radius:20px;">Embark on the Journey to Moksha</h2>
+</section>
 
-<!-- STICKY NAV + state dropdown -->
 <nav>
-  <button id="tab-intro" class="main-btn active">Introduction</button>
-  <button id="tab-temples" class="main-btn">Temples</button>
-  <button id="tab-packages" class="main-btn">Packages / Booking</button>
-  <button id="tab-contact" class="main-btn">Enquiry</button>
+  <button id="tab-intro" class="active">Introduction</button>
+  <button id="tab-temples">Temples</button>
+  <button id="tab-booking">Packages /Booking</button>
 
-  <label style="margin-left:8px; color: rgba(47,59,82,0.8); font-weight:600;">Jump to state:</label>
-  <select id="stateSelect" class="state-select" aria-label="Select state">
-    <option value="">-- Select State --</option>
-    <option value="tn">Tamil Nadu</option>
-    <option value="ap">Andhra Pradesh</option>
-    <option value="ka">Karnataka</option>
-    <option value="kl">Kerala</option>
-  </select>
-</nav>
-
+  <button id="tab-contact">Enquiry</button>
+</nav>  
 <main>
-
-  <!-- HERO -->
-  <section id="hero" aria-hidden="false">
-    <h2>Embark on the Journey to Moksha — Heritage, Rituals & Routes</h2>
-  </section>
-
-  <!-- INTRO -->
   <section id="intro" class="active">
     <h2>Welcome to Moksha Yatra</h2>
     <p>
-      Moksha Yatra is a lovingly curated temple atlas and pilgrimage companion for seekers of history, architecture, and devotion.
-      We preserve temple lore (Divya Desams, Padal Petra Sthalams, Jyotirlingas, Arupadai Veedu), map pilgrimage circuits, and propose routes for soulful travel.
+      Moksha Yatra is your dedicated pilgrimage and spiritual travel platform focusing on the sacred temples of Southern India.
+      We help devotees, seekers, and travelers explore the divine heritage embodied in ancient temples through well-curated temple circuits, rich historical context, and personalized tour plans.
     </p>
-
-    <div style="margin-top:10px">
-      <strong>Feature pages (open as full pages):</strong>
-      <button class="nav-btn" onclick="openSpecialPage('divyadesam')">Divya Desam (Full Guide)</button>
-      <button class="nav-btn" onclick="openSpecialPage('padalpetra')">Padal Petra Sthalam</button>
-      <button class="nav-btn" onclick="openSpecialPage('jyotirlinga')">Jyotirlingas</button>
-      <button class="nav-btn" onclick="openSpecialPage('arupadai')">Arupadai Veedu</button>
-      <button class="nav-btn" onclick="openSpecialPage('shakti')">Shakti Peetham</button>
-    </div>
+    <h3>Arupadai Veedu – The Six Sacred Abodes of Lord Murugan</h3>
+    <ul>
+      <li><b>Thiruparankundram:</b> Marriage to Deivayanai; first abode.</li>
+      <li><b>Tiruchendur:</b> Victory over Surapadman – the demon king.</li>
+      <li><b>Palani:</b> Renunciation and wisdom; ascetic hills.</li>
+      <li><b>Swamimalai:</b> Teaching “Om” to Shiva; heavenly knowledge.</li>
+      <li><b>Thiruthani:</b> Homecoming and reunion; peace and devotion.</li>
+      <li><b>Pazhamudircholai:</b> Fertile forest hills; Murugan’s divine bliss with both consorts Valli and Deivayanai.</li>
+    </ul>
+    <h3>Padal Petra Sthalam – 275 Sacred Shaivite Temples</h3>
+    <p>
+      Remarkable ancient temples glorified by the Tamil Saiva saint-poets (Nayanmars) through the Tevaram hymns, celebrated for their history, rituals, and the presence of special “Sthala Viruksham” trees and Tirtham tanks.
+    </p>
+    <h3>Divya Desams – The 108 Sacred Vishnu Temples</h3>
+    <p>
+      Vaishnava canonized sites, sung by the Alwars – each Divya Desam marked by a unique manifestation of Vishnu, magnificent festivals, and deep mythological significance.
+    </p>
+    <h3>Navagraha Sthalams – The Nine Planetary Temples</h3>
+    <ul>
+      <li>Dedicated to the Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, and Ketu.</li>
+      <li>Pilgrimage believed to bring harmony and astrological balance.</li>
+    </ul>
+    <p>
+      <strong>Purpose:</strong> Moksha Yatra’s mission is to make India’s sacred temple journeys accessible, deeply informative, inspiring, and supportive—so every traveler or devotee finds their spiritual circuit, learns the stories, and feels the power of darshan.
+    </p>
   </section>
+ 
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
 
-  <!-- ======================
-       TEMPLES SECTION (keeps existing Kumbakonam content intact)
-       ====================== -->
   <section id="temples" class="hidden">
-    <!-- MINI NAV for temple regions -->
-    <div id="temple-nav">
-      <button onclick="scrollToSection('kumbakonam')" class="nav-btn">Kumbakonam</button>
-      <button onclick="scrollToSection('tirunelveli')" class="nav-btn">Tirunelveli</button>
-      <button onclick="scrollToSection('trichy')" class="nav-btn">Trichy</button>
-      <button onclick="scrollToSection('thanjavur')" class="nav-btn">Thanjavur</button>
-      <button onclick="scrollToSection('kanchipuram')" class="nav-btn">Kanchipuram</button>
-      <button onclick="scrollToSection('madurai')" class="nav-btn">Madurai</button>
-      <button onclick="scrollToSection('ap')" class="nav-btn">Andhra</button>
-      <button onclick="scrollToSection('ka')" class="nav-btn">Karnataka</button>
-      <button onclick="scrollToSection('kl')" class="nav-btn">Kerala</button>
-      <button onclick="scrollToSection('pancha')" class="nav-btn">Pancha Bootha</button>
-      <button onclick="scrollToSection('jyotirlinga-sec')" class="nav-btn">Jyotirlingas</button>
-    </div>
+<h2 id="kumbakonam">Tamilnadu Temples – Detailed Listing</h2>
 
-    <!-- ================= KUMBHAKONAM (retained content) ================= -->
-    <h2 id="kumbakonam">Kumbakonam Temples – Detailed Listing</h2>
+    <!-- Section added 26-10 ============================ -->
+<!-- TEMPLE CATEGORY NAVIGATION -->
+<!-- ============================ -->
+<div id="temple-nav" style="text-align:center; margin: 20px 0;">
+  <button onclick="scrollToSection('kumbakonam')" class="nav-btn">Kumbakonam</button>
+  <button onclick="scrollToSection('tirunelveli')" class="nav-btn">Tirunelveli</button>
+  <button onclick="scrollToSection('trichy')" class="nav-btn">Trichy</button>
+  <button onclick="scrollToSection('thanjavur')" class="nav-btn">Thanjavur</button>
+  <button onclick="scrollToSection('pancha')" class="nav-btn">Pancha Bootha</button>
+  <button onclick="scrollToSection('jyotirlinga')" class="nav-btn">Jyotirlingas</button>
+</div>
 
-    <!-- (Original Kumbakonam content preserved — START) -->
+<style>
+  .nav-btn {
+    background: #b86a16;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: background 0.3s ease;
+  }
+  .nav-btn:hover { background: #ffcc00; color: #4d2614; }
+</style>
+
+        <!-- Section added 26-10 ============================ -->
+
     <button class="accordion">Sarangapani Temple (Divya Desam No.48)</button>
     <div class="panel">
       <p>
-        <b>Moolavar:</b> Sri Sarangapani Perumal (Vishnu)<br>
-        <b>Sthala Viruksham:</b> Neem Tree (Azadirachta indica)<br>
-        <b>Significance:</b> Largest Vishnu temple in Kumbakonam; remarkable 12-tiered Rajagopuram; associated with saint Nathamuni; home to one of largest temple chariots.<br>
-        <b>Location:</b> Kumbakonam Town, banks of River Kaveri.<br>
-        <b>Special Note:</b> Potramarai tank outside western entrance; celebrated during Tamil month Chittirai.
+        <b>Moolavar:</b> Sarangapani Perumal (Vishnu) ***<br>
+        <b>Sthala Viruksham:</b> Neem<br>
+        <b>Significance:</b> Largest Vishnu temple in Kumbakonam; 12-tiered gopuram, grand chariot festival.
       </p>
     </div>
-
-    <button class="accordion">Adi Kumbeswarar Temple</button>
+    <button class="accordion">Adi Kumbeswarar Temple **</button>
     <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva (Adi Kumbeswarar)<br>
-         <b>Sthala Viruksham:</b> Ashoka Tree (Saraca asoca)<br>
-         <b>Significance:</b> Oldest Shaivaite temple in Kumbakonam; built by Cholas; vast complex with 11-story gopuram.<br>
-         <b>Location:</b> Big Bazaar Street, Kumbakonam.<br>
-         <b>Special Note:</b> Known for its unique Shiva Lingam and numerous halls with stone carvings of stars and zodiac.</p>
-    </div>
-
-    <button class="accordion">Airavatesvara Temple (Darasuram)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva (Airavatesvara)<br>
-         <b>Sthala Viruksham:</b> Margosa Tree (Neem)<br>
-         <b>Significance:</b> UNESCO World Heritage Site, built by Rajaraja Chola II; known for intricate stone carvings and chariot-shaped structure.<br>
-         <b>Location:</b> Darasuram near Kumbakonam.</p>
-    </div>
-
-    <button class="accordion">Nageswaran Temple</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva (Nageswaran)<br>
-         <b>Significance:</b> 12th-century Chola temple built as a chariot; sunlight enters sanctum during Tamil month Chithirai.<br>
-         <b>Location:</b> Near old bus stand, Kumbakonam.</p>
-    </div>
-
-    <button class="accordion">Uppiliappan Temple (Divya Desam No.60)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Vishnu (Uppiliappan)<br>
-         <b>Significance:</b> Salt-free prasadam temple glorified by Alwars; place where Vishnu married Bhoomidevi.<br>
-         <b>Location:</b> Thirunageswaram, near Kumbakonam.</p>
-    </div>
-
-    <button class="accordion">Mahalingeswarar Temple (Thiruvidaimaruthur)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva (Mahalingeswarar)<br>
-         <b>Significance:</b> One of the seven major Shiva temples; contains the revered Jothimayalingam Lingam.<br>
-         <b>Location:</b> SH 64, Thiruvidaimaruthur.</p>
-    </div>
-
-    <button class="accordion">Ramaswamy Temple</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Rama (Avatara of Vishnu)<br>
-         <b>Significance:</b> Famous for Ramayana murals; features Rama and Sita on same pedestal; Hanuman playing veena.<br>
-         <b>Location:</b> East Street, Kumbakonam.</p>
-    </div>
-
-    <button class="accordion">Brahma Temple (Kumbakonam)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Brahma & Vedanarayanaperumal (Vishnu)<br>
-         <b>Significance:</b> One of only two Brahma temples on Earth; unusual iconography and rituals.<br>
-         <b>Location:</b> Birman Kovil Street, Kumbakonam.</p>
-    </div>
-    <!-- (Original Kumbakonam content preserved — END) -->
-
-    <!-- ================= NEW REGIONS (appended) ================= -->
-
-    <!-- TIRUNELVELI -->
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Nellaiappar_Temple_Tirunelveli.jpg" alt="Nellaiappar Temple">
-    <h2 id="tirunelveli">Tirunelveli Temples – Sacred Shaiva & Vaishnava Shrines</h2>
-
-    <button class="accordion">Nellaiappar & Kanthimathi Amman Temple</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva (Nellaiappar) & Goddess Kanthimathi<br>
-         <b>Significance:</b> Twin-temple complex; musical pillars and 1000-pillared hall; Pandya & later contributions.<br>
-         <b>Location:</b> Tirunelveli town.</p>
-    </div>
-
-    <button class="accordion">Sankarankoil (Sankaranarayanar)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Sankaranarayanar (half Shiva, half Vishnu)<br>
-         <b>Significance:</b> Represents Shaiva–Vaishnava harmony; known for sacred sand used in cures.<br>
-         <b>Location:</b> Sankarankoil.</p>
-    </div>
-
-    <button class="accordion">Thirukurungudi (Divya Desam)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Nindra Nambi Perumal (Vishnu)<br>
-         <b>Significance:</b> One of 108 Divya Desams; Nammalvar connection; strong Vaishnava presence south of Tirunelveli.<br>
-         <b>Location:</b> Thirukurungudi.</p>
-    </div>
-
-    <button class="accordion">Tenkasi Kasi Viswanathar Temple</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Kasi Viswanathar (Shiva)<br>
-         <b>Significance:</b> Replica of Varanasi Kashi Vishwanath; tall gopuram; close to Courtallam waterfalls.<br>
-         <b>Location:</b> Tenkasi.</p>
-    </div>
-
-    <button class="accordion">Krishnapuram Venkatachalapathy Temple</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Venkatachalapathy (Vishnu)<br>
-         <b>Significance:</b> Nayak-period sculptures; Ramayana panels nearby.<br>
-         <b>Location:</b> Near Tirunelveli.</p>
-    </div>
-
-    <hr>
-
-    <!-- TRICHY -->
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Srirangam_Ranganathaswamy_Temple_Gopuram.jpg" alt="Srirangam">
-    <h2 id="trichy">Tiruchirappalli (Trichy) Temples – Spiritual Heart of Tamil Nadu</h2>
-
-    <button class="accordion">Sri Ranganathaswamy Temple, Srirangam</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Ranganatha (reclining Vishnu)<br>
-         <b>Significance:</b> One of the world's largest functioning temple complexes; Divya Desam No.1; Vaikunta Ekadasi celebrations.<br>
-         <b>Note:</b> 21 gopurams and extensive inscriptions across dynasties.</p>
-    </div>
-
-    <button class="accordion">Jambukeswarar Temple, Thiruvanaikaval (Pancha Bootha – Water)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Jambukeswarar (Shiva as Water) & Akilandeswari<br>
-         <b>Significance:</b> One of the Pancha Bootha temples (Water); underground spring fills sanctum.<br>
-         <b>Location:</b> Thiruvanaikaval, near Srirangam.</p>
-    </div>
-
-    <button class="accordion">Uchi Pillayar Temple, Rockfort</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Ganesha<br>
-         <b>Significance:</b> Rock-top shrine with panoramic views of Trichy; linked to Vinayaka legends.<br>
-         <b>Location:</b> Rockfort hill, Trichy.</p>
-    </div>
-
-    <button class="accordion">Samayapuram Mariamman Temple</button>
-    <div class="panel">
-      <p><b>Deity:</b> Mariamman (Goddess)<br>
-         <b>Significance:</b> Powerful Shakti center; devotees seek blessings for health & protection. Major festivals annually.<br>
-         <b>Location:</b> Samayapuram.</p>
-    </div>
-
-    <hr>
-
-    <!-- THANJAVUR -->
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Brihadeeswarar_Temple_Gopuram.jpg" alt="Brihadeeswarar">
-    <h2 id="thanjavur">Thanjavur Region Temples – Chola Glory & Architectural Brilliance</h2>
-
-    <button class="accordion">Brihadeeswarar Temple (Big Temple)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva (Peruvudaiyar)<br>
-         <b>Significance:</b> UNESCO World Heritage Site; built by Raja Raja Chola I (1010 CE); the great Vimana and perfect Chola proportion.<br>
-         <b>Location:</b> Thanjavur.</p>
-    </div>
-
-    <button class="accordion">Gangaikonda Cholapuram Temple</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva<br>
-         <b>Significance:</b> Built by Rajendra Chola I; represents Chola imperial reach up to the Ganga; exquisite sculptural panels.<br>
-         <b>Location:</b> Gangaikonda Cholapuram.</p>
-    </div>
-
-    <button class="accordion">Thiruvarur Thyagaraja Temple</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Thyagaraja (Shiva)<br>
-         <b>Significance:</b> One of the Saptha Vidanga Sthalams; famous chariot festival and musical heritage.<br>
-         <b>Location:</b> Thiruvarur.</p>
-    </div>
-
-    <hr>
-
-    <!-- KANCHIPURAM -->
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/7/76/ekambareswarar_temple_kanchipuram.jpg" alt="Ekambareswarar Temple">
-    <h2 id="kanchipuram">Kanchipuram & Environs – The City of a Thousand Temples</h2>
-
-    <button class="accordion">Ekambareswarar Temple (Pancha Bootha – Earth)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Lord Shiva (Ekambareswarar)<br>
-         <b>Significance:</b> One of the five elemental temples; ancient sacred mango tree and Vedas association.<br>
-         <b>Location:</b> Kanchipuram.</p>
-    </div>
-
-    <button class="accordion">Varadaraja Perumal Temple (Divya Desam)</button>
-    <div class="panel">
-      <p><b>Moolavar:</b> Varadaraja Perumal (Vishnu)<br>
-         <b>Significance:</b> Major Vaishnava center; large complex and important festival calendar.<br>
-         <b>Location:</b> Kanchipuram.</p>
-    </div>
-
-    <button class="accordion">Kailasanathar and Other Shrines</button>
-    <div class="panel">
-      <p>Kanchipuram hosts many ancient temples — Shaiva, Vaishnava, and Jain monuments — important for both architecture and spiritual study.</p>
-    </div>
-
-    <hr>
-
-    <!-- MADURAI & TIRUCHENDUR -->
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Meenakshi_Temple_Pillars.jpg" alt="Madurai Meenakshi">
-    <h2 id="madurai">Madurai, Tiruchendur & the Pandya Heartland</h2>
-
-    <button class="accordion">Meenakshi Amman Temple, Madurai</button>
-    <div class="panel">
-      <p><b>Deity:</b> Meenakshi (Parvati) & Sundareswarar (Shiva)<br>
-         <b>Significance:</b> Iconic Dravidian complex; towering gopurams and rich ritual life; night and day festivals draw global visitors.<br>
-         <b>Location:</b> Madurai.</p>
-    </div>
-
-    <button class="accordion">Tiruchendur Murugan Temple</button>
-    <div class="panel">
-      <p><b>Deity:</b> Lord Murugan (Subrahmanya)<br>
-         <b>Significance:</b> One of the six Arupadai Veedu (Murugan abodes); seaside hill temple with strong festival tradition.<br>
-         <b>Location:</b> Tiruchendur, near Tuticorin coast.</p>
-    </div>
-
-    <button class="accordion">Alagar Kovil (Thirumalai)</button>
-    <div class="panel">
-      <p><b>Deity:</b> Lord Vishnu as Kallalagar<br>
-         <b>Significance:</b> Hill shrine associated with the Chithirai festival; scenic drive from Madurai.</p>
-    </div>
-
-    <hr>
-
-    <!-- PANCHA BOOTHA -->
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Arunachalesvara_Temple%2C_Tiruvannamalai.jpg" alt="Arunachaleswarar">
-    <h2 id="pancha">Pancha Bootha Temples – Five Elements of Shiva</h2>
-
-    <button class="accordion">Ekambareswarar Temple – Kanchipuram (Earth)</button>
-    <div class="panel">
-      <p>Represents Prithvi (Earth); ancient mango tree; spiritual significance tied to Parvati’s penance.</p>
-    </div>
-
-    <button class="accordion">Jambukeswarar – Thiruvanaikaval (Water)</button>
-    <div class="panel">
-      <p>Represents Appu (Water); constant spring fills the sanctum; important Shaiva shrine near Trichy.</p>
-    </div>
-
-    <button class="accordion">Arunachaleswarar – Tiruvannamalai (Fire)</button>
-    <div class="panel">
-      <p>Represents Agni (Fire); Karthigai Deepam festival lights the hill; Girivalam path pilgrims circumambulate the hill.</p>
-    </div>
-
-    <button class="accordion">Sri Kalahasti Temple – Srikalahasti (Air)</button>
-    <div class="panel">
-      <p>Represents Vayu (Air); located in Srikalahasti (Andhra Pradesh); known for lamp that flickers and Rahu–Ketu remedies.</p>
-    </div>
-
-    <button class="accordion">Chidambaram Nataraja Temple – Chidambaram (Space)</button>
-    <div class="panel">
-      <p>Represents Akasha (Space); famous for the Chidambara Rahasyam and Nataraja’s cosmic dance.</p>
-    </div>
-
-    <hr>
-
-    <!-- JYOTIRLINGA SECTION -->
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Rameswaram_temple_corridor.jpg" alt="Rameswaram">
-    <h2 id="jyotirlinga-sec">Jyotirlingas & Radiant Shrines of Shiva</h2>
-
-    <button class="accordion">Ramanathaswamy Temple (Rameshwaram)</button>
-    <div class="panel">
-      <p><b>Region:</b> Tamil Nadu<br>
-         <b>Significance:</b> Linked with Rama’s penance before Lanka; long corridors and sacred wells (tīrthams).</p>
-    </div>
-
-    <button class="accordion">Kashi Vishwanath (Varanasi)</button>
-    <div class="panel">
-      <p><b>Region:</b> Uttar Pradesh — spiritual axis mundi for Shiva devotees; major pilgrimage destination nationwide.</p>
-    </div>
-
-    <button class="accordion">Trimbakeshwar & Grishneshwar (Maharashtra)</button>
-    <div class="panel">
-      <p>Important pilgrimage circuit — Trimbakeshwar near Nasik and Grishneshwar near Ellora.</p>
-    </div>
-
-    <hr>
-
-    <!-- ================= ANDHRA PRADESH BLOCK ================= -->
-    <h2 id="ap">Andhra Pradesh – Sacred Shrines & Pilgrimage Circuits</h2>
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Tirumala_temple_gopuram.jpg" alt="Tirumala">
-
-    <button class="accordion">Tirumala Venkateswara Temple (Tirupati)</button>
-    <div class="panel">
-      <p><b>Deity:</b> Lord Venkateswara (Vishnu)<br>
-         <b>Significance:</b> One of the richest and most visited Hindu temples in the world; an important Divya Desam & major Vaishnava center.<br>
-         <b>Location:</b> Tirupati, Chittoor district.</p>
-    </div>
-
-    <button class="accordion">Srisailam Mallikarjuna Temple</button>
-    <div class="panel">
-      <p><b>Deity:</b> Mallikarjuna (Shiva) & Bhramaramba (Shakti)<br>
-         <b>Significance:</b> One of the twelve Jyotirlingas and an important Shakti Peetham; situated in a forested plateau.</p>
-    </div>
-
-    <button class="accordion">Kanaka Durga Temple (Vijayawada)</button>
-    <div class="panel">
-      <p><b>Deity:</b> Kanaka Durga (Goddess)<br>
-         <b>Significance:</b> Prominent Shakti shrine overlooking the Krishna River; Dasara celebrations are grand.<br>
-         <b>Location:</b> Indrakeeladri hill, Vijayawada.</p>
-    </div>
-
-    <button class="accordion">Sri Kalahasteeswara Temple (Srikalahasti)</button>
-    <div class="panel">
-      <p><b>Deity:</b> Kalahasteeswara (Shiva)<br>
-         <b>Significance:</b> Pancha Bootha site for Air (Vayu); rituals for eclipse doshas; near Tirupati triangle.</p>
-    </div>
-
-    <button class="accordion">Lepakshi — Veerabhadra Temple & Monoliths</button>
-    <div class="panel">
-      <p><b>Deity:</b> Veerabhadra (form of Shiva)<br>
-         <b>Significance:</b> Sri Veerabhadra Temple, famous hanging pillar and exquisite Vijayanagara paintings and carvings; important for architecture lovers.<br>
-         <b>Location:</b> Lepakshi, Anantapur district.</p>
-    </div>
-
-    <hr>
-
-    <!-- ================= KARNATAKA BLOCK ================= -->
-    <h2 id="ka">Karnataka – Hampi, Belur, Halebidu & Hill Shrines</h2>
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/6/63/Vittala_Temple%2C_Hampi.jpg" alt="Hampi Vittala">
-
-    <button class="accordion">Belur – Chennakeshava Temple</button>
-    <div class="panel">
-      <p><b>Significance:</b> Hoysala masterpiece with delicate star-plan architecture, ornate friezes, and sculptural panels.<br>
-         <b>Location:</b> Belur, Hassan district.</p>
-    </div>
-
-    <button class="accordion">Halebidu – Hoysaleshwara Temple (near Belur)</button>
-    <div class="panel">
-      <p>Hoysala twin to Belur, carved soapstone panels and complex iconography — essential stop for Chalukya/Hoysala architecture enthusiasts.</p>
-    </div>
-
-    <button class="accordion">Hampi – Virupaksha & Vittala Temples (Vijayanagara)</button>
-    <div class="panel">
-      <p><b>Significance:</b> UNESCO World Heritage site; legendary ruins of Vijayanagara with iconic stone chariot and musical pillars.<br>
-         <b>Location:</b> Hampi (Ballari district).</p>
-    </div>
-
-    <button class="accordion">Kukke Subramanya (Kukke)</button>
-    <div class="panel">
-      <p><b>Deity:</b> Lord Subramanya (Murugan)<br>
-         <b>Significance:</b> Hill shrine and serpent worship center in Karnataka; popular for ancestral rites and serpent blessings.<br>
-         <b>Location:</b> Subramanya, Dakshina Kannada.</p>
-    </div>
-
-    <hr>
-
-    <!-- KERALA BLOCK -->
-    <h2 id="kl">Kerala — Temples & Hill Shrines</h2>
-    <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Sabarimala_temple.jpg" alt="Sabarimala">
-
-    <button class="accordion">Guruvayur Temple (Krishna Temple)</button>
-    <div class="panel">
-      <p><b>Deity:</b> Guruvayurappan (Krishna)<br>
-         <b>Significance:</b> One of Kerala's most visited pilgrimage sites; strict tradition and devotional music (bhajans).</p>
-    </div>
-
-    <button class="accordion">Sabarimala Ayyappa Temple</button>
-    <div class="panel">
-      <p><b>Deity:</b> Lord Ayyappa<br>
-         <b>Significance:</b> Important hill pilgrimage with unique vratham (vow) rules and mass pilgrim season (Mandala-Makaravilakku).</p>
-    </div>
-
-    <hr>
-
-    <!-- RELATED LINKS & FOOTER NOTE -->
-    <section>
-      <h2>Notes, circuits & links</h2>
       <p>
-        This page intentionally aggregates many major temples across the four southern states. For full, elaborate pages dedicated to <strong>Divya Desam</strong>, <strong>Padal Petra Sthalam</strong>, <strong>Jyotirlingas</strong>, <strong>Arupadai Veedu</strong>, and <strong>Shakti Peetham</strong>, click the feature buttons on the home page. Those open as complete pages with curated circuits, maps, timings, lore, and suggested itineraries.
+        <b>Moolavar:</b> Adi Kumbeswarar (Shiva)<br>
+        <b>Sthala Viruksham:</b> Ashoka<br>
+        <b>Significance:</b> Presiding deity of Kumbakonam; legendary origin linked to the cosmic pot (Kumbha).
       </p>
-      <p style="color:var(--muted); font-size:.95em">Image credits: Wikimedia Commons (public domain / commons images). Replace with your own hosted images at <code>/images/</code> for faster loading on GitHub Pages.</p>
-    </section>
+    </div>
+    <!-- Add more temples accordion here, per your expanded listings -->
+<!-- ============================ -->
+<!-- NEW TEMPLE SECTIONS ADDED -->
+<!-- ============================ -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Nellaiappar_Temple_Tirunelveli.jpg" alt="Nellaiappar Temple" style="width:100%; border-radius:12px; margin-top:1em; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
+<h2 id="tirunelveli">Tirunelveli Temples – Sacred Shaiva & Vaishnava Shrines</h2>
 
-  </section> <!-- END temples -->
+<button class="accordion">Nellaiappar & Kanthimathi Amman Temple</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Lord Shiva (Nellaiappar) & Goddess Kanthimathi<br>
+  <b>Significance:</b> One of the largest twin-temple complexes in South India; musical pillars, 1000-pillar hall, and architectural marvel from the Pandya period.<br>
+  <b>Location:</b> Tirunelveli Town.<br>
+  <b>Festival:</b> Thaipoosam and Aarudra Darshan draw thousands of devotees.</p>
+</div>
+
+<button class="accordion">Sankarankoil Temple</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Lord Sankaranarayanar (half Shiva, half Vishnu)<br>
+  <b>Significance:</b> Represents harmony between Shaivism and Vaishnavism; famous for sacred sand (“puttrusand”) believed to cure ailments.<br>
+  <b>Location:</b> Sankarankoil, 56 km from Tirunelveli.<br>
+  <b>Special:</b> A must-visit during the Aadi Thabasu festival.</p>
+</div>
+
+<button class="accordion">Thirukurungudi Temple (Divya Desam)</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Nindra Nambi Perumal (Vishnu)<br>
+  <b>Significance:</b> One of 108 Divya Desams; Lord Vishnu taught Nammalvar here; features five forms of Vishnu in one complex.<br>
+  <b>Location:</b> 40 km south of Tirunelveli.<br>
+  <b>Special Note:</b> Known as the southern Vaikuntam.</p>
+</div>
+
+<button class="accordion">Tenkasi Kasi Viswanathar Temple</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Kasi Viswanathar (Shiva)<br>
+  <b>Significance:</b> Replica of Varanasi’s Kashi Vishwanath; Pandya architecture with lofty 180-ft gopuram.<br>
+  <b>Location:</b> Tenkasi, near Courtallam.<br>
+  <b>Special Note:</b> Courtallam waterfalls and Kasi Vishwanathar darshan form a divine twin experience.</p>
+</div>
+
+<button class="accordion">Krishnapuram Venkatachalapathy Temple</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Venkatachalapathy (Vishnu)<br>
+  <b>Significance:</b> Nayak-period temple with life-size sculptures depicting scenes from Ramayana.<br>
+  <b>Location:</b> 8 km from Tirunelveli.</p>
+</div>
+
+<hr>
+
+<h2 id="trichy">Tiruchirappalli (Trichy) Temples – Spiritual Heart of Tamil Nadu</h2>
+
+<button class="accordion">Sri Ranganathaswamy Temple, Srirangam</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Ranganatha (reclining Vishnu)<br>
+  <b>Significance:</b> Largest functioning Hindu temple in the world; Divya Desam No.1; island between Kaveri and Kollidam rivers.<br>
+  <b>Festival:</b> Vaikunta Ekadasi; major Vaishnava center.<br>
+  <b>Special:</b> 21 gopurams, 1000-pillar hall, and ancient inscriptions from multiple dynasties.</p>
+</div>
+
+<button class="accordion">Jambukeswarar Temple, Thiruvanaikaval (Pancha Bootha – Water)</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Jambukeswarar (Shiva as Water Element) & Akilandeswari<br>
+  <b>Significance:</b> Represents the “Appu” or water element; underground spring constantly fills the sanctum.<br>
+  <b>Location:</b> Srirangam suburb, Tiruchy.<br>
+  <b>Special:</b> Shiva & Parvati worship rituals performed symbolically daily.</p>
+</div>
+
+<button class="accordion">Uchi Pillayar Temple, Rockfort</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Lord Ganesha<br>
+  <b>Significance:</b> Ancient rock-cut temple atop 83-m hill; panoramic view of Trichy city; linked to legend of Vinayaka hiding the Atmalinga.<br>
+  <b>Special:</b> Early Pallava architecture combined with natural rock formations.</p>
+</div>
+
+<button class="accordion">Samayapuram Mariamman Temple</button>
+<div class="panel">
+  <p><b>Deity:</b> Goddess Mariamman<br>
+  <b>Significance:</b> One of the most powerful Shakti shrines; goddess believed to cure diseases and remove obstacles.<br>
+  <b>Festival:</b> Chithirai festival draws millions.<br>
+  <b>Location:</b> 20 km north of Trichy city.</p>
+</div>
+
+<hr>
+
+<h2  id="thanjavur">Thanjavur Region Temples – Chola Glory & Architectural Brilliance</h2>
+
+<button class="accordion">Brihadeeswarar Temple (Big Temple)</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Lord Shiva (Peruvudaiyar)<br>
+  <b>Significance:</b> UNESCO World Heritage Site; built by Raja Raja Chola I in 1010 CE; the Vimana (tower) casts no shadow at noon.<br>
+  <b>Location:</b> Thanjavur town.<br>
+  <b>Special:</b> Example of perfect Chola proportion and granite architecture.</p>
+</div>
+
+<button class="accordion">Gangaikonda Cholapuram Temple</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Lord Shiva<br>
+  <b>Significance:</b> Built by Rajendra Chola I; symbolizes Chola expansion to the Ganga; exquisite sculptures and feminine grace.<br>
+  <b>Location:</b> 70 km from Thanjavur.</p>
+</div>
+
+<button class="accordion">Thiruvarur Thyagaraja Temple</button>
+<div class="panel">
+  <p><b>Moolavar:</b> Lord Shiva as Thyagaraja<br>
+  <b>Significance:</b> One of the Saptha Vidanga Sthalams; temple car (chariot) is one of the largest in Asia.<br>
+  <b>Location:</b> Thiruvarur, near Tanjore district.<br>
+  <b>Special:</b> Linked to Thyagaraja cult and musical heritage.</p>
+</div>
+
+<hr>
+
+<h2 pancha>Pancha Bootha Temples – The Five Elements of Shiva</h2>
+
+<button class="accordion">Ekambareswarar Temple – Kanchipuram (Earth)</button>
+<div class="panel">
+  <p><b>Element:</b> Prithvi (Earth)<br>
+  <b>Significance:</b> 3500-year-old temple with sacred mango tree representing four Vedas.<br>
+  <b>Special:</b> Earth Linga formed by Goddess Parvati herself.</p>
+</div>
+
+<button class="accordion">Jambukeswarar Temple – Thiruvanaikaval (Water)</button>
+<div class="panel">
+  <p><b>Element:</b> Appu (Water)<br>
+  <b>Significance:</b> Natural spring flows in the sanctum always; embodies Shiva as water principle.</p>
+</div>
+
+<button class="accordion">Arunachaleswarar Temple – Tiruvannamalai (Fire)</button>
+<div class="panel">
+  <p><b>Element:</b> Agni (Fire)<br>
+  <b>Significance:</b> Lord Shiva appeared as infinite column of fire; Karthigai Deepam festival famous worldwide.<br>
+  <b>Special:</b> 66-m tall gopuram; Girivalam path encircles the hill.</p>
+</div>
+
+<button class="accordion">Sri Kalahasti Temple – Andhra Pradesh (Air)</button>
+<div class="panel">
+  <p><b>Element:</b> Vayu (Air)<br>
+  <b>Significance:</b> The lamp in sanctum flickers even without breeze; associated with Rahu–Ketu worship.<br>
+  <b>Special:</b> Ideal for removing doshas of eclipses.</p>
+</div>
+
+<button class="accordion">Chidambaram Nataraja Temple – Tamil Nadu (Space)</button>
+<div class="panel">
+  <p><b>Element:</b> Akasha (Space)<br>
+  <b>Significance:</b> Represents the cosmos and consciousness; Nataraja’s dance symbolizes rhythm of the universe.<br>
+  <b>Special:</b> Hidden secret – the Chidambara Rahasyam (space behind curtain).</p>
+</div>
+
+<hr>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Rameswaram_temple_corridor.jpg" alt="Rameswaran Temple" style="width:100%; border-radius:12px; margin-top:1em; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
+<h2 jyotirlinga>Jyotirlinga Temples – Radiant Shrines of Lord Shiva</h2>
+
+<button class="accordion">Rameshwaram Ramanathaswamy Temple (Tamil Nadu)</button>
+<div class="panel">
+  <p><b>Region:</b> Tamil Nadu<br>
+  <b>Significance:</b> One of 12 Jyotirlingas; where Rama worshipped Shiva before crossing to Lanka; has India’s longest temple corridor (1,200 m).<br>
+  <b>Special:</b> 22 sacred wells inside temple; pilgrims bathe in each before darshan.</p>
+</div>
+
+<button class="accordion">Somnath Temple (Gujarat)</button>
+<div class="panel">
+  <p><b>Significance:</b> The first Jyotirlinga; repeatedly destroyed and rebuilt; symbol of resilience.<br>
+  <b>Special:</b> Lies on the western coast facing the Arabian Sea.</p>
+</div>
+
+<button class="accordion">Kashi Vishwanath Temple (Uttar Pradesh)</button>
+<div class="panel">
+  <p><b>Significance:</b> Most sacred among Jyotirlingas; located on the banks of Ganga; spiritual capital of India.<br>
+  <b>Special:</b> Recently renovated Kashi corridor links river to sanctum.</p>
+</div>
+
+<button class="accordion">Trimbakeshwar Temple (Maharashtra)</button>
+<div class="panel">
+  <p><b>Significance:</b> Origin of river Godavari; the Linga represents Brahma, Vishnu, and Mahesh together.<br>
+  <b>Special:</b> Associated with rituals for ancestors (Pitru dosha remedies).</p>
+</div>
+
+<button class="accordion">Grishneshwar Temple (Maharashtra)</button>
+<div class="panel">
+  <p><b>Significance:</b> The twelfth Jyotirlinga; near Ellora caves; last in traditional pilgrimage circuit.<br>
+  <b>Special:</b> Women allowed to touch the Shiva Linga here.</p>
+</div>
+
+<!-- ============================ -->
+<!-- END NEW TEMPLE SECTIONS -->
+<!-- ============================ -->
+<!-- <section id="kumbakonam-temples">-->
+  <h2>Kumbakonam Temples – Comprehensive Detailed Listing</h2>
+
+  <button class="accordion">1. Sarangapani Temple (Divya Desam No. 48)</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Sri Sarangapani Perumal (Vishnu)<br>
+       <b>Sthala Viruksham:</b> Neem Tree (Azadirachta indica)<br>
+       <b>Significance:</b> Largest Vishnu temple in Kumbakonam; remarkable 12-tiered Rajagopuram; associated with saint Nathamuni; home to one of largest temple chariots.<br>
+       <b>Location:</b> Kumbakonam Town, banks of River Kaveri.<br>
+       <b>Special Note:</b> Potramarai tank outside western entrance; celebrated during Tamil month Chittirai.</p>
+  </div>
+
+  <button class="accordion">2. Chakrapani Temple (Divya Desam No. 43)</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Chakrapani Perumal (Vishnu)<br>
+       <b>Sthala Viruksham:</b> Banyan Tree<br>
+       <b>Significance:</b> Unique Vishnu temple where deity worshipped with discus (Chakra); architecture from Nayak period.<br>
+       <b>Location:</b> Chakrapani Sannathi Street, Kumbakonam.<br>
+       <b>Special Note:</b> Features statue of King Sarfoji II worshipping Lord Vishnu.</p>
+  </div>
+
+  <button class="accordion">3. Adi Kumbeswarar Temple</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Lord Shiva (Adi Kumbeswarar)<br>
+       <b>Sthala Viruksham:</b> Ashoka Tree (Saraca asoca)<br>
+       <b>Significance:</b> Oldest Shaivaite temple in Kumbakonam; built by Cholas; vast complex with 11-story gopuram.<br>
+       <b>Location:</b> Big Bazaar Street, Kumbakonam.<br>
+       <b>Special Note:</b> Known for its unique Shiva Lingam and numerous halls with stone carvings of stars and zodiac.</p>
+  </div>
+
+  <button class="accordion">4. Airavatesvara Temple (Darasuram)</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Lord Shiva (Airavatesvara)<br>
+       <b>Sthala Viruksham:</b> Margosa Tree (Neem)<br>
+       <b>Significance:</b> UNESCO World Heritage Site, built by Rajaraja Chola II; known for intricate stone carvings and chariot-shaped structure.<br>
+       <b>Location:</b> Gurunathan Pillai Colony, Darasuram near Kumbakonam.</p>
+  </div>
+
+  <button class="accordion">5. Nageswaran Temple</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Lord Shiva (Nageswaran, “Serpent King”)<br>
+       <b>Sthala Viruksham:</b> Neem Tree<br>
+       <b>Significance:</b> Famous 12th-century Chola temple built as a chariot; sunlight enters sanctum only during Tamil month Chithirai (April/May).<br>
+       <b>Location:</b> Gandhi Adigal Salai, near old bus stand, Kumbakonam.<br>
+       <b>Special Note:</b> Site famous for serpent worship and Navagraha Rahu shrine.</p>
+  </div>
+
+  <button class="accordion">6. Uppiliappan Temple (Divya Desam No. 60)</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Lord Vishnu (Uppiliappan)<br>
+       <b>Sthala Viruksham:</b> Neem Tree<br>
+       <b>Significance:</b> Salt-free prasadam temple glorified by Alwars; represents place where Vishnu married Bhoomidevi.<br>
+       <b>Location:</b> Thirunageswaram, near Kumbakonam.<br>
+       <b>Special Note:</b> Divya Desam and highly revered Vaishnavite temple.</p>
+  </div>
+
+  <button class="accordion">7. Mahalingeswarar Temple (Thiruvidaimaruthur)</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Lord Shiva (Mahalingeswarar)<br>
+       <b>Sthala Viruksham:</b> Peepal Tree<br>
+       <b>Significance:</b> One of the seven major Shiva temples; contains the revered Jothimayalingam Lingam.<br>
+       <b>Location:</b> SH 64, Thiruvidaimaruthur.<br>
+       <b>Special Note:</b> Major festivals and Saivite rituals performed annually.</p>
+  </div>
+
+  <button class="accordion">8. Ramaswamy Temple</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Lord Rama (Avatara of Vishnu)<br>
+       <b>Sthala Viruksham:</b> Neem Tree<br>
+       <b>Significance:</b> Famous for Ramayana murals; features Rama and Sita on the same pedestal; Hanuman playing veena.<br>
+       <b>Location:</b> East Street, Kumbakonam.<br>
+       <b>Special Note:</b> Known as “Thennaga Ayodheyai” (Ayodhya of South India).</p>
+  </div>
+
+  <button class="accordion">9. Brahma Temple</button>
+  <div class="panel">
+    <p><b>Moolavar:</b> Lord Vishnu (Vedanarayanaperumal) and Brahma<br>
+       <b>Sthala Viruksham:</b> Peepal Tree<br>
+       <b>Significance:</b> One of only two Brahma temples on Earth.<br>
+       <b>Location:</b> Birman Kovil Street, Kumbakonam.<br>
+       <b>Special Note:</b> Contains shrines for Vishnu and Lakshmi along with Brahma.</p>
+  </div>
+
+  <!-- Additional detailed temples would follow in similar format -->
+<!--</section>-->
+
+    
+  </section>
 </main>
+  <script>
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>
 
-<!-- Floating back-to-top lotus -->
-<button onclick="scrollToTop()" id="toTopBtn" title="Back to Top">🪷</button>
-
-<!-- ============================
-     Scripts: tabs, accordion, navigation, special pages
-     ============================ -->
 <script>
-  // Tabs
+  // Tabs script
   const introBtn = document.getElementById('tab-intro');
   const templesBtn = document.getElementById('tab-temples');
   const introSection = document.getElementById('intro');
@@ -646,116 +447,20 @@
     introSection.classList.add('hidden');
   });
 
-  // Accordion setup
-  function initAccordions(){
-    const acc = document.getElementsByClassName("accordion");
-    for (let i=0;i<acc.length;i++){
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
+  // Accordion script
+  const accordions = document.getElementsByClassName('accordion');
+  for(let acc of accordions) {
+    acc.addEventListener('click', function() {
+      this.classList.toggle('active');
+      let panel = this.nextElementSibling;
+      if(panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
   }
-  initAccordions();
-
-  // Smooth scroll to section IDs
-  function scrollToSection(id){
-    const el = document.getElementById(id);
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-  // state select handler
-  const stateSelect = document.getElementById('stateSelect');
-  stateSelect.addEventListener('change', function(){
-    const val = this.value;
-    if(!val) return;
-    scrollToSection(val);
-    // reset
-    this.value = "";
-  });
-
-  function scrollToTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
-
-  // === Special full pages content builder ===
-  // When user clicks a feature button, we open a new window and write a full-page HTML for the selected topic.
-  function openSpecialPage(topic){
-    let title = "Special";
-    let bodyContent = "<h1>Coming soon</h1>";
-    if(topic==='divyadesam'){
-      title = "Divya Desams — The 108 Sacred Vishnu Temples";
-      bodyContent = `
-        <h2>Divya Desams — Introduction</h2>
-        <p>Divya Desams are 108 temples of Vishnu celebrated in the Tamil Vaishnava canon of the Alvars. Each Divya Desam has unique iconography, festivals, and tradition. This dedicated page collects each Divya Desam with maps, legends, and pilgrimage circuits across Tamil Nadu and neighbouring states.</p>
-        <h3>Highlights (sample)</h3>
-        <ul>
-          <li>Tiruppathi (Tirumala)</li>
-          <li>Srirangam (Sri Ranganathaswamy)</li>
-          <li>Sarangapani (Kumbakonam)</li>
-          <li>Uppiliappan (Thirunageswaram)</li>
-        </ul>
-        <p><em>This page is long-form: it includes a master list, a searchable index, festival calendars, and suggested multi-day circuits (South, Central, North Tamil Nadu)</em>.</p>
-      `;
-    } else if(topic==='padalpetra'){
-      title = "Padal Petra Sthalams — The Canonical Shaiva Temples";
-      bodyContent = `
-        <h2>Padal Petra Sthalams</h2>
-        <p>These are the 275 Shaivite temples sung by the early Nayanmar saints (Appar, Sundarar, Sambandar). Each has its own sacred tree (Sthala Viruksham), tirtham, and unique hymn references. This page provides the full list, search by Tamil month & by saint, and itineraries to cover the canonical routes.</p>
-      `;
-    } else if(topic==='jyotirlinga'){
-      title = "Jyotirlingas — The 12 Radiant Shrines of Shiva";
-      bodyContent = `
-        <h2>Jyotirlingas — Overview</h2>
-        <p>The 12 Jyotirlingas (e.g., Somnath, Trimbakeshwar, Kedarnath, Rameshwaram) are powerful Shiva shrines across the Indian subcontinent. This page contains a map, travel notes, rituals, and notes on when to visit (seasonal details).</p>
-      `;
-    } else if(topic==='arupadai'){
-      title = "Arupadai Veedu — Six Abodes of Murugan";
-      bodyContent = `
-        <h2>Arupadai Veedu</h2>
-        <p>The six Murugan shrines (Palani, Thiruparankundram, Tiruchendur, Swamimalai, Thiruthani, Pazhamudircholai) are mapped here with festival timing, how to combine with an Amma/Amman circuit, and transit suggestions (bus + Tamil Nadu state transport links).</p>
-      `;
-    } else if(topic==='shakti'){
-      title = "Shakti Peetham — The Sacred Seats of the Goddess";
-      bodyContent = `
-        <h2>Shakti Peetham — Overview</h2>
-        <p>Shakti Peethas are revered shrines associated with the goddess (Sati/Parvati) scattered across South Asia. This page catalogs major peethas, local legends, and recommended circuits for devotees of Devi (Tamil Nadu, Andhra & beyond).</p>
-      `;
-    }
-
-    const win = window.open('', '_blank', 'noopener,noreferrer');
-    if(!win) { alert('Pop-up blocked. Allow pop-ups for this site to open dedicated pages.'); return; }
-    const specialHTML = `
-      <!doctype html>
-      <html>
-      <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>${title} — Moksha Yatra</title>
-        <style>
-          body{ font-family: 'Noto Serif', Georgia, serif; background: #fbfbf8; color:#2f3b52; padding:20px; }
-          header{ background:linear-gradient(90deg,#c49b3e,#f7d774); padding:18px; border-radius:8px; margin-bottom:18px; color:#2f3b52; }
-          h1{ margin:0; font-size:1.6em; }
-          h2{ color:#2f3b52; margin-top:14px; }
-          p, li{ line-height:1.6 }
-          .btn{ display:inline-block; background:#2f3b52; color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; margin-top:12px;}
-        </style>
-      </head>
-      <body>
-        <header><h1>${title}</h1></header>
-        <main>${bodyContent}</main>
-        <a class="btn" href="javascript:window.close()">Close</a>
-      </body>
-      </html>
-    `;
-    win.document.write(specialHTML);
-    win.document.close();
-  }
-
-  // re-initialize accordions inside newly opened windows if needed (not necessary here)
 </script>
-
+  
 </body>
 </html>
