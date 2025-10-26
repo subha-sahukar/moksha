@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Karnataka — Moksha Yatra</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Karnataka circuits</small></header>
+<nav><button class="main-btn" onclick="location.href='index.html'">Home</button></nav>
+<main>
+<section>
+  <h2>Hampi, Belur & Halebidu</h2>
+  <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/6/63/Vittala_Temple%2C_Hampi.jpg" alt="Hampi">
+  <button class="accordion">Belur — Chennakeshava</button><div class="panel"><p>Hoysala jewel.</p></div>
+  <button class="accordion">Hampi — Virupaksha & Vittala</button><div class="panel"><p>Vijayanagara ruins and chariot.</p></div>
+  <button class="accordion">Kukke Subramanya</button><div class="panel"><p>Serpent and hill worship centre.</p></div>
+</section>
+</main>
+<script>const accs=document.getElementsByClassName('accordion');for(let a of accs){a.addEventListener('click',function(){this.classList.toggle('active');const p=this.nextElementSibling;if(p.style.maxHeight){p.style.maxHeight=null;}else{p.style.maxHeight=p.scrollHeight+'px';}})}</script>
+</body></html>
