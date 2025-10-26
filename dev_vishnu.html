@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Vishnu Stories — Moksha Yatra</title><link rel="stylesheet" href="style.css"/></head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Vishnu — Avatars, Leelas & Temple Links</small></header>
+<nav><button class="main-btn" onclick="location.href='index.html'">Home</button></nav>
+
+<main>
+<section>
+  <h2>Vishnu in brief</h2>
+  <p>Vishnu maintains cosmic order and descends as avatars to restore dharma. Temples dedicated to Vishnu (Divya Desams) are central to Vaishnava practice.</p>
+</section>
+
+<section>
+  <h2>Representative stories</h2>
+  <button class="accordion">Dashavatara — Ten incarnations</button>
+  <div class="panel"><p>From Matsya (fish) to Kalki (future avatar), each incarnation addresses a cosmic need and is celebrated in temple iconography.</p></div>
+
+  <button class="accordion">Rama’s journey</button>
+  <div class="panel"><p>Rama’s life and the Ramaraya tradition—Rameswaram & Ramanathaswamy temple associations with Rama’s penance.</p></div>
+
+  <button class="accordion">Krishna — Bhagavata leelas</button>
+  <div class="panel"><p>Krishna’s childhood stories, Gopis, and the Bhagavad Gita form central devotional material for many Vishnu temples.</p></div>
+</section>
+
+<section>
+  <h2>Vishnu temples & festivals</h2>
+  <p>Vaikunta Ekadashi, Brahmotsavam, and Utsavams form the major temple festivals. Divya Desams have deep Alvar hymn traditions associating each temple to a sung stanza.</p>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>const accs=document.getElementsByClassName('accordion'); for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null;} else{ p.style.maxHeight = p.scrollHeight + 'px'; } }); }</script>
+</body>
+</html>
