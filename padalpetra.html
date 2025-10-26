@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Padal Petra Sthalam — Moksha Yatra</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Padal Petra Sthalam — Canonical Shaiva Shrines</small></header>
+<nav>
+  <button class="main-btn" onclick="location.href='index.html'">Home</button>
+  <button class="main-btn" onclick="location.href='tamilnadu.html'">Tamil Nadu</button>
+</nav>
+
+<main>
+<section>
+  <h2>What are Padal Petra Sthalams?</h2>
+  <p>These are the 275 Shiva temples sung in the Tevaram hymns by the Tamil Nayanmar saints—Appar, Sambandar, and Sundarar. Each temple has unique sthala purana (local legend), a sacred tree (Sthala Viruksham), and a tirtha (sacred waterbody).</p>
+</section>
+
+<section>
+  <h2>How to use this resource</h2>
+  <p>This page groups Padal Petra Sthalams by district/region for practical pilgrimage planning. Each temple entry should ideally include: Sthala Purana, saint reference (which hymn), timings, and nearby transport.</p>
+</section>
+
+<section>
+  <h2>Selected canonical temples (examples)</h2>
+
+  <button class="accordion">Chidambaram — Thillai Nataraja</button>
+  <div class="panel"><p>One of the celebrated Padal Petra Sthalams and home of Lord Nataraja; cosmic symbolism and ancient Chola patronage.</p></div>
+
+  <button class="accordion">Thiruvarur — Thyagaraja Temple</button>
+  <div class="panel"><p>Thiruvarur appears prominently in the Tevaram corpus; famous for musical instruments and chariot festival.</p></div>
+
+  <button class="accordion">Thiruvanaikaval — (Jambukeswarar)</button>
+  <div class="panel"><p>Pancha Bootha (water) and also celebrated in Shaiva hymnody.</p></div>
+
+  <p class="small-muted">— Full list of all 275 temples can be added to the page as a searchable table keyed to Tevaram hymn references. I can generate the complete list with saint/hymn citations if you want.</p>
+</section>
+
+<section>
+  <h2>Pilgrimage tips</h2>
+  <ol>
+    <li>Plan visits by district to minimize transit time — many Padal Petra Sthalams cluster around Chola and Pandya heartlands.</li>
+    <li>Check local festival calendars (Tamil months) for special pujas and pratishthas.</li>
+    <li>Carry temple-appropriate attire and observe each shrine’s protocols.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Related resources</h2>
+  <p>Want the full machine-readable list (CSV/JSON) of all 275 Padal Petra Sthalams with coordinates and hymn references? I can generate it for import into your site for search, filter, and route planning.</p>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>
+const accs=document.getElementsByClassName('accordion'); for(let a of accs){ a.addEventListener('click',function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null; } else { p.style.maxHeight = p.scrollHeight + 'px'; } });}
+</script>
+</body>
+</html>
