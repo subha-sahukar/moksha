@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Auspicious Events — Moksha Yatra</title><link rel="stylesheet" href="style.css"/></head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Auspicious Events — Ekadashi, Pradosham, Shashti & more</small></header>
+<nav><button class="main-btn" onclick="location.href='index.html'">Home</button></nav>
+
+<main>
+<section>
+  <h2>Why temple calendars matter</h2>
+  <p>
+    Temple festivals and lunar/solar observances structure the devotional year. Many rituals (abhishekam, fasting, processions) are tied to lunar tithis and specific weekdays.
+  </p>
+</section>
+
+<section>
+  <h2>Key observances explained</h2>
+
+  <button class="accordion">Ekadashi</button>
+  <div class="panel"><p>Ekadashi (11th lunar day) — Vaishnava fasting day honoring Vishnu; many observe a day-long fast and special prayers at temples. There are 24 Ekadashis a year with names and unique characteristics.</p></div>
+
+  <button class="accordion">Pradosham</button>
+  <div class="panel"><p>Pradosham occurs twice a month (on the 13th lunar day) and is significant for Shiva worship—special abhishekam and rituals performed during the pradosha kala (twilight period).</p></div>
+
+  <button class="accordion">Sani Pradosham</button>
+  <div class="panel"><p>A Pradosham falling on Saturday—considered potent for prayers to Saturn-related doshas; devotees seek specific remedies and rituals.</p></div>
+
+  <button class="accordion">Shashti</button>
+  <div class="panel"><p>Shashti (6th lunar day) — important for Murugan worship; Skanda Sashti festival (month of Kartika) is widely celebrated.</p></div>
+
+  <button class="accordion">Chaturthi</button>
+  <div class="panel"><p>Chaturthi (4th lunar day) — associated with Ganesha; Vinayaka Chaturthi is the major annual observance.</p></div>
+
+  <button class="accordion">Amavasya & Pournami</button>
+  <div class="panel"><p>Amavasya (new moon) and Pournami (full moon) are monthly markers for ancestral rites, special pujas, and regional festivals (e.g., Kartik Purnima).</p></div>
+
+  <button class="accordion">Girivalam / Giri Valam</button>
+  <div class="panel"><p>Full-moon circumambulation around sacred hills (e.g., Tiruvannamalai Girivalam) — a devotional night-walk combining austerity and community devotional practice.</p></div>
+</section>
+
+<section>
+  <h2>Practical tips for pilgrims</h2>
+  <ul>
+    <li>Always check the temple’s official calendar for festival dates (they follow Tamil/solar-lunar specifics and may adjust for regional observances).</li>
+    <li>For Ekadashi/fasts: consult local priests for accepted dietary practices and fast-breaking procedures.</li>
+    <li>For Pradosham & Sani Pradosham: book morning/afternoon darshan early; twilight rituals attract high attendance.</li>
+  </ul>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>const accs=document.getElementsByClassName('accordion'); for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null; } else{ p.style.maxHeight = p.scrollHeight + 'px'; } }); }</script>
+</body>
+</html>
