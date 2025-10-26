@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Arupadai Veedu — Moksha Yatra</title><link rel="stylesheet" href="style.css"/></head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Arupadai Veedu — The Six Abodes of Lord Murugan</small></header>
+<nav><button class="main-btn" onclick="location.href='index.html'">Home</button><button class="main-btn" onclick="location.href='tamilnadu.html'">Tamil Nadu</button></nav>
+
+<main>
+<section>
+  <h2>What are Arupadai Veedu?</h2>
+  <p>The Arupadai Veedu are six temples associated with Lord Murugan (Kartikeya) — each temple marks an important episode in Murugan’s life and the Tamil bhakti tradition.</p>
+</section>
+
+<section>
+  <h2>The Six Abodes</h2>
+
+  <button class="accordion">Thiruparankundram</button>
+  <div class="panel"><p>Murugan’s marriage to Deivayanai; cave shrine with ancient sculptures.</p></div>
+
+  <button class="accordion">Tiruchendur</button>
+  <div class="panel"><p>Sea-front victory shrine where Murugan defeats Surapadman.</p></div>
+
+  <button class="accordion">Palani</button>
+  <div class="panel"><p>The hill shrine of renunciation and devotion; famous for the sacred hill and devotees carrying kavadis.</p></div>
+
+  <button class="accordion">Swamimalai</button>
+  <div class="panel"><p>Murugan teaches the meaning of Om to Lord Shiva — a place of learning and devotion.</p></div>
+
+  <button class="accordion">Thiruthani</button>
+  <div class="panel"><p>Homecoming shrine where peace and reunion are celebrated.</p></div>
+
+  <button class="accordion">Pazhamudircholai</button>
+  <div class="panel"><p>Forest shrine connected to fertility and divine bliss with consorts Valli & Deivayanai.</p></div>
+</section>
+
+<section>
+  <h2>Pilgrimage advice</h2>
+  <ul>
+    <li>Best to plan Murugan circuits during Skanda Sashti month and local temple festivals.</li>
+    <li>Combine Tiruchendur with Tuticorin coastal attractions and Palani with nearby hill circuits.</li>
+  </ul>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>const accs=document.getElementsByClassName('accordion'); for(let a of accs){ a.addEventListener('click',function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null;} else{ p.style.maxHeight = p.scrollHeight + 'px'; } }); }</script>
+</body>
+</html>
