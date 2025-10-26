@@ -81,7 +81,38 @@
 </script>
 
   <section id="temples" class="hidden">
-    <h2>Kumbakonam Temples – Detailed Listing</h2>
+<h2 id="kumbakonam">Kumbakonam Temples – Detailed Listing</h2>
+
+    <!-- Section added 26-10 ============================ -->
+<!-- TEMPLE CATEGORY NAVIGATION -->
+<!-- ============================ -->
+<div id="temple-nav" style="text-align:center; margin: 20px 0;">
+  <button onclick="scrollToSection('kumbakonam')" class="nav-btn">Kumbakonam</button>
+  <button onclick="scrollToSection('tirunelveli')" class="nav-btn">Tirunelveli</button>
+  <button onclick="scrollToSection('trichy')" class="nav-btn">Trichy</button>
+  <button onclick="scrollToSection('thanjavur')" class="nav-btn">Thanjavur</button>
+  <button onclick="scrollToSection('pancha')" class="nav-btn">Pancha Bootha</button>
+  <button onclick="scrollToSection('jyotirlinga')" class="nav-btn">Jyotirlingas</button>
+</div>
+
+<style>
+  .nav-btn {
+    background: #b86a16;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: background 0.3s ease;
+  }
+  .nav-btn:hover { background: #ffcc00; color: #4d2614; }
+</style>
+
+        <!-- Section added 26-10 ============================ -->
+
     <button class="accordion">Sarangapani Temple (Divya Desam No.48)</button>
     <div class="panel">
       <p>
@@ -103,7 +134,7 @@
 <!-- NEW TEMPLE SECTIONS ADDED -->
 <!-- ============================ -->
 
-<h2>Tirunelveli Temples – Sacred Shaiva & Vaishnava Shrines</h2>
+<h2 id="tirunelveli">Tirunelveli Temples – Sacred Shaiva & Vaishnava Shrines</h2>
 
 <button class="accordion">Nellaiappar & Kanthimathi Amman Temple</button>
 <div class="panel">
@@ -146,7 +177,7 @@
 
 <hr>
 
-<h2>Tiruchirappalli (Trichy) Temples – Spiritual Heart of Tamil Nadu</h2>
+<h2 id="trichy">Tiruchirappalli (Trichy) Temples – Spiritual Heart of Tamil Nadu</h2>
 
 <button class="accordion">Sri Ranganathaswamy Temple, Srirangam</button>
 <div class="panel">
@@ -181,7 +212,7 @@
 
 <hr>
 
-<h2>Thanjavur Region Temples – Chola Glory & Architectural Brilliance</h2>
+<h2  id="thanjavur">Thanjavur Region Temples – Chola Glory & Architectural Brilliance</h2>
 
 <button class="accordion">Brihadeeswarar Temple (Big Temple)</button>
 <div class="panel">
@@ -208,7 +239,7 @@
 
 <hr>
 
-<h2>Pancha Bootha Temples – The Five Elements of Shiva</h2>
+<h2 pancha>Pancha Bootha Temples – The Five Elements of Shiva</h2>
 
 <button class="accordion">Ekambareswarar Temple – Kanchipuram (Earth)</button>
 <div class="panel">
@@ -246,7 +277,7 @@
 
 <hr>
 
-<h2>Jyotirlinga Temples – Radiant Shrines of Lord Shiva</h2>
+<h2 jyotirlinga>Jyotirlinga Temples – Radiant Shrines of Lord Shiva</h2>
 
 <button class="accordion">Rameshwaram Ramanathaswamy Temple (Tamil Nadu)</button>
 <div class="panel">
@@ -371,6 +402,15 @@
     
   </section>
 </main>
+  <script>
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>
+
 <script>
   // Tabs script
   const introBtn = document.getElementById('tab-intro');
@@ -406,5 +446,6 @@
     });
   }
 </script>
+  
 </body>
 </html>
