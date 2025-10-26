@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Shiva Stories — Moksha Yatra</title><link rel="stylesheet" href="style.css"/></head>
+<body>
+<header><h1>Moksha Yatra</h1><small class="small-muted">Shiva — Myths, Tandava & Local Lore</small></header>
+<nav><button class="main-btn" onclick="location.href='index.html'">Home</button></nav>
+
+<main>
+<section>
+  <h2>Shiva in brief</h2>
+  <p>Shiva is the ascetic and cosmic dancer—both fierce and compassionate. He is venerated across Shaiva traditions and central to many temple rituals.</p>
+</section>
+
+<section>
+  <h2>Key myths</h2>
+  <button class="accordion">Shiva as Nataraja (cosmic dancer)</button>
+  <div class="panel"><p>The Ananda Tandava describes the cycle of creation and destruction—the Nataraja icon symbolizes the rhythm of the cosmos.</p></div>
+
+  <button class="accordion">Shiva and the poison (Samudra Manthan)</button>
+  <div class="panel"><p>Shiva drinks the poison Halahala to save the worlds—his throat turns blue (Neelakantha).</p></div>
+
+  <button class="accordion">Daksha Yajna and Sati</button>
+  <div class="panel"><p>The story that leads to the Shakti Peetham myth—Sati’s self-immolation and Shiva's grief.</p></div>
+</section>
+
+<section>
+  <h2>Temple practice & festivals</h2>
+  <p>Mahashivaratri, Pradosham, and local month-specific rituals form the living rhythm of Shaiva worship. Padal Petra Sthalams are key hymn sites sung by Nayanmars.</p>
+  <p><button class="nav-btn" onclick="location.href='index.html'">Back to Home</button></p>
+</section>
+</main>
+
+<script>const accs=document.getElementsByClassName('accordion'); for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null;} else{ p.style.maxHeight = p.scrollHeight + 'px'; } }); }</script>
+</body>
+</html>
