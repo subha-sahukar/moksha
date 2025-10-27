@@ -1,36 +1,169 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Tamil Nadu — Moksha Yatra</title><link rel="stylesheet" href="style.css"></head><body>
-<header><h1>Moksha Yatra</h1><small class="small-muted">Tamil Nadu circuits</small></header>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Tamil Nadu — Moksha Yatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Tamil Nadu temples — district-wise temple circuits with sthala varalaru, deity and festivals.">
+</head>
+<body>
 <nav>
-  <button class="main-btn" onclick="location.href='index.html'">Home</button>
-  <button class="main-btn" onclick="location.href='tamilnadu.html'">Tamil Nadu</button>
-  <select class="state-select" onchange="if(this.value) location.href=this.value"><option value="">Jump…</option><option value="andhra.html">Andhra</option><option value="karnataka.html">Karnataka</option><option value="kerala.html">Kerala</option></select>
+  <div class="brand">Moksha Yatra</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tamilnadu.html">Tamil Nadu</a>
+    <a href="divyadesam.html">Divya Desam</a>
+    <a href="#guidelines">Guidelines</a>
+  </div>
+  <button class="hamburger" aria-label="Open menu" onclick="alert('mobile menu placeholder')">☰</button>
 </nav>
-<main>
-<section id="tn-hero"><h2 style="text-align:center">Tamil Nadu — Temple Circuits</h2></section>
 
-<section>
-  <h2 id="kumbakonam">Kumbakonam — Divya Desams & Chola Marvels</h2>
-  <img class="section-banner" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Kumbakonam_Sarangapani_Temple.jpg" alt="Sarangapani">
-  <button class="accordion">Sarangapani Temple (Kumbakonam)</button>
-  <div class="panel"><p>Largest Vishnu temple in Kumbakonam; Rajagopuram and chariot festival.</p></div>
+<header class="hero" aria-hidden="true">
+  <div class="hero-bg" style="background-image:url('images/brihadeeswarar_dusk.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="mandala" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <h1>Tamil Nadu — Temple Circuits</h1>
+    <p>Tap a district below. We show compact, non-scrolling temple cards grouped by district for focused planning.</p>
 
-  <button class="accordion">Adi Kumbeswarar Temple (Kumbakonam)</button>
-  <div class="panel"><p>Shaiva center; Chola era complex.</p></div>
+    <div id="districtTabs" class="tabs" role="tablist" aria-label="Districts">
+      <button class="tab active" data-tab="kumbakonam">Kumbakonam</button>
+      <button class="tab" data-tab="thanjavur">Thanjavur</button>
+      <button class="tab" data-tab="trichy">Trichy</button>
+      <button class="tab" data-tab="madurai">Madurai</button>
+    </div>
+  </div>
+</header>
 
-  <h2 id="madurai">Madurai & Tiruchendur</h2>
-  <button class="accordion">Meenakshi Amman Temple</button>
-  <div class="panel"><p>Madurai's living temple with vibrant ritual life.</p></div>
+<main class="main container" id="main">
+  <!-- Kumbakonam -->
+  <section id="kumbakonam" class="district" data-visible="true">
+    <div class="section-title"><h2>Kumbakonam & Environs</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/sarangapani.jpg" alt="Sarangapani Temple, Kumbakonam">
+        <div class="inner">
+          <h3>Sarangapani Temple</h3>
+          <div class="meta">Kumbakonam • <em>Divya Desam</em></div>
+          <p><strong>Deity:</strong> Sri Sarangapani Perumal (Vishnu). <strong>Sthala Varalāru:</strong> Bow motif & chariot legend; chariot festival anchors town ritual life.</p>
+          <div class="info-row"><span class="icon">📍</span>Kumbakonam<span class="icon">🎊</span>Brahmotsavam<span class="icon">⏰</span>06:00–12:00</div>
+        </div>
+      </article>
 
-  <button class="accordion">Tiruchendur Murugan Temple</button>
-  <div class="panel"><p>One of Arupadai Veedu — seaside Murugan shrine.</p></div>
+      <article class="card">
+        <img src="images/airavatesvara.jpg" alt="Airavatesvara Temple, Darasuram">
+        <div class="inner">
+          <h3>Airavatesvara (Darasuram)</h3>
+          <div class="meta">Darasuram • Chola</div>
+          <p><strong>Deity:</strong> Airavatesvara (Shiva). <strong>Sthala Varalāru:</strong> Built by Rajaraja Chola II; associated with Indra's elephant Airavata and exquisite stonework.</p>
+          <div class="info-row"><span class="icon">📍</span>Darasuram<span class="icon">🏛️</span>UNESCO<span class="icon">⏰</span>06:30–19:00</div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-  <h2 id="navatirupati">Nava Tirupati (Tirunelveli)</h2>
-  <p>The Nava Tirupati cluster near Tirunelveli are nine Divya Desams along the Tamiraparani; great for a compact yatra.</p>
-</section>
+  <!-- Thanjavur -->
+  <section id="thanjavur" class="district" data-visible="false" style="display:none">
+    <div class="section-title"><h2>Thanjavur (Tanjore)</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/brihadeeswarar_dusk.jpg" alt="Brihadeeswarar Temple">
+        <div class="inner">
+          <h3>Brihadeeswarar Temple</h3>
+          <div class="meta">Thanjavur • Peruvudaiyar</div>
+          <p><strong>Deity:</strong> Peruvudaiyar (Shiva). <strong>Sthala Varalāru:</strong> Raja Raja Chola I's monumental temple; famed vimana and monolithic Nandi.</p>
+          <div class="info-row"><span class="icon">📍</span>Thanjavur<span class="icon">🏛️</span>Chola Architecture<span class="icon">⏰</span>06:00–12:00</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/airavatesvara.jpg" alt="Gangaikonda Cholapuram">
+        <div class="inner">
+          <h3>Gangaikonda Cholapuram</h3>
+          <div class="meta">Chola • Historic</div>
+          <p><strong>Deity:</strong> Shiva. <strong>Sthala Varalāru:</strong> Built by Rajendra Chola I to celebrate victories; refined sculptural program.</p>
+          <div class="info-row"><span class="icon">📍</span>Kumbakonam region<span class="icon">🎊</span>Local utsavam<span class="icon">⏰</span>07:00–18:00</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Trichy -->
+  <section id="trichy" class="district" data-visible="false" style="display:none">
+    <div class="section-title"><h2>Tiruchirappalli (Trichy)</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/srirangam.jpg" alt="Srirangam">
+        <div class="inner">
+          <h3>Sri Ranganathaswamy (Srirangam)</h3>
+          <div class="meta">Divya Desam • Vaishnava</div>
+          <p><strong>Deity:</strong> Ranganatha (Vishnu). <strong>Sthala Varalāru:</strong> Grand island temple, extensive prakaram and Vaikunta Ekadasi celebrations.</p>
+          <div class="info-row"><span class="icon">📍</span>Srirangam<span class="icon">🎊</span>Vaikunta Ekadasi<span class="icon">⏰</span>05:30–20:00</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Madurai -->
+  <section id="madurai" class="district" data-visible="false" style="display:none">
+    <div class="section-title"><h2>Madurai & Surroundings</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/meenakshi.jpg" alt="Meenakshi Amman">
+        <div class="inner">
+          <h3>Meenakshi Amman Temple</h3>
+          <div class="meta">Madurai • Shakti</div>
+          <p><strong>Deity:</strong> Meenakshi & Sundareswarar. <strong>Sthala Varalāru:</strong> Ancient Pandya base with Nayak elaborations; center of the Chithirai festival.</p>
+          <div class="info-row"><span class="icon">📍</span>Madurai<span class="icon">🎊</span>Chithirai Thiruvizha<span class="icon">⏰</span>04:30–21:00</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div id="guidelines" class="section">
+    <div class="section-title"><h2>Visiting Guidelines</h2></div>
+    <div class="guidelines">
+      <ul>
+        <li><strong>Attire:</strong> Traditional or modest clothing is recommended (dhoti/sari for main sanctum access in many temples).</li>
+        <li><strong>Timings:</strong> Most temples open early (06:00–12:00) and again in the evening (16:00–20:00); check local pages for festival schedules.</li>
+        <li><strong>Etiquette:</strong> Remove shoes, avoid loud photography in puja areas, and respect priestly timings for seva.</li>
+        <li><strong>Auspicious days:</strong> Vaikunta Ekadasi, Pradosham, Skanda Sashti, and local Brahmotsavams are peak pilgrimage times.</li>
+      </ul>
+    </div>
+  </div>
 </main>
+
+<div class="footer container"><p>© 2025 Moksha Yatra — Sacred Grandeur • Built for mindful pilgrimage</p></div>
+
+<div class="audio-control" aria-hidden="false">
+  <button onclick="toggleAudio()" id="audioBtn">🔔 Play Chime</button>
+  <audio id="bgAudio" loop preload="none">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Temple_bell.ogg" type="audio/ogg">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tanpura_droning.ogg" type="audio/ogg">
+  </audio>
+</div>
+
 <script>
-const accs = document.getElementsByClassName('accordion');
-for(let a of accs){ a.addEventListener('click', function(){ this.classList.toggle('active'); const p=this.nextElementSibling; if(p.style.maxHeight){ p.style.maxHeight=null; } else { p.style.maxHeight = p.scrollHeight + 'px'; } }); }
+/* Tabs: simple client-side switch — accessible and no reload */
+document.querySelectorAll('#districtTabs .tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('#districtTabs .tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.district').forEach(s=>{
+      if(s.id === tab){ s.style.display = ''; s.setAttribute('data-visible','true') }
+      else { s.style.display = 'none'; s.setAttribute('data-visible','false') }
+    });
+    window.scrollTo({top:80,behavior:'smooth'});
+  });
+});
+
+/* Audio toggle */
+function toggleAudio(){const a=document.getElementById('bgAudio'), b=document.getElementById('audioBtn'); if(a.paused){a.play(); b.textContent='⏸ Pause Chime';} else {a.pause(); b.textContent='🔔 Play Chime';}}
+
+/* Parallax effect for hero */
+document.addEventListener('scroll', function(){ const y = window.scrollY; const bg = document.querySelector('.hero-bg'); if(bg) bg.style.transform = 'translateY(' + (y * 0.06) + 'px)'; });
 </script>
-</body></html>
+</body>
+</html>
