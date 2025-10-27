@@ -3,114 +3,110 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Moksha Yatra — Home</title>
+<title>Moksha Yatra — Sacred Grandeur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<meta name="description" content="Moksha Yatra — curated pilgrimage atlas of South Indian temples.">
 </head>
 <body>
-<header>
-  <h1>Moksha Yatra</h1>
-  <small class="small-muted">A Lotus & Lamp pilgrimage atlas — temples, stories & sacred calendars</small>
-</header>
-
 <nav>
-  <button id="tab-intro" class="main-btn active">Introduction</button>
-  <button id="tab-temples" class="main-btn">Temples</button>
-  <button id="tab-packages" class="main-btn">Packages</button>
-  <button id="tab-contact" class="main-btn">Enquiry</button>
-
-  <label style="margin-left:10px;font-weight:600;color:#2e1a25">Jump to state:</label>
-  <select id="stateSelect" class="state-select" aria-label="Select state">
-    <option value="">— Select —</option>
-    <option value="tamilnadu.html">Tamil Nadu</option>
-    <option value="andhra.html">Andhra Pradesh</option>
-    <option value="karnataka.html">Karnataka</option>
-    <option value="kerala.html">Kerala</option>
-  </select>
+  <div class="brand">Moksha Yatra</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tamilnadu.html">Tamil Nadu</a>
+    <a href="andhra.html">Andhra</a>
+    <a href="karnataka.html">Karnataka</a>
+    <a href="kerala.html">Kerala</a>
+    <a href="#about">About</a>
+  </div>
+  <button class="hamburger" aria-label="Open menu" onclick="alert('Use the top links — mobile menu placeholder')">☰</button>
 </nav>
 
-<main>
-  <section id="hero">
-    <h2>Open the doors — a Yatra toward Sorgha Vasal</h2>
-  </section>
+<header class="hero" role="banner" aria-label="Brihadeeswarar in golden light">
+  <div class="hero-bg" style="background-image:url('images/brihadeeswarar_dusk.jpg')" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="mandala" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <h1>Brihadeeswarar — Light on Stone</h1>
+    <p>Welcome to Moksha Yatra — a carefully curated pilgrimage atlas of South India's sacred temples. Choose a region, pick a circuit, and travel with ritual awareness.</p>
 
-  <section id="intro">
-    <h2>Welcome — The Lotus & Lamp Pilgrimage</h2>
-    <p>Moksha Yatra gathers temple circuits, sacred calendars, devotional stories and pariharam guidance — curated for seekers and travellers who want more than a checklist: they want the story and the ritual.</p>
-
-    <div style="margin-top:12px;">
-      <button class="nav-btn" onclick="window.open('divyadesam.html','_blank')">Divya Desam — Full Guide</button>
-      <button class="nav-btn" onclick="window.open('padalpetra.html','_blank')">Padal Petra Sthalam</button>
-      <button class="nav-btn" onclick="window.open('jyotirlingam.html','_blank')">Jyotirlinga Guide</button>
-      <button class="nav-btn" onclick="window.open('padaiveedu.html','_blank')">Arupadai Veedu</button>
-      <button class="nav-btn" onclick="window.open('sakthipeetham.html','_blank')">Shakti Peetham</button>
+    <div class="tabs" role="tablist" aria-label="Quick links">
+      <button class="tab active" onclick="location.href='tamilnadu.html'">Explore Tamil Nadu</button>
+      <button class="tab" onclick="location.href='divyadesam.html'">Divya Desam</button>
+      <button class="tab" onclick="location.href='padalpetra.html'">Padal Petra</button>
+      <button class="tab" onclick="location.href='auspicious.html'">Auspicious Days</button>
     </div>
 
-    <p style="margin-top:12px;">Quick jump: <button class="nav-btn" onclick="location.href='tamilnadu.html'">Tamil Nadu</button> <button class="nav-btn" onclick="location.href='andhra.html'">Andhra</button> <button class="nav-btn" onclick="location.href='karnataka.html'">Karnataka</button> <button class="nav-btn" onclick="location.href='kerala.html'">Kerala</button></p>
+    <div class="cta">
+      <button class="btn" onclick="location.href='tamilnadu.html'">Enter the Circuits</button>
+      <button class="btn secondary" onclick="location.href='divyadesam.html'">Divya Desam Guide</button>
+    </div>
+  </div>
+</header>
+
+<main class="main container" id="content" role="main">
+  <section class="section">
+    <div class="section-title"><h2>Featured circuits</h2></div>
+    <div class="grid" aria-hidden="false">
+      <article class="card">
+        <img src="images/brihadeeswarar_dusk.jpg" alt="Brihadeeswarar">
+        <div class="inner">
+          <h3>Brihadeeswarar / Thanjavur</h3>
+          <div class="meta">Chola capital — historic vimana</div>
+          <p>Monumental Chola architecture, icon of imperial temple art. A must for architecture-minded pilgrims.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/srirangam.jpg" alt="Srirangam">
+        <div class="inner">
+          <h3>Srirangam</h3>
+          <div class="meta">Divya Desam — living complex</div>
+          <p>A vast island temple complex with deep ritual calendars and Vaishnava festivals.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/meenakshi.jpg" alt="Meenakshi">
+        <div class="inner">
+          <h3>Meenakshi Amman</h3>
+          <div class="meta">Madurai — goddess sanctum</div>
+          <p>Center of city life and ritual drama — especially rich during Chithirai Thiruvizha.</p>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <section>
-    <h2>Navagraha Sthalam & Pariharam</h2>
-    <p>Navagraha circuits (the nine planetary shrines) and recommended pariharam rituals — short remedies, temple visits, and mantras to balance common doshas. We discuss outcome, timing, priestly rites, and how to combine them with nearby temple tours.</p>
-  </section>
+  <div class="divider"></div>
 
-  <section>
-    <h2>Devotional stories — Categorized</h2>
-    <p>Explore stories by deity: 
-      <button class="nav-btn" onclick="location.href='dev_ganesha.html'">Ganesha</button>
-      <button class="nav-btn" onclick="location.href='dev_shiva.html'">Shiva</button>
-      <button class="nav-btn" onclick="location.href='dev_vishnu.html'">Vishnu</button>
-      <button class="nav-btn" onclick="location.href='dev_narada.html'">Narada</button>
-    </p>
-  </section>
-
-  <section>
-    <h2>Auspicious events & the temple calendar</h2>
-    <p>Ekadashi, Pradosham, Sani Pradosham, Shashti, Chaturthi, Amavasya, Pournami and Girivalam — what they mean, how to observe them in temples, fasts, and special rites. <button class="nav-btn" onclick="location.href='auspicious.html'">Open Calendar & Rituals</button></p>
-  </section>
-
-  <section>
-    <h2>Featured: Nava Tirupati (near Tirunelveli)</h2>
-    <p>The Nava Tirupati cluster (nine Divya Desams along Tamiraparani river) is an elegant circuit — included in our Tamil Nadu page with rituals and suggested 2-3 day pilgrimage route.</p>
+  <section class="section">
+    <div class="section-title"><h2>Why Moksha Yatra</h2></div>
+    <p class="meta">We combine practical travel notes with ritual context — timings, festivals, and local legends — so your pilgrim experience is informed and respectful.</p>
   </section>
 </main>
 
-<!-- floating audio control & back to top -->
-<div class="audio-control">
-  <label style="font-weight:700">Temple sound</label>
-  <button id="audioBtn" onclick="toggleAudio()" style="margin-left:8px;padding:6px 8px;border-radius:8px;border:none;background:#a24368;color:#fff;cursor:pointer">Play</button>
-  <div style="font-size:0.9em;color:rgba(46,26,37,0.6);margin-top:6px">Bell + tanpura (toggle)</div>
+<div class="footer container">
+  <p>© 2025 Moksha Yatra — Sacred Grandeur • Built for mindful pilgrimage</p>
 </div>
 
-<audio id="bgAudio" loop preload="none">
-  <!-- Example public-domain/commons samples; replace with your own uploads if you prefer -->
-  <source src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Temple_bell.ogg" type="audio/ogg">
-  <source src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tanpura_droning.ogg" type="audio/ogg">
-  Your browser does not support the audio element.
-</audio>
-
-<button id="toTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">🪷</button>
+<div class="audio-control" aria-hidden="false">
+  <button onclick="toggleAudio()" id="audioBtn">🔔 Play Chime</button>
+  <audio id="bgAudio" loop preload="none">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Temple_bell.ogg" type="audio/ogg">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tanpura_droning.ogg" type="audio/ogg">
+  </audio>
+</div>
 
 <script>
-/* Tabs behavior (keeps it simple — intro default) */
-document.getElementById('tab-intro').addEventListener('click', ()=> {
-  document.getElementById('tab-intro').classList.add('active');
-  document.getElementById('tab-temples').classList.remove('active');
-});
-document.getElementById('tab-temples').addEventListener('click', ()=> {
-  document.getElementById('tab-temples').classList.add('active');
-  document.getElementById('tab-intro').classList.remove('active');
-});
-
-/* audio control */
-const audio = document.getElementById('bgAudio');
-const audioBtn = document.getElementById('audioBtn');
+/* Audio toggle */
 function toggleAudio(){
-  if(audio.paused){ audio.play(); audioBtn.textContent='Pause'; } else { audio.pause(); audioBtn.textContent='Play'; }
+  const a=document.getElementById('bgAudio'), b=document.getElementById('audioBtn');
+  if(a.paused){ a.play(); b.textContent='⏸ Pause Chime'; } else { a.pause(); b.textContent='🔔 Play Chime'; }
 }
-
-/* state dropdown */
-document.getElementById('stateSelect').addEventListener('change', function(){
-  if(this.value) window.location.href = this.value;
+/* small parallax */
+document.addEventListener('scroll', function(){
+  const y = window.scrollY, bg = document.querySelector('.hero-bg');
+  if(bg) bg.style.transform = 'translateY(' + (y * 0.08) + 'px)';
 });
 </script>
 </body>
