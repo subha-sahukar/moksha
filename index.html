@@ -1,113 +1,56 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Moksha Yatra — Sacred Grandeur</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moksha Yatra — Granite Glow</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<meta name="description" content="Moksha Yatra — curated pilgrimage atlas of South Indian temples.">
 </head>
 <body>
-<nav>
-  <div class="brand">Moksha Yatra</div>
-  <div class="nav-links">
+
+<header class="site-header">
+  <h1>Moksha Yatra</h1>
+  <nav class="main-nav">
     <a href="index.html">Home</a>
     <a href="tamilnadu.html">Tamil Nadu</a>
-    <a href="andhra.html">Andhra</a>
-    <a href="karnataka.html">Karnataka</a>
-    <a href="kerala.html">Kerala</a>
-    <a href="#about">About</a>
-  </div>
-  <button class="hamburger" aria-label="Open menu" onclick="alert('Use the top links — mobile menu placeholder')">☰</button>
-</nav>
-
-<header class="hero" role="banner" aria-label="Brihadeeswarar in golden light">
-  <div class="hero-bg" style="background-image:url('images/brihadeeswarar_dusk.jpg')" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="mandala" aria-hidden="true"></div>
-  <div class="container hero-inner">
-    <h1>Brihadeeswarar — Light on Stone</h1>
-    <p>Welcome to Moksha Yatra — a carefully curated pilgrimage atlas of South India's sacred temples. Choose a region, pick a circuit, and travel with ritual awareness.</p>
-
-    <div class="tabs" role="tablist" aria-label="Quick links">
-      <button class="tab active" onclick="location.href='tamilnadu.html'">Explore Tamil Nadu</button>
-      <button class="tab" onclick="location.href='divyadesam.html'">Divya Desam</button>
-      <button class="tab" onclick="location.href='padalpetra.html'">Padal Petra</button>
-      <button class="tab" onclick="location.href='auspicious.html'">Auspicious Days</button>
-    </div>
-
-    <div class="cta">
-      <button class="btn" onclick="location.href='tamilnadu.html'">Enter the Circuits</button>
-      <button class="btn secondary" onclick="location.href='divyadesam.html'">Divya Desam Guide</button>
-    </div>
-  </div>
+    <a href="#">Andhra</a>
+    <a href="#">Karnataka</a>
+    <a href="#">Kerala</a>
+    <a href="#">About</a>
+  </nav>
 </header>
 
-<main class="main container" id="content" role="main">
-  <section class="section">
-    <div class="section-title"><h2>Featured circuits</h2></div>
-    <div class="grid" aria-hidden="false">
-      <article class="card">
-        <img src="images/brihadeeswarar_dusk.jpg" alt="Brihadeeswarar">
-        <div class="inner">
-          <h3>Brihadeeswarar / Thanjavur</h3>
-          <div class="meta">Chola capital — historic vimana</div>
-          <p>Monumental Chola architecture, icon of imperial temple art. A must for architecture-minded pilgrims.</p>
-        </div>
-      </article>
+<section class="hero">
+  <h2>A Journey Through Stone and Silence</h2>
+  <p>Discover South India’s sacred geographies — from the granite hearts of Chola shrines to the living sanctums of Vaishnava Divya Desams. Each page opens a new corridor in this timeless pilgrimage.</p>
+  <div class="cta">
+    <button class="btn" onclick="location.href='tamilnadu.html'">Begin in Tamil Nadu</button>
+    <button class="btn secondary">Read the Legends</button>
+  </div>
+</section>
 
-      <article class="card">
-        <img src="images/srirangam.jpg" alt="Srirangam">
-        <div class="inner">
-          <h3>Srirangam</h3>
-          <div class="meta">Divya Desam — living complex</div>
-          <p>A vast island temple complex with deep ritual calendars and Vaishnava festivals.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="images/meenakshi.jpg" alt="Meenakshi">
-        <div class="inner">
-          <h3>Meenakshi Amman</h3>
-          <div class="meta">Madurai — goddess sanctum</div>
-          <p>Center of city life and ritual drama — especially rich during Chithirai Thiruvizha.</p>
-        </div>
-      </article>
+<section class="section">
+  <h3>Featured Circuits</h3>
+  <div class="grid">
+    <div class="card">
+      <h4>Thanjavur — Brihadeeswarar</h4>
+      <p>The granite marvel built by Raja Raja Chola I. A union of engineering and devotion.</p>
     </div>
-  </section>
+    <div class="card">
+      <h4>Kumbakonam — Sarangapani</h4>
+      <p>Among the most celebrated Divya Desams, where Vishnu rests in the chariot sanctum.</p>
+    </div>
+    <div class="card">
+      <h4>Madurai — Meenakshi Amman</h4>
+      <p>Where goddess and god meet each dawn; a living theatre of ritual.</p>
+    </div>
+  </div>
+</section>
 
-  <div class="divider"></div>
+<footer>
+  © 2025 Moksha Yatra • Built for Mindful Pilgrimage
+</footer>
 
-  <section class="section">
-    <div class="section-title"><h2>Why Moksha Yatra</h2></div>
-    <p class="meta">We combine practical travel notes with ritual context — timings, festivals, and local legends — so your pilgrim experience is informed and respectful.</p>
-  </section>
-</main>
-
-<div class="footer container">
-  <p>© 2025 Moksha Yatra — Sacred Grandeur • Built for mindful pilgrimage</p>
-</div>
-
-<div class="audio-control" aria-hidden="false">
-  <button onclick="toggleAudio()" id="audioBtn">🔔 Play Chime</button>
-  <audio id="bgAudio" loop preload="none">
-    <source src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Temple_bell.ogg" type="audio/ogg">
-    <source src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tanpura_droning.ogg" type="audio/ogg">
-  </audio>
-</div>
-
-<script>
-/* Audio toggle */
-function toggleAudio(){
-  const a=document.getElementById('bgAudio'), b=document.getElementById('audioBtn');
-  if(a.paused){ a.play(); b.textContent='⏸ Pause Chime'; } else { a.pause(); b.textContent='🔔 Play Chime'; }
-}
-/* small parallax */
-document.addEventListener('scroll', function(){
-  const y = window.scrollY, bg = document.querySelector('.hero-bg');
-  if(bg) bg.style.transform = 'translateY(' + (y * 0.08) + 'px)';
-});
-</script>
 </body>
 </html>
