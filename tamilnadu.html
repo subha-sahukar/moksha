@@ -1,67 +1,131 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Tamil Nadu Temples — Moksha Yatra</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="site-header">
-  <h1>Moksha Yatra</h1>
-  <nav class="main-nav">
+<nav>
+  <div class="brand">Moksha Yatra</div>
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="tamilnadu.html">Tamil Nadu</a>
     <a href="#">Andhra</a>
     <a href="#">Karnataka</a>
     <a href="#">Kerala</a>
-  </nav>
+  </div>
+</nav>
+
+<header class="hero" aria-label="Tamil Nadu temples">
+  <div class="hero-bg" id="heroImage"
+       style="background-image:url('images/brihadeeswarar_dusk.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="mandala"></div>
+  <div class="container hero-inner">
+    <h1>Tamil Nadu — Land of Living Temples</h1>
+    <p>From the granite Chola wonders of Thanjavur to the vibrant gopurams of Madurai and the sacred tanks of Kumbakonam — every stone here chants a hymn.</p>
+  </div>
 </header>
 
-<section class="hero">
-  <h2>Tamil Nadu — Stone & Sanctity</h2>
-  <p>Explore the Chola heartland and beyond. Temples are grouped by district — each card a portal to history, architecture, and living ritual.</p>
-</section>
+<main class="main container">
 
-<section class="section">
-  <h3>Kumbakonam District</h3>
-  <div class="grid">
-    <div class="card">
-      <h4>Sarangapani Temple</h4>
-      <p>Dedicated to Vishnu as Sarangapani. One of the 108 Divya Desams. The temple gopuram dominates the skyline with twelve tiers of carved mythology.</p>
+  <!-- Kumbakonam -->
+  <section class="section">
+    <img src="images/kumbakonam_banner.jpg" alt="Kumbakonam temples" style="width:100%;border-radius:14px;margin-bottom:14px;">
+    <div class="section-title"><h2>Kumbakonam & Environs</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/sarangapani.jpg" alt="Sarangapani Temple">
+        <div class="inner">
+          <h3>Sarangapani Temple</h3>
+          <div class="meta">Divya Desam • Vishnu</div>
+          <p>Among the 108 Divya Desams. The Lord rests in a chariot-shaped sanctum. A grand car festival defines Kumbakonam’s spiritual calendar.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="images/airavatesvara.jpg" alt="Airavatesvara Temple">
+        <div class="inner">
+          <h3>Airavatesvara (Darasuram)</h3>
+          <div class="meta">Chola • Shiva</div>
+          <p>UNESCO World Heritage monument built by Rajaraja Chola II. Stone carvings depict dance and music with astonishing finesse.</p>
+        </div>
+      </article>
     </div>
-    <div class="card">
-      <h4>Airavatesvara Temple</h4>
-      <p>A UNESCO heritage site built by Rajaraja Chola II. The stone chariot motif embodies motion and music in architecture.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <h3>Thanjavur District</h3>
-  <div class="grid">
-    <div class="card">
-      <h4>Brihadeeswarar Temple</h4>
-      <p>The Great Living Chola Temple, crowned with the world’s largest monolithic vimana capstone. Spiritual and structural awe in equal measure.</p>
-    </div>
-  </div>
-</section>
+  <div class="section-divider">🪷</div>
 
-<section class="section">
-  <h3>Madurai Region</h3>
-  <div class="grid">
-    <div class="card">
-      <h4>Meenakshi Amman Temple</h4>
-      <p>A twin sanctum for Meenakshi and Sundareswarar; city life revolves around its daily rituals and annual Chithirai festival.</p>
+  <!-- Thanjavur -->
+  <section class="section">
+    <img src="images/tanjore_banner.jpg" alt="Thanjavur temples" style="width:100%;border-radius:14px;margin-bottom:14px;">
+    <div class="section-title"><h2>Thanjavur District</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/brihadeeswarar_dusk.jpg" alt="Brihadeeswarar Temple">
+        <div class="inner">
+          <h3>Brihadeeswarar (Peruvudaiyar)</h3>
+          <div class="meta">Shiva • UNESCO</div>
+          <p>Raja Raja Chola I’s masterpiece with a 216-ft vimana and the world’s largest monolithic Nandi. Architecture as devotion.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="images/gangaikonda.jpg" alt="Gangaikonda Cholapuram">
+        <div class="inner">
+          <h3>Gangaikonda Cholapuram</h3>
+          <div class="meta">Shiva • Chola</div>
+          <p>Built by Rajendra Chola I to commemorate his northern victories. Sculptural detailing softens imperial power with grace.</p>
+        </div>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  © 2025 Moksha Yatra • Tamil Nadu Temples
+  <div class="section-divider">🪷</div>
+
+  <!-- Madurai -->
+  <section class="section">
+    <img src="images/madurai_banner.jpg" alt="Madurai Meenakshi" style="width:100%;border-radius:14px;margin-bottom:14px;">
+    <div class="section-title"><h2>Madurai & Surroundings</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="images/meenakshi.jpg" alt="Meenakshi Amman Temple">
+        <div class="inner">
+          <h3>Meenakshi Amman Temple</h3>
+          <div class="meta">Shakti • Madurai</div>
+          <p>One of India’s oldest living temple complexes. The Chithirai festival reenacts the divine marriage of Meenakshi and Sundareswarar.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="images/thirupparamkunram.jpg" alt="Thiruparankundram Murugan Temple">
+        <div class="inner">
+          <h3>Thiruparankundram Murugan Temple</h3>
+          <div class="meta">Murugan • Arupadai Veedu</div>
+          <p>One of the six sacred abodes of Murugan, carved into rock near Madurai. Symbolizes victory over demons and ego.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer container">
+  <p>© 2025 Moksha Yatra — Sacred Grandeur • Tamil Nadu Temples</p>
 </footer>
 
+<script>
+/* simple background rotation for hero */
+const imgs=[
+ 'images/brihadeeswarar_dusk.jpg',
+ 'images/srirangam.jpg',
+ 'images/meenakshi.jpg'
+];
+let i=0;
+setInterval(()=>{
+ i=(i+1)%imgs.length;
+ document.getElementById('heroImage').style.backgroundImage=`url('${imgs[i]}')`;
+},6000);
+</script>
 </body>
 </html>
