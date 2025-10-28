@@ -164,3 +164,17 @@ nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:cen
   padding:.5rem;
   font-size:.9rem;
 }
+
+.auspicious-list li{
+  margin:.25rem 0;
+  border-bottom:1px dotted rgba(255,255,255,0.15);
+  padding-bottom:.2rem;
+}
+.auspicious-list li strong{
+  color:#ffd8e5;
+}
+.auspicious-list li:last-child{
+  border:none;
+  text-shadow:0 0 6px rgba(255,216,229,0.4);
+}
+
