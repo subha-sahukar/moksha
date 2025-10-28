@@ -1,113 +1,230 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Moksha Yatra — Sacred Grandeur</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moksha Yatra – Home</title>
 <link rel="stylesheet" href="style.css">
-<meta name="description" content="Moksha Yatra — curated pilgrimage atlas of South Indian temples.">
-</head>
-<body>
-<nav>
-  <div class="brand">Moksha Yatra</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="tamilnadu.html">Tamil Nadu</a>
-    <a href="andhra.html">Andhra</a>
-    <a href="karnataka.html">Karnataka</a>
-    <a href="kerala.html">Kerala</a>
-    <a href="#about">About</a>
-  </div>
-  <button class="hamburger" aria-label="Open menu" onclick="alert('Use the top links — mobile menu placeholder')">☰</button>
-</nav>
-
-<header class="hero" role="banner" aria-label="Brihadeeswarar in golden light">
-  <div class="hero-bg" style="background-image:url('images/brihadeeswarar_dusk.jpg')" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="mandala" aria-hidden="true"></div>
-  <div class="container hero-inner">
-    <h1>Brihadeeswarar — Light on Stone</h1>
-    <p>Welcome to Moksha Yatra — a carefully curated pilgrimage atlas of South India's sacred temples. Choose a region, pick a circuit, and travel with ritual awareness.</p>
-
-    <div class="tabs" role="tablist" aria-label="Quick links">
-      <button class="tab active" onclick="location.href='tamilnadu.html'">Explore Tamil Nadu</button>
-      <button class="tab" onclick="location.href='divyadesam.html'">Divya Desam</button>
-      <button class="tab" onclick="location.href='padalpetra.html'">Padal Petra</button>
-      <button class="tab" onclick="location.href='auspicious.html'">Auspicious Days</button>
-    </div>
-
-    <div class="cta">
-      <button class="btn" onclick="location.href='tamilnadu.html'">Enter the Circuits</button>
-      <button class="btn secondary" onclick="location.href='divyadesam.html'">Divya Desam Guide</button>
-    </div>
-  </div>
-</header>
-
-<main class="main container" id="content" role="main">
-  <section class="section">
-    <div class="section-title"><h2>Featured circuits</h2></div>
-    <div class="grid" aria-hidden="false">
-      <article class="card">
-        <img src="images/brihadeeswarar_dusk.jpg" alt="Brihadeeswarar">
-        <div class="inner">
-          <h3>Brihadeeswarar / Thanjavur</h3>
-          <div class="meta">Chola capital — historic vimana</div>
-          <p>Monumental Chola architecture, icon of imperial temple art. A must for architecture-minded pilgrims.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="images/srirangam.jpg" alt="Srirangam">
-        <div class="inner">
-          <h3>Srirangam</h3>
-          <div class="meta">Divya Desam — living complex</div>
-          <p>A vast island temple complex with deep ritual calendars and Vaishnava festivals.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="images/meenakshi.jpg" alt="Meenakshi">
-        <div class="inner">
-          <h3>Meenakshi Amman</h3>
-          <div class="meta">Madurai — goddess sanctum</div>
-          <p>Center of city life and ritual drama — especially rich during Chithirai Thiruvizha.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section class="section">
-    <div class="section-title"><h2>Why Moksha Yatra</h2></div>
-    <p class="meta">We combine practical travel notes with ritual context — timings, festivals, and local legends — so your pilgrim experience is informed and respectful.</p>
-  </section>
-</main>
-
-<div class="footer container">
-  <p>© 2025 Moksha Yatra — Sacred Grandeur • Built for mindful pilgrimage</p>
-</div>
-
-<div class="audio-control" aria-hidden="false">
-  <button onclick="toggleAudio()" id="audioBtn">🔔 Play Chime</button>
-  <audio id="bgAudio" loop preload="none">
-    <source src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Temple_bell.ogg" type="audio/ogg">
-    <source src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tanpura_droning.ogg" type="audio/ogg">
-  </audio>
-</div>
-
-<script>
-/* Audio toggle */
-function toggleAudio(){
-  const a=document.getElementById('bgAudio'), b=document.getElementById('audioBtn');
-  if(a.paused){ a.play(); b.textContent='⏸ Pause Chime'; } else { a.pause(); b.textContent='🔔 Play Chime'; }
+<style>
+body{
+  margin:0;display:flex;flex-direction:row;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#3d081b 0%,#5f1e38 100%);
+  color:#fffaf3;
 }
-/* small parallax */
-document.addEventListener('scroll', function(){
-  const y = window.scrollY, bg = document.querySelector('.hero-bg');
-  if(bg) bg.style.transform = 'translateY(' + (y * 0.08) + 'px)';
-});
+
+/* --- Left Sacred Sidebar --- */
+.sacred-sidebar{
+  width:280px;min-height:100vh;
+  background:linear-gradient(180deg,#6b2340 0%,#a54a69 100%);
+  color:#fffaf3;position:sticky;top:0;
+  padding:1rem;box-shadow:inset -2px 0 6px rgba(0,0,0,0.3);
+}
+.sidebar-inner{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;}
+.sidebar-lotus{width:80px;margin-bottom:1rem;opacity:0.8;}
+.sacred-sidebar h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin:.8rem 0 .4rem;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:.3rem;width:100%;}
+.auspicious-list,.sidebar-links{list-style:none;padding:0;margin:0 0 1rem;font-size:.9rem;}
+.sidebar-links a{color:#ffd8e5;text-decoration:none;font-weight:500;}
+.sidebar-links a:hover{text-decoration:underline;}
+.sidebar-silhouette{width:90%;opacity:0.1;position:absolute;bottom:10px;}
+
+/* --- Main Content --- */
+.main-content{flex:1;overflow-x:hidden;}
+header{
+  text-align:center;padding:2rem 1rem;
+  background:linear-gradient(180deg,#a54a69 0%,#6b2340 100%);
+}
+header h1{font-family:'Playfair Display',serif;margin:0;font-size:2.5rem;color:#fff;}
+nav{
+  background:rgba(255,255,255,0.1);
+  display:flex;justify-content:center;flex-wrap:wrap;padding:.5rem 0;
+}
+nav a{color:#ffd8e5;text-decoration:none;margin:0 .8rem;font-weight:500;}
+nav a:hover{text-decoration:underline;}
+.hero{
+  background:url('images/temple_hero.jpg') center/cover no-repeat;
+  height:70vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+.hero h2{font-family:'Playfair Display',serif;font-size:2.2rem;color:#fff;margin:0;}
+.hero p{max-width:600px;text-align:center;color:#fffaf3;}
+.cta-buttons button{
+  background:rgba(255,255,255,0.2);border:none;
+  border-radius:8px;margin:.3rem;padding:.5rem 1rem;
+  color:#fff;cursor:pointer;
+}
+.cta-buttons button:hover{background:#ffd8e5;color:#5a1731;}
+
+/* --- Sacred Circuits section (from earlier design) --- */
+.vertical-circuits{background:linear-gradient(180deg,#a54a69 0%,#e9b8c8 100%);padding:3rem 1rem;text-align:center;}
+.vertical-circuits h2{font-family:'Playfair Display',serif;color:#fff;}
+.vertical-circuits p{color:#fffaf3;max-width:600px;margin:0 auto 2rem;}
+.circuit{display:flex;flex-direction:column;align-items:center;margin:2rem auto;max-width:420px;background:rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;transition:transform .4s ease;}
+.circuit:hover{transform:scale(1.03);}
+.circuit img{width:100%;height:300px;object-fit:cover;filter:brightness(0.9);}
+.circuit-info{padding:1rem;color:#fffaf3;}
+.circuit-info h3{margin:.5rem 0;}
+.circuit-info button{background:rgba(255,255,255,0.2);border:none;border-radius:8px;margin:.3rem;padding:.5rem 1rem;color:#fff;cursor:pointer;}
+.circuit-info button:hover{background:#ffd8e5;color:#5a1731;}
+
+.travel-packages{background:#f7c9d8;color:#3d081b;padding:2rem 1rem;text-align:center;}
+.travel-packages .package{background:rgba(255,255,255,0.7);margin:1rem auto;padding:1rem;border-radius:10px;max-width:400px;transition:transform .3s;}
+.travel-packages .package:hover{transform:scale(1.04);}
+.devotional-stories{background:linear-gradient(180deg,#f7c9d8 0%,#ffe5ee 100%);padding:2rem 1rem 4rem;text-align:center;color:#3d081b;}
+.story-carousel{display:flex;overflow-x:auto;gap:1rem;scroll-snap-type:x mandatory;padding-bottom:1rem;}
+.story-card{scroll-snap-align:center;background:#fff;border-radius:12px;min-width:220px;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:transform .3s;}
+.story-card:hover{transform:translateY(-5px);}
+.story-card img{width:100%;height:150px;object-fit:cover;border-radius:12px 12px 0 0;}
+.story-card p{padding:.7rem;font-size:.9rem;line-height:1.3;}
+
+footer{text-align:center;padding:1rem;background:linear-gradient(180deg,#5f1e38 0%,#3d081b 100%);font-size:.9rem;color:#f0e2e1;}
+
+/* --- Mobile adjustments --- */
+@media(max-width:900px){
+  body{flex-direction:column;}
+  .sacred-sidebar{width:100%;min-height:auto;position:relative;}
+  .sidebar-silhouette{display:none;}
+}
+</style>
+</head>
+
+<body>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sacred-sidebar">
+    <div class="sidebar-inner">
+      <img src="images/lotus_symbol.png" alt="Lotus" class="sidebar-lotus">
+      <h3>🪔 Auspicious Today</h3>
+      <ul class="auspicious-list">
+        <li><strong>Pradosham</strong> – 6:15 PM</li>
+        <li><strong>Pournami</strong> – Oct 30 2025</li>
+        <li><strong>Ekadasi</strong> – Nov 2 2025</li>
+      </ul>
+
+      <h3>🕉 Temple Categories</h3>
+      <ul class="sidebar-links">
+        <li><a href="divyadesam.html">Divya Desam</a></li>
+        <li><a href="padalpetra.html">Padal Petra Sthalam</a></li>
+        <li><a href="sakthipeetham.html">Shakti Peetham</a></li>
+        <li><a href="arupadaiveedu.html">6 Padai Veedu</a></li>
+      </ul>
+
+      <img src="images/nataraja_shadow.png" alt="Nataraja" class="sidebar-silhouette">
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <header>
+      <h1>🪷 Moksha Yatra</h1>
+      <p>Journey through the temples of South India</p>
+    </header>
+
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="tamilnadu.html">Tamil Nadu</a>
+      <a href="andhra.html">Andhra Pradesh</a>
+      <a href="kerala.html">Kerala</a>
+      <a href="karnataka.html">Karnataka</a>
+    </nav>
+
+    <section class="hero">
+      <h2>Discover Divinity</h2>
+      <p>From the granite spires of Thanjavur to the waves of Kanyakumari – walk the sacred circuits that connect history and hearts.</p>
+      <div class="cta-buttons">
+        <button>🧭 Start Exploring</button>
+        <button>📜 Read Legends</button>
+      </div>
+    </section>
+
+    <!-- SACRED CIRCUITS (shortened preview on home) -->
+    <section class="vertical-circuits">
+      <h2>🪷 Sacred Circuits</h2>
+      <p>Preview the temple trails you can follow across the South.</p>
+
+      <div class="circuit">
+        <img src="images/trichy_tanjore_circuit.jpg" alt="Trichy Thanjavur Circuit">
+        <div class="circuit-info">
+          <h3>Trichy – Thanjavur Trail</h3>
+          <p>8 temples in 2 days including Srirangam & Brihadeeswarar.</p>
+          <button>🧭 View Route</button>
+        </div>
+      </div>
+
+      <div class="circuit">
+        <img src="images/madurai_arupadai.jpg" alt="Madurai Murugan Circuit">
+        <div class="circuit-info">
+          <h3>Madurai – Murugan Circuit</h3>
+          <p>Six abodes of Lord Murugan across Tamil Nadu.</p>
+          <button>🧭 View Route</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="devotional-stories">
+      <h2>📜 Legends & Lore</h2>
+      <div class="story-carousel">
+        <div class="story-card"><img src="images/ganesha_story.jpg"><p>When Ganesha circled His parents and won the world.</p></div>
+        <div class="story-card"><img src="images/shiva_dance.jpg"><p>The cosmic dance of Nataraja at Chidambaram.</p></div>
+        <div class="story-card"><img src="images/narada_story.jpg"><p>Narada’s song that taught the devas humility.</p></div>
+      </div>
+    </section>
+
+    <footer>© 2025 Moksha Yatra | Built with devotion and open knowledge</footer>
+  </main>
+  <script>
+async function loadAuspicious() {
+  try {
+    const res = await fetch('today.json');
+    if (!res.ok) throw new Error('JSON not found');
+    const data = await res.json();
+    const list = document.querySelector('.auspicious-list');
+    list.innerHTML = ''; // clear old items
+
+    // headline date
+    const dateLi = document.createElement('li');
+    dateLi.innerHTML = `<strong>Date</strong> – ${data.date}`;
+    list.appendChild(dateLi);
+
+    // major events
+    data.events.forEach(ev => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${ev.name}</strong> – ${ev.time}`;
+      list.appendChild(li);
+    });
+
+    // daily times
+    const extra = [
+      ["Rahu Kalam", data.rahuKalam],
+      ["Yamakandam", data.yamakandam],
+      ["Nalla Neram", data.nallaNeram],
+      ["Chandrashtam", data.chandrashtam],
+      ["Tamil Month", data.tamilMonth],
+      ["Telugu Month", data.teluguMonth]
+    ];
+    extra.forEach(([label,val])=>{
+      if(val){
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${label}</strong> – ${val}`;
+        list.appendChild(li);
+      }
+    });
+
+    // speciality
+    if (data.speciality) {
+      const spec = document.createElement('li');
+      spec.style.marginTop = '0.5rem';
+      spec.style.fontStyle = 'italic';
+      spec.style.color = '#fff4e5';
+      spec.textContent = 'Speciality – ' + data.speciality;
+      list.appendChild(spec);
+    }
+  } catch (err) {
+    console.error('Auspicious data load failed:', err);
+  }
+}
+document.addEventListener('DOMContentLoaded', loadAuspicious);
 </script>
+
 </body>
 </html>
