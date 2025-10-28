@@ -1,131 +1,308 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tamil Nadu Temples — Moksha Yatra</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* --- Tamil Nadu Sacred Atlas Extension --- */
+body {
+  background: linear-gradient(180deg,#3c0b1f 0%,#6d2444 45%,#a85775 90%);
+  color:#fff4f7;
+}
+.district-section {
+  margin: 1.2rem auto;
+  width: 95%;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  transition: all .3s ease;
+}
+.district-section:hover { box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+.district-header {
+  cursor:pointer;
+  background:linear-gradient(90deg,#7a2c4e 0%,#a84c72 100%);
+  padding:10px 14px;
+  border-radius:12px 12px 0 0;
+  text-align:center;
+}
+.district-header h2 {margin:0;font-family:'Playfair Display',serif;color:#ffe1ea;}
+.district-content {display:none;padding:14px;}
+.district-content img {width:100%;border-radius:12px;margin-bottom:12px;}
+.temple-list {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:10px;
+}
+.temple-card {
+  background:rgba(255,255,255,0.08);
+  border-radius:10px;
+  padding:10px 12px;
+  line-height:1.4;
+}
+.temple-card h4 {margin:4px 0;font-family:'Playfair Display',serif;color:#ffd8e5;}
+.temple-meta {font-size:0.85rem;color:#fce8ec;}
+.temple-festival {font-size:0.8rem;color:#ffd6d6;}
+footer {
+  background:#4c102a;
+  text-align:center;
+  padding:12px;
+  font-size:0.9rem;
+  color:#ffd8e5;
+  border-top:1px solid rgba(255,255,255,0.2);
+}
+</style>
 </head>
 <body>
+
 <nav>
   <div class="brand">Moksha Yatra</div>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="tamilnadu.html">Tamil Nadu</a>
+    <a href="tamilnadu.html" class="active">Tamil Nadu</a>
     <a href="#">Andhra</a>
     <a href="#">Karnataka</a>
     <a href="#">Kerala</a>
   </div>
 </nav>
 
-<header class="hero" aria-label="Tamil Nadu temples">
-  <div class="hero-bg" id="heroImage"
-       style="background-image:url('images/brihadeeswarar_dusk.jpg')"></div>
-  <div class="hero-overlay"></div>
-  <div class="mandala"></div>
+<header class="hero" style="background:linear-gradient(180deg,rgba(80,20,40,0.9),rgba(20,0,20,0.8)),url('images/meenakshi.jpg') center/cover no-repeat;">
   <div class="container hero-inner">
-    <h1>Tamil Nadu — Land of Living Temples</h1>
-    <p>From the granite Chola wonders of Thanjavur to the vibrant gopurams of Madurai and the sacred tanks of Kumbakonam — every stone here chants a hymn.</p>
+    <h1>Tamil Nadu — The Sacred Atlas</h1>
+    <p>Every river bend and hilltop in this land hides a shrine. Each temple is not just a monument but a living chronicle of devotion.</p>
   </div>
 </header>
 
-<main class="main container">
+<main class="container">
 
-  <!-- Kumbakonam -->
-  <section class="section">
-    <img src="images/kumbakonam_banner.jpg" alt="Kumbakonam temples" style="width:100%;border-radius:14px;margin-bottom:14px;">
-    <div class="section-title"><h2>Kumbakonam & Environs</h2></div>
-    <div class="grid">
-      <article class="card">
-        <img src="images/sarangapani.jpg" alt="Sarangapani Temple">
-        <div class="inner">
-          <h3>Sarangapani Temple</h3>
-          <div class="meta">Divya Desam • Vishnu</div>
-          <p>Among the 108 Divya Desams. The Lord rests in a chariot-shaped sanctum. A grand car festival defines Kumbakonam’s spiritual calendar.</p>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/airavatesvara.jpg" alt="Airavatesvara Temple">
-        <div class="inner">
-          <h3>Airavatesvara (Darasuram)</h3>
-          <div class="meta">Chola • Shiva</div>
-          <p>UNESCO World Heritage monument built by Rajaraja Chola II. Stone carvings depict dance and music with astonishing finesse.</p>
-        </div>
-      </article>
+<!-- Chennai -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🪔 Chennai District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/chennai_temple.jpg" alt="Chennai temples">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Kapaleeshwarar Temple</h4>
+        <div class="temple-meta">Shiva • Padal Petra Sthalam • Latitude:13.0409, Longitude:80.2663</div>
+        <p>Significance: Removes obstacles</p>
+        <div class="temple-festival">Festival: Maha Shivaratri</div>
+      </div>
+      <div class="temple-card">
+        <h4>Parthasarathy Temple</h4>
+        <div class="temple-meta">Vishnu • Divya Desam • 13.0532,80.2794</div>
+        <p>Significance: Relief from doshas</p>
+        <div class="temple-festival">Festival: Vaikunta Ekadasi</div>
+      </div>
+      <div class="temple-card">
+        <h4>Ashtalakshmi Temple</h4>
+        <div class="temple-meta">Devi • Shakti Peetham • 13.0112,80.2814</div>
+        <p>Significance: Wealth and prosperity</p>
+        <div class="temple-festival">Festival: Navaratri</div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider">🪷</div>
-
-  <!-- Thanjavur -->
-  <section class="section">
-    <img src="images/tanjore_banner.jpg" alt="Thanjavur temples" style="width:100%;border-radius:14px;margin-bottom:14px;">
-    <div class="section-title"><h2>Thanjavur District</h2></div>
-    <div class="grid">
-      <article class="card">
-        <img src="images/brihadeeswarar_dusk.jpg" alt="Brihadeeswarar Temple">
-        <div class="inner">
-          <h3>Brihadeeswarar (Peruvudaiyar)</h3>
-          <div class="meta">Shiva • UNESCO</div>
-          <p>Raja Raja Chola I’s masterpiece with a 216-ft vimana and the world’s largest monolithic Nandi. Architecture as devotion.</p>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/gangaikonda.jpg" alt="Gangaikonda Cholapuram">
-        <div class="inner">
-          <h3>Gangaikonda Cholapuram</h3>
-          <div class="meta">Shiva • Chola</div>
-          <p>Built by Rajendra Chola I to commemorate his northern victories. Sculptural detailing softens imperial power with grace.</p>
-        </div>
-      </article>
+<!-- Kanchipuram -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🪷 Kanchipuram District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/kanchipuram_banner.jpg" alt="Kanchipuram temples">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Ekambareswarar Temple</h4>
+        <div class="temple-meta">Shiva • Padal Petra Sthalam • 12.8310,79.7068</div>
+        <p>Significance: Health and longevity</p>
+        <div class="temple-festival">Festival: Karthigai Deepam</div>
+      </div>
+      <div class="temple-card">
+        <h4>Varadharaja Perumal Temple</h4>
+        <div class="temple-meta">Vishnu • Divya Desam • 12.8374,79.7051</div>
+        <p>Significance: Fertility and family welfare</p>
+        <div class="temple-festival">Festival: Brahmotsavam</div>
+      </div>
+      <div class="temple-card">
+        <h4>Kamakshi Amman Temple</h4>
+        <div class="temple-meta">Devi • Shakti Peetham • 12.8351,79.7033</div>
+        <p>Significance: Marriage harmony</p>
+        <div class="temple-festival">Festival: Aadi Pooram</div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider">🪷</div>
-
-  <!-- Madurai -->
-  <section class="section">
-    <img src="images/madurai_banner.jpg" alt="Madurai Meenakshi" style="width:100%;border-radius:14px;margin-bottom:14px;">
-    <div class="section-title"><h2>Madurai & Surroundings</h2></div>
-    <div class="grid">
-      <article class="card">
-        <img src="images/meenakshi.jpg" alt="Meenakshi Amman Temple">
-        <div class="inner">
-          <h3>Meenakshi Amman Temple</h3>
-          <div class="meta">Shakti • Madurai</div>
-          <p>One of India’s oldest living temple complexes. The Chithirai festival reenacts the divine marriage of Meenakshi and Sundareswarar.</p>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/thirupparamkunram.jpg" alt="Thiruparankundram Murugan Temple">
-        <div class="inner">
-          <h3>Thiruparankundram Murugan Temple</h3>
-          <div class="meta">Murugan • Arupadai Veedu</div>
-          <p>One of the six sacred abodes of Murugan, carved into rock near Madurai. Symbolizes victory over demons and ego.</p>
-        </div>
-      </article>
+<!-- Thanjavur -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🛕 Thanjavur District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/tanjore_banner.jpg" alt="Thanjavur temples">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Brihadeeswarar Temple</h4>
+        <div class="temple-meta">Shiva • Padal Petra Sthalam • 10.7820,79.1310</div>
+        <p>Significance: Spiritual power</p>
+        <div class="temple-festival">Festival: Maha Shivaratri</div>
+      </div>
+      <div class="temple-card">
+        <h4>Srirangam Ranganathaswamy Temple</h4>
+        <div class="temple-meta">Vishnu • Divya Desam • 10.8700,78.6946</div>
+        <p>Significance: Removes doshas</p>
+        <div class="temple-festival">Festival: Vaikunta Ekadasi</div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Madurai -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🌺 Madurai District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/madurai_banner.jpg" alt="Madurai temples">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Meenakshi Amman Temple</h4>
+        <div class="temple-meta">Devi • Shakti Peetham • 9.9196,78.1191</div>
+        <p>Significance: Marriage and family blessings</p>
+        <div class="temple-festival">Festival: Chithirai Festival</div>
+      </div>
+      <div class="temple-card">
+        <h4>Thiruparankundram Murugan Temple</h4>
+        <div class="temple-meta">Murugan • Aru Padai Veedu • 9.8876,78.0984</div>
+        <p>Significance: Victory and courage</p>
+        <div class="temple-festival">Festival: Skanda Sashti</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tirunelveli -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🕉 Tirunelveli District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/tirunelveli_banner.jpg" alt="Tirunelveli temples">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Nellaiappar Temple</h4>
+        <div class="temple-meta">Shiva • Padal Petra Sthalam • 8.7139,77.6926</div>
+        <p>Significance: Health and prosperity</p>
+        <div class="temple-festival">Festival: Panguni Uthiram</div>
+      </div>
+      <div class="temple-card">
+        <h4>Nava Tirupati Temples</h4>
+        <div class="temple-meta">Vishnu • Nava Tirupati • 8.7200,77.7000</div>
+        <p>Significance: Astrological remedies</p>
+        <div class="temple-festival">Festival: Various Tirupati Festivals</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dindigul -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🔱 Dindigul District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/palani_banner.jpg" alt="Palani Murugan Temple">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Palani Murugan Temple</h4>
+        <div class="temple-meta">Murugan • Aru Padai Veedu • 10.4500,77.5200</div>
+        <p>Significance: Relief from Rahu dosha</p>
+        <div class="temple-festival">Festival: Thaipusam</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kumbakonam -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>💮 Kumbakonam District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/kumbakonam_banner.jpg" alt="Kumbakonam temples">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Sarangapani Temple</h4>
+        <div class="temple-meta">Vishnu • Divya Desam • 10.9601,79.3632</div>
+        <p>Significance: Spiritual upliftment</p>
+        <div class="temple-festival">Festival: Chitra Pournami</div>
+      </div>
+      <div class="temple-card">
+        <h4>Nageswaran Temple</h4>
+        <div class="temple-meta">Shiva • Padal Petra Sthalam • 10.9623,79.3644</div>
+        <p>Significance: Removes Sarpa Dosha</p>
+        <div class="temple-festival">Festival: Maha Shivaratri</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kanyakumari -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🌸 Kanyakumari District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/kanyakumari_banner.jpg" alt="Kumari Amman Temple">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Kumari Amman Temple</h4>
+        <div class="temple-meta">Devi • Shakti Peetham • 8.0800,77.5600</div>
+        <p>Significance: Fertility and well-being</p>
+        <div class="temple-festival">Festival: Navaratri</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nagapattinam -->
+<section class="district-section">
+  <div class="district-header" onclick="toggleDistrict(this)">
+    <h2>🪙 Nagapattinam District</h2>
+  </div>
+  <div class="district-content">
+    <img src="images/nagapattinam_banner.jpg" alt="Soundararajaperumal Temple">
+    <div class="temple-list">
+      <div class="temple-card">
+        <h4>Soundararajaperumal Temple</h4>
+        <div class="temple-meta">Vishnu • Divya Desam candidate • 10.7653,79.8445</div>
+        <p>Significance: Protection from evil</p>
+        <div class="temple-festival">Festival: Brahmotsavam</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer class="footer container">
-  <p>© 2025 Moksha Yatra — Sacred Grandeur • Tamil Nadu Temples</p>
+<footer>
+  © 2025 Moksha Yatra — Sacred Atlas of Tamil Nadu Temples
 </footer>
 
 <script>
-/* simple background rotation for hero */
-const imgs=[
- 'images/brihadeeswarar_dusk.jpg',
- 'images/srirangam.jpg',
- 'images/meenakshi.jpg'
-];
-let i=0;
-setInterval(()=>{
- i=(i+1)%imgs.length;
- document.getElementById('heroImage').style.backgroundImage=`url('${imgs[i]}')`;
-},6000);
+function toggleDistrict(el){
+  const content = el.nextElementSibling;
+  document.querySelectorAll('.district-content').forEach(c=>{
+    if(c!==content) c.style.display='none';
+  });
+  content.style.display = (content.style.display==='block') ? 'none' : 'block';
+}
 </script>
+
 </body>
 </html>
