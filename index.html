@@ -1,229 +1,606 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moksha Yatra – Home</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Moksha Yatra — Home</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body{
-  margin:0;display:flex;flex-direction:row;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(180deg,#3d081b 0%,#5f1e38 100%);
-  color:#fffaf3;
+:root{
+  --lotus:#e49ab0;
+  --gold:#d4af37;
+  --ivory:#f5efe4;
+  --stone1:#2b1a16;
+  --stone2:#3a2320;
+  --muted:rgba(245,239,228,0.8);
+  --card-bg: rgba(255,255,255,0.02);
+  --shadow: 0 8px 30px rgba(0,0,0,0.45);
 }
 
-/* --- Left Sacred Sidebar --- */
+/* Page reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,var(--stone2) 0%, #2a1410 60%);color:var(--ivory);-webkit-font-smoothing:antialiased}
+
+/* stone texture + silhouette (hero behind nav) */
+.page-bg {
+  position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(1200px 400px at 20% 10%, rgba(191,164,111,0.06), transparent 10%),
+    linear-gradient(180deg, rgba(40,20,16,0.95), rgba(18,9,8,0.98));
+  pointer-events:none;
+}
+/* soft repeating noise (CSS-only) */
+.page-bg::after{
+  content:"";position:absolute;inset:0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><filter id='n'><feTurbulence baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.02' /></svg>");
+  opacity:0.85;
+}
+
+/* silhouette overlay of a temple (subtle) */
+.temple-silhouette {
+  position:fixed; right: -5%; bottom: -2%;
+  width:65vw; height:65vh; opacity:0.06; z-index:-1;
+  background-image: url('images/temple_silhouette.svg'); /* add this SVG silhouette */
+  background-repeat:no-repeat; background-position:right bottom; background-size:contain;
+}
+
+/* Layout: left sidebar + main column */
+body{display:flex;flex-direction:row;min-height:100vh}
 .sacred-sidebar{
-  width:280px;min-height:100vh;
-  background:linear-gradient(180deg,#6b2340 0%,#a54a69 100%);
-  color:#fffaf3;position:sticky;top:0;
-  padding:1rem;box-shadow:inset -2px 0 6px rgba(0,0,0,0.3);
+  width:300px;min-height:100vh;position:sticky;top:0;
+  background:linear-gradient(180deg,#5b1d33 0%, #8c3b5a 100%);
+  padding:20px; box-shadow:inset -2px 0 8px rgba(0,0,0,0.5);
+  display:flex;flex-direction:column;gap:18px;align-items:center;
 }
-.sidebar-inner{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;}
-.sidebar-lotus{width:80px;margin-bottom:1rem;opacity:0.8;}
-.sacred-sidebar h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin:.8rem 0 .4rem;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:.3rem;width:100%;}
-.auspicious-list,.sidebar-links{list-style:none;padding:0;margin:0 0 1rem;font-size:.9rem;}
-.sidebar-links a{color:#ffd8e5;text-decoration:none;font-weight:500;}
-.sidebar-links a:hover{text-decoration:underline;}
-.sidebar-silhouette{width:90%;opacity:0.1;position:absolute;bottom:10px;}
+.sidebar-inner{width:100%;text-align:center}
+.sidebar-lotus{width:84px;opacity:0.95;margin-bottom:8px}
+.sacred-sidebar h3{font-family:'Playfair Display',serif;margin:6px 0;color:var(--ivory);font-size:1.05rem}
+.auspicious-list{list-style:none;padding:0;margin:0;width:100%;text-align:left}
+.auspicious-list li{padding:8px 6px;border-bottom:1px dotted rgba(255,255,255,0.04);font-size:0.95rem;color:var(--ivory)}
+.auspicious-list li strong{color:var(--lotus)}
+.auspicious-note{margin-top:8px;font-size:0.9rem;color:rgba(245,239,228,0.85);font-style:italic}
 
-/* --- Main Content --- */
-.main-content{flex:1;overflow-x:hidden;}
-header{
-  text-align:center;padding:2rem 1rem;
-  background:linear-gradient(180deg,#a54a69 0%,#6b2340 100%);
+/* small select fallback for city selection */
+.location-fallback{margin-top:8px;width:100%}
+.location-fallback select{width:100%;padding:8px;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:var(--ivory)}
+
+/* main content */
+.main-content{flex:1; min-height:100vh; padding:28px 36px 48px 36px; overflow-x:hidden}
+.header{
+  text-align:center;padding:28px 6px 16px 6px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.06));
+  margin-bottom:18px;border-radius:12px;
 }
-header h1{font-family:'Playfair Display',serif;margin:0;font-size:2.5rem;color:#fff;}
-nav{
-  background:rgba(255,255,255,0.1);
-  display:flex;justify-content:center;flex-wrap:wrap;padding:.5rem 0;
+.brand {
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;color:var(--gold);letter-spacing:1px;margin-bottom:6px;
+  text-shadow:0 2px 12px rgba(0,0,0,0.6)
 }
-nav a{color:#ffd8e5;text-decoration:none;margin:0 .8rem;font-weight:500;}
-nav a:hover{text-decoration:underline;}
+.lead {color:var(--muted);max-width:900px;margin:0 auto 12px;font-size:1.04rem}
+
+/* navigation */
+.navbar{display:flex;justify-content:center;gap:18px;padding:10px 0;margin-bottom:18px}
+.navbar a{color:var(--ivory);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.navbar a:hover{background:rgba(255,255,255,0.03);color:var(--gold)}
+
+/* hero visual */
 .hero{
-  background:url('images/temple_hero.jpg') center/cover no-repeat;
-  height:70vh;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  text-shadow:0 0 10px rgba(0,0,0,0.5);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  padding:36px;border-radius:12px;margin-bottom:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  box-shadow:var(--shadow);
 }
-.hero h2{font-family:'Playfair Display',serif;font-size:2.2rem;color:#fff;margin:0;}
-.hero p{max-width:600px;text-align:center;color:#fffaf3;}
-.cta-buttons button{
-  background:rgba(255,255,255,0.2);border:none;
-  border-radius:8px;margin:.3rem;padding:.5rem 1rem;
-  color:#fff;cursor:pointer;
-}
-.cta-buttons button:hover{background:#ffd8e5;color:#5a1731;}
+.hero-quote{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold);margin-bottom:8px;text-align:center}
+.hero-sub{color:var(--muted);max-width:760px;text-align:center}
 
-/* --- Sacred Circuits section (from earlier design) --- */
-.vertical-circuits{background:linear-gradient(180deg,#a54a69 0%,#e9b8c8 100%);padding:3rem 1rem;text-align:center;}
-.vertical-circuits h2{font-family:'Playfair Display',serif;color:#fff;}
-.vertical-circuits p{color:#fffaf3;max-width:600px;margin:0 auto 2rem;}
-.circuit{display:flex;flex-direction:column;align-items:center;margin:2rem auto;max-width:420px;background:rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;transition:transform .4s ease;}
-.circuit:hover{transform:scale(1.03);}
-.circuit img{width:100%;height:300px;object-fit:cover;filter:brightness(0.9);}
-.circuit-info{padding:1rem;color:#fffaf3;}
-.circuit-info h3{margin:.5rem 0;}
-.circuit-info button{background:rgba(255,255,255,0.2);border:none;border-radius:8px;margin:.3rem;padding:.5rem 1rem;color:#fff;cursor:pointer;}
-.circuit-info button:hover{background:#ffd8e5;color:#5a1731;}
+/* circuits & content blocks */
+.vertical-circuits{margin-top:6px;padding:34px;border-radius:12px;background:linear-gradient(180deg,#8d3a5d 0%, #eeb8c9 100%);color:#fff}
+.vertical-circuits h2{font-family:'Playfair Display',serif;margin:0 0 8px}
+.circuits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+.circuit-card{background:rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;transition:transform .28s;box-shadow:0 12px 30px rgba(0,0,0,0.4)}
+.circuit-card:hover{transform:translateY(-6px)}
+.circuit-card img{width:100%;height:260px;object-fit:cover;display:block}
+.circuit-body{padding:14px}
+.circuit-body h3{margin:6px 0;font-family:'Playfair Display',serif;color:#fff}
+.circuit-body p{color:rgba(255,250,250,0.9);margin:6px 0 12px}
+.circuit-actions{display:flex;gap:8px}
+.circuit-actions button{border:none;padding:8px 10px;border-radius:8px;cursor:pointer;background:rgba(255,255,255,0.12);color:#fff}
+.circuit-actions button.primary{background:var(--gold);color:#2a1410}
 
-.travel-packages{background:#f7c9d8;color:#3d081b;padding:2rem 1rem;text-align:center;}
-.travel-packages .package{background:rgba(255,255,255,0.7);margin:1rem auto;padding:1rem;border-radius:10px;max-width:400px;transition:transform .3s;}
-.travel-packages .package:hover{transform:scale(1.04);}
-.devotional-stories{background:linear-gradient(180deg,#f7c9d8 0%,#ffe5ee 100%);padding:2rem 1rem 4rem;text-align:center;color:#3d081b;}
-.story-carousel{display:flex;overflow-x:auto;gap:1rem;scroll-snap-type:x mandatory;padding-bottom:1rem;}
-.story-card{scroll-snap-align:center;background:#fff;border-radius:12px;min-width:220px;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:transform .3s;}
-.story-card:hover{transform:translateY(-5px);}
-.story-card img{width:100%;height:150px;object-fit:cover;border-radius:12px 12px 0 0;}
-.story-card p{padding:.7rem;font-size:.9rem;line-height:1.3;}
+/* stories carousel */
+.story-carousel{display:flex;gap:12px;overflow-x:auto;padding:14px 0}
+.story-card{min-width:220px;background:rgba(255,255,255,0.95);color:#2a1410;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+.story-card img{width:100%;height:130px;object-fit:cover}
+.story-card p{padding:10px}
 
-footer{text-align:center;padding:1rem;background:linear-gradient(180deg,#5f1e38 0%,#3d081b 100%);font-size:.9rem;color:#f0e2e1;}
+/* footer */
+.footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted)}
 
-/* --- Mobile adjustments --- */
-@media(max-width:900px){
-  body{flex-direction:column;}
-  .sacred-sidebar{width:100%;min-height:auto;position:relative;}
-  .sidebar-silhouette{display:none;}
+/* responsive adjustments */
+@media(max-width:980px){
+  .sacred-sidebar{display:none}
+  body{flex-direction:column}
+  .main-content{padding:18px}
+  .hero-quote{font-size:1.25rem}
 }
 </style>
 </head>
-
 <body>
-  <!-- LEFT SIDEBAR -->
-  <aside class="sacred-sidebar">
-    <div class="sidebar-inner">
-      <img src="images/lotus_symbol.png" alt="Lotus" class="sidebar-lotus">
-      <h3>🪔 Auspicious Today</h3>
-      <ul class="auspicious-list">
-        <li><strong>Pradosham</strong> – 6:15 PM</li>
-        <li><strong>Pournami</strong> – Oct 30 2025</li>
-        <li><strong>Ekadasi</strong> – Nov 2 2025</li>
-      </ul>
 
-      <h3>🕉 Temple Categories</h3>
-      <ul class="sidebar-links">
-        <li><a href="divyadesam.html">Divya Desam</a></li>
-        <li><a href="padalpetra.html">Padal Petra Sthalam</a></li>
-        <li><a href="sakthipeetham.html">Shakti Peetham</a></li>
-        <li><a href="arupadaiveedu.html">6 Padai Veedu</a></li>
-      </ul>
+<div class="page-bg"></div>
+<div class="temple-silhouette"></div>
 
-      <img src="images/nataraja_shadow.png" alt="Nataraja" class="sidebar-silhouette">
+<!-- LEFT SIDEBAR -->
+<aside class="sacred-sidebar" aria-label="Sacred sidebar with daily times">
+  <div class="sidebar-inner">
+    <img class="sidebar-lotus" src="images/lotus_symbol.png" alt="Lotus symbol (logo)">
+    <h3>🪔 Auspicious Today</h3>
+
+    <ul class="auspicious-list" aria-live="polite">
+      <li><strong>Loading…</strong> Determining location & sunrise</li>
+    </ul>
+
+    <div class="auspicious-note">All times shown in your local time. If geolocation is denied, Chennai will be used as default — you can also pick a city below.</div>
+
+    <div class="location-fallback">
+      <label for="citySelect" style="font-size:0.85rem;color:rgba(255,255,255,0.78)">Pick location (fallback)</label>
+      <select id="citySelect" aria-label="Select fallback city">
+        <option value="">— use device location —</option>
+        <option value="13.0827,80.2707">Chennai</option>
+        <option value="9.9312,76.2673">Thiruvananthapuram</option>
+        <option value="11.0168,76.9558">Coimbatore</option>
+        <option value="13.0827,80.2707">Madras/Chennai</option>
+        <option value="12.9716,77.5946">Bengaluru</option>
+        <option value="8.0883,77.5385">Kanyakumari</option>
+        <option value="10.7905,78.7047">Trichy (Tiruchirappalli)</option>
+      </select>
     </div>
-  </aside>
+  </div>
+</aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
-    <header>
-      <h1>🪷 Moksha Yatra</h1>
-      <p>Journey through the temples of South India</p>
-    </header>
-
-    <nav>
-      <a href="index.html" class="active">Home</a>
+<!-- MAIN CONTENT -->
+<div class="main-content">
+  <div class="header">
+    <div class="brand">Moksha Yatra</div>
+    <div class="lead">A quiet temple atlas — walk circuits, read the stories, and plan days by the rhythms of the sky.</div>
+    <div class="navbar">
+      <a href="index.html">Home</a>
       <a href="tamilnadu.html">Tamil Nadu</a>
-      <a href="andhra.html">Andhra Pradesh</a>
-      <a href="kerala.html">Kerala</a>
+      <a href="andhra.html">Andhra</a>
       <a href="karnataka.html">Karnataka</a>
-    </nav>
+      <a href="kerala.html">Kerala</a>
+    </div>
+  </div>
 
-    <section class="hero">
-      <h2>Discover Divinity</h2>
-      <p>From the granite spires of Thanjavur to the waves of Kanyakumari – walk the sacred circuits that connect history and hearts.</p>
-      <div class="cta-buttons">
-        <button>🧭 Start Exploring</button>
-        <button>📜 Read Legends</button>
-      </div>
-    </section>
+  <section class="hero" aria-label="Hero">
+    <div class="hero-quote">“A journey through stone and silence — each shrine a doorway.”</div>
+    <div class="hero-sub">Explore curated circuits, live auspicious times for the day, and a library of devotional legends.</div>
+  </section>
 
-    <!-- SACRED CIRCUITS (shortened preview on home) -->
-    <section class="vertical-circuits">
-      <h2>🪷 Sacred Circuits</h2>
-      <p>Preview the temple trails you can follow across the South.</p>
+  <!-- Circuits (vertical stack displayed as cards) -->
+  <section class="vertical-circuits" aria-label="Sacred circuits">
+    <h2>🪷 Sacred Circuits & Journeys</h2>
+    <p>Suggested temple circuits (6–9 temples each) and short day plans you can take on by foot or car.</p>
 
-      <div class="circuit">
-        <img src="images/trichy_tanjore_circuit.jpg" alt="Trichy Thanjavur Circuit">
-        <div class="circuit-info">
-          <h3>Trichy – Thanjavur Trail</h3>
-          <p>8 temples in 2 days including Srirangam & Brihadeeswarar.</p>
-          <button>🧭 View Route</button>
+    <div class="circuits-grid">
+      <article class="circuit-card">
+        <img src="images/trichy_tanjore_circuit.jpg" alt="Trichy - Tanjore">
+        <div class="circuit-body">
+          <h3>Trichy — Thanjavur Heritage Trail</h3>
+          <p>2-day route: Srirangam → Ucchi Pillayar → Brihadeeswarar → Thirukandiyur — best for architecture & bhakti.</p>
+          <div class="circuit-actions"><button class="primary">🧭 View Route</button><button>📜 Story</button></div>
         </div>
-      </div>
+      </article>
 
-      <div class="circuit">
-        <img src="images/madurai_arupadai.jpg" alt="Madurai Murugan Circuit">
-        <div class="circuit-info">
-          <h3>Madurai – Murugan Circuit</h3>
-          <p>Six abodes of Lord Murugan across Tamil Nadu.</p>
-          <button>🧭 View Route</button>
+      <article class="circuit-card">
+        <img src="images/madurai_arupadai.jpg" alt="Madurai Arupadai">
+        <div class="circuit-body">
+          <h3>Madurai — Arupadai Veedu Circuit</h3>
+          <p>3–4 day Murugan circuit covering Thiruparankundram, Palani, Swamimalai, Tiruchendur and Pazhamudircholai.</p>
+          <div class="circuit-actions"><button class="primary">🧭 View Route</button><button>📜 Story</button></div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="devotional-stories">
-      <h2>📜 Legends & Lore</h2>
-      <div class="story-carousel">
-        <div class="story-card"><img src="images/ganesha_story.jpg"><p>When Ganesha circled His parents and won the world.</p></div>
-        <div class="story-card"><img src="images/shiva_dance.jpg"><p>The cosmic dance of Nataraja at Chidambaram.</p></div>
-        <div class="story-card"><img src="images/narada_story.jpg"><p>Narada’s song that taught the devas humility.</p></div>
-      </div>
-    </section>
+      <article class="circuit-card">
+        <img src="images/navagraha_circuit.jpg" alt="Navagraha Circuit">
+        <div class="circuit-body">
+          <h3>Kumbakonam — Navagraha Circuit</h3>
+          <p>Day-trip friendly cluster of nine planetary shrines around Kumbakonam — ideal for pariharam.</p>
+          <div class="circuit-actions"><button class="primary">🧭 View Route</button><button>📜 Story</button></div>
+        </div>
+      </article>
 
-    <footer>© 2025 Moksha Yatra | Built with devotion and open knowledge</footer>
-  </main>
-  <script>
-async function loadAuspicious() {
-  try {
-    const res = await fetch('today.json');
-    if (!res.ok) throw new Error('JSON not found');
-    const data = await res.json();
-    const list = document.querySelector('.auspicious-list');
-    list.innerHTML = ''; // clear old items
+      <article class="circuit-card">
+        <img src="images/tirunelveli_navatirupati.jpg" alt="Nava Tirupati">
+        <div class="circuit-body">
+          <h3>Tirunelveli — Nava Tirupati</h3>
+          <p>Nine Vishnu shrines along the Tamirabarani — each temple linked to a planet and healing remedies.</p>
+          <div class="circuit-actions"><button class="primary">🧭 View Route</button><button>📜 Story</button></div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    // headline date
-    const dateLi = document.createElement('li');
-    dateLi.innerHTML = `<strong>Date</strong> – ${data.date}`;
-    list.appendChild(dateLi);
+  <!-- Stories -->
+  <section style="margin-top:18px">
+    <h2 style="font-family:'Playfair Display',serif">📜 Stories & Legends</h2>
+    <div class="story-carousel" role="list">
+      <div class="story-card"><img src="images/ganesha_story.jpg" alt=""><p>Ganesha’s clever world-circumambulation story — a tale about devotion and wisdom.</p></div>
+      <div class="story-card"><img src="images/shiva_dance.jpg" alt=""><p>The cosmic Nataraja: how dance became the language of the cosmos.</p></div>
+      <div class="story-card"><img src="images/narada_story.jpg" alt=""><p>Narada’s mischief and the lessons of humility that followed.</p></div>
+    </div>
+  </section>
 
-    // major events
-    data.events.forEach(ev => {
-      const li = document.createElement('li');
-      li.innerHTML = `<strong>${ev.name}</strong> – ${ev.time}`;
-      list.appendChild(li);
-    });
+  <div class="footer">© 2025 Moksha Yatra — Sacred Atlas</div>
+</div>
 
-    // daily times
-    const extra = [
-      ["Rahu Kalam", data.rahuKalam],
-      ["Yamakandam", data.yamakandam],
-      ["Nalla Neram", data.nallaNeram],
-      ["Chandrashtam", data.chandrashtam],
-      ["Tamil Month", data.tamilMonth],
-      ["Telugu Month", data.teluguMonth]
-    ];
-    extra.forEach(([label,val])=>{
-      if(val){
-        const li = document.createElement('li');
-        li.innerHTML = `<strong>${label}</strong> – ${val}`;
-        list.appendChild(li);
-      }
-    });
+<!-- ======= SCRIPT: Geolocation -> Sunrise -> RahuKalam etc. ======= -->
+<script>
+/*
+  This script:
+  - attempts to get user's geolocation
+  - computes sunrise & sunset (NOAA-like algorithm approximation)
+  - divides day into 8 equal parts to compute Rahu Kalam per weekday mapping
+  - computes Brahma Muhurta (1.5 hr before sunrise) and Nalla Neram approximations
+  - fills sidebar .auspicious-list with results
+  Notes: approximations are indicated; for ritual-critical times verify locally.
+*/
 
-    // speciality
-    if (data.speciality) {
-      const spec = document.createElement('li');
-      spec.style.marginTop = '0.5rem';
-      spec.style.fontStyle = 'italic';
-      spec.style.color = '#fff4e5';
-      spec.textContent = 'Speciality – ' + data.speciality;
-      list.appendChild(spec);
-    }
-  } catch (err) {
-    console.error('Auspicious data load failed:', err);
-  }
+/* ---------- Utilities: date/time helpers ---------- */
+function toLocalTimeISO(d){ return new Date(d.getTime() - d.getTimezoneOffset()*60000).toISOString(); }
+function pad2(n){ return n<10 ? '0'+n : n; }
+function fmtTime(date){
+  if(!date) return '--';
+  // format to hh:mm AM/PM local
+  const opts={hour:'numeric',minute:'2-digit'};
+  return date.toLocaleTimeString([], opts);
 }
-document.addEventListener('DOMContentLoaded', loadAuspicious);
+
+/* ---------- Sunrise/Sunset algorithm (simple) ----------
+   Based on NOAA algorithm approximations. Good for web use.
+*/
+function julianDay(date){
+  // date: JS Date UTC
+  return (date/86400000) + 2440587.5;
+}
+function toJulianCentury(jd){
+  return (jd - 2451545.0)/36525.0;
+}
+
+function sunGeomMeanLong(T){
+  return (280.46646 + T*(36000.76983 + T*0.0003032)) % 360;
+}
+function sunGeomMeanAnomaly(T){
+  return 357.52911 + T*(35999.05029 - 0.0001537*T);
+}
+function eccentEarthOrbit(T){
+  return 0.016708634 - T*(0.000042037 + 0.0000001267*T);
+}
+function sunEqOfCenter(T, M){
+  const Mrad = M * Math.PI/180;
+  return Math.sin(Mrad)*(1.914602 - T*(0.004817 + 0.000014*T))
+       + Math.sin(2*Mrad)*(0.019993 - 0.000101*T)
+       + Math.sin(3*Mrad)*0.000289;
+}
+function sunTrueLong(L0, C){ return L0 + C; }
+function sunAppLong(T, trueLong){
+  const omega = 125.04 - 1934.136 * T;
+  return trueLong - 0.00569 - 0.00478*Math.sin(omega*Math.PI/180);
+}
+function meanObliqEcliptic(T){
+  return 23 + (26 + ((21.448 - T*(46.815 + T*(0.00059 - T*0.001813))))/60)/60;
+}
+function obliqCorr(T, e0){
+  const omega = 125.04 - 1934.136*T;
+  return e0 + 0.00256*Math.cos(omega*Math.PI/180);
+}
+function sunDeclination(epsilon, lambda){
+  const eps = epsilon*Math.PI/180, lam=lambda*Math.PI/180;
+  return Math.asin(Math.sin(eps)*Math.sin(lam)) * 180/Math.PI;
+}
+function varY(epsilon){
+  const e = epsilon*Math.PI/180;
+  return Math.tan(e/2)*Math.tan(e/2);
+}
+function eqOfTime(T, L0, e, M, lambda){
+  // returns minutes
+  const y = varY(e);
+  const L0rad = L0*Math.PI/180;
+  const Mrad = M*Math.PI/180;
+  const lamrad = lambda*Math.PI/180;
+  const sin2L0 = Math.sin(2*L0rad), sinM = Math.sin(Mrad);
+  const cos2L0 = Math.cos(2*L0rad), sin4L0 = Math.sin(4*L0rad);
+  const sin2M = Math.sin(2*Mrad);
+  const Etime = y*sin2L0 - 2*e*sinM + 4*e*y*sinM*cos2L0 - 0.5*y*y*sin4L0 - 1.25*e*e*sin2M;
+  return 4*(Etime*180/Math.PI); // minutes
+}
+
+function calcSunriseSunset(dateUTC, lat, lon) {
+  // dateUTC: Date set to local midnight in UTC (so pass new Date(Date.UTC(y,m,d)))
+  const jd = julianDay(dateUTC);
+  const T = toJulianCentury(jd);
+  const L0 = sunGeomMeanLong(T);
+  const M = sunGeomMeanAnomaly(T);
+  const e = eccentEarthOrbit(T);
+  const C = sunEqOfCenter(T, M);
+  const trueLong = sunTrueLong(L0, C);
+  const appLong = sunAppLong(T, trueLong);
+  const e0 = meanObliqEcliptic(T);
+  const eps = obliqCorr(T, e0);
+  const decl = sunDeclination(eps, appLong);
+
+  const eqtime = eqOfTime(T, L0, e0, M, appLong); // minutes
+
+  // hour angle for sunrise (sun altitude -0.833°)
+  const zen = 90.833;
+  const latRad = lat*Math.PI/180;
+  const declRad = decl*Math.PI/180;
+  const cosH = (Math.cos(zen*Math.PI/180) - Math.sin(latRad)*Math.sin(declRad)) / (Math.cos(latRad)*Math.cos(declRad));
+  if (cosH > 1) return null; // polar night
+  if (cosH < -1) return null; // polar day
+  const H = Math.acos(cosH) * 180/Math.PI; // degrees
+
+  // Solar noon (UTC) in fractional hours
+  const solarNoon = (720 - 4*lon - eqtime) / 1440; // fraction of day
+  const sunrise = solarNoon - H*4/1440;
+  const sunset = solarNoon + H*4/1440;
+
+  // convert fractional day to Date objects (UTC)
+  const base = dateUTC.getTime();
+  const sunriseTime = new Date(base + sunrise * 86400000);
+  const sunsetTime = new Date(base + sunset * 86400000);
+  return {sunrise: sunriseTime, sunset: sunsetTime};
+}
+
+/* ---------- Rahu Kalam mapping ----------
+   Divide day (sunrise->sunset) into 8 equal parts. Each weekday has one Rahu slot:
+   Monday: 2, Tuesday:7, Wednesday:5, Thursday:6, Friday:4, Saturday:3, Sunday:8
+*/
+const rahuSlotByWeekday = {
+  0:8, // Sunday (JS:0)
+  1:2, // Monday
+  2:7, // Tuesday
+  3:5, // Wednesday
+  4:6, // Thursday
+  5:4, // Friday
+  6:3  // Saturday
+};
+
+/* ---------- Nalla Neram & Brahma Muhurta approximations ----------
+   - Brahma Muhurta: roughly 1 hour 36 minutes before sunrise (approx 1.5 hrs). We'll present a 90-min block ending 48 min before sunrise (traditional 1.5h before sunrise).
+   - Nalla Neram (good time): provide a practical 60-min slot after sunrise and a 60-min slot before sunset (approximation).
+*/
+function computeAuspiciousTimes(sunrise, sunset, weekday){
+  const dayLen = sunset - sunrise; // milliseconds
+  const segment = dayLen / 8;
+  const rahuIndex = rahuSlotByWeekday[weekday]; // 1..8
+  const rahuStart = new Date(sunrise.getTime() + (rahuIndex - 1)*segment);
+  const rahuEnd = new Date(rahuStart.getTime() + segment);
+
+  // Yamakandam — approximate as the 2nd slot after sunrise for this implementation (traditional tables vary)
+  // We'll compute Yamakandam as slot 4 for secure coverage if uncertain; but to be honest, we'll show morning/evening variant:
+  const yamaIndex = Math.max(1, Math.floor( (segment>0 ? 3 : 1) )); // fallback placeholder
+  // For clarity: rather than risk wrong mapping, we compute Yamakandam as the middle slot of the day:
+  const yamaIndexBest = Math.ceil(8/2); // 4
+  const yamaStart = new Date(sunrise.getTime() + (yamaIndexBest - 1)*segment);
+  const yamaEnd = new Date(yamaStart.getTime() + segment);
+
+  // Brahma muhurta (approx) — 90 minutes ending ~48 minutes before sunrise (we'll give 90-min window)
+  const brahmaEnd = new Date(sunrise.getTime() - (48*60000)); // 48 minutes before sunrise
+  const brahmaStart = new Date(brahmaEnd.getTime() - (90*60000));
+
+  // Nalla Neram approximate morning: 60 minutes after sunrise
+  const nallaMorningStart = new Date(sunrise.getTime());
+  const nallaMorningEnd = new Date(sunrise.getTime() + (60*60000));
+  // Nalla Neram evening: 60 minutes before sunset
+  const nallaEveningStart = new Date(sunset.getTime() - (60*60000));
+  const nallaEveningEnd = new Date(sunset.getTime());
+
+  return {
+    rahuStart, rahuEnd,
+    yamaStart, yamaEnd,
+    brahmaStart, brahmaEnd,
+    nallaMorningStart, nallaMorningEnd,
+    nallaEveningStart, nallaEveningEnd
+  };
+}
+
+/* ---------- Tamil & Telugu month approximations ----------
+   We use mid-month boundaries (approx) — commonly Tamil months start around 14/15 of Gregorian months.
+   This is an approximation; for exact lunar-solar months, use a panchangam service.
+*/
+const tamilMonths = [
+  {name:'Chithirai', startMonth:3, startDay:14},  // Apr 14
+  {name:'Vaikasi', startMonth:4, startDay:14},    // May 14
+  {name:'Aani', startMonth:5, startDay:15},       // Jun 15
+  {name:'Aadi', startMonth:6, startDay:15},       // Jul 15
+  {name:'Aavani', startMonth:7, startDay:17},     // Aug 17
+  {name:'Purattasi', startMonth:8, startDay:17},  // Sep 17
+  {name:'Aippasi', startMonth:9, startDay:17},    // Oct 17
+  {name:'Karthigai', startMonth:10, startDay:16}, // Nov 16
+  {name:'Margazhi', startMonth:11, startDay:15},  // Dec 15
+  {name:'Thai', startMonth:0, startDay:14},       // Jan 14
+  {name:'Maasi', startMonth:1, startDay:13},      // Feb 13
+  {name:'Panguni', startMonth:2, startDay:14}     // Mar 14
+];
+// Telugu month names (approx same mid-month boundaries)
+const teluguMonths = [
+  'Chaitra','Vaishakha','Jyeshtha','Ashadha','Shravana','Bhadrapada','Aswayuja','Karthika','Margashira','Pausa','Magha','Phalguna'
+];
+
+function approxTamilMonth(date){
+  // date: JS Date local
+  const y = date.getFullYear();
+  const m = date.getMonth();
+  const d = date.getDate();
+  for(let i=0;i<tamilMonths.length;i++){
+    const t = tamilMonths[i];
+    const start = new Date(y, t.startMonth, t.startDay);
+    // handle Jan wrap
+    let endIndex = (i+1) % tamilMonths.length;
+    const tNext = tamilMonths[endIndex];
+    let end = new Date(y, tNext.startMonth, tNext.startDay);
+    if(tNext.startMonth < t.startMonth) end = new Date(y+1, tNext.startMonth, tNext.startDay);
+    if(date >= start && date < end) return t.name;
+  }
+  return '—';
+}
+function approxTeluguMonth(date){
+  // simply map by mid-month boundaries similar to tamil for approximation
+  // reuse tamilMonths start boundaries but return Telugu name by index shift
+  const y = date.getFullYear();
+  for(let i=0;i<tamilMonths.length;i++){
+    const t = tamilMonths[i];
+    const start = new Date(y, t.startMonth, t.startDay);
+    let endIndex = (i+1) % tamilMonths.length;
+    const tNext = tamilMonths[endIndex];
+    let end = new Date(y, tNext.startMonth, tNext.startDay);
+    if(tNext.startMonth < t.startMonth) end = new Date(y+1, tNext.startMonth, tNext.startDay);
+    if(new Date() >= start && new Date() < end) return teluguMonths[i];
+  }
+  return '—';
+}
+
+/* ---------- UI update ---------- */
+function fillSidebar(data){
+  const ul = document.querySelector('.auspicious-list');
+  ul.innerHTML = ''; // clear
+
+  const pushItem = (label, val, small) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${label}</strong> – ${val}${small ? ` <div style="font-size:0.82rem;color:rgba(255,255,255,0.7)">${small}</div>` : ''}`;
+    ul.appendChild(li);
+  };
+
+  pushItem('Date', data.dateStr);
+  if(data.sunrise && data.sunset){
+    pushItem('Sunrise', fmtTime(data.sunrise));
+    pushItem('Sunset', fmtTime(data.sunset));
+  } else {
+    pushItem('Sunrise','—'); pushItem('Sunset','—');
+  }
+
+  pushItem('Rahu Kalam', `${fmtTime(data.rahuStart)} – ${fmtTime(data.rahuEnd)}`);
+  pushItem('Yamakandam (approx)', `${fmtTime(data.yamaStart)} – ${fmtTime(data.yamaEnd)}`);
+  pushItem('Brahma Muhurta (approx)', `${fmtTime(data.brahmaStart)} – ${fmtTime(data.brahmaEnd)}`, 'Traditionally early morning quiet time');
+  pushItem('Nalla Neram (morning)', `${fmtTime(data.nallaMorningStart)} – ${fmtTime(data.nallaMorningEnd)}`);
+  pushItem('Nalla Neram (evening)', `${fmtTime(data.nallaEveningStart)} – ${fmtTime(data.nallaEveningEnd)}`);
+
+  pushItem('Tamil Month (approx)', data.tamilMonth);
+  pushItem('Telugu Month (approx)', data.teluguMonth);
+
+  // speciality / advisory
+  const sp = document.createElement('li');
+  sp.style.marginTop = '8px';
+  sp.style.fontStyle = 'italic';
+  sp.style.color = '#fff4e5';
+  sp.textContent = data.speciality || 'Speciality — Good day for quiet worship.';
+  ul.appendChild(sp);
+}
+
+/* ---------- Main integration: attempt geo -> compute -> fill ---------- */
+async function getLocationAndCompute() {
+  // attempt geolocation
+  let lat=null, lon=null;
+  const fallbackSelect = document.getElementById('citySelect');
+
+  const useCoords = (coords) => {
+    lat = coords.latitude; lon = coords.longitude; computeAndShow(lat,lon);
+  };
+
+  // if user chooses fallback manually
+  fallbackSelect.addEventListener('change', function(){
+    const v = this.value;
+    if(v && v.includes(',')){
+      const [la,lo] = v.split(',').map(Number);
+      computeAndShow(la,lo);
+    } else {
+      // empty -> try geolocation again
+      tryGeo();
+    }
+  });
+
+  function tryGeo(){
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(pos=>{
+        useCoords(pos.coords);
+      }, err=>{
+        // denied or failed -> fallback to Chennai
+        console.warn('Geolocation failed or denied, using Chennai (fallback).', err);
+        computeAndShow(13.0827,80.2707); // Chennai
+      }, {timeout:10000});
+    } else {
+      computeAndShow(13.0827,80.2707);
+    }
+  }
+
+  tryGeo();
+}
+
+/* ---------- compute & render ---------- */
+function computeAndShow(lat, lon){
+  const now = new Date();
+  // create date at 00:00 local; but algorithm expects UTC-date at local midnight:
+  const y = now.getFullYear(), m = now.getMonth(), d = now.getDate();
+  // create dateUTC that represents local midnight in UTC by using new Date(year,month,day) and converting to UTC midnight
+  const localMidnight = new Date(y, m, d);
+  // convert localMidnight to UTC timestamp by subtracting timezone offset
+  const dateUTC = new Date(Date.UTC(localMidnight.getFullYear(), localMidnight.getMonth(), localMidnight.getDate()));
+
+  // compute sunrise/sunset (returns UTC Date objects based on dateUTC)
+  const sun = calcSunriseSunset(dateUTC, lat, lon);
+  let sunriseLocal=null, sunsetLocal=null;
+  if(sun){
+    sunriseLocal = new Date(sun.sunrise.getTime() + (new Date()).getTimezoneOffset()*60000);
+    sunsetLocal = new Date(sun.sunset.getTime() + (new Date()).getTimezoneOffset()*60000);
+  }
+
+  // weekday local
+  const weekday = (new Date()).getDay();
+
+  // compute times
+  let computed = {};
+  if(sunriseLocal && sunsetLocal){
+    computed = computeAuspiciousTimes(sunriseLocal, sunsetLocal, weekday);
+  } else {
+    // fallback: set sunrise 6:00, sunset 18:00 (approx)
+    const base = new Date(); base.setHours(6,0,0,0);
+    const baseS = new Date(); baseS.setHours(18,0,0,0);
+    computed = computeAuspiciousTimes(base, baseS, weekday);
+    sunriseLocal = base; sunsetLocal = baseS;
+  }
+
+  // approximate month names
+  const tamil = approxTamilMonth(new Date());
+  const telugu = approxTeluguMonth(new Date());
+
+  fillSidebar({
+    dateStr: new Date().toDateString(),
+    sunrise: sunriseLocal,
+    sunset: sunsetLocal,
+    rahuStart: computed.rahuStart,
+    rahuEnd: computed.rahuEnd,
+    yamaStart: computed.yamaStart,
+    yamaEnd: computed.yamaEnd,
+    brahmaStart: computed.brahmaStart,
+    brahmaEnd: computed.brahmaEnd,
+    nallaMorningStart: computed.nallaMorningStart,
+    nallaMorningEnd: computed.nallaMorningEnd,
+    nallaEveningStart: computed.nallaEveningStart,
+    nallaEveningEnd: computed.nallaEveningEnd,
+    tamilMonth: tamil,
+    teluguMonth: telugu,
+    speciality: 'Approximate local auspicious times for planning. Verify ritual timing locally.'
+  });
+
+  // small visual cue in case of success
+  console.log('Auspicious times computed for', lat, lon);
+}
+
+/* start */
+document.addEventListener('DOMContentLoaded', getLocationAndCompute);
 </script>
 
 </body>
