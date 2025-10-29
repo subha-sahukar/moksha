@@ -177,4 +177,39 @@ nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:cen
   border:none;
   text-shadow:0 0 6px rgba(255,216,229,0.4);
 }
+.hero{
+  position:relative;
+  height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  background:url('images/hero_temple_bg.jpg') center/cover no-repeat;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0.45) 0%,rgba(60,20,30,0.75) 100%);
+  z-index:0;
+}
+.hero-quote, .hero-sub{
+  position:relative;z-index:1;
+  text-align:center;
+}
+.hero-quote{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  color:var(--gold);
+  text-shadow:0 2px 12px rgba(0,0,0,0.6);
+  margin-bottom:10px;
+}
+.hero-sub{
+  color:#f5efe4;
+  max-width:700px;
+  font-size:1.05rem;
+  text-shadow:0 1px 4px rgba(0,0,0,0.4);
+}
 
