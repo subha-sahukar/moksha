@@ -212,4 +212,16 @@ nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:cen
   font-size:1.05rem;
   text-shadow:0 1px 4px rgba(0,0,0,0.4);
 }
+.hero{
+  position:relative;
+  height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  background:url('images/hero_temple_bg.png') center/cover no-repeat;
+}
 
