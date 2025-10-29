@@ -29,33 +29,6 @@ nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:cen
 .nav-links a:hover{background:var(--accent);color:#1a0a02;transform:translateY(-3px);box-shadow:0 6px 20px rgba(212,175,55,0.12)}
 .hamburger{display:none;background:transparent;border:none;color:var(--ivory);font-size:22px}
 
-/* Hero */
-.hero {
-  position: relative;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  background: url('images/hero_temple_bg.jpg') center/cover no-repeat;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(60,20,30,0.75) 100%);
-  z-index: 0;
-}
-
-.hero-quote, .hero-sub {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
 
 
 /* CTA */
