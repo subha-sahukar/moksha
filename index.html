@@ -89,15 +89,67 @@ body{display:flex;flex-direction:row;min-height:100vh}
 /* hero visual */
 
 .hero {
-  background-image: url('https://subha-sahukar.github.io/moksha/images/hero_temple_bg.jpg') !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  border: 3px solid gold;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  background-image: url('https://subha-sahukar.github.io/moksha/images/hero_temple_bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.hero-quote{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold);margin-bottom:8px;text-align:center}
-.hero-sub{color:var(--muted);max-width:760px;text-align:center}
+/* soft lotus-pink overlay for readability */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(163, 76, 107, 0.55) 0%,
+    rgba(91, 29, 51, 0.75) 100%
+  );
+  z-index: 0;
+}
+
+.hero-quote,
+.hero-sub {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* main quote in golden tone */
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #d4af37; /* soft gold */
+  margin-bottom: 10px;
+}
+
+/* sub-text in warm ivory with muted pink undertone */
+.hero-sub {
+  color: #f7e9ef;
+  max-width: 760px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* responsive tweak */
+@media (max-width: 900px) {
+  .hero {
+    height: 55vh;
+  }
+  .hero-quote {
+    font-size: 1.5rem;
+  }
+}
 
 /* circuits & content blocks */
 .vertical-circuits{margin-top:6px;padding:34px;border-radius:12px;background:linear-gradient(180deg,#8d3a5d 0%, #eeb8c9 100%);color:#fff}
