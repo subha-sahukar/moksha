@@ -1,117 +1,31 @@
-body {
- margin:0;
- font-family: Inter, sans-serif;
- background: linear-gradient(180deg,#7b3e48,#c97b84,#f7d9dd,#fff6ea);
- color:#4a2b2d;
-}
+body { margin:0; font-family:'Inter', sans-serif; background:#fff7f4; color:#4a2b18; }
 
-/* NAV */
-.nav {
- display:flex; justify-content:space-between;
- padding:14px 24px;
- background:rgba(255,246,234,0.7);
- backdrop-filter:blur(6px);
- border-bottom:1px solid rgba(255,215,0,0.4);
-}
-.logo {
- font-family: "Playfair Display", serif;
- font-size:1.2rem; color:#7b3e48; font-weight:bold;
-}
-.state-nav a {
- margin-left:12px; text-decoration:none;
- color:#7b3e48; font-weight:600;
-}
-.state-nav a.active {
- color:#ffd873;
- text-shadow:0 0 8px rgba(255,215,0,0.6);
-}
+.header { display:flex; justify-content:space-between; padding:10px 20px; background:#eacbc5; }
+.header a { margin:0 10px; text-decoration:none; color:#4a2b18; font-weight:600; }
+.header a.active { color:#8b0000; }
 
-/* HERO */
-.hero {
- text-align:center; padding:120px 20px 80px;
- background:url("hero_temple_bg.jpg") center/cover no-repeat;
-}
-.hero h1 {
- font-family:"Playfair Display",serif;
- font-size:2.7rem; color:#ffd873;
- text-shadow:0 0 12px rgba(255,215,0,0.4);
-}
-.hero-sub {
- font-size:1.1rem;
- color:#fff6ea;
- max-width:720px; margin:auto;
-}
+.hero { height:300px; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; }
 
-/* LAYOUT */
-.layout-wrapper { display:flex; min-height:60vh; }
+.hero h1 { font-family:"Playfair Display"; font-size:1.8rem; text-shadow:0 2px 6px rgba(0,0,0,0.4); }
 
-.sidebar {
- width:220px; background:#fff6ea;
- padding:16px;
- border-right:2px solid rgba(255,215,0,0.4);
-}
-.side-title {
- font-family:"Playfair Display",serif;
- margin-bottom:12px;
- color:#7b3e48;
-}
-.sidebar button {
- width:100%; padding:10px;
- margin-bottom:10px;
- border:none; border-radius:8px;
- background:#ffd873; color:#4a2b2d; font-weight:600;
- cursor:pointer;
-}
+.panchang-section{padding:15px;}
+.panchang-banner{background:#e6c09a;padding:10px;border-radius:6px;text-align:center;margin-bottom:10px;}
+.panchang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;}
+.panchang-card{background:#fff2d8;padding:10px;border:1px solid #c6a078;border-radius:5px;}
 
-.content { flex:1; padding:22px; }
+.story-section{padding:20px;text-align:center;}
+.story-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.story-card{background:#ffe7cf;padding:12px;border-radius:6px;width:250px;border:1px solid #c8a27b;}
 
-.district-intro {
- background:rgba(255,246,234,0.8);
- border-left:4px solid #ffd873;
- padding:18px; margin-bottom:18px;
- font-style:italic;
-}
+.sub-hero{padding:25px;text-align:center;background:#ead2cd;}
+.tamil-body{display:flex;min-height:70vh;}
+.district-list{width:180px;background:#fcece7;padding:10px;}
+.district-list ul{list-style:none;padding:0;}
+.district-list li{padding:8px;border-bottom:1px solid #e0b6a6;cursor:pointer;}
+.district-list li.active{font-weight:bold;color:#8b0000;}
 
-.temple-grid {
- display:grid; gap:18px;
- grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-}
+.temple-display{padding:15px;flex:1;}
+.temple-card{background:#fff;padding:12px;border-radius:6px;margin-bottom:10px;border:1px solid #c8a27b;}
+.temple-card img{width:100%;border-radius:6px;}
 
-.temple-card {
- background:rgba(255,255,255,0.75);
- padding:14px; border-radius:14px;
- border:1px solid rgba(255,215,0,0.4);
-}
-.temple-card img {
- width:100%; border-radius:12px; margin-bottom:8px;
-}
-
-/* STORIES */
-.story-row {
- display:flex; flex-wrap:wrap; gap:18px;
-}
-.story-card {
- width:300px; background:#fff; border-radius:12px;
- border:1px solid rgba(255,215,0,0.4);
- padding:12px; text-align:center;
-}
-.story-card img { width:100%; border-radius:8px; }
-
-/* FOOTER */
-.footer {
- background:linear-gradient(180deg,#7b3e48,#c97b84,#f7d9dd);
- padding:35px 20px; text-align:center;
- color:#fff6ea; font-family:"Playfair Display",serif;
- border-top:2px solid rgba(255,215,0,0.5);
-}
-
-/* PLACEHOLDERS */
-.placeholder-box {
- padding:40px; background:#fff6ea;
- border:1px dashed #c97b84;
-}
-.section-title {
- font-family:"Playfair Display",serif;
- margin:20px 0; font-size:1.4rem;
-}
-.section { padding:40px 20px; }
+.footer{text-align:center;padding:10px;background:#e6c4bf;margin-top:20px;}
