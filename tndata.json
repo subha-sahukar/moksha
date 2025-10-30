@@ -1,167 +1,70 @@
 {
   "Chennai": {
-    "intro": "Where Pallava stones met colonial boulevards — sanctity in a modern port city.",
+    "intro": "Where ancient Dravidian shrines stand beside a roaring ocean and colonial avenues — spirituality in a modern metropolis.",
     "temples": [
+      {
+        "name": "Kapaleeshwarar Temple",
+        "deity": "Shiva",
+        "type": "Paadal Petra Sthalam",
+        "significance": "Built by Pallavas; famous for divine peacock legend and Dravidian gopuram.",
+        "image": "images/kapaleeshwarar.jpg"
+      },
       {
         "name": "Parthasarathy Temple",
         "deity": "Krishna (Parthasarathy)",
         "type": "Divya Desam",
-        "significance": "Arjuna’s charioteer — oldest known Krishna icon with moustache",
-        "image": "parthasarathy.jpg"
+        "significance": "Oldest known Krishna temple; deity appears with conch marks and moustache.",
+        "image": "images/parthasarathy.jpg"
       },
       {
-        "name": "Kapaleeswarar Temple",
-        "deity": "Shiva",
-        "type": "Paadal Petra Sthalam",
-        "significance": "Pearl city’s Dravidian jewel; built by Pallavas, rebuilt by Vijayanagara",
-        "image": "kapaleeswarar.jpg"
+        "name": "Ashtalakshmi Temple",
+        "deity": "Lakshmi",
+        "type": "Shakti",
+        "significance": "Eight forms of Goddess Lakshmi worshipped in one sacred complex by the sea.",
+        "image": "images/ashtalakshmi.jpg"
       }
     ]
   },
 
   "Kanchipuram": {
-    "intro": "City of a thousand temples — sacred seat of Kanchi Kamakoti and Pallava art.",
+    "intro": "City of a thousand temples — philosophical capital of the Pallavas and seat of Sri Kamakoti Peetam.",
     "temples": [
       {
         "name": "Ekambareswarar Temple",
         "deity": "Shiva",
         "type": "Pancha Bhoota (Earth)",
-        "significance": "Pallava–Chola masterpiece with ancient mango tree",
-        "image": "ekambareswarar.jpg"
+        "significance": "Sacred mango tree believed to be 3,500 years old; Pallava origin.",
+        "image": "images/ekambareswarar.jpg"
+      },
+      {
+        "name": "Kamakshi Amman Temple",
+        "deity": "Parvati",
+        "type": "Shakti Peetham",
+        "significance": "Goddess seated posture represents supreme grace and compassion.",
+        "image": "images/kamakshi.jpg"
       },
       {
         "name": "Varadaraja Perumal Temple",
         "deity": "Vishnu",
         "type": "Divya Desam",
-        "significance": "Golden lizard shrine; Vishnu as king of grace",
-        "image": "varadaraja.jpg"
-      },
-      {
-        "name": "Kamakshi Amman Temple",
-        "deity": "Parvati",
-        "type": "Shakti Peetam (Sthana)",
-        "significance": "Seated goddess — compassion as supreme power",
-        "image": "kamakshi.jpg"
+        "significance": "Golden lizard shrine; major Vishnu Kshetram.",
+        "image": "images/varadaraja.jpg"
       }
     ]
   },
 
   "Thanjavur": {
-    "intro": "Imperial Chola heartland — bronze, Carnatic art, and the Big Temple of light.",
+    "intro": "Imperial Chola heartland — where granite rose like mountain peaks to honour the divine.",
     "temples": [
       {
         "name": "Brihadeeswarar Temple",
         "deity": "Shiva",
         "type": "UNESCO Chola Temple",
-        "significance": "Raja Raja’s granite crown — vimana taller than gopuram",
-        "image": "brihadeeswara.jpg"
+        "significance": "Rajaraja Chola’s masterpiece — the Great Living Chola Temple.",
+        "image": "images/brihadeeswarar.jpg"
       },
       {
         "name": "Gangaikonda Cholapuram",
         "deity": "Shiva",
         "type": "UNESCO Chola Temple",
-        "significance": "Rajendra Chola’s royal capital — refined sculptural grace",
-        "image": "gkc.jpg"
-      }
-    ]
-  },
-
-  "Kumbakonam": {
-    "intro": "Temple town of nectar — Mahamaham tank and cosmic spiritual grid.",
-    "temples": [
-      {
-        "name": "Airavatesvara Temple (Darasuram)",
-        "deity": "Shiva",
-        "type": "UNESCO Chola Temple",
-        "significance": "Chariot-style sculptural marvel — musical steps",
-        "image": "darasuram.jpg"
-      },
-      {
-        "name": "Adi Kumbeshwarar",
-        "deity": "Shiva",
-        "type": "Major Shaivite Temple",
-        "significance": "Creation pot myth; cosmic origin legend",
-        "image": "kumbeshwarar.jpg"
-      },
-      {
-        "name": "Sarangapani Temple",
-        "deity": "Vishnu",
-        "type": "Divya Desam",
-        "significance": "Lord reclining within chariot-style sanctum",
-        "image": "sarangapani.jpg"
-      },
-      {
-        "name": "Mahamaham Tank",
-        "deity": "Sacred Teertham",
-        "type": "Holy Tank",
-        "significance": "Kumbha Mela of the South every 12 years",
-        "image": "mahamaham.jpg"
-      }
-    ]
-  },
-
-  "Tiruvannamalai": {
-    "intro": "Mountain of fire — Advaita soul center where silence becomes mantra.",
-    "temples": [
-      {
-        "name": "Arunachaleswarar Temple",
-        "deity": "Shiva",
-        "type": "Pancha Bhoota (Fire)",
-        "significance": "Giri Pradakshina — the sacred walk around the hill",
-        "image": "arunachala.jpg"
-      }
-    ]
-  },
-
-  "Madurai": {
-    "intro": "Sacred lotus city — Tamil sangam, Pandya crown, and divine marriage traditions.",
-    "temples": [
-      {
-        "name": "Meenakshi Amman Temple",
-        "deity": "Parvati (Meenakshi)",
-        "type": "Major Shakti Temple",
-        "significance": "Temple city universe — sculpture, music, divine matrimony",
-        "image": "meenakshi.jpg"
-      }
-    ]
-  },
-
-  "Palani": {
-    "intro": "Hill of knowledge — Siddhar land and Murugan’s luminous grace.",
-    "temples": [
-      {
-        "name": "Palani Murugan Temple",
-        "deity": "Murugan",
-        "type": "Arupadai Veedu",
-        "significance": "Dandayudhapani — renunciation & supreme wisdom",
-        "image": "palani.jpg"
-      }
-    ]
-  },
-
-  "Chidambaram": {
-    "intro": "Cosmic stage — where silence is the supreme mantra and dance births creation.",
-    "temples": [
-      {
-        "name": "Nataraja Temple",
-        "deity": "Shiva (Nataraja)",
-        "type": "Pancha Bhoota (Space)",
-        "significance": "Chidambara Rahasya — formless truth behind golden veil",
-        "image": "chidambaram.jpg"
-      }
-    ]
-  },
-
-  "Rameswaram": {
-    "intro": "Bridge of faith — Rama’s path to Lanka and Shiva’s ocean of grace.",
-    "temples": [
-      {
-        "name": "Ramanathaswamy Temple",
-        "deity": "Shiva",
-        "type": "Jyotirlinga",
-        "significance": "Sacred wells, longest temple corridor in Asia",
-        "image": "rameswaram.jpg"
-      }
-    ]
-  }
-}
+        "significance": "Rajendra Chola’
