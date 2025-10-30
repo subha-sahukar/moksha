@@ -1,108 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sacred South India</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Moksha Yatra — Sacred Grandeur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://unpkg.com/phosphor-icons">
+<meta name="description" content="Moksha Yatra — curated pilgrimage atlas of South Indian temples.">
 </head>
-
 <body>
+<nav>
+  <div class="brand">Moksha Yatra</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tamilnadu.html">Tamil Nadu</a>
+    <a href="andhra.html">Andhra</a>
+    <a href="karnataka.html">Karnataka</a>
+    <a href="kerala.html">Kerala</a>
+    <a href="#about">About</a>
+  </div>
+  <button class="hamburger" aria-label="Open menu" onclick="alert('Use the top links — mobile menu placeholder')">☰</button>
+</nav>
 
-<header class="topbar">
-  <div class="logo">Sacred South India</div>
-  <nav>
-    <a href="tamilnadu.html" class="active">Tamil Nadu</a>
-    <a href="#">Andhra Pradesh</a>
-    <a href="#">Karnataka</a>
-    <a href="#">Kerala</a>
-  </nav>
-  <div class="search-box">
-    <input placeholder="Search temples...">
+<header class="hero" role="banner" aria-label="Brihadeeswarar in golden light">
+  <div class="hero-bg" style="background-image:url('images/brihadeeswarar_dusk.jpg')" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="mandala" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <h1>Brihadeeswarar — Light on Stone</h1>
+    <p>Welcome to Moksha Yatra — a carefully curated pilgrimage atlas of South India's sacred temples. Choose a region, pick a circuit, and travel with ritual awareness.</p>
+
+    <div class="tabs" role="tablist" aria-label="Quick links">
+      <button class="tab active" onclick="location.href='tamilnadu.html'">Explore Tamil Nadu</button>
+      <button class="tab" onclick="location.href='divyadesam.html'">Divya Desam</button>
+      <button class="tab" onclick="location.href='padalpetra.html'">Padal Petra</button>
+      <button class="tab" onclick="location.href='auspicious.html'">Auspicious Days</button>
+    </div>
+
+    <div class="cta">
+      <button class="btn" onclick="location.href='tamilnadu.html'">Enter the Circuits</button>
+      <button class="btn secondary" onclick="location.href='divyadesam.html'">Divya Desam Guide</button>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <h1>A Journey Through Stone and Silence</h1>
-  <p>Explore sacred circuits, daily panchangam, shakti & tanatalam devotion</p>
-</section>
+<main class="main container" id="content" role="main">
+  <section class="section">
+    <div class="section-title"><h2>Featured circuits</h2></div>
+    <div class="grid" aria-hidden="false">
+      <article class="card">
+        <img src="images/brihadeeswarar_dusk.jpg" alt="Brihadeeswarar">
+        <div class="inner">
+          <h3>Brihadeeswarar / Thanjavur</h3>
+          <div class="meta">Chola capital — historic vimana</div>
+          <p>Monumental Chola architecture, icon of imperial temple art. A must for architecture-minded pilgrims.</p>
+        </div>
+      </article>
 
-<section class="section-title">Pilgrimage Circuits</section>
+      <article class="card">
+        <img src="images/srirangam.jpg" alt="Srirangam">
+        <div class="inner">
+          <h3>Srirangam</h3>
+          <div class="meta">Divya Desam — living complex</div>
+          <p>A vast island temple complex with deep ritual calendars and Vaishnava festivals.</p>
+        </div>
+      </article>
 
-<div class="circuits-grid">
-
-  <a href="thanjavur-circuit.html" class="circuit-card">
-    <img src="Brihadeeswarar_Temple_Gopuram.jpg">
-    <div class="circuit-content">
-      <h3>Trichy–Thanjavur Circuit</h3>
-      <p>Panchabootha, Shakti & Thayagaraja devotion in Chola land</p>
-      <div class="meta"><span>80 km</span> · <span>2–3 days</span></div>
-      <button>Explore Circuit →</button>
+      <article class="card">
+        <img src="images/meenakshi.jpg" alt="Meenakshi">
+        <div class="inner">
+          <h3>Meenakshi Amman</h3>
+          <div class="meta">Madurai — goddess sanctum</div>
+          <p>Center of city life and ritual drama — especially rich during Chithirai Thiruvizha.</p>
+        </div>
+      </article>
     </div>
-  </a>
+  </section>
 
-  <a href="kumbakonam-circuit.html" class="circuit-card">
-    <img src="navagraha_circuit_2.jpg">
-    <div class="circuit-content">
-      <h3>Kumbakonam Navagraha</h3>
-      <p>Sun, Moon & Graha shrines along sacred Cauvery banks</p>
-      <div class="meta"><span>95 km</span> · <span>3–4 days</span></div>
-      <button>Explore Circuit →</button>
-    </div>
-  </a>
+  <div class="divider"></div>
 
-  <a href="chidambaram-circuit.html" class="circuit-card">
-    <img src="chidambaram.jpg">
-    <div class="circuit-content">
-      <h3>Chidambaram – Tiruvannamalai</h3>
-      <p>Secret Dance & Fire of Shiva manifestation</p>
-      <div class="meta"><span>150 km</span> · <span>2–3 days</span></div>
-      <button>Explore Circuit →</button>
-    </div>
-  </a>
+  <section class="section">
+    <div class="section-title"><h2>Why Moksha Yatra</h2></div>
+    <p class="meta">We combine practical travel notes with ritual context — timings, festivals, and local legends — so your pilgrim experience is informed and respectful.</p>
+  </section>
+</main>
 
-  <a href="rameswaram-circuit.html" class="circuit-card">
-    <img src="rameswaram.jpg">
-    <div class="circuit-content">
-      <h3>Rameswaram – Kanyakumari</h3>
-      <p>Where ocean meets grace — coastal Shiva shrines</p>
-      <div class="meta"><span>85 km</span> · <span>2 days</span></div>
-      <button>Explore Circuit →</button>
-    </div>
-  </a>
-
+<div class="footer container">
+  <p>© 2025 Moksha Yatra — Sacred Grandeur • Built for mindful pilgrimage</p>
 </div>
 
-<section class="section-title">Mythic Stories</section>
-
-<div class="stories-grid">
-
-  <div class="story-card">
-    <img src="shiva.png">
-    <h4>Shiva</h4>
-    <small>Dance of Silence</small>
-    <p>Chidambaram — where silence becomes cosmic movement.</p>
-    <a href="shiva-story.html" class="story-btn">Read Story →</a>
-  </div>
-
-  <div class="story-card">
-    <img src="vishnu.png">
-    <h4>Vishnu</h4>
-    <small>Eternal Srirangam</small>
-    <p>The reclining Lord guarding time and devotion.</p>
-    <a href="vishnu-story.html" class="story-btn">Read Story →</a>
-  </div>
-
-  <div class="story-card">
-    <img src="murugan.png">
-    <h4>Murugan</h4>
-    <small>Warrior Sage</small>
-    <p>From Palani hills to Tiruchendur waves.</p>
-    <a href="murugan-story.html" class="story-btn">Read Story →</a>
-  </div>
-
+<div class="audio-control" aria-hidden="false">
+  <button onclick="toggleAudio()" id="audioBtn">🔔 Play Chime</button>
+  <audio id="bgAudio" loop preload="none">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Temple_bell.ogg" type="audio/ogg">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tanpura_droning.ogg" type="audio/ogg">
+  </audio>
 </div>
 
+<script>
+/* Audio toggle */
+function toggleAudio(){
+  const a=document.getElementById('bgAudio'), b=document.getElementById('audioBtn');
+  if(a.paused){ a.play(); b.textContent='⏸ Pause Chime'; } else { a.pause(); b.textContent='🔔 Play Chime'; }
+}
+/* small parallax */
+document.addEventListener('scroll', function(){
+  const y = window.scrollY, bg = document.querySelector('.hero-bg');
+  if(bg) bg.style.transform = 'translateY(' + (y * 0.08) + 'px)';
+});
+</script>
 </body>
 </html>
