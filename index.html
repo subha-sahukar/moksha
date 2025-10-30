@@ -1,122 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moksha Yatra</title>
+<title>Sacred South India</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/phosphor-icons">
 </head>
 
 <body>
 
-<header class="hero">
-<nav class="top-nav">
-<a href="index.html" class="active">Tamil Nadu</a>
-<a href="#">Andhra</a>
-<a href="#">Karnataka</a>
-<a href="#">Kerala</a>
-</nav>
-
-<h1 class="hero-title">
-A journey through stone and silence — each shrine a doorway.
-</h1>
-<p class="hero-sub">
-Explore sacred circuits, daily panchangam, stories & timeless devotion
-</p>
+<header class="topbar">
+  <div class="logo">Sacred South India</div>
+  <nav>
+    <a href="tamilnadu.html" class="active">Tamil Nadu</a>
+    <a href="#">Andhra Pradesh</a>
+    <a href="#">Karnataka</a>
+    <a href="#">Kerala</a>
+  </nav>
+  <div class="search-box">
+    <input placeholder="Search temples...">
+  </div>
 </header>
 
-<div class="layout">
-
-<aside class="side-panel">
-<h3>Auspicious Today</h3>
-<p>Sunrise — 06:05 AM</p>
-<p>Rahu Kalam — 10:30 AM – 12:00 PM</p>
-<p>Yamagandam — 3:00 PM – 4:30 PM</p>
-<p>Nalla Neram — 7:30 AM – 9:00 AM</p>
-
-<hr>
-
-<h3>Pilgrimage Circuits</h3>
-<ul>
-<li>Thanjavur — Brihadeeswarar, Gangaikonda Cholapuram, Darasuram</li>
-<li>Trichy — Srirangam, Rockfort, Samayapuram</li>
-<li>Madurai — Meenakshi, Pazhamudhircholai</li>
-<li>Kumbakonam Navagraha Circuit</li>
-</ul>
-</aside>
-
-<main class="content">
-<section class="pilgrimage-circuits">
-<h2>Pilgrimage Circuits</h2>
-
-<div class="circuit-row">
-
-<div class="circuit-card">
-<img src="images/tanjore.jpg" alt="Thanjavur Temple">
-<div class="circuit-text">
-<h3>Thanjavur — Chola Divine Axis</h3>
-<p>Brihadeeswara • Gangaikonda Cholapuram • Darasuram</p>
-</div>
-</div>
-
-<div class="circuit-card">
-<img src="images/trichy.jpg" alt="Srirangam">
-<div class="circuit-text">
-<h3>Trichy — Spiritual Heartland</h3>
-<p>Srirangam • Rockfort • Samayapuram</p>
-</div>
-</div>
-
-<div class="circuit-card">
-<img src="images/madurai.jpg" alt="Madurai Meenakshi">
-<div class="circuit-text">
-<h3>Madurai — Sacred Grandeur</h3>
-<p>Meenakshi Amman • Pazhamudhircholai</p>
-</div>
-</div>
-
-<div class="circuit-card">
-<img src="images/kumbakonam.jpg" alt="Kumbakonam Temple">
-<div class="circuit-text">
-<h3>Kumbakonam — Navagraha Circuit</h3>
-<p>Suriyanar • Chandran • Budhan • Shukra • Rahu • Ketu</p>
-</div>
-</div>
-
-</div>
+<section class="hero">
+  <h1>A Journey Through Stone and Silence</h1>
+  <p>Explore sacred circuits, daily panchangam, shakti & tanatalam devotion</p>
 </section>
 
+<section class="section-title">Pilgrimage Circuits</section>
 
-<hr>
+<div class="circuits-grid">
 
-<section>
-<h2>Mythic Stories</h2>
+  <a href="thanjavur-circuit.html" class="circuit-card">
+    <img src="assets/circuits/thanjavur.jpg">
+    <div class="circuit-content">
+      <h3>Trichy–Thanjavur Circuit</h3>
+      <p>Panchabootha, Shakti & Thayagaraja devotion in Chola land</p>
+      <div class="meta"><span>80 km</span> · <span>2–3 days</span></div>
+      <button>Explore Circuit →</button>
+    </div>
+  </a>
 
-<div class="story-card">
-<h3>Shiva — Dance of Silence</h3>
-<p>Chidambaram — where silence becomes cosmic movement.</p>
+  <a href="kumbakonam-circuit.html" class="circuit-card">
+    <img src="assets/circuits/kumbakonam.jpg">
+    <div class="circuit-content">
+      <h3>Kumbakonam Navagraha</h3>
+      <p>Sun, Moon & Graha shrines along sacred Cauvery banks</p>
+      <div class="meta"><span>95 km</span> · <span>3–4 days</span></div>
+      <button>Explore Circuit →</button>
+    </div>
+  </a>
+
+  <a href="chidambaram-circuit.html" class="circuit-card">
+    <img src="assets/circuits/chidambaram.jpg">
+    <div class="circuit-content">
+      <h3>Chidambaram – Tiruvannamalai</h3>
+      <p>Secret Dance & Fire of Shiva manifestation</p>
+      <div class="meta"><span>150 km</span> · <span>2–3 days</span></div>
+      <button>Explore Circuit →</button>
+    </div>
+  </a>
+
+  <a href="rameswaram-circuit.html" class="circuit-card">
+    <img src="assets/circuits/rameswaram.jpg">
+    <div class="circuit-content">
+      <h3>Rameswaram – Kanyakumari</h3>
+      <p>Where ocean meets grace — coastal Shiva shrines</p>
+      <div class="meta"><span>85 km</span> · <span>2 days</span></div>
+      <button>Explore Circuit →</button>
+    </div>
+  </a>
+
 </div>
 
-<div class="story-card">
-<h3>Vishnu — Eternal Srirangam</h3>
-<p>The reclining Lord guarding time and devotion.</p>
+<section class="section-title">Mythic Stories</section>
+
+<div class="stories-grid">
+
+  <div class="story-card">
+    <img src="assets/stories/shiva.png">
+    <h4>Shiva</h4>
+    <small>Dance of Silence</small>
+    <p>Chidambaram — where silence becomes cosmic movement.</p>
+    <a href="shiva-story.html" class="story-btn">Read Story →</a>
+  </div>
+
+  <div class="story-card">
+    <img src="assets/stories/vishnu.png">
+    <h4>Vishnu</h4>
+    <small>Eternal Srirangam</small>
+    <p>The reclining Lord guarding time and devotion.</p>
+    <a href="vishnu-story.html" class="story-btn">Read Story →</a>
+  </div>
+
+  <div class="story-card">
+    <img src="assets/stories/murugan.png">
+    <h4>Murugan</h4>
+    <small>Warrior Sage</small>
+    <p>From Palani hills to Tiruchendur waves.</p>
+    <a href="murugan-story.html" class="story-btn">Read Story →</a>
+  </div>
+
 </div>
-
-<div class="story-card">
-<h3>Murugan — Warrior Sage</h3>
-<p>From Palani hills to Tiruchendur waves.</p>
-</div>
-
-</section>
-
-</main>
-
-</div>
-
-<footer>
-Moksha Yatra — Eternal Pilgrimage
-</footer>
 
 </body>
 </html>
