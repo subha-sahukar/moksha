@@ -3,96 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moksha Yatra — Sacred Temple Atlas</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Moksha — Tamil Nadu Temples</title>
 <link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
-
 </head>
-<body>
 
-<header class="navbar">
-  <div class="logo">🌸 Moksha Yatra</div>
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="tamilnadu.html">Tamil Nadu</a>
-    <a href="#">Andhra Pradesh</a>
-    <a href="#">Karnataka</a>
-    <a href="#">Kerala</a>
-  </nav>
+<body>
+<header class="hero">
+    <div class="overlay"></div>
+    <h1>Explore sacred circuits, daily panchangam,<br>and the stories that shaped them.</h1>
 </header>
 
-<section class="hero" style="background-image:url('images/hero_temple_bg.jpg')">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>Sacred Trails of Bharat</h1>
-    <p>Where every stone has memory, every bell echoes eternity.</p>
-  </div>
+<nav class="top-nav">
+<a href="index.html">Tamil Nadu</a>
+<a href="andhra.html">Andhra</a>
+<a href="karnataka.html">Karnataka</a>
+<a href="tamilnadu.html"><b>Temple Explorer</b></a>
+</nav>
+
+<div class="container-home">
+
+<div class="left-panel">
+    <h3>Auspicious Today</h3>
+    <p>Sunrise: 06:05 AM</p>
+    <p>Rahu Kalam: 10:30 AM – 12:00 PM</p>
+    <p>Yamagandam: 3:00 PM – 4:30 PM</p>
+    <p>Nalla Neram: 7:30 – 9:00 AM</p>
+
+    <hr>
+
+    <h3>Pilgrimage Circuits</h3>
+    <ul>
+        <li><a href="tamilnadu.html#tanjore">Thanjavur — Chola Axis</a></li>
+        <li><a href="tamilnadu.html#trichy">Trichy — Spiritual Heartland</a></li>
+        <li><a href="tamilnadu.html#madurai">Madurai — Sacred Grandeur</a></li>
+        <li><a href="tamilnadu.html#kumbakonam">Kumbakonam — Navagraha</a></li>
+    </ul>
+</div>
+
+<div class="content-area">
+
+<section>
+<h2>Pilgrimage Circuits</h2>
+
+<div class="circuit-card">Thanjavur — Chola Axis<br><small>Brihadeeswara, Gangaikonda Cholapuram, Thiruvaiyaru</small></div>
+
+<div class="circuit-card">Trichy — Spiritual Heartland<br><small>Srirangam, Rockfort, Samayapuram</small></div>
+
+<div class="circuit-card">Madurai — Sacred Grandeur<br><small>Meenakshi Amman, Azhagar Kovil</small></div>
+
+<div class="circuit-card">Kumbakonam Navagraha<br><small>Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu</small></div>
 </section>
 
-<section class="auspicious">
-  <h2>Auspicious Today</h2>
-  <div id="panchang-panel">
-    Loading divine timings… 🔱
-  </div>
+<hr>
+
+<section>
+<h2>Mythic Stories</h2>
+
+<div class="story-card">
+    <h3>Shiva — Dance of Silence</h3>
+    <p>Chidambaram’s secret space where silence becomes creation.</p>
+    <button>Read Story</button>
+</div>
+
+<div class="story-card">
+    <h3>Vishnu — Sleepless Srirangam</h3>
+    <p>The reclining Lord who guards time, destiny, and devotion.</p>
+    <button>Read Story</button>
+</div>
+
+<div class="story-card">
+    <h3>Murugan — The Warrior Sage</h3>
+    <p>From Palani’s hill to Tiruchendur’s waves — divinity in motion.</p>
+    <button>Read Story</button>
+</div>
+
 </section>
+</div>
+</div>
 
-<section class="circuitsBox">
-  <h2>Pilgrimage Circuits</h2>
-  <div class="circuit-grid">
-    
-    <div class="circuit-card">
-      <h3>Thanjavur — Chola Divine Axis</h3>
-      <p>Brihadeeswarar · Gangaikonda Cholapuram · Darasuram · Thiruvaiyaru</p>
-    </div>
-    
-    <div class="circuit-card">
-      <h3>Trichy — Spiritual Heartland</h3>
-      <p>Srirangam · Rockfort · Thiruvanaikaval · Samayapuram</p>
-    </div>
-
-    <div class="circuit-card">
-      <h3>Madurai — Sacred Grandeur</h3>
-      <p>Meenakshi · Pazhamudircholai · Azhagar Kovil</p>
-    </div>
-
-    <div class="circuit-card">
-      <h3>Kumbakonam Navagraha</h3>
-      <p>Suriyanar · Kethu · Chandran · Rahu · Guru · Shani · Shukra · Budhan · Angaraka</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="stories">
-  <h2>Mythic Stories</h2>
-  <div class="story-grid">
-    
-    <div class="story-card">
-      <h3>Shiva — Dance of Cosmic Silence</h3>
-      <p>Chidambaram’s secret space — where silence becomes creation.</p>
-      <button class="read-more">Read Story</button>
-    </div>
-    
-    <div class="story-card">
-      <h3>Vishnu — Sleepless Srirangam</h3>
-      <p>The reclining lord who guards time, destiny, and devotion.</p>
-      <button class="read-more">Read Story</button>
-    </div>
-
-    <div class="story-card">
-      <h3>Murugan — The Warrior Sage</h3>
-      <p>From Palani’s hill to Tiruchendur’s waves — He stands between courage and compassion.</p>
-      <button class="read-more">Read Story</button>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <p>🌸 Moksha Yatra — A pilgrimage through time, devotion & stone</p>
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
