@@ -1,6 +1,6 @@
 body {
  margin:0;
- font-family: "Inter", sans-serif;
+ font-family: Inter, sans-serif;
  background: linear-gradient(180deg,#7b3e48,#c97b84,#f7d9dd,#fff6ea);
  color:#4a2b2d;
 }
@@ -9,47 +9,67 @@ body {
 .nav {
  display:flex; justify-content:space-between;
  padding:14px 24px;
- background:rgba(255,246,234,0.7); backdrop-filter:blur(6px);
+ background:rgba(255,246,234,0.7);
+ backdrop-filter:blur(6px);
  border-bottom:1px solid rgba(255,215,0,0.4);
 }
-.logo { font-family:Playfair Display, serif; font-weight:bold; color:#7b3e48; }
+.logo {
+ font-family: "Playfair Display", serif;
+ font-size:1.2rem; color:#7b3e48; font-weight:bold;
+}
 .state-nav a {
- margin-left:12px; text-decoration:none; color:#7b3e48; font-weight:500;
+ margin-left:12px; text-decoration:none;
+ color:#7b3e48; font-weight:600;
 }
 .state-nav a.active {
  color:#ffd873;
  text-shadow:0 0 8px rgba(255,215,0,0.6);
 }
 
-/* Hero */
-.hero { text-align:center; padding:120px 20px 80px; }
+/* HERO */
+.hero {
+ text-align:center; padding:120px 20px 80px;
+ background:url("hero_temple_bg.jpg") center/cover no-repeat;
+}
 .hero h1 {
  font-family:"Playfair Display",serif;
  font-size:2.7rem; color:#ffd873;
- text-shadow:0 0 12px rgba(255,215,0,0.3);
+ text-shadow:0 0 12px rgba(255,215,0,0.4);
 }
-.hero-sub { font-size:1.1rem; max-width:720px; margin:auto; color:#fff6ea; }
+.hero-sub {
+ font-size:1.1rem;
+ color:#fff6ea;
+ max-width:720px; margin:auto;
+}
 
-/* Layout split */
+/* LAYOUT */
 .layout-wrapper { display:flex; min-height:60vh; }
 
-/* Sidebar */
 .sidebar {
- width:220px; background:#fff6ea; padding:16px; border-right:2px solid rgba(255,215,0,0.4);
+ width:220px; background:#fff6ea;
+ padding:16px;
+ border-right:2px solid rgba(255,215,0,0.4);
 }
-.sidebar h3 { font-family:"Playfair Display",serif; color:#7b3e48; margin-bottom:10px; }
+.side-title {
+ font-family:"Playfair Display",serif;
+ margin-bottom:12px;
+ color:#7b3e48;
+}
 .sidebar button {
- width:100%; margin-bottom:10px; padding:8px;
+ width:100%; padding:10px;
+ margin-bottom:10px;
  border:none; border-radius:8px;
  background:#ffd873; color:#4a2b2d; font-weight:600;
+ cursor:pointer;
 }
 
-/* Content area */
-.content { flex:1; padding:20px; }
+.content { flex:1; padding:22px; }
+
 .district-intro {
  background:rgba(255,246,234,0.8);
  border-left:4px solid #ffd873;
- padding:18px; margin-bottom:18px; font-style:italic;
+ padding:18px; margin-bottom:18px;
+ font-style:italic;
 }
 
 .temple-grid {
@@ -58,15 +78,40 @@ body {
 }
 
 .temple-card {
- background:rgba(255,255,255,0.7); padding:14px;
- border-radius:14px; border:1px solid rgba(255,215,0,0.4);
+ background:rgba(255,255,255,0.75);
+ padding:14px; border-radius:14px;
+ border:1px solid rgba(255,215,0,0.4);
 }
-.temple-card img { width:100%; border-radius:12px; margin-bottom:8px; }
+.temple-card img {
+ width:100%; border-radius:12px; margin-bottom:8px;
+}
 
-/* Footer */
+/* STORIES */
+.story-row {
+ display:flex; flex-wrap:wrap; gap:18px;
+}
+.story-card {
+ width:300px; background:#fff; border-radius:12px;
+ border:1px solid rgba(255,215,0,0.4);
+ padding:12px; text-align:center;
+}
+.story-card img { width:100%; border-radius:8px; }
+
+/* FOOTER */
 .footer {
  background:linear-gradient(180deg,#7b3e48,#c97b84,#f7d9dd);
- padding:35px 20px; text-align:center; color:#fff6ea;
- font-family:"Playfair Display",serif;
+ padding:35px 20px; text-align:center;
+ color:#fff6ea; font-family:"Playfair Display",serif;
  border-top:2px solid rgba(255,215,0,0.5);
 }
+
+/* PLACEHOLDERS */
+.placeholder-box {
+ padding:40px; background:#fff6ea;
+ border:1px dashed #c97b84;
+}
+.section-title {
+ font-family:"Playfair Display",serif;
+ margin:20px 0; font-size:1.4rem;
+}
+.section { padding:40px 20px; }
