@@ -1,0 +1,94 @@
+.hero-tn {
+  position: relative;
+  background-image: url('../images/hero_temple_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  text-align: center;
+  color: gold;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(50, 0, 20, 0.35);
+}
+
+.hero-title {
+  position: relative;
+  font-size: 2.6rem;
+  font-family: "Playfair Display", serif;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.tn-container {
+  display: flex;
+  min-height: 80vh;
+  background: #f7eafb;
+}
+
+.district-nav {
+  width: 260px;
+  background: #f7def7;
+  padding: 20px;
+  border-right: 2px solid gold;
+}
+
+.district-nav ul li {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 6px;
+  border: 1px solid #e3b7e7;
+  border-radius: 6px;
+}
+.district-nav ul li.active {
+  background: #ffecff;
+  border-color: gold;
+  font-weight: bold;
+}
+
+.district-content {
+  flex: 1;
+  padding: 25px;
+}
+
+.district-intro {
+  background: #fff9ff;
+  padding: 18px;
+  border-left: 4px solid gold;
+  margin-bottom: 22px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.temple-card {
+  background: #fff;
+  border: 1px solid #e3b7e7;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.story-section {
+  padding: 60px 10px;
+  background: #f5d9f7;
+}
+
+.story-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.story-card {
+  flex: 1;
+  background: #fff6ff;
+  padding: 18px;
+  border: 1px solid gold;
+  border-radius: 8px;
+}
+.audio-toggle {
+  position: fixed; bottom: 20px; right: 20px;
+  background: gold; padding: 10px; cursor: pointer;
+  border-radius: 50%; font-size: 20px;
+}
