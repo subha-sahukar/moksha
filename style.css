@@ -1,90 +1,83 @@
-/* Lotus Gold Temple Theme */
-
-:root{
- --lotus:#f2e5ea;
- --lotus-deep:#d6b2c2;
- --gold:#c9a35d;
- --stone:#6c5f5b;
- --dark:#2e241f;
- --white:#fff;
+body {
+font-family: "Merriweather", serif;
+margin: 0;
+background: #faeef2;
+color: #4b2e2e;
 }
 
-body{
- margin:0;
- background:var(--lotus);
- color:var(--dark);
- font-family:'Mukta',sans-serif;
+.hero {
+background: linear-gradient(to bottom, #d7a5b6, #f4d6df);
+text-align: center;
+padding: 90px 0 70px;
+color: #fff;
+font-size: 24px;
+font-weight: bold;
+position: relative;
 }
 
-h1,h2,h3{
- font-family:'Marcellus',serif;
- color:var(--stone);
+.top-nav {
+background: #fff4f7;
+padding: 10px;
+text-align: center;
+border-bottom: 1px solid #e2b9c7;
+}
+.top-nav a {
+margin: 0 8px;
+color: #9b425b;
+text-decoration: none;
+font-weight: 600;
+}
+.top-nav a.active {
+color: #d12d52;
 }
 
-.navbar{
- background:var(--white);
- padding:10px 22px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- border-bottom:2px solid var(--gold);
- position:sticky;top:0;z-index:10;
+.container-home {
+display: flex;
+padding: 15px;
 }
 
-.navbar a{
- text-decoration:none;
- margin:0 10px;
- color:var(--dark);
- font-weight:500;
+.left-panel {
+width: 250px;
+background: #fff0f5;
+border: 1px solid #e8c4d4;
+padding: 15px;
+border-radius: 6px;
 }
 
-.navbar a.active{color:var(--gold);}
-
-.hero{
- height:60vh;
- background-size:cover;
- position:relative;
- display:flex;
- justify-content:center;
- align-items:center;
- text-align:center;
+.content-area {
+flex: 1;
+padding-left: 20px;
 }
 
-.hero-overlay{
- position:absolute;inset:0;
- background:rgba(0,0,0,0.35);
+.circuit-card, .story-card, .legend-card {
+background: #fff;
+border: 1px solid #e8c4d4;
+padding: 12px;
+margin-bottom: 10px;
+border-radius: 8px;
 }
 
-.hero-content{
- position:relative;
- color:var(--white);
- max-width:620px;
+.tn-container {
+display: grid;
+grid-template-columns: 200px 1fr 300px;
+gap: 15px;
+padding: 20px;
 }
 
-.auspicious{
- padding:20px;
- background:var(--lotus-deep);
- border-top:2px solid var(--gold);
+.district-list {
+background: #fff0f5;
+border: 1px solid #e8c4d4;
+padding: 10px;
 }
 
-.circuit-grid,.story-grid{
- display:grid;
- gap:18px;
- grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
- padding:18px;
+.map-box {
+background: #fff;
+border: 1px solid #e8c4d4;
+padding: 10px;
+height: fit-content;
 }
 
-.circuit-card,.story-card{
- background:var(--white);
- border:1px solid var(--gold);
- border-radius:10px;
- padding:18px;
-}
-
-footer{
- text-align:center;
- padding:25px;
- background:var(--white);
- border-top:2px solid var(--gold);
- margin-top:20px;
+.legend-block {
+padding: 30px;
+background: #fbeff4;
 }
