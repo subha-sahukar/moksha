@@ -1,232 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tamil Nadu Temples – Moksha</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --lotus:#c27193;--gold:#d4af37;--deep:#3b1d28;--ivory:#fff8f9;--muted:#f7e9ef;
-}
-body{
-  margin:0;font-family:'Poppins',sans-serif;background:#fff8f9;color:#332;
-}
-
-/* === HERO === */
-.hero{
-  position:relative;
-  height:65vh;
-  background:url('https://subha-sahukar.github.io/moksha/images/brihadeeswarar_dusk.jpg') center/cover no-repeat;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;
-  border-bottom:4px solid var(--gold);
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(rgba(59,29,40,0.4),rgba(59,29,40,0.8));
-  z-index:0;
-}
-.hero h1,.hero p,.state-menu{position:relative;z-index:1;}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  color:var(--gold);font-size:2.4rem;margin:0 0 .5rem;
-  text-shadow:0 0 10px rgba(212,175,55,.6);
-}
-.hero p{
-  max-width:700px;color:var(--muted);margin:0 auto 1rem;
-  text-shadow:0 2px 6px rgba(0,0,0,.6);
-}
-
-/* === STATE MENU (same as index) === */
-.state-menu{
-  display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;
-}
-.state-menu a{
-  text-decoration:none;color:#fff;font-weight:500;
-  border-bottom:2px solid transparent;padding-bottom:3px;
-  transition:all .3s ease;
-}
-.state-menu a:hover{color:var(--gold);border-bottom:2px solid var(--gold);text-shadow:0 0 6px rgba(212,175,55,.6);}
-.state-menu a.active{color:var(--gold);border-bottom:2px solid var(--gold);}
-
-/* === MAIN LAYOUT === */
-main{
-  display:flex;min-height:100vh;
-  background:url('https://subha-sahukar.github.io/moksha/images/floral_stone_bg.png') center/contain repeat;
-}
-.sidebar{
-  width:250px;padding:1rem;background:rgba(193,113,147,.1);
-  border-right:2px solid rgba(212,175,55,.4);
-}
-.sidebar h2{
-  font-family:'Playfair Display',serif;color:var(--deep);
-  font-size:1.2rem;margin:0 0 .8rem;
-}
-.sidebar button{
-  width:100%;background:none;border:none;text-align:left;
-  padding:.6rem;font-size:.95rem;color:var(--deep);
-  border-left:3px solid transparent;cursor:pointer;
-  transition:all .3s ease;
-}
-.sidebar button:hover,
-.sidebar button.active{
-  color:var(--gold);border-left:3px solid var(--gold);
-  background:rgba(212,175,55,.1);
-}
-.hamburger{
-  display:none;position:fixed;top:15px;left:15px;
-  background:none;border:none;color:var(--gold);
-  font-size:1.8rem;z-index:999;
-}
-
-/* === CONTENT === */
-.content{flex:1;padding:2rem;display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));align-content:start;}
-.district-summary{
-  grid-column:1/-1;background:rgba(255,255,255,.9);
-  border-left:4px solid var(--gold);border-radius:8px;
-  padding:1rem 1.5rem;margin-bottom:.5rem;
-}
-.district-summary h2{font-family:'Playfair Display',serif;color:var(--lotus);margin:0 0 .5rem;}
-.temple-card{
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(212,175,55,.3);
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
-  overflow:hidden;
-  animation:fadeup .8s both;
-  transition:transform .3s ease,box-shadow .3s ease;
-}
-.temple-card:hover{transform:translateY(-5px);box-shadow:0 6px 16px rgba(0,0,0,.15);}
-.temple-card img{width:100%;height:160px;object-fit:cover;}
-.temple-card .info{padding:1rem;}
-.temple-card h3{font-family:'Playfair Display',serif;color:var(--lotus);font-size:1.05rem;margin:0 0 .4rem;}
-.temple-card p{margin:.2rem 0;font-size:.9rem;line-height:1.4;color:#444;}
-@keyframes fadeup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
-
-/* === STORY SECTION === */
-.story-section{
-  background:linear-gradient(to top,rgba(59,29,40,1),rgba(59,29,40,.95));
-  color:var(--muted);text-align:center;padding:3rem 1rem;
-}
-.story-section h2{color:var(--gold);font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:2rem;}
-.story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
-.story-card{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(212,175,55,.2);
-  border-radius:10px;padding:1rem;
-  transition:background .3s ease;
-}
-.story-card:hover{background:rgba(255,255,255,.1);}
-.story-card h3{color:var(--gold);font-family:'Playfair Display',serif;}
-.story-card p{font-size:.9rem;line-height:1.5;color:var(--muted);}
-
-/* === FOOTER === */
-footer{
-  background:var(--deep);color:var(--muted);
-  text-align:center;padding:1rem;font-size:.85rem;
-}
-
-/* === MOBILE === */
-@media(max-width:900px){
-  main{flex-direction:column;}
-  .sidebar{
-    position:fixed;top:0;left:0;height:100%;
-    transform:translateX(-100%);
-    transition:transform .3s ease;z-index:998;
-    background:#fff8f9;
-  }
-  .sidebar.open{transform:translateX(0);}
-  .hamburger{display:block;}
-}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamil Nadu Pilgrimage — Moksha</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/tamilnadu.css">
+<script src="js/temples.js" defer></script>
+<script src="js/dynasties.js" defer></script>
+<script src="js/tamilnadu.js" defer></script>
+<script src="js/ambient.js" defer></script>
 </head>
 
 <body>
-<button class="hamburger" onclick="toggleMenu()">☰</button>
 
-<section class="hero">
-  <h1>Tamil Nadu Temples</h1>
-  <p>Let dawn light the carvings, let bells and birds answer each other.  
-  Stone, lamp, chant, and sky — from Chidambaram to Kanyakumari,  
-  each shrine keeps the rhythm of devotion alive.</p>
-  <div class="state-menu">
-    <a href="tamilnadu.html" class="active">Tamil Nadu</a>
-    <a href="andhra.html">Andhra Pradesh</a>
-    <a href="karnataka.html">Karnataka</a>
-    <a href="kerala.html">Kerala</a>
-  </div>
+<header>
+  <nav class="main-nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand">Moksha</a>
+    </div>
+    <div class="nav-right">
+      <a href="tamilnadu.html" class="active">Tamil Nadu</a>
+      <a href="andhra.html">Andhra</a>
+      <a href="karnataka.html">Karnataka</a>
+      <a href="kerala.html">Kerala</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero-tn">
+  <div class="hero-overlay"></div>
+  <h1 class="hero-title">Tamil Nadu — Land of Eternal Temples</h1>
+  <p class="hero-sub">
+    Where Chola stone breathes, Pandya corridors echo hymns, and Pallava wisdom flowers in sculpture.
+  </p>
 </section>
 
-<main>
-  <aside class="sidebar" id="sidebar">
-    <h2>Districts</h2>
-    <div id="districtList"></div>
+<!-- Audio lotus toggle -->
+<div class="audio-toggle" onclick="toggleAmbience()" title="Temple Ambience">
+  🪷
+</div>
+
+<section class="tn-container">
+
+  <!-- Sidebar -->
+  <aside class="district-nav">
+    <h3>Temple Regions</h3>
+    <ul id="districtList"></ul>
   </aside>
 
-  <section class="content" id="templeGrid">
-    <p style="grid-column:1/-1;text-align:center;">Select a district to begin your journey.</p>
-  </section>
-</main>
+  <!-- Main Content -->
+  <main class="district-content">
+    <div id="districtIntro" class="district-intro"></div>
+    <div id="templeGrid" class="temple-grid"></div>
+  </main>
+
+</section>
 
 <section class="story-section">
-  <h2>Legends & Heritage of Tamil Nadu</h2>
+  <h2 class="section-title">Legends & Eternal Stories</h2>
   <div class="story-grid">
-    <div class="story-card"><h3>The Chola Flame of Architecture</h3><p>The Cholas built in granite and gold — from Thanjavur’s towering vimana to Gangaikonda Cholapuram’s grandeur, their art turned devotion into dynasty.</p></div>
-    <div class="story-card"><h3>The Sacred Cauvery</h3><p>Winding through the delta, the Cauvery nourishes fields and faith alike; along her banks rise countless shrines and melodies of the Nayanmars.</p></div>
-    <div class="story-card"><h3>The Madurai Sangam Age</h3><p>Poets once gathered by the Vaigai’s edge, weaving Tamil into verse that carried gods, kings, and lovers into immortality.</p></div>
-    <div class="story-card"><h3>Pilgrimage of the Nayanmars</h3><p>From Appar to Sundarar, saints walked these lands barefoot, turning every step into song and every temple into truth.</p></div>
+    <div class="story-card">Birth of Saint Appar & Shiva’s Grace</div>
+    <div class="story-card">Rajaraja Chola’s Vision for Brihadeeswarar</div>
+    <div class="story-card">Nammalvar and the Tamiraparani Vishnu Circuit</div>
   </div>
 </section>
 
-<footer>© 2025 Moksha — Sacred Circuits of Bharat</footer>
+<footer class="footer">
+  <p>🛕 A pilgrimage in pixels. © Moksha Yatra</p>
+</footer>
 
-<script>
-const temples=[
- {district:"Thanjavur",name:"Brihadeeswarar Temple",deity:"Shiva",category:"Padal Petra Sthalam",significance:"Spiritual power",festival:"Maha Shivaratri",img:"https://upload.wikimedia.org/wikipedia/commons/5/5d/Brihadeeswarar_Temple.jpg"},
- {district:"Thanjavur",name:"Srirangam Ranganathaswamy Temple",deity:"Vishnu",category:"Divya Desam",significance:"Removes doshas",festival:"Vaikunta Ekadasi",img:"https://upload.wikimedia.org/wikipedia/commons/d/d0/Srirangam_Ranganathaswamy_Temple_07.jpg"},
- {district:"Madurai",name:"Meenakshi Amman Temple",deity:"Devi",category:"Shakti Peetham",significance:"Marriage and family blessings",festival:"Chithirai Festival",img:"https://upload.wikimedia.org/wikipedia/commons/5/54/Meenakshi_Amman_temple_tower_1.jpg"},
- {district:"Madurai",name:"Thiruparankundram Murugan Temple",deity:"Murugan",category:"Aru Padai Veedu",significance:"Victory and courage",festival:"Skanda Sashti",img:"https://upload.wikimedia.org/wikipedia/commons/a/a8/Thiruparankundram_temple.jpg"},
- {district:"Kanchipuram",name:"Ekambareswarar Temple",deity:"Shiva",category:"Padal Petra Sthalam",significance:"Health and longevity",festival:"Karthigai Deepam",img:"https://upload.wikimedia.org/wikipedia/commons/0/0d/Ekambareswarar_Temple%2C_Kanchipuram.jpg"},
- {district:"Kanchipuram",name:"Varadharaja Perumal Temple",deity:"Vishnu",category:"Divya Desam",significance:"Fertility and family welfare",festival:"Brahmotsavam",img:"https://upload.wikimedia.org/wikipedia/commons/f/f6/Varadharaja_Perumal_Temple%2C_Kanchipuram.jpg"},
- {district:"Chennai",name:"Kapaleeshwarar Temple",deity:"Shiva",category:"Padal Petra Sthalam",significance:"Removes obstacles",festival:"Maha Shivaratri",img:"https://upload.wikimedia.org/wikipedia/commons/7/72/Kapaleeswarar_temple.jpg"},
- {district:"Chennai",name:"Parthasarathy Temple",deity:"Vishnu",category:"Divya Desam",significance:"Relief from doshas",festival:"Vaikunta Ekadasi",img:"https://upload.wikimedia.org/wikipedia/commons/9/9e/Parthasarathy_temple_tank.jpg"},
- {district:"Tirunelveli",name:"Nellaiappar Temple",deity:"Shiva",category:"Padal Petra Sthalam",significance:"Health and prosperity",festival:"Panguni Uthiram",img:"https://upload.wikimedia.org/wikipedia/commons/8/83/Nellaiappar_temple_gopuram.jpg"},
- {district:"Tirunelveli",name:"Nava Tirupati Temples",deity:"Vishnu",category:"Nava Tirupati",significance:"Astrological remedies",festival:"Various festivals",img:"https://upload.wikimedia.org/wikipedia/commons/4/4c/Alwarthirunagari_temple.jpg"}
-];
-
-const districtInfo={
- "Thanjavur":"Once the seat of the Chola Empire, this fertile Cauvery delta city cradles art, bronze, and towering vimanas. The Saraswathi Mahal Library and palace echo its scholarly past.",
- "Madurai":"An ancient city of temples and jasmine, Madurai rose under the Pandyas. The Vaigai River curves through its streets like a hymn to Meenakshi and Sundareswarar.",
- "Kanchipuram":"Known as the City of Thousand Temples, Kanchi flourished under the Pallavas and Cholas. Silk weaving and philosophy still bloom beside its sacred tanks.",
- "Chennai":"Once a colonial port, Chennai grew around Fort St. George. Its Marina beach, music season, and Kapaleeshwarar temple anchor a blend of heritage and modernity.",
- "Tirunelveli":"By the Tamiraparani River, this southern district holds the Nava Tirupatis and Nellaiappar temple — faith and agriculture woven through its fields."
-};
-
-const districts=[...new Set(temples.map(t=>t.district))];
-const districtList=document.getElementById('districtList');
-const grid=document.getElementById('templeGrid');
-
-districts.forEach(d=>{
-  const b=document.createElement('button');
-  b.textContent=d;
-  b.onclick=()=>{document.querySelectorAll('.sidebar button').forEach(x=>x.classList.remove('active'));b.classList.add('active');loadTemples(d);};
-  districtList.appendChild(b);
-});
-
-function loadTemples(d){
-  grid.innerHTML=`<div class='district-summary'><h2>${d}</h2><p>${districtInfo[d]||''}</p></div>`;
-  temples.filter(t=>t.district===d).forEach(t=>{
-    const c=document.createElement('div');
-    c.className='temple-card';
-    c.innerHTML=`<img src="${t.img}" alt="${t.name}"><div class='info'><h3>${t.name}</h3><p><b>Deity:</b> ${t.deity}</p><p><b>Type:</b> ${t.category}</p><p><b>Festival:</b> ${t.festival}</p><p><b>Significance:</b> ${t.significance}</p></div>`;
-    grid.appendChild(c);
-  });
-}
-
-function toggleMenu(){document.getElementById('sidebar').classList.toggle('open');}
-</script>
 </body>
 </html>
