@@ -2,51 +2,47 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tamil Nadu Temples – Moksha Yatra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tamil Nadu Temples | Moksha Yatra</title>
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<header class="nav">
-  <a class="logo" href="index.html">Moksha</a>
-  <nav class="state-nav">
-    <a class="active" href="tamilnadu.html">Tamil Nadu</a>
+<header class="header">
+  <div class="logo">🕉️ Moksha Yatra</div>
+  <nav>
     <a href="index.html">Home</a>
-    <a href="#">Andhra</a>
+    <a href="tamilnadu.html" class="active">Tamil Nadu</a>
+    <a href="#">Andhra Pradesh</a>
     <a href="#">Karnataka</a>
     <a href="#">Kerala</a>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Tamil Nadu — Land of Eternal Temples</h1>
-  <p class="hero-sub">
-    Where Chola stone breathes, Pandya corridors echo hymns, and Pallava art flowers in bronze and granite.
-  </p>
+<section class="sub-hero">
+  <h1>Temples of Tamil Nadu</h1>
+  <p>Chola stone, Pandya devotion, Pallava grace — a land of sacred echoes.</p>
 </section>
 
-<section class="layout-wrapper">
+<div class="tamil-body">
+  <aside class="district-list">
+    <ul id="district-menu"></ul>
+  </aside>
 
-<aside class="sidebar">
-  <h3 class="side-title">Temple Regions</h3>
-  <ul id="districtList"></ul>
-</aside>
+  <main class="temple-display">
+    <div class="district-intro" id="district-intro">Select a district.</div>
+    <div class="temple-cards" id="temple-cards"></div>
+  </main>
+</div>
 
-<main class="content">
-  <div id="districtIntro" class="district-intro">
-    Select a temple region to begin your sacred walk.
-  </div>
-  <div id="templeCards" class="temple-grid"></div>
-</main>
-
+<section class="story-section small">
+  <h2>Pilgrimage Circuits</h2>
+  <p>Chola cave trail • Navagraha darshan • Nava Tirupati • Murugan Aru Padai Veedu</p>
 </section>
 
-<footer class="footer">
-  <p>© 2025 Moksha Yatra — Eternal Pilgrimage</p>
-</footer>
+<footer class="footer">© Moksha Yatra — Tamil Nadu Devotional Atlas</footer>
 
 </body>
 </html>
