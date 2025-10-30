@@ -2,69 +2,90 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moksha Yatra – Sacred Atlas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moksha Yatra</title>
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<header class="nav">
-  <a class="logo" href="index.html">Moksha</a>
-  <nav class="state-nav">
-    <a class="active" href="index.html">Home</a>
+<header class="header">
+  <div class="logo">🕉️ Moksha Yatra</div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
     <a href="tamilnadu.html">Tamil Nadu</a>
-    <a href="#">Andhra</a>
+    <a href="#">Andhra Pradesh</a>
     <a href="#">Karnataka</a>
     <a href="#">Kerala</a>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Moksha Yatra</h1>
-  <p class="hero-sub">
-    Walk temple corridors where chants echo stone and time breathes devotion.
-  </p>
+<section class="hero" style="background-image:url('images/hero_temple_bg.jpg');">
+  <div class="hero-content">
+    <h1>“A journey through stone and silence — each shrine a doorway.”</h1>
+    <p>Walk where sages walked. Let temple bells and wind carry your prayer.</p>
+  </div>
 </section>
 
-<section class="section">
-<h2 class="section-title">Panchangam & Auspicious Timings</h2>
-<div class="placeholder-box">
-  Panchang widget placeholder — your same JS will render here.
-</div>
+<!-- Panchang -->
+<section class="panchang-section">
+  <div class="panchang-banner">
+    <h2>🪔 Panchangam & Auspicious Timings</h2>
+    <p class="subtitle">Indicative timings. Check local temple boards.</p>
+  </div>
+
+  <div class="panchang-grid">
+    <div class="panchang-card">
+      <h4>Nalla Neram</h4>
+      <p>Morning: <span id="nalla-morning">6:00 – 7:00 AM</span></p>
+      <p>Evening: <span id="nalla-evening">4:30 – 5:30 PM</span></p>
+    </div>
+
+    <div class="panchang-card">
+      <h4>Rahu Kalam</h4>
+      <p id="rahu">varies by weekday</p>
+    </div>
+
+    <div class="panchang-card">
+      <h4>Yamagandam</h4>
+      <p id="yama">varies by weekday</p>
+    </div>
+
+    <div class="panchang-card">
+      <h4>Tithi / Nakshatra</h4>
+      <p id="tithi">—</p>
+      <p id="nakshatra">—</p>
+    </div>
+
+    <div class="panchang-card">
+      <h4>Months</h4>
+      <p>Tamil: <span id="tamil-month">—</span></p>
+      <p>Telugu: <span id="telugu-month">—</span></p>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-<h2 class="section-title">Temple Stories</h2>
-
-<div class="story-row">
-
-  <div class="story-card">
-    <img src="ganesha.jpg" alt="">
-    <h3>Ganesha’s world-circle wisdom</h3>
-    <p>The sacred journey inward as the greatest pilgrimage.</p>
+<!-- Story Cards -->
+<section class="story-section">
+  <h2>Divine Stories</h2>
+  <div class="story-grid">
+    <div class="story-card">
+      <h3>Why Shiva Burns Kama?</h3>
+      <p>Desire bows before meditation; grace returns love purified.</p>
+    </div>
+    <div class="story-card">
+      <h3>Vishnu's Vaikuntha Darshan</h3>
+      <p>In moments of surrender, every doorway becomes Vaikuntha.</p>
+    </div>
+    <div class="story-card">
+      <h3>Murugan & The Fruit of Wisdom</h3>
+      <p>What you seek outside, resides within you already.</p>
+    </div>
   </div>
-
-  <div class="story-card">
-    <img src="nataraja.jpg" alt="">
-    <h3>Nataraja: dance of creation</h3>
-    <p>Rhythm, dissolution, and cosmic grace in motion.</p>
-  </div>
-
-  <div class="story-card">
-    <img src="narada.jpg" alt="">
-    <h3>Narada’s playful wisdom</h3>
-    <p>Humility, devotion, and the path through song.</p>
-  </div>
-
-</div>
 </section>
 
-<footer class="footer">
-  <p>© 2025 Moksha Yatra — Sacred Atlas</p>
-  <small>Temple images © respective trusts</small>
-</footer>
+<footer class="footer">© Moksha Yatra — Walk With Devotion</footer>
 
 </body>
 </html>
