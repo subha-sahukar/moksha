@@ -67,4 +67,108 @@
         "name": "Gangaikonda Cholapuram",
         "deity": "Shiva",
         "type": "UNESCO Chola Temple",
-        "significance": "Rajendra Chola’
+        "significance": "Rajendra Chola’s sacred capital — refined sculpture and elegance.",
+        "image": "images/gkc.jpg"
+      }
+    ]
+  },
+
+  "Kumbakonam": {
+    "intro": "Temple town of nectar — sacred rivers, teerthams, and the Mahamaham cosmic festival center.",
+    "temples": [
+      {
+        "name": "Adi Kumbeshwarar Temple",
+        "deity": "Shiva",
+        "type": "Major Shaivite Temple",
+        "significance": "Origin of Kumbakonam — Shiva shaped from nectar pot.",
+        "image": "images/kumbeshwarar.jpg"
+      },
+      {
+        "name": "Sarangapani Temple",
+        "deity": "Vishnu",
+        "type": "Divya Desam",
+        "significance": "Largest Vishnu temple in South India after Srirangam.",
+        "image": "images/sarangapani.jpg"
+      },
+      {
+        "name": "Airavatesvara Temple (Darasuram)",
+        "deity": "Shiva",
+        "type": "UNESCO Chola Temple",
+        "significance": "Musical steps and chariot-shaped mandapa — sculptural excellence.",
+        "image": "images/darasuram.jpg"
+      },
+      {
+        "name": "Mahamaham Tank",
+        "deity": "Sacred Teertham",
+        "type": "Holy Tank",
+        "significance": "Southern Kumbh — holy dip every 12 years removes karmic layers.",
+        "image": "images/mahamaham.jpg"
+      }
+    ]
+  },
+
+  "Tiruvannamalai": {
+    "intro": "Mountain of fire — spiritual axis of Advaita and home of thiruvannamalai deepam.",
+    "temples": [
+      {
+        "name": "Arunachaleswarar Temple",
+        "deity": "Shiva",
+        "type": "Pancha Bhoota (Fire)",
+        "significance": "Arunachala hill itself revered as Shiva; Giri Pradakshina sacred walk.",
+        "image": "images/arunachala.jpg"
+      }
+    ]
+  },
+
+  "Madurai": {
+    "intro": "Lotus-shaped cultural capital — Sangam age heritage and divine marriage legend.",
+    "temples": [
+      {
+        "name": "Meenakshi Amman Temple",
+        "deity": "Parvati",
+        "type": "Major Shakti Temple",
+        "significance": "Temple city model — divine wedding of Meenakshi & Sundareshwarar.",
+        "image": "images/meenakshi.jpg"
+      }
+    ]
+  },
+
+  "Palani": {
+    "intro": "Sacred hill of renunciation — where Murugan revealed the fruit of wisdom.",
+    "temples": [
+      {
+        "name": "Palani Murugan Temple",
+        "deity": "Murugan",
+        "type": "Arupadai Veedu",
+        "significance": "Dandayudhapani — renunciation, Siddhar tradition, Panchamirtham prasadam.",
+        "image": "images/palani.jpg"
+      }
+    ]
+  },
+
+  "Chidambaram": {
+    "intro": "Cosmic stage of consciousness — Nataraja’s dance of creation and silence.",
+    "temples": [
+      {
+        "name": "Nataraja Temple",
+        "deity": "Shiva (Nataraja)",
+        "type": "Pancha Bhoota (Space)",
+        "significance": "Chidambara Rahasya — formless truth behind golden veil.",
+        "image": "images/chidambaram.jpg"
+      }
+    ]
+  },
+
+  "Rameswaram": {
+    "intro": "Bridge of devotion — where Rama worshipped Shiva and oceans purify pilgrims.",
+    "temples": [
+      {
+        "name": "Ramanathaswamy Temple",
+        "deity": "Shiva",
+        "type": "Jyotirlinga",
+        "significance": "Sacred wells, longest temple corridor in India — gateway to moksha.",
+        "image": "images/rameswaram.jpg"
+      }
+    ]
+  }
+}
