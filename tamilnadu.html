@@ -1,80 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tamil Nadu Temples | Moksha Yatra</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="hero_shared.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="hero_shared.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
 <style>
-  
-:root{
-  --lotus:#e8b6c2;--lotus-light:#f9dce2;--lotus-dark:#722f37;
-  --gold:#d4af37;--ivory:#f7e9ef;
-}
-
-
-/* breadcrumb */
-.breadcrumb{
-  background:var(--lotus-light);
-  padding:0.75rem 1rem;
-  font-size:0.9rem;
-  color:#552633;
-  border-bottom:1px solid rgba(0,0,0,0.05);
-}
-.breadcrumb a{color:#552633;text-decoration:none}
-.breadcrumb a:hover{text-decoration:underline}
-
-/* main layout */
-main{display:flex;flex:1;min-height:80vh;background:#fff7f9}
-.district-list{
-  width:260px;background:linear-gradient(180deg,var(--lotus) 0%,var(--lotus-light) 100%);
-  border-right:2px solid #f3cbd4;padding:1rem;overflow-y:auto;
-}
-.district-list h2{text-align:center;color:var(--lotus-dark);margin-bottom:1rem;font-family:'Playfair Display',serif}
-.district{
-  background:#f9e7eb;border:1px solid #f3cbd4;border-radius:8px;
-  padding:10px;margin-bottom:10px;cursor:pointer;text-align:center;
-  transition:all .25s ease-in-out;
-}
-.district:hover{background:#fceff3;transform:scale(1.03)}
-.district.active{background:#f6c8d5;color:#4a1a26;font-weight:600}
-
-/* right content */
-.temple-container{flex:1;padding:2rem;overflow-y:auto;background:#fff9fa}
-.temple-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;
-}
-.temple-card{
-  background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,.08);
-  overflow:hidden;border-top:5px solid #e8a9b5;transition:transform .25s ease;
-}
-.temple-card:hover{transform:translateY(-6px)}
-.temple-image{width:100%;height:180px;object-fit:cover;display:block}
-.temple-card h3{color:#772b36;font-family:'Playfair Display',serif;margin:10px 12px 4px}
-.temple-card p{font-size:.9rem;color:#555;margin:2px 12px 6px}
-
-/* smooth scroll */
-html{scroll-behavior:smooth}
-
-/* responsive */
-@media(max-width:900px){
-  main{flex-direction:column}
-  .district-list{
-    width:100%;display:flex;overflow-x:auto;border-right:none;
-    border-bottom:2px solid #f3cbd4;padding:.5rem 1rem;
-  }
-  .district{flex:0 0 auto;margin-right:10px}
-}
+:root{--lotus:#e8b6c2;--lotus-light:#f9dce2;--lotus-dark:#722f37;--gold:#d4af37;--ivory:#f7e9ef;}
+body{margin:0;font-family:'Poppins',sans-serif;background:#fff9fa;color:#42272f;}
+.hero{background:url('images/hero_temple_bg.jpg') center/cover no-repeat fixed;}
+.state-links{margin-top:1rem;z-index:1;position:relative;}
+.state-links a{color:var(--ivory);margin:0 .4rem;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.3);border-radius:20px;text-decoration:none;font-size:.9rem;transition:.2s;}
+.state-links a:hover,.state-links a.active{background:rgba(255,255,255,.2);border-color:var(--gold);color:var(--gold);}
+.breadcrumb{background:var(--lotus-light);padding:.6rem 1rem;font-size:.9rem;color:#552633;}
+.breadcrumb a{color:#552633;text-decoration:none;}
+main{display:flex;min-height:75vh;}
+.district-list{width:260px;background:linear-gradient(180deg,var(--lotus-light),var(--lotus));border-right:2px solid #f3cbd4;padding:1rem;overflow-y:auto;transition:transform .3s ease;}
+.district-list h2{text-align:center;color:var(--lotus-dark);font-family:'Playfair Display',serif;margin-bottom:1rem;}
+.district{background:#f9e7eb;border:1px solid #f3cbd4;border-radius:8px;padding:10px;margin-bottom:10px;cursor:pointer;text-align:center;color:#4a1a26;transition:all .25s;}
+.district:hover{background:#fceff3;transform:scale(1.03);}
+.district.active{background:#d992a8;color:#fff;font-weight:600;}
+.temple-container{flex:1;padding:2rem;overflow-y:auto;}
+.temple-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;}
+.temple-card{background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,.08);overflow:hidden;border-top:5px solid #e8a9b5;transition:transform .25s;opacity:0;transform:translateY(15px);animation:fadeInUp .6s forwards;}
+.temple-card:hover{transform:translateY(-6px);}
+.temple-image{width:100%;height:180px;object-fit:cover;}
+.temple-card h3{color:#772b36;font-family:'Playfair Display',serif;margin:10px 12px 4px;}
+.temple-card p{font-size:.9rem;color:#555;margin:2px 12px 6px;}
+@keyframes fadeInUp{to{opacity:1;transform:none;}}
+.hamburger{position:absolute;top:20px;right:25px;background:none;border:none;font-size:28px;color:var(--gold);cursor:pointer;display:none;z-index:999;}
+@media(max-width:900px){main{flex-direction:column;}.district-list{position:fixed;top:0;left:0;height:100%;transform:translateX(-100%);z-index:998;}.district-list.open{transform:translateX(0);}.hamburger{display:block;}}
+footer{background:linear-gradient(180deg,var(--lotus-dark),#2a0f13);color:var(--ivory);text-align:center;padding:1.5rem 1rem;margin-top:2rem;}
+footer .footnote{font-size:.85rem;opacity:.8;}
 </style>
 </head>
 
 <body>
-
 <section class="hero">
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
   <h1>Tamil Nadu Temples</h1>
   <p>Stone, lamp, chant, and sky — from Chidambaram to Kanyakumari, each shrine keeps the rhythm of devotion alive.</p>
+  <nav class="state-links">
+    <a href="tamilnadu.html" class="active">Tamil Nadu</a>
+    <a href="andhra.html">Andhra Pradesh</a>
+    <a href="karnataka.html">Karnataka</a>
+    <a href="kerala.html">Kerala</a>
+  </nav>
 </section>
 
 <nav class="breadcrumb">
@@ -100,13 +75,28 @@ html{scroll-behavior:smooth}
   </section>
 </main>
 
+<footer>
+  <div class="footer-inner">
+    <p>© 2025 Moksha Yatra • A digital pilgrimage through the sacred South.</p>
+    <p class="footnote">Crafted in reverence — where code meets devotion.</p>
+  </div>
+</footer>
+
 <script>
-const temples={ /* same JSON structure as before */ };
+let temples={};
+async function loadTemples(){
+  const res=await fetch('data/temples_tn.json');
+  temples=await res.json();
+  showTemples('chennai');
+  document.querySelector('.district').classList.add('active');
+}
+
 function showTemples(district,ev){
   document.querySelectorAll('.district').forEach(d=>d.classList.remove('active'));
   if(ev)ev.target.classList.add('active');
-  const grid=document.getElementById('templeGrid');grid.innerHTML='';
-  temples[district].forEach(t=>{
+  const grid=document.getElementById('templeGrid');
+  grid.innerHTML='';
+  (temples[district]||[]).forEach(t=>{
     const card=document.createElement('div');card.className='temple-card';
     card.innerHTML=`
       <img src="images/temples/${t.img}" alt="${t.name}" class="temple-image">
@@ -118,8 +108,12 @@ function showTemples(district,ev){
     grid.appendChild(card);
   });
 }
-showTemples('chennai');
-document.querySelector('.district').classList.add('active');
+
+function toggleMenu(){
+  document.querySelector('.district-list').classList.toggle('open');
+}
+
+loadTemples();
 </script>
 </body>
 </html>
