@@ -1,0 +1,42 @@
+[
+  {
+    "district":"Chennai",
+    "name":"Kapaleeshwarar Temple",
+    "deity":"Shiva",
+    "category":"Padal Petra Sthalam",
+    "significance":"Removes obstacles",
+    "festival":"Mahashivaratri"
+  },
+  {
+    "district":"Kanchipuram",
+    "name":"Varadharaja Perumal Temple",
+    "deity":"Vishnu",
+    "category":"Divya Desam",
+    "significance":"Prosperity and grace",
+    "festival":"Brahmotsavam"
+  },
+  {
+    "district":"Madurai",
+    "name":"Meenakshi Amman Temple",
+    "deity":"Devi",
+    "category":"Shakti Peetham",
+    "significance":"Marriage blessings",
+    "festival":"Chithirai Festival"
+  },
+  {
+    "district":"Thanjavur",
+    "name":"Brihadeeswarar Temple",
+    "deity":"Shiva",
+    "category":"Padal Petra Sthalam",
+    "significance":"Spiritual strength",
+    "festival":"Mahashivaratri"
+  },
+  {
+    "district":"Tirunelveli",
+    "name":"Nellaiappar Temple",
+    "deity":"Shiva",
+    "category":"Padal Petra Sthalam",
+    "significance":"Health & prosperity",
+    "festival":"Panguni Uthiram"
+  }
+]
