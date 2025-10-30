@@ -57,12 +57,16 @@ color: #4b2e2e;
 
 
 
-.hero {
-background: linear-gradient(180deg,#b04b69,#d6879d,#f7e6ee);
-padding: 70px 20px;
-text-align: center;
-color: #fff8f0;
-}
+/* Hero */
+.hero{height:66vh;display:flex;align-items:center;justify-content:center;position:relative;margin-top:64px}
+.hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;z-index:0;filter:contrast(1.02) saturate(.9) hue-rotate(-6deg);transform:translateZ(0);will-change:transform}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(1200px 600px at 50% 20%, rgba(228,154,176,0.06), rgba(0,0,0,0.5));z-index:1}
+.mandala{position:absolute;inset:0;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22></svg>');opacity:.06;z-index:1;mix-blend-mode:overlay}
+.hero-inner{position:relative;z-index:2;max-width:980px;padding:26px;border-radius:12px;text-align:center}
+.hero h1{font-family:'Playfair Display',serif;font-size:2.6rem;margin:0 0 10px;color:var(--gold);text-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.hero p{margin:0;color:var(--muted);font-size:1.02rem;line-height:1.6}
+
+
 
 .top-nav {
 background: rgba(255,255,255,0.2);
@@ -111,3 +115,93 @@ background: #b04b69;
 color: white;
 text-align: center;
 }
+.vertical-circuits {
+  background:linear-gradient(180deg,#a54a69 0%,#e9b8c8 100%);
+  padding:3rem 1rem;
+  text-align:center;
+}
+.vertical-circuits h2 { font-family:'Playfair Display',serif; color:#fff; }
+
+.circuit {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin:2rem auto;
+  max-width:400px;
+  background:rgba(255,255,255,0.08);
+  border-radius:16px;
+  overflow:hidden;
+  transition:transform .4s ease;
+}
+.circuit:hover { transform:scale(1.03); }
+.circuit img {
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  filter:brightness(0.9);
+}
+.circuit-info { padding:1rem; color:#fffaf3; }
+.circuit-info h3 { margin:.5rem 0; }
+.circuit-info button {
+  background:rgba(255,255,255,0.2);
+  border:none;
+  border-radius:8px;
+  margin:0.3rem;
+  padding:.4rem .8rem;
+  color:#fff;
+  cursor:pointer;
+}
+.circuit-info button:hover {
+  background:#ffd8e5; color:#5a1731;
+}
+
+/* Travel packages */
+.travel-packages {
+  background:#f7c9d8;
+  color:#3d081b;
+  padding:2rem 1rem;
+}
+.travel-packages .package {
+  background:rgba(255,255,255,0.6);
+  margin:1rem auto;
+  padding:1rem;
+  border-radius:10px;
+  max-width:400px;
+}
+
+/* Stories carousel (simple scrollable row) */
+.devotional-stories {
+  background:linear-gradient(180deg,#f7c9d8 0%,#ffe5ee 100%);
+  padding:2rem 1rem;
+  text-align:center;
+  color:#3d081b;
+}
+.story-carousel {
+  display:flex;
+  overflow-x:auto;
+  gap:1rem;
+  scroll-snap-type:x mandatory;
+}
+.story-card {
+  scroll-snap-align:center;
+  background:#fff;
+  border-radius:12px;
+  min-width:200px;
+  flex-shrink:0;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.story-card img {
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:12px 12px 0 0;
+}
+.story-card p {
+  padding:.5rem;
+  font-size:.9rem;
+}
+
+/* Tabbed district selector */
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.tab{background:var(--tab-bg);border:1px solid rgba(255,255,255,0.03);padding:10px 14px;border-radius:12px;color:var(--ivory);cursor:pointer;font-weight:600;transition:all .16s}
+.tab.active{background:linear-gradient(90deg,#3a1010,#5a1327);box-shadow:0 8px 28px rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.12)}
