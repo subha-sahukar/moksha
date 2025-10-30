@@ -1,40 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tamil Nadu Temples | Moksha Yatra</title>
 
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="hero_shared.css" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="hero_shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{--lotus:#e8b6c2;--lotus-light:#f9dce2;--lotus-dark:#722f37;--gold:#d4af37;--ivory:#f7e9ef;}
-body{margin:0;font-family:'Poppins',sans-serif;background:#fff9fa;color:#42272f;}
+:root{
+  --lotus:#e8b6c2;--lotus-light:#f9dce2;--lotus-dark:#722f37;
+  --gold:#d4af37;--ivory:#f7e9ef;
+}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:#40242c;
+  background:linear-gradient(180deg,#f9dce2 0%,#fff3f5 60%,#f5e4e7 100%);
+  background-attachment:fixed;
+}
 .hero{background:url('images/hero_temple_bg.jpg') center/cover no-repeat fixed;}
-.state-links{margin-top:1rem;z-index:1;position:relative;}
-.state-links a{color:var(--ivory);margin:0 .4rem;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.3);border-radius:20px;text-decoration:none;font-size:.9rem;transition:.2s;}
+.state-links a{color:var(--ivory);margin:0 .4rem;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.3);border-radius:20px;text-decoration:none;font-size:.9rem;}
 .state-links a:hover,.state-links a.active{background:rgba(255,255,255,.2);border-color:var(--gold);color:var(--gold);}
+
+/* breadcrumb */
 .breadcrumb{background:var(--lotus-light);padding:.6rem 1rem;font-size:.9rem;color:#552633;}
 .breadcrumb a{color:#552633;text-decoration:none;}
 main{display:flex;min-height:75vh;}
-.district-list{width:260px;background:linear-gradient(180deg,var(--lotus-light),var(--lotus));border-right:2px solid #f3cbd4;padding:1rem;overflow-y:auto;transition:transform .3s ease;}
+
+/* left panel */
+.district-list{
+  width:260px;background:rgba(255,255,255,.4);
+  border-right:1px solid rgba(0,0,0,.05);
+  backdrop-filter:blur(6px);
+  padding:1rem;overflow-y:auto;transition:transform .3s;
+  box-shadow:inset -2px 0 8px rgba(0,0,0,.05);
+}
 .district-list h2{text-align:center;color:var(--lotus-dark);font-family:'Playfair Display',serif;margin-bottom:1rem;}
-.district{background:#f9e7eb;border:1px solid #f3cbd4;border-radius:8px;padding:10px;margin-bottom:10px;cursor:pointer;text-align:center;color:#4a1a26;transition:all .25s;}
+.district{
+  background:#f9e7eb;border:1px solid #f3cbd4;border-radius:10px;
+  padding:10px;margin-bottom:10px;text-align:center;cursor:pointer;
+  color:#4a1a26;font-weight:500;transition:all .25s;
+}
 .district:hover{background:#fceff3;transform:scale(1.03);}
-.district.active{background:#d992a8;color:#fff;font-weight:600;}
-.temple-container{flex:1;padding:2rem;overflow-y:auto;}
-.temple-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;}
-.temple-card{background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,.08);overflow:hidden;border-top:5px solid #e8a9b5;transition:transform .25s;opacity:0;transform:translateY(15px);animation:fadeInUp .6s forwards;}
-.temple-card:hover{transform:translateY(-6px);}
-.temple-image{width:100%;height:180px;object-fit:cover;}
-.temple-card h3{color:#772b36;font-family:'Playfair Display',serif;margin:10px 12px 4px;}
-.temple-card p{font-size:.9rem;color:#555;margin:2px 12px 6px;}
-@keyframes fadeInUp{to{opacity:1;transform:none;}}
+.district.active{background:#d992a8;color:#fff;font-weight:600;box-shadow:0 0 10px rgba(217,146,168,.6);}
+
+/* right content */
+.temple-container{flex:1;padding:2rem;overflow-y:auto;position:relative;}
+.temple-container::before{
+  content:'';position:absolute;inset:0;
+  background:url('images/stone_pattern.png') center/contain repeat;
+  opacity:.05;z-index:0;
+}
+.temple-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;position:relative;z-index:1;}
+.temple-card{
+  background:linear-gradient(180deg,#fff9fa 0%,#fdf1f4 100%);
+  border-radius:14px;
+  border:1px solid #f3cbd4;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+  overflow:hidden;
+  transition:transform .25s;
+  animation:fadeIn .6s forwards;
+}
+.temple-card:hover{transform:translateY(-5px);}
+.temple-image{width:100%;height:180px;object-fit:cover;border-bottom:3px solid #e8a9b5;}
+.temple-card h3{
+  font-family:'Playfair Display',serif;
+  color:#6e2433;
+  font-size:1.15rem;
+  margin:10px 12px 6px;
+  border-bottom:1px solid #f3cbd4;
+  padding-bottom:4px;
+}
+.temple-card p{font-size:.9rem;color:#4b303a;margin:2px 12px 6px;line-height:1.4;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+
+/* mobile */
 .hamburger{position:absolute;top:20px;right:25px;background:none;border:none;font-size:28px;color:var(--gold);cursor:pointer;display:none;z-index:999;}
-@media(max-width:900px){main{flex-direction:column;}.district-list{position:fixed;top:0;left:0;height:100%;transform:translateX(-100%);z-index:998;}.district-list.open{transform:translateX(0);}.hamburger{display:block;}}
-footer{background:linear-gradient(180deg,var(--lotus-dark),#2a0f13);color:var(--ivory);text-align:center;padding:1.5rem 1rem;margin-top:2rem;}
+@media(max-width:900px){
+  main{flex-direction:column;}
+  .district-list{
+    position:fixed;top:0;left:0;height:100%;
+    transform:translateX(-100%);z-index:998;
+  }
+  .district-list.open{transform:translateX(0);}
+  .hamburger{display:block;}
+}
+
+footer{background:linear-gradient(180deg,var(--lotus-dark),#2a0f13);
+  color:var(--ivory);text-align:center;padding:1.5rem 1rem;margin-top:2rem;}
 footer .footnote{font-size:.85rem;opacity:.8;}
 </style>
 </head>
@@ -52,9 +108,7 @@ footer .footnote{font-size:.85rem;opacity:.8;}
   </nav>
 </section>
 
-<nav class="breadcrumb">
-  <a href="index.html">Home</a> › <span>Tamil Nadu</span>
-</nav>
+<nav class="breadcrumb"><a href="index.html">Home</a> › <span>Tamil Nadu</span></nav>
 
 <main>
   <aside class="district-list">
@@ -76,10 +130,8 @@ footer .footnote{font-size:.85rem;opacity:.8;}
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <p>© 2025 Moksha Yatra • A digital pilgrimage through the sacred South.</p>
-    <p class="footnote">Crafted in reverence — where code meets devotion.</p>
-  </div>
+  <p>© 2025 Moksha Yatra • A digital pilgrimage through the sacred South.</p>
+  <p class="footnote">Crafted in reverence — where code meets devotion.</p>
 </footer>
 
 <script>
@@ -90,7 +142,6 @@ async function loadTemples(){
   showTemples('chennai');
   document.querySelector('.district').classList.add('active');
 }
-
 function showTemples(district,ev){
   document.querySelectorAll('.district').forEach(d=>d.classList.remove('active'));
   if(ev)ev.target.classList.add('active');
@@ -108,11 +159,7 @@ function showTemples(district,ev){
     grid.appendChild(card);
   });
 }
-
-function toggleMenu(){
-  document.querySelector('.district-list').classList.toggle('open');
-}
-
+function toggleMenu(){document.querySelector('.district-list').classList.toggle('open');}
 loadTemples();
 </script>
 </body>
