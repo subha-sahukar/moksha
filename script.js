@@ -1,31 +1,22 @@
-// Load Tamil Nadu Temple Data on Tamil Nadu Page
-async function loadTamilNaduTemples() {
-  if (!document.getElementById("district-menu")) return;
+// Panchang loader
+document.addEventListener("DOMContentLoaded", async () => {
+  const panel = document.getElementById("panchang-panel");
+  if(!panel) return;
 
-  const res = await fetch("tndata.json");
-  const data = await res.json();
+  panel.innerHTML = `
+    Sunrise: calculating... <br>
+    Rahu Kalam: calculating... <br>
+    Yamagandam: calculating... <br>
+    Nalla Neram: blessed... <br>
+  `;
 
-  const menu = document.getElementById("district-menu");
-  const intro = document.getElementById("district-intro");
-  const cards = document.getElementById("temple-cards");
-
-  Object.keys(data).forEach(district => {
-    const li = document.createElement("li");
-    li.textContent = district;
-    li.onclick = () => {
-      document.querySelectorAll(".district-list li").forEach(i => i.classList.remove("active"));
-      li.classList.add("active");
-      intro.textContent = data[district].intro;
-      cards.innerHTML = data[district].temples.map(t => `
-        <div class="temple-card">
-          <img src="${t.image}">
-          <h3>${t.name}</h3>
-          <p><b>${t.deity}</b> — ${t.type}</p>
-          <p>${t.significance}</p>
-        </div>
-      `).join("");
-    };
-    menu.appendChild(li);
-  });
-}
-loadTamilNaduTemples();
+  // Placeholder logic. Real sunrise calc formula upgrade coming.
+  setTimeout(()=>{
+    panel.innerHTML = `
+      Sunrise: 06:05 AM<br>
+      Rahu Kalam: 10:30 AM – 12:00 PM<br>
+      Yamagandam: 3:00 PM – 4:30 PM<br>
+      Nalla Neram: 7:30 — 9:00 AM
+    `;
+  },800);
+});
