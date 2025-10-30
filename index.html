@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Moksha Yatra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moksha Yatra — Sacred Temple Atlas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
-</head>
 
+</head>
 <body>
 
-<header class="header">
-  <div class="logo">🕉️ Moksha Yatra</div>
+<header class="navbar">
+  <div class="logo">🌸 Moksha Yatra</div>
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="tamilnadu.html">Tamil Nadu</a>
@@ -21,71 +23,76 @@
   </nav>
 </header>
 
-<section class="hero" style="background-image:url('images/hero_temple_bg.jpg');">
+<section class="hero" style="background-image:url('images/hero_temple_bg.jpg')">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>“A journey through stone and silence — each shrine a doorway.”</h1>
-    <p>Walk where sages walked. Let temple bells and wind carry your prayer.</p>
+    <h1>Sacred Trails of Bharat</h1>
+    <p>Where every stone has memory, every bell echoes eternity.</p>
   </div>
 </section>
 
-<!-- Panchang -->
-<section class="panchang-section">
-  <div class="panchang-banner">
-    <h2>🪔 Panchangam & Auspicious Timings</h2>
-    <p class="subtitle">Indicative timings. Check local temple boards.</p>
-  </div>
-
-  <div class="panchang-grid">
-    <div class="panchang-card">
-      <h4>Nalla Neram</h4>
-      <p>Morning: <span id="nalla-morning">6:00 – 7:00 AM</span></p>
-      <p>Evening: <span id="nalla-evening">4:30 – 5:30 PM</span></p>
-    </div>
-
-    <div class="panchang-card">
-      <h4>Rahu Kalam</h4>
-      <p id="rahu">varies by weekday</p>
-    </div>
-
-    <div class="panchang-card">
-      <h4>Yamagandam</h4>
-      <p id="yama">varies by weekday</p>
-    </div>
-
-    <div class="panchang-card">
-      <h4>Tithi / Nakshatra</h4>
-      <p id="tithi">—</p>
-      <p id="nakshatra">—</p>
-    </div>
-
-    <div class="panchang-card">
-      <h4>Months</h4>
-      <p>Tamil: <span id="tamil-month">—</span></p>
-      <p>Telugu: <span id="telugu-month">—</span></p>
-    </div>
+<section class="auspicious">
+  <h2>Auspicious Today</h2>
+  <div id="panchang-panel">
+    Loading divine timings… 🔱
   </div>
 </section>
 
-<!-- Story Cards -->
-<section class="story-section">
-  <h2>Divine Stories</h2>
+<section class="circuitsBox">
+  <h2>Pilgrimage Circuits</h2>
+  <div class="circuit-grid">
+    
+    <div class="circuit-card">
+      <h3>Thanjavur — Chola Divine Axis</h3>
+      <p>Brihadeeswarar · Gangaikonda Cholapuram · Darasuram · Thiruvaiyaru</p>
+    </div>
+    
+    <div class="circuit-card">
+      <h3>Trichy — Spiritual Heartland</h3>
+      <p>Srirangam · Rockfort · Thiruvanaikaval · Samayapuram</p>
+    </div>
+
+    <div class="circuit-card">
+      <h3>Madurai — Sacred Grandeur</h3>
+      <p>Meenakshi · Pazhamudircholai · Azhagar Kovil</p>
+    </div>
+
+    <div class="circuit-card">
+      <h3>Kumbakonam Navagraha</h3>
+      <p>Suriyanar · Kethu · Chandran · Rahu · Guru · Shani · Shukra · Budhan · Angaraka</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="stories">
+  <h2>Mythic Stories</h2>
   <div class="story-grid">
+    
     <div class="story-card">
-      <h3>Why Shiva Burns Kama?</h3>
-      <p>Desire bows before meditation; grace returns love purified.</p>
+      <h3>Shiva — Dance of Cosmic Silence</h3>
+      <p>Chidambaram’s secret space — where silence becomes creation.</p>
+      <button class="read-more">Read Story</button>
     </div>
+    
     <div class="story-card">
-      <h3>Vishnu's Vaikuntha Darshan</h3>
-      <p>In moments of surrender, every doorway becomes Vaikuntha.</p>
+      <h3>Vishnu — Sleepless Srirangam</h3>
+      <p>The reclining lord who guards time, destiny, and devotion.</p>
+      <button class="read-more">Read Story</button>
     </div>
+
     <div class="story-card">
-      <h3>Murugan & The Fruit of Wisdom</h3>
-      <p>What you seek outside, resides within you already.</p>
+      <h3>Murugan — The Warrior Sage</h3>
+      <p>From Palani’s hill to Tiruchendur’s waves — He stands between courage and compassion.</p>
+      <button class="read-more">Read Story</button>
     </div>
+
   </div>
 </section>
 
-<footer class="footer">© Moksha Yatra — Walk With Devotion</footer>
+<footer>
+  <p>🌸 Moksha Yatra — A pilgrimage through time, devotion & stone</p>
+</footer>
 
 </body>
 </html>
