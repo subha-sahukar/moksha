@@ -3,71 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tamil Nadu Pilgrimage — Moksha</title>
+<title>Tamil Nadu Temples – Moksha Yatra</title>
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/tamilnadu.css">
-<script src="js/temples.js" defer></script>
-<script src="js/dynasties.js" defer></script>
-<script src="js/tamilnadu.js" defer></script>
-<script src="js/ambient.js" defer></script>
+<script defer src="script.js"></script>
 </head>
 
 <body>
 
-<header>
-  <nav class="main-nav">
-    <div class="nav-left">
-      <a href="index.html" class="brand">Moksha</a>
-    </div>
-    <div class="nav-right">
-      <a href="tamilnadu.html" class="active">Tamil Nadu</a>
-      <a href="andhra.html">Andhra</a>
-      <a href="karnataka.html">Karnataka</a>
-      <a href="kerala.html">Kerala</a>
-    </div>
+<header class="nav">
+  <a class="logo" href="index.html">Moksha</a>
+  <nav class="state-nav">
+    <a class="active" href="tamilnadu.html">Tamil Nadu</a>
+    <a href="index.html">Home</a>
+    <a href="#">Andhra</a>
+    <a href="#">Karnataka</a>
+    <a href="#">Kerala</a>
   </nav>
 </header>
 
-<section class="hero-tn">
-  <div class="hero-overlay"></div>
-  <h1 class="hero-title">Tamil Nadu — Land of Eternal Temples</h1>
+<section class="hero">
+  <h1>Tamil Nadu — Land of Eternal Temples</h1>
   <p class="hero-sub">
-    Where Chola stone breathes, Pandya corridors echo hymns, and Pallava wisdom flowers in sculpture.
+    Where Chola stone breathes, Pandya corridors echo hymns, and Pallava art flowers in bronze and granite.
   </p>
 </section>
 
-<!-- Audio lotus toggle -->
-<div class="audio-toggle" onclick="toggleAmbience()" title="Temple Ambience">
-  🪷
-</div>
+<section class="layout-wrapper">
 
-<section class="tn-container">
+<aside class="sidebar">
+  <h3 class="side-title">Temple Regions</h3>
+  <ul id="districtList"></ul>
+</aside>
 
-  <!-- Sidebar -->
-  <aside class="district-nav">
-    <h3>Temple Regions</h3>
-    <ul id="districtList"></ul>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="district-content">
-    <div id="districtIntro" class="district-intro"></div>
-    <div id="templeGrid" class="temple-grid"></div>
-  </main>
-
-</section>
-
-<section class="story-section">
-  <h2 class="section-title">Legends & Eternal Stories</h2>
-  <div class="story-grid">
-    <div class="story-card">Birth of Saint Appar & Shiva’s Grace</div>
-    <div class="story-card">Rajaraja Chola’s Vision for Brihadeeswarar</div>
-    <div class="story-card">Nammalvar and the Tamiraparani Vishnu Circuit</div>
+<main class="content">
+  <div id="districtIntro" class="district-intro">
+    Select a temple region to begin your sacred walk.
   </div>
+  <div id="templeCards" class="temple-grid"></div>
+</main>
+
 </section>
 
 <footer class="footer">
-  <p>🛕 A pilgrimage in pixels. © Moksha Yatra</p>
+  <p>© 2025 Moksha Yatra — Eternal Pilgrimage</p>
 </footer>
 
 </body>
