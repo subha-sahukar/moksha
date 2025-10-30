@@ -1,83 +1,61 @@
 body {
-font-family: "Merriweather", serif;
 margin: 0;
+font-family: Georgia, serif;
 background: #faeef2;
 color: #4b2e2e;
 }
 
 .hero {
-background: linear-gradient(to bottom, #d7a5b6, #f4d6df);
+background: linear-gradient(180deg,#b04b69,#d6879d,#f7e6ee);
+padding: 70px 20px;
 text-align: center;
-padding: 90px 0 70px;
-color: #fff;
-font-size: 24px;
-font-weight: bold;
-position: relative;
+color: #fff8f0;
 }
 
 .top-nav {
-background: #fff4f7;
+background: rgba(255,255,255,0.2);
 padding: 10px;
-text-align: center;
-border-bottom: 1px solid #e2b9c7;
+text-align: right;
 }
 .top-nav a {
-margin: 0 8px;
-color: #9b425b;
+color: #fff;
+margin: 0 10px;
 text-decoration: none;
-font-weight: 600;
+font-weight: bold;
 }
-.top-nav a.active {
-color: #d12d52;
+.top-nav .active {color: gold;}
+
+.layout {
+display: flex; padding: 15px;
+}
+.side-panel {
+width: 240px; background: #f9dce6;
+padding: 16px; border-radius: 6px;
 }
 
-.container-home {
-display: flex;
+.content {flex: 1; padding-left: 20px;}
+
+.card, .story-card {
+background: #ffffffcc;
+border: 1px solid #e5bdd0;
 padding: 15px;
+border-radius: 10px;
+margin-bottom: 12px;
+transition: 0.25s ease;
+box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.card:hover, .story-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+background: #fffdf9;
 }
 
-.left-panel {
-width: 250px;
-background: #fff0f5;
-border: 1px solid #e8c4d4;
+.map-box iframe {
+width: 300px; height: 400px; border: 0;
+}
+footer {
 padding: 15px;
-border-radius: 6px;
-}
-
-.content-area {
-flex: 1;
-padding-left: 20px;
-}
-
-.circuit-card, .story-card, .legend-card {
-background: #fff;
-border: 1px solid #e8c4d4;
-padding: 12px;
-margin-bottom: 10px;
-border-radius: 8px;
-}
-
-.tn-container {
-display: grid;
-grid-template-columns: 200px 1fr 300px;
-gap: 15px;
-padding: 20px;
-}
-
-.district-list {
-background: #fff0f5;
-border: 1px solid #e8c4d4;
-padding: 10px;
-}
-
-.map-box {
-background: #fff;
-border: 1px solid #e8c4d4;
-padding: 10px;
-height: fit-content;
-}
-
-.legend-block {
-padding: 30px;
-background: #fbeff4;
+background: #b04b69;
+color: white;
+text-align: center;
 }
