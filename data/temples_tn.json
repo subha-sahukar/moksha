@@ -1,0 +1,37 @@
+{
+  "chennai": [
+    {"name":"Kapaleeshwarar Temple","deity":"Shiva","type":"Padal Petra Sthalam","festival":"Maha Shivaratri","significance":"Removes obstacles","img":"kapaleeshwarar.jpg"},
+    {"name":"Parthasarathy Temple","deity":"Vishnu","type":"Divya Desam","festival":"Vaikunta Ekadasi","significance":"Relief from doshas","img":"parthasarathy.jpg"},
+    {"name":"Ashtalakshmi Temple","deity":"Devi","type":"Shakti Peetham","festival":"Navaratri","significance":"Wealth and prosperity","img":"ashtalakshmi.jpg"}
+  ],
+  "kanchipuram": [
+    {"name":"Ekambareswarar Temple","deity":"Shiva","type":"Padal Petra Sthalam","festival":"Karthigai Deepam","significance":"Health and longevity","img":"ekambareswarar.jpg"},
+    {"name":"Varadharaja Perumal Temple","deity":"Vishnu","type":"Divya Desam","festival":"Brahmotsavam","significance":"Fertility and family welfare","img":"varadharaja.jpg"},
+    {"name":"Kamakshi Amman Temple","deity":"Devi","type":"Shakti Peetham","festival":"Aadi Pooram","significance":"Marriage harmony","img":"kamakshi.jpg"}
+  ],
+  "madurai": [
+    {"name":"Meenakshi Amman Temple","deity":"Devi","type":"Shakti Peetham","festival":"Chithirai Festival","significance":"Marriage and family blessings","img":"meenakshi.jpg"},
+    {"name":"Thiruparankundram Murugan Temple","deity":"Murugan","type":"Aru Padai Veedu","festival":"Skanda Sashti","significance":"Victory and courage","img":"thiruparankundram.jpg"}
+  ],
+  "thanjavur": [
+    {"name":"Brihadeeswarar Temple","deity":"Shiva","type":"Padal Petra Sthalam","festival":"Maha Shivaratri","significance":"Spiritual power","img":"brihadeeswarar.jpg"},
+    {"name":"Srirangam Ranganathaswamy Temple","deity":"Vishnu","type":"Divya Desam","festival":"Vaikunta Ekadasi","significance":"Removes doshas","img":"srirangam.jpg"}
+  ],
+  "tirunelveli": [
+    {"name":"Nellaiappar Temple","deity":"Shiva","type":"Padal Petra Sthalam","festival":"Panguni Uthiram","significance":"Health and prosperity","img":"nellaiappar.jpg"},
+    {"name":"Nava Tirupati Temples","deity":"Vishnu","type":"Nava Tirupati","festival":"Various Tirupati festivals","significance":"Astrological remedies","img":"navatirupati.jpg"}
+  ],
+  "dindigul": [
+    {"name":"Palani Murugan Temple","deity":"Murugan","type":"Aru Padai Veedu","festival":"Thaipusam","significance":"Relief from Rahu dosha","img":"palani.jpg"}
+  ],
+  "kumbakonam": [
+    {"name":"Sarangapani Temple","deity":"Vishnu","type":"Divya Desam","festival":"Chitra Pournami","significance":"Spiritual upliftment","img":"sarangapani.jpg"},
+    {"name":"Nageswaran Temple","deity":"Shiva","type":"Padal Petra Sthalam","festival":"Maha Shivaratri","significance":"Removes Sarpa Dosha","img":"nageswaran.jpg"}
+  ],
+  "kanyakumari": [
+    {"name":"Kumari Amman Temple","deity":"Devi","type":"Shakti Peetham","festival":"Navaratri","significance":"Fertility and well-being","img":"kumari.jpg"}
+  ],
+  "nagapattinam": [
+    {"name":"Soundararajaperumal Temple","deity":"Vishnu","type":"Divya Desam candidate","festival":"Brahmotsavam","significance":"Protection from evil","img":"soundararaja.jpg"}
+  ]
+}
