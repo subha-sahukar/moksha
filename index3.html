@@ -9,6 +9,47 @@
 <meta name="description" content="Moksha Yatra — curated pilgrimage atlas of South Indian temples.">
 
 <style>
+
+  /* lighter sacred background */
+body {
+  background: linear-gradient(180deg, #4b1f28, #5a2431 35%, #651f2e 100%);
+}
+
+/* ritual panel — slightly lighter */
+.ritual-panel {
+  background:#4a2a2e;
+  border-right:2px solid #7b544a;
+}
+
+/* 3 circuits per row, clean */
+.grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+}
+
+/* story grid no scrollbar */
+.story-grid {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:16px;
+  overflow:hidden;
+}
+
+/* romantic temple stone glow */
+.story-card, .card {
+  background:#5d373b;
+  border:1px solid #8b6a60;
+}
+
+/* fallback if img missing */
+.story-card img, .card img {
+  background:#7c5b55;
+  color:#fff;
+  font-size:12px;
+  display:block;
+}
+
 /* Left Ritual Panel */
 .ritual-panel {
   background:#3a2326;
@@ -143,7 +184,7 @@
         </article>
 
         <article class="card">
-          <img src="images/meenakshi.jpg" alt="">
+          <img src="images/kallagar_1.jpg" alt="Kallagazhar">
           <div class="inner"><h3>Meenakshi Amman</h3><div class="meta">Madurai — goddess sanctum</div><p>Epic Chithirai festival & sacred street geometry.</p></div>
         </article>
 
@@ -151,6 +192,15 @@
     </section>
 
     <div class="divider"></div>
+<!-- ✅ Right panel Insights  Section -->
+    
+    <section class="section">
+  <div class="section-title"><h2>Ritual Insight Today</h2></div>
+  <p><strong>Nakshatra:</strong> Rohini</p>
+  <p><strong>Deity of the Day:</strong> Shiva</p>
+  <p><em>“Where stillness meets power, liberation rises.”</em></p>
+  <p>Temple practice: Light a lamp and sit in silence for 3 breaths before starting your day.</p>
+</section>
 
     <!-- ✅ Stories Section -->
     <section class="section">
@@ -158,25 +208,25 @@
       <div class="story-grid">
 
         <div class="story-card">
-          <img src="images/shiva_story.jpg" alt="">
+          <img src="images/shiva_story.jpg" alt="shiva">
           <h4>Shiva — Silent Fire</h4>
           <p>Where cosmic stillness births thunderous dance.</p>
         </div>
 
         <div class="story-card">
-          <img src="images/ganesha_story.jpg" alt="">
+          <img src="images/ganesha_story.jpg" alt="ganesha">
           <h4>Ganesha — Threshold Guide</h4>
           <p>Obstacles dissolve where humility meets wisdom.</p>
         </div>
 
         <div class="story-card">
-          <img src="images/muruga_story.jpg" alt="">
+          <img src="images/muruga_story.jpg" alt="muruga">
           <h4>Muruga — Spear of Light</h4>
           <p>Divine warrior-sage guarding Tamil devotion.</p>
         </div>
 
         <div class="story-card">
-          <img src="images/vishnu_story.jpg" alt="">
+          <img src="images/vishnu_story.jpg" alt="vishnu">
           <h4>Vishnu — Eternal Balance</h4>
           <p>The preserver dreaming universes into order.</p>
         </div>
