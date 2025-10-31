@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Moksha Yatra — Sacred Grandeur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Moksha Yatra — curated pilgrimage atlas of South Indian temples.">
+
+<style>
+/* Left Ritual Panel */
+.ritual-panel {
+  background:#3a2326;
+  border-right:2px solid #5d3e36;
+  color:#f7e8c9;
+  padding:18px;
+  width:240px;
+  flex-shrink:0;
+}
+.ritual-panel h3 {
+  margin-bottom:10px;
+  font-family:"Playfair Display";
+}
+.ritual-panel p {
+  margin:4px 0;
+  font-size:14px;
+}
+
+/* Layout Wrapper */
+.page-flex {
+  display:flex;
+}
+
+/* Story Section */
+.story-grid {
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+}
+.story-card {
+  background:#3c2527;
+  border:1px solid #6d5048;
+  border-radius:6px;
+  min-width:230px;
+  color:#f7e8c9;
+  padding-bottom:8px;
+}
+.story-card img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:6px 6px 0 0;
+}
+.story-card h4 {
+  font-family:"Playfair Display";
+  padding:8px 12px 0;
+}
+.story-card p {
+  padding:4px 12px 12px;
+  font-size:14px;
+  opacity:0.9;
+}
+.section-title h2 {
+  font-family:"Playfair Display";
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="brand">Moksha Yatra</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tamilnadu.html">Tamil Nadu</a>
+    <a href="andhra.html">Andhra</a>
+    <a href="karnataka.html">Karnataka</a>
+    <a href="kerala.html">Kerala</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
+
+<header class="hero" role="banner">
+  <div class="hero-bg" style="background-image:url('images/brihadeeswarar_dusk.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="mandala"></div>
+  <div class="container hero-inner">
+    <h1>Brihadeeswarar — Light on Stone</h1>
+    <p>Welcome to Moksha Yatra — a curated pilgrimage atlas of South India's sacred temples. Choose a region, pick a circuit, and travel with ritual awareness.</p>
+
+    <div class="tabs">
+      <button class="tab active">Explore Tamil Nadu</button>
+      <button class="tab">Divya Desam</button>
+      <button class="tab">Padal Petra</button>
+      <button class="tab">Auspicious Days</button>
+    </div>
+
+    <div class="cta">
+      <button class="btn">Enter the Circuits</button>
+      <button class="btn secondary">Divya Desam Guide</button>
+    </div>
+  </div>
+</header>
+
+<div class="page-flex">
+  
+  <!-- ✅ Left Ritual & Auspicious Panel -->
+  <aside class="ritual-panel">
+    <h3>Ritual Timings</h3>
+    <p><strong>Rahu Kalam:</strong> 9:00 – 10:30 AM</p>
+    <p><strong>Yama Kandam:</strong> 1:30 – 3:00 PM</p>
+    <p><strong>Gulikai:</strong> 6:00 – 7:30 AM</p>
+
+    <br>
+    <h3>Lunar Calendar</h3>
+    <p><strong>Tamil Month:</strong> Karthigai</p>
+    <p><strong>Telugu Month:</strong> Margashira</p>
+    <p><strong>Tithi:</strong> Shashti</p>
+
+    <br>
+    <h3>Auspicious</h3>
+    <p>Shubha Muhurtham Today</p>
+    <p>Pradosham Tomorrow</p>
+    <p>Karthigai Deepam Week</p>
+  </aside>
+
+  <main class="main container" id="content">
+    
+    <!-- Existing Featured Circuits -->
+    <section class="section">
+      <div class="section-title"><h2>Featured circuits</h2></div>
+      <div class="grid">
+        
+        <article class="card">
+          <img src="images/brihadeeswarar_dusk.jpg" alt="">
+          <div class="inner"><h3>Brihadeeswarar / Thanjavur</h3><div class="meta">Chola capital — historic vimana</div><p>Monumental Chola architecture, imperial temple art.</p></div>
+        </article>
+
+        <article class="card">
+          <img src="images/srirangam.jpg" alt="">
+          <div class="inner"><h3>Srirangam</h3><div class="meta">Divya Desam — living complex</div><p>Island temple with deep Vaishnava calendar.</p></div>
+        </article>
+
+        <article class="card">
+          <img src="images/meenakshi.jpg" alt="">
+          <div class="inner"><h3>Meenakshi Amman</h3><div class="meta">Madurai — goddess sanctum</div><p>Epic Chithirai festival & sacred street geometry.</p></div>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ✅ Stories Section -->
+    <section class="section">
+      <div class="section-title"><h2>Divine Stories</h2></div>
+      <div class="story-grid">
+
+        <div class="story-card">
+          <img src="images/shiva.jpg" alt="">
+          <h4>Shiva — Silent Fire</h4>
+          <p>Where cosmic stillness births thunderous dance.</p>
+        </div>
+
+        <div class="story-card">
+          <img src="images/ganesha.jpg" alt="">
+          <h4>Ganesha — Threshold Guide</h4>
+          <p>Obstacles dissolve where humility meets wisdom.</p>
+        </div>
+
+        <div class="story-card">
+          <img src="images/muruga.jpg" alt="">
+          <h4>Muruga — Spear of Light</h4>
+          <p>Divine warrior-sage guarding Tamil devotion.</p>
+        </div>
+
+        <div class="story-card">
+          <img src="images/vishnu.jpg" alt="">
+          <h4>Vishnu — Eternal Balance</h4>
+          <p>The preserver dreaming universes into order.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <div class="section-title"><h2>Why Moksha Yatra</h2></div>
+      <p class="meta">Practical routes, ritual precision, mythic depth — a pilgrim’s companion built for reverence, not rush.</p>
+    </section>
+
+  </main>
+</div>
+
+<div class="footer container">
+  <p>© 2025 Moksha Yatra — Sacred Grandeur • Built for mindful pilgrimage</p>
+</div>
+
+</body>
+</html>
