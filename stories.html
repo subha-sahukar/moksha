@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sacred Stories</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Sacred South</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Temple Tales</h1>
+  <p>Short, gentle stories. Little lamps of wisdom for young pilgrims.</p>
+</header>
+
+<section class="section">
+  <div class="card-grid">
+
+    <div class="card story-card">
+      <h3>Why Ganesha Was First Worshipped</h3>
+      <button class="btn" onclick="playAudio('ganesha')">Listen</button>
+      <audio id="ganesha" src="assets/audio/ganesha.mp3"></audio>
+    </div>
+
+    <div class="card story-card">
+      <h3>Meenakshi Born From Fire</h3>
+      <button class="btn" onclick="playAudio('meenakshi')">Listen</button>
+      <audio id="meenakshi" src="assets/audio/meenakshi.mp3"></audio>
+    </div>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
