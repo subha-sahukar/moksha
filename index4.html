@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pilgrimage with Purpose</title>
-  <link rel="stylesheet" href="stylenew.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sacred South — Pilgrimage With Purpose</title>
+<link rel="stylesheet" href="stylenew.css" />
 </head>
 
 <body>
 
+<header class="top-nav">
+<div class="logo">Sacred South</div>
 <nav>
-  <div class="logo">Sacred South</div>
-  <div class="nav-links">
-    <a href="tamilnadu_circuits.html">Circuits</a>
-    <a href="parihara.html">Parihara Paths</a>
-    <a href="stories.html">Stories</a>
-  </div>
+<a href="tamilnadu_circuits.html">Circuits</a>
+<a href="parihara.html">Parihara Paths</a>
+<a href="stories.html">Stories</a>
+<a href="planner.html" class="highlight">Plan Trip</a>
 </nav>
-
-<header class="hero">
-  <h1>Pilgrimage With Purpose</h1>
-  <p>Discover sacred Tamil Nadu. Move temple to temple with meaning, not rush.</p>
-  <a class="btn" href="tamilnadu_circuits.html">Explore Circuits</a>
 </header>
 
-<section class="section">
-  <h2>What Brings You Here?</h2>
+<section class="ritual-bar">
+📿 Today: Brahma Muhurta 4:30–6:00 AM | Rahu Kalam 1:30–3:00 PM | Thithi: Shasti  
+</section>
 
-  <div class="card-grid">
-    <div class="card">
-      <h3>Parihāra & Dosh Nivaran</h3>
-      Seek guidance aligned with traditional paths, with context and reverence.
-      <br><a class="btn" href="parihara.html">Begin</a>
-    </div>
+<section class="hero">
+<div class="hero-content">
+<h1>Pilgrimage With Purpose</h1>
+<p>Walk sacred Tamil land. Move temple to temple with devotion, not hurry.</p>
+<button onclick="window.location='tamilnadu_circuits.html'">Explore Circuits</button>
+</div>
+</section>
 
-    <div class="card">
-      <h3>Pilgrimage Circuits</h3>
-      Create routes through ancient temples & sacred towns.
-      <br><a class="btn" href="tamilnadu_circuits.html">View Routes</a>
-    </div>
+<section class="quick-planner">
+<h2>Start Your Pilgrimage Plan</h2>
+<form action="planner.html" method="get">
+<label>Departure City:</label>
+<input type="text" placeholder="Chennai, Madurai, Trichy..." />
 
-    <div class="card">
-      <h3>Stories & Legends</h3>
-      Short audio & visual stories for children and seekers.
-      <br><a class="btn" href="stories.html">Listen</a>
-    </div>
-  </div>
+<label>Focus:</label>
+<select>
+<option>General Darshan</option>
+<option>Dosh Nivaran / Pariharam</option>
+<option>Ancient Chola Temples</option>
+<option>Navagraha Kshetra Circuit</option>
+</select>
+
+<label>Days Available:</label>
+<select>
+<option>1 Day</option>
+<option>2 Days</option>
+<option>3 Days</option>
+<option>5 Days</option>
+<option>7 Days</option>
+</select>
+
+<button type="submit">Generate Plan</button>
+</form>
+</section>
+
+<section class="temple-gallery">
+<h2>Sacred Glimpse</h2>
+<div class="gallery-row">
+<img src="assets/brihadeeswarar.jpg" alt="Brihadeeswarar Temple">
+<img src="assets/srirangam.jpg" alt="Srirangam Temple">
+<img src="assets/meenakshi.jpg" alt="Meenakshi Temple">
+<img src="assets/palani.jpg" alt="Palani Murugan Temple">
+<img src="assets/rameswaram.jpg" alt="Rameswaram Temple">
+</div>
+</section>
+
+<section class="sections">
+<div class="card">
+<h3>Parihāra & Dosh Nivaran</h3>
+<p>Guided remedies rooted in temple traditions.</p>
+<button onclick="window.location='parihara.html'">Begin</button>
+</div>
+
+<div class="card">
+<h3>Pilgrimage Circuits</h3>
+<p>Structured temple routes with story & purpose.</p>
+<button onclick="window.location='tamilnadu_circuits.html'">View</button>
+</div>
+
+<div class="card">
+<h3>Stories & Legends</h3>
+<p>Short tales & dharma nuggets for families & kids.</p>
+<button onclick="window.location='stories.html'">Listen</button>
+</div>
 </section>
 
 <footer>
-  Made with devotion. For Tamil Nadu’s temples, traditions & future pilgrims.
+Made with devotion for Tamil Nadu's temples, traditions & seekers.  
 </footer>
 
 </body>
