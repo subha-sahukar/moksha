@@ -1,97 +1,430 @@
-<!DOCTYPE html>
+<!-- FILE: index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sacred South — Pilgrimage With Purpose</title>
-<link rel="stylesheet" href="stylenew.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Moksha Yatra — Tamil Nadu Circuits (v1)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+  /* Lotus brown–gold tone, gently lightened */
+  --bg:#6a4a3a;   /* slightly lighter lotus-brown */
+  --panel:#593a30; /* softened earthy brown */
+  --muted:#f0e4d6; /* softer lotus-beige */
+  --accent:#e0b456; /* warmer temple gold */
+  --card:#7a5546;  /* lighter rich brown card */
+  --radius:12px;
+  --max-width:1180px;
+}
+    html,body{margin:0;background:linear-gradient(180deg,var(--bg) 0%, #2b1519 70%);font-family:Inter,color:var(--muted);color:var(--muted)}
+    .wrap{max-width:var(--max-width);margin:26px auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+    nav a:hover{background:rgba(255,255,255,0.06);color:#fff}
+    .hero{margin-top:20px;display:grid;grid-template-columns:1fr 330px;gap:24px}
+    .hero-card{background:rgba(255,255,255,0.04);padding:22px;border-radius:14px}
+    h1,h2{font-family:Merriweather;color:#f4dcc2;margin:0}
+    .btn{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+    .card{background:var(--card);border-radius:12px;overflow:hidden}
+    .card img{width:100%;height:160px;object-fit:cover;display:block}
+    footer{text-align:center;margin-top:38px;color:#c3a89a;font-size:0.85rem}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <header>
+      <div style="display:flex;gap:12px;align-items:center">
+        <img src="/assets/logo-placeholder.jpg" alt="logo" style="width:48px;height:48px;border-radius:8px;object-fit:cover">
+        <div>
+          <h1 style="font-size:1.15rem;color:var(--accent)">Moksha Yatra — Tamil Nadu</h1>
+          <div style="font-size:0.85rem;color:#e7d6cd">Purpose-led temple circuits across Tamil Nadu</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#featured">Circuits</a>
+        <a href="#stories">Stories</a>
+        <a href="#plan">Plan</a>
+        <a href="parihara.html">Parihara Pathway</a>
+        <a href="madurai.html">Madurai</a>
+        <a href="trichy.html">Trichy</a>
+      </nav>
+    </header>
 
-<header class="top-nav">
-<div class="logo">Sacred South</div>
-<nav>
-<a href="tamilnadu_circuits.html">Circuits</a>
-<a href="parihara.html">Parihara Paths</a>
-<a href="stories.html">Stories</a>
-<a href="planner.html" class="highlight">Plan Trip</a>
-</nav>
-</header>
+    <main class="hero">
+      <section class="hero-card">
+        <h2>Pilgrimage with Purpose</h2>
+        <p style="color:#e6d8cf">Choose circuits crafted for dharma, pariharam, and personal transformation — not just travel but inner alignment.</p>
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <a href="#featured" class="btn">Explore Circuits</a>
+          <a href="#plan" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)">Start Planner</a>
+        </div>
 
-<section class="ritual-bar">
-📿 Today: Brahma Muhurta 4:30–6:00 AM | Rahu Kalam 1:30–3:00 PM | Thithi: Shasti  
-</section>
+        <div style="margin-top:16px;color:#e0d6d0">
+          <strong>USP:</strong> Purpose-tagged circuits (e.g. Pariharam, Marriage Blessings, Career Focus). Each circuit contains history, ritual context, and practical notes.
+        </div>
+      </section>
 
-<section class="hero">
-<div class="hero-content">
-<h1>Pilgrimage With Purpose</h1>
-<p>Walk sacred Tamil land. Move temple to temple with devotion, not hurry.</p>
-<button onclick="window.location='tamilnadu_circuits.html'">Explore Circuits</button>
-</div>
-</section>
+      <aside style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--panel);padding:12px;border-radius:12px">
+          <h4 style="margin:0;color:var(--accent)">Quick Planner</h4>
+          <form id="quickPlan" style="margin-top:8px;display:flex;flex-direction:column;gap:8px">
+            <select id="region" style="padding:8px;border-radius:8px;background:transparent;color:var(--muted)">
+              <option value="madurai">Madurai Circuit</option>
+              <option value="trichy">Trichy Circuit</option>
+              <option value="thanjavur">Thanjavur Circuit</option>
+              <option value="dindigul">Dindigul / Palani</option>
+              <option value="nagercoil">Nagercoil & South</option>
+            </select>
+            <select id="purpose" style="padding:8px;border-radius:8px;background:transparent;color:var(--muted)">
+              <option value="general">General Pilgrimage</option>
+              <option value="pariharam">Pariharam / Remedies</option>
+              <option value="marriage">Marriage Blessings</option>
+              <option value="wellbeing">Health & Wellbeing</option>
+            </select>
+            <button type="button" class="btn" onclick="suggestPlan()">Suggest Circuit</button>
+          </form>
+        </div>
 
-<section class="quick-planner">
-<h2>Start Your Pilgrimage Plan</h2>
-<form action="planner.html" method="get">
-<label>Departure City:</label>
-<input type="text" placeholder="Chennai, Madurai, Trichy..." />
+        <div style="background:var(--panel);padding:12px;border-radius:12px">
+          <h4 style="margin:0;color:var(--accent)">Today's Ritual Timings</h4>
+          <div style="margin-top:8px;color:#e0d6d0">Rahu: 9–10:30 AM<br>Yama: 1:30–3 PM</div>
+        </div>
+      </aside>
+      <section class="region-block">
+    <h2>Tamil Nadu Pilgrimage Circuits</h2>
+    <div class="circuit-grid">
+      <div class="circuit-card">
+        <h3>Aru Padai Veedu — Murugan</h3>
+        <p>Thiruparankundram • Tiruchendur • Palani • Swamimalai • Thiruthani • Pazhamudhircholai</p>
+        <a class="btn" href="aru-padai-veedu.html">Explore →</a>
+      </div>
+      <div class="circuit-card">
+        <h3>Madurai Circuit</h3>
+        <p>Meenakshi Amman • Thirupparamkundram • Alagar Koil • Pazhamudhircholai</p>
+        <a class="btn" href="madurai.html">Explore →</a>
+      </div>
+      <div class="circuit-card">
+        <h3>Trichy Circuit</h3>
+        <p>Srirangam • Rockfort • Samayapuram • Thiruvanaikoil</p>
+        <a class="btn" href="trichy.html">Explore →</a>
+      </div>
+      <div class="circuit-card">
+        <h3>Tanjore Circuit</h3>
+        <p>Brihadeeswarar • Thiruvaiyaru • Thirunageswaram • Kumbakonam</p>
+        <a class="btn" href="tanjore.html">Explore →</a>
+      </div>
+      <div class="circuit-card">
+        <h3>Dindigul Circuit</h3>
+        <p>Dindigul Murugan • Palani • Thadikombu Soundararaja</p>
+        <a class="btn" href="dindigul.html">Explore →</a>
+      </div>
+      <div class="circuit-card">
+        <h3>Kanyakumari & Nagercoil</h3>
+        <p>Kanyakumari Amman • Nagaraja Temple • Suchindram Thanumalayan</p>
+        <a class="btn" href="kanyakumari.html">Explore →</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-<label>Focus:</label>
-<select>
-<option>General Darshan</option>
-<option>Dosh Nivaran / Pariharam</option>
-<option>Ancient Chola Temples</option>
-<option>Navagraha Kshetra Circuit</option>
-</select>
+    <section id="featured" style="margin-top:28px">
+      <h2 style="color:var(--accent);margin-bottom:12px">Featured Circuits — Tamil Nadu</h2>
+      <div class="cards-grid">
+        <a class="card" href="madurai.html">
+          <img src="/assets/meenakshi.jpg" alt="Meenakshi">
+          <div style="padding:12px;color:#efe1d4"><strong>Madurai Circuit</strong><div style="font-size:0.9rem;color:#e0d6d0">Meenakshi, Thiruparankundram, Azhagar — Marriage & Shakti</div></div>
+        </a>
 
-<label>Days Available:</label>
-<select>
-<option>1 Day</option>
-<option>2 Days</option>
-<option>3 Days</option>
-<option>5 Days</option>
-<option>7 Days</option>
-</select>
+        <a class="card" href="trichy.html">
+          <img src="/assets/srirangam.jpg" alt="Srirangam">
+          <div style="padding:12px;color:#efe1d4"><strong>Trichy Circuit</strong><div style="font-size:0.9rem;color:#e0d6d0">Srirangam, Rockfort — Divya Desam & Moksha</div></div>
+        </a>
 
-<button type="submit">Generate Plan</button>
-</form>
-</section>
+        <a class="card" href="thanjavur.html">
+          <img src="/assets/brihadeeswarar.jpg" alt="Brihadeeswarar">
+          <div style="padding:12px;color:#efe1d4"><strong>Thanjavur Circuit</strong><div style="font-size:0.9rem;color:#e0d6d0">Chola architecture & ritual heritage</div></div>
+        </a>
 
-<section class="temple-gallery">
-<h2>Sacred Glimpse</h2>
-<div class="gallery-row">
-<img src="images/Brihadeeswarar_Temple_Goupram.jpg" alt="Brihadeeswarar Temple">
-<img src="images/srirangam.jpg" alt="Srirangam Temple">
-<img src="images/chidambaram" alt="Chidambaram Temple">
-<img src="images/palani.jpg" alt="Palani Murugan Temple">
-<img src="images/rameshwaram_1.jpg" alt="Rameswaram Temple">
-</div>
-</section>
+        <a class="card" href="dindigul.html">
+          <img src="/assets/palani.jpg" alt="Palani">
+          <div style="padding:12px;color:#efe1d4"><strong>Dindigul / Palani</strong><div style="font-size:0.9rem;color:#e0d6d0">Murugan traditions, hill-pooja circuits</div></div>
+        </a>
 
-<section class="sections">
-<div class="card">
-<h3>Parihāra & Dosh Nivaran</h3>
-<p>Guided remedies rooted in temple traditions.</p>
-<button onclick="window.location='parihara.html'">Begin</button>
-</div>
+        <a class="card" href="nagercoil.html">
+          <img src="/assets/suchindram.jpg" alt="Suchindram">
+          <div style="padding:12px;color:#efe1d4"><strong>Nagercoil & South</strong><div style="font-size:0.9rem;color:#e0d6d0">Suchindram, Tiruchendur, Kanyakumari</div></div>
+        </a>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Pilgrimage Circuits</h3>
-<p>Structured temple routes with story & purpose.</p>
-<button onclick="window.location='tamilnadu_circuits.html'">View</button>
-</div>
+    <section id="stories" style="margin-top:28px">
+      <h2 style="color:var(--accent);margin-bottom:12px">Short Stories & Sthala Puranas</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+        <div style="background:var(--card);padding:12px;border-radius:10px"><h4>Meenakshi — The Fish-eyed Goddess</h4><p style="color:#e0d6d0">Two-line tappable story + Readmore</p></div>
+        <div style="background:var(--card);padding:12px;border-radius:10px"><h4>Ranganatha of Srirangam</h4><p style="color:#e0d6d0">Two-line tappable story + Readmore</p></div>
+        <div style="background:var(--card);padding:12px;border-radius:10px"><h4>Thanjavur — The Big Temple</h4><p style="color:#e0d6d0">Short historical bite</p></div>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Stories & Legends</h3>
-<p>Short tales & dharma nuggets for families & kids.</p>
-<button onclick="window.location='stories.html'">Listen</button>
-</div>
-</section>
+    <!-- Content Deepening Phase -->
+    <section id="deepening" style="margin-top:28px">
+      <h2 style="color:var(--accent);margin-bottom:12px">Content Deepening</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+        <div style="background:var(--card);padding:12px;border-radius:10px">
+          <h4>Parihāra Pathways</h4>
+          <p style="color:#e0d6d0">Guided sequences for traditional remedies — framed culturally, with context and ethics. Includes key shrines such as Garbarakshambigai and Immayilum Kali Amman for specific pariharam journeys.</p>
+        </div>
+        <div style="background:var(--card);padding:12px;border-radius:10px">
+          <h4>Temple Audio Stories</h4>
+          <p style="color:#e0d6d0">2–3 minute immersive voice notes — legends, kings, sculptures and divine quirks.</p>
+        </div>
+        <div style="background:var(--card);padding:12px;border-radius:10px">
+          <h4>Kid‑Friendly Mythology</h4>
+          <p style="color:#e0d6d0">Short, joyful stories for young pilgrims to connect through wonder and imagination.</p>
+        </div>
+      </div>
+    </section>
 
-<footer>
-Made with devotion for Tamil Nadu's temples, traditions & seekers.  
-</footer>
+    <section id="plan" style="margin-top:28px">
+      <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:12px">
+        <h3 style="margin:0;color:var(--accent)">Plan Your Purpose Yatra</h3>
+        <p style="color:#e0d6d0">Pick a circuit, choose your intention, and get a 1–3 day suggested itinerary with temple timing tips and practical notes.</p>
+        <button class="btn" onclick="location.href='planner.html'">Open Planner</button>
+      </div>
+    </section>
 
+    <footer>
+      © Moksha Yatra — Tamil Nadu pilot · Replace /assets images before publishing
+    </footer>
+
+  <!-- Tamil Nadu Full Index -->
+  <section id="tn-full-index" style="margin-top:40px">
+    <h2 style="color:var(--accent);margin-bottom:12px">Tamil Nadu — Full Temple Index</h2>
+    <p style="color:#e0d6d0;font-size:0.95rem">Browse district‑wise temple directory coming soon. This will include Divya Desams, Paadal Petra Sthalams, Shakti Peethams, Murugan shrines, Nava Kailashams, Nava Tirupathi & more.</p>
+  </section>
+  </div>
+
+  <script>
+    function suggestPlan(){
+      const r = document.getElementById('region').value;
+      const p = document.getElementById('purpose').value;
+      const map = {
+        madurai: 'Day 1: Meenakshi → Thiruparankundram. Day 2: Azhagar → Alagar kovil. Purpose: ' + p,
+        trichy: 'Day 1: Srirangam → Rockfort. Day 2: Samayapuram. Purpose: ' + p,
+        thanjavur: 'Brihadeeswarar → Thiruvaiyaru. Purpose: ' + p,
+        dindigul: 'Palani hill shrine (single day). Purpose: ' + p,
+        nagercoil: 'Suchindram → Tiruchendur → Kanyakumari. Purpose: ' + p
+      };
+      alert(map[r]||'Suggested circuit coming soon');
+    }
+  </script>
 </body>
 </html>
+
+
+<!-- FILE: template_temple.html -->
+<!-- Temple detail template. Copy and rename to <temple-slug>.html and update content. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{Temple Name}} — Moksha Yatra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:Inter;background:#fff;color:#222;padding:18px;max-width:980px;margin:0 auto}header{display:flex;align-items:center;gap:12px}h1{font-family:Merriweather;color:#333}img{max-width:100%;height:auto;border-radius:8px}section{margin-top:12px}</style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back</a>
+    <h1>{{Temple Name}}</h1>
+  </header>
+
+  <img src="/assets/{{image}}" alt="{{Temple Name}}">
+
+  <section>
+    <h2>Quick Facts</h2>
+    <ul>
+      <li><strong>Location:</strong> {{City, District}}</li>
+      <li><strong>Primary Deity:</strong> {{Deity}}</li>
+      <li><strong>Era / Dynasty:</strong> {{Chola / Pandya / Pallava}}</li>
+      <li><strong>Best time to visit:</strong> {{Months / Festivals}}</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Short History</h2>
+    <p>{{A concise, sourced 3–5 sentence history.}}</p>
+  </section>
+
+  <section>
+    <h2>Sthala Purana (two-line bite)</h2>
+    <p>{{A short myth or origin story — 1–2 lines for quick reading}}</p>
+  </section>
+
+  <section>
+    <h2>Pariharam / Significance</h2>
+    <p>{{Traditional pariharam practice described carefully — framed as cultural guidance, not medical/astrological promises.}}</p>
+  </section>
+
+  <section>
+    <h2>Plan this visit</h2>
+    <p>Darshan timings: {{6 AM — 12 PM, 4 PM — 8 PM}}. Suggested duration: {{1 — 2 hrs}}. Nearby gems: {{list}}</p>
+    <button onclick="alert('Add to planner — sample')">Add to my Yatra</button>
+  </section>
+
+  <footer style="margin-top:18px;color:#666">© Moksha Yatra — Content needs citations before public release</footer>
+</body>
+</html>
+
+
+<!-- FILE: madurai.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Madurai Circuit — Moksha Yatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#faf7f5;color:#2b1b17;margin:0;padding:18px;max-width:1100px;margin:auto}header{display:flex;justify-content:space-between;align-items:center}h1{font-family:Merriweather;color:#b85a2c} .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px} .card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)} img{width:100%;border-radius:8px}</style>
+</head><body>
+<header><div><a href="index.html">← Back</a><h1>Madurai Circuit</h1><div style="color:#5b4a44">Meenakshi, Thiruparankundram, Alagar</div></div><nav><a href="planner.html">Open Planner</a></nav></header>
+
+<div class="grid">
+  <main>
+    <div class="card"><h2>Meenakshi Amman Temple</h2><img src="/assets/meenakshi.jpg" alt="Meenakshi"><p><strong>Quick:</strong> Shakti Peetham, famed for its sculptural gopurams and festival culture.</p><p><strong>Sthala Purana:</strong> Short two-line myth.</p><p><strong>Pariharam:</strong> Offerings and rituals framed as cultural practice.</p></div>
+
+    <div class="card"><h2>Thiruparankundram</h2><img src="/assets/thiruparankundram.jpg" alt=""><p>Murugan temple — hill shrine, skanda legends.</p></div>
+
+    <div class="card"><h2>Alagar Kovil</h2><img src="/assets/alagar.jpg" alt=""><p>Alagar god's temple — scenic, cool, river-side rituals.</p></div>
+  </main>
+
+  <aside>
+    <div class="card"><h3>Planner Tips</h3><p>Best time: early morning. Festival: Chithirai (April–May). Local prasadam: Jigarthanda, Malli dosa.</p></div>
+    <div class="card"><h3>Practical</h3><p>Parking, darshan queues, accessibility notes.</p></div>
+  </aside>
+</div>
+<footer style="margin-top:18px;color:#7a6b66">© Moksha Yatra — Madurai circuit</footer>
+</body></html>
+
+
+<!-- FILE: trichy.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trichy Circuit — Moksha Yatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#fff9f7;color:#2b1b17;margin:0;padding:18px;max-width:1100px;margin:auto}header{display:flex;justify-content:space-between;align-items:center}h1{font-family:Merriweather;color:#b85a2c}.grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px}.card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}img{width:100%;border-radius:8px}</style>
+</head><body>
+<header><div><a href="index.html">← Back</a><h1>Trichy Circuit</h1><div style="color:#5b4a44">Srirangam, Rockfort, Samayapuram</div></div><nav><a href="planner.html">Open Planner</a></nav></header>
+
+<div class="grid">
+  <main>
+    <div class="card"><h2>Srirangam Ranganathaswamy</h2><img src="/assets/srirangam.jpg" alt="Srirangam"><p><strong>Quick:</strong> Island temple, Divya Desam, enormous temple complex with living traditions.</p></div>
+    <div class="card"><h2>Rockfort Temple</h2><img src="/assets/rockfort.jpg" alt=""><p>Mixed Shaiva-Vaishnava sites with panoramic city views.</p></div>
+    <div class="card"><h2>Samayapuram</h2><img src="/assets/samayapuram.jpg" alt=""><p>Fierce goddess worship, strong ritual fervour.</p></div>
+  </main>
+
+  <aside>
+    <div class="card"><h3>Planner Tips</h3><p>Expect longer darshan times at Srirangam during festival seasons. Carry water and plan mornings.</p></div>
+    <div class="card"><h3>Pariharam Notes</h3><p>Contextual guidance on traditional remedies connected to these temples.</p></div>
+  </aside>
+</div>
+<footer style="margin-top:18px;color:#7a6b66">© Moksha Yatra — Trichy circuit</footer>
+</body></html>
+
+
+<!-- FILE: thanjavur.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thanjavur Circuit — Moksha Yatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#fff9f7;color:#2b1b17;margin:0;padding:18px;max-width:1100px;margin:auto}header{display:flex;justify-content:space-between;align-items:center}h1{font-family:Merriweather;color:#b85a2c}.grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px}.card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}img{width:100%;border-radius:8px}</style>
+</head><body>
+<header><div><a href="index.html">← Back</a><h1>Thanjavur Circuit</h1><div style="color:#5b4a44">Brihadeeswarar, Thiruvaiyaru, Kumbakonam belt</div></div></header>
+
+<div class="grid">
+  <main>
+    <div class="card"><h2>Brihadeeswarar Temple</h2><img src="/assets/brihadeeswarar.jpg" alt="Brihadeeswarar"><p>UNESCO site — Chola architecture, monumental vimana.</p></div>
+    <div class="card"><h2>Thiruvaiyaru</h2><img src="/assets/thiruvaiyaru.jpg" alt=""><p>Saint Tyagaraja's temple, music and ritual confluence.</p></div>
+  </main>
+
+  <aside>
+    <div class="card"><h3>Planner Tips</h3><p>Combine Thanjavur and Kumbakonam in a 2-day circuit. Respect ASI timings for complex visits.</p></div>
+  </aside>
+</div>
+<footer style="margin-top:18px;color:#7a6b66">© Moksha Yatra — Thanjavur circuit</footer>
+</body></html>
+
+
+<!-- FILE: dindigul.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dindigul / Palani — Moksha Yatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#fff9f7;color:#2b1b17;margin:0;padding:18px;max-width:1100px;margin:auto}header{display:flex;justify-content:space-between;align-items:center}h1{font-family:Merriweather;color:#b85a2c}.grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px}.card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}img{width:100%;border-radius:8px}</style>
+</head><body>
+<header><div><a href="index.html">← Back</a><h1>Dindigul / Palani</h1><div style="color:#5b4a44">Hill shrine traditions and Murugan worship</div></div></header>
+
+<div class="grid">
+  <main>
+    <div class="card"><h2>Palani Murugan</h2><img src="/assets/palani.jpg" alt="Palani"><p>Hill shrine; major Murugan pilgrimage — steep climb, prasadam, hill rituals.</p></div>
+  </main>
+  <aside>
+    <div class="card"><h3>Practical</h3><p>Most pilgrims prefer the ropeway or footpath depending on mobility.</p></div>
+  </aside>
+</div>
+<footer style="margin-top:18px;color:#7a6b66">© Moksha Yatra — Palani</footer>
+</body></html>
+
+
+<!-- FILE: nagercoil.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nagercoil & South — Moksha Yatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#fff9f7;color:#2b1b17;margin:0;padding:18px;max-width:1100px;margin:auto}header{display:flex;justify-content:space-between;align-items:center}h1{font-family:Merriweather;color:#b85a2c}.grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px}.card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}img{width:100%;border-radius:8px}</style>
+</head><body>
+<header><div><a href="index.html">← Back</a><h1>Nagercoil & South</h1><div style="color:#5b4a44">Suchindram, Tiruchendur, Kanyakumari</div></div></header>
+
+<div class="grid">
+  <main>
+    <div class="card"><h2>Suchindram Temple</h2><img src="/assets/suchindram.jpg" alt="Suchindram"><p>Unique Trimurti shrine; musical stone pillars.</p></div>
+    <div class="card"><h2>Tiruchendur</h2><img src="/assets/tiruchendur.jpg" alt="Tiruchendur"><p>Seaside Murugan temple with strong devotional traditions.</p></div>
+  </main>
+  <aside>
+    <div class="card"><h3>Planner Tips</h3><p>Combine Kanyakumari for sunrise and Suchindram for quick darshan in one day.</p></div>
+  </aside>
+</div>
+<footer style="margin-top:18px;color:#7a6b66">© Moksha Yatra — Nagercoil & South</footer>
+</body></html>
+
+
+<!-- FILE: planner.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Planner — Moksha Yatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#faf7f5;color:#2b1b17;margin:0;padding:18px;max-width:980px;margin:auto}header{display:flex;justify-content:space-between;align-items:center}label{display:block;margin-top:12px}input,select{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}button{margin-top:12px;padding:10px 14px;border-radius:8px;background:#b85a2c;color:#fff;border:none}</style>
+</head><body>
+<header><a href="index.html">← Back</a><h1>Yatra Planner</h1></header>
+<form id="planner">
+  <label>Choose Circuit<select id="circuit"><option value="madurai">Madurai</option><option value="trichy">Trichy</option><option value="thanjavur">Thanjavur</option></select></label>
+  <label>Purpose<select id="purpose"><option value="general">General</option><option value="pariharam">Pariharam</option><option value="marriage">Marriage</option></select></label>
+  <label>Duration (days)<input type="number" id="days" value="2" min="1" max="7"></label>
+  <button type="button" onclick="generatePlan()">Generate Suggested Plan</button>
+</form>
+<div id="output" style="margin-top:18px"></div>
+<script>
+function generatePlan(){
+  const c=document.getElementById('circuit').value;
+  const d=Number(document.getElementById('days').value);
+  let out='';
+  if(c==='madurai'){
+    out += '<h3>Suggested '+d+'‑day Madurai circuit</h3><ol>';
+    out += '<li>Day 1: Meenakshi Amman — morning darshan, Thiruparankundram in evening</li>';
+    if(d>1) out += '<li>Day 2: Alagar Kovil + local cultural spots</li>';
+    out += '</ol>';
+  } else if(c==='trichy'){
+    out += '<h3>Suggested '+d+'‑day Trichy circuit</h3><ol>';
+    out += '<li>Day 1: Srirangam — island temple, long corridors</li>';
+    if(d>1) out += '<li>Day 2: Rockfort + Samayapuram</li>';
+    out += '</ol>';
+  } else {
+    out = '<p>Plan for this circuit will be added soon.</p>';
+  }
+  document.getElementById('output').innerHTML = out;
+}
+</script>
+</body></html>
