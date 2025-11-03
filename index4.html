@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Temple Stories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root {
+  --bg:#24130c;
+  --card:#392217;
+  --gold:#d7b56d;
+  --lotus:#b97862;
+}
+
+body {
+  margin:0;
+  background:var(--bg);
+  font-family: "Georgia", serif;
+  color:#f7eeda;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* Layout */
+.container {
+  height:100%;
+  width:100%;
+  display:flex;
+  transition:transform .8s ease;
+}
+
+/* Cards */
+.story {
+  flex:0 0 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:1.5rem;
+  text-align:center;
+  background:var(--card);
+  border:2px solid var(--gold);
+  animation:fadein 1s;
+}
+
+@keyframes fadein {
+  from {opacity:0} to {opacity:1}
+}
+
+h2 {
+  color:var(--gold);
+  font-weight:600;
+  margin-bottom:.8rem;
+}
+
+/* Diya */
+.diya {
+  width:40px; height:40px;
+  background:url("assets/diya.png");
+  background-size:cover;
+  margin-bottom:1rem;
+  animation:flicker 2s infinite ease-in-out;
+}
+
+@keyframes flicker {
+  0%,100% { filter:brightness(1); }
+  50% { filter:brightness(1.4); }
+}
+
+/* Bottom dots */
+.dots {
+  position:absolute;
+  bottom:10px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:6px;
+}
+
+.dot {
+  width:8px;height:8px;
+  border-radius:50%;
+  background:#7d5b45;
+}
+.dot.active { background:var(--gold); }
+
+/* Nav Arrows */
+.nav {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:2rem;
+  color:var(--gold);
+  cursor:pointer;
+  padding:.5rem;
+}
+.left { left:4px; }
+.right { right:4px; }
+
+/* Utility Buttons */
+.controls {
+  position:absolute;
+  top:8px;
+  right:8px;
+  display:flex;
+  gap:10px;
+}
+
+.btn-switch {
+  padding:4px 8px;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
+  cursor:pointer;
+  border-radius:6px;
+  font-size:.8rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="controls">
+  <button class="btn-switch" onclick="toggleKids()">Kids Mode</button>
+  <button class="btn-switch" onclick="toggleAmbient()">Ambience</button>
+</div>
+
+<div class="nav left" onclick="prev()">⟨</div>
+<div class="nav right" onclick="next()">⟩</div>
+
+<div class="container" id="slider">
+
+  <div class="story">
+    <div class="diya"></div>
+    <h2 id="title0">Murugan & the Mango</h2>
+    <p id="text0">Once, Sage Narada brought a divine mango… Murugan walked to Palani, choosing inner truth over praise.</p>
+    <button onclick="play(0)">🔊 Listen</button>
+  </div>
+
+  <div class="story">
+    <div class="diya"></div>
+    <h2 id="title1">Garbarakshambigai — Mother of Protection</h2>
+    <p id="text1">A mother prayed here for her unborn child. Compassion answered — a temple of safe beginnings.</p>
+    <button onclick="play(1)">🔊 Listen</button>
+  </div>
+
+  <div class="story">
+    <div class="diya"></div>
+    <h2 id="title2">Nandi Who Hears</h2>
+    <p id="text2">Devotees whisper wishes to Nandi. When heart speaks softly, life listens louder.</p>
+    <button onclick="play(2)">🔊 Listen</button>
+  </div>
+
+</div>
+
+<div class="dots">
+  <div class="dot active"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<audio id="a0" src="audio/murugan.mp3"></audio>
+<audio id="a1" src="audio/garba.mp3"></audio>
+<audio id="a2" src="audio/nandi.mp3"></audio>
+<audio id="bell" src="audio/bell.mp3"></audio>
+<audio id="ambient" src="audio/temple.mp3" loop></audio>
+
+<script>
+let i = 0;
+const slider = document.getElementById("slider");
+const dots = document.querySelectorAll(".dot");
+const bell = document.getElementById("bell");
+const amb = document.getElementById("ambient");
+const kids = {
+  title0:"Murugan & the Sweet Fruit",
+  text0:"A magic fruit came. Murugan chose to find his own path — that’s why Palani shines.",
+  title1:"Garbarakshambigai Amma",
+  text1:"A mother prayed. The Goddess protected her baby with love like a warm cradle.",
+  title2:"Nandi the Listener",
+  text2:"Whisper to Nandi. Kind hearts are heard by the universe."
+};
+
+function upd(){ slider.style.transform = `translateX(-${i*100}%)`; dots.forEach((d,x)=>d.classList.toggle("active",x===i)); bell.play(); stopAll(); }
+function next(){ i=(i+1)%3; upd(); }
+function prev(){ i=(i-1+3)%3; upd(); }
+
+function play(n){ stopAll(); document.getElementById("a"+n).play(); }
+function stopAll(){ for(let x=0;x<3;x++){ let a=document.getElementById(\"a\"+x); a.pause(); a.currentTime=0; } }
+
+let kidMode = false;
+function toggleKids(){
+  kidMode = !kidMode;
+  document.getElementById(\"title0\").innerText = kidMode?kids.title0:\"Murugan & the Mango\";
+  document.getElementById(\"text0\").innerText  = kidMode?kids.text0:\"Once, Sage Narada brought a divine mango… Murugan walked to Palani, choosing inner truth over praise.\";
+  document.getElementById(\"title1\").innerText = kidMode?kids.title1:\"Garbarakshambigai — Mother of Protection\";
+  document.getElementById(\"text1\").innerText  = kidMode?kids.text1:\"A mother prayed here for her unborn child. Compassion answered — a temple of safe beginnings.\";
+  document.getElementById(\"title2\").innerText = kidMode?kids.title2:\"Nandi Who Hears\";
+  document.getElementById(\"text2\").innerText  = kidMode?kids.text2:\"Devotees whisper wishes to Nandi. When heart speaks softly, life listens louder.\";
+}
+
+function toggleAmbient(){ amb.paused ? amb.play() : amb.pause(); }
+</script>
+
+</body>
+</html>
