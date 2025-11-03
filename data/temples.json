@@ -1,0 +1,38 @@
+{
+  "circuits": [
+    {
+      "id":"madurai",
+      "title":"Madurai Circuit",
+      "slug":"madurai",
+      "summary":"Meenakshi, Thiruparankundram, Alagar — Marriage & Shakti",
+      "image":"assets/meenakshi.jpg",
+      "temples":[
+        {"name":"Meenakshi Amman Temple","slug":"meenakshi","purpose":["marriage","shakti"]},
+        {"name":"Thiruparankundram","slug":"thiruparankundram","purpose":["murugan"]},
+        {"name":"Alagar Kovil","slug":"alagar","purpose":["devotion"]}
+      ]
+    },
+    {
+      "id":"trichy",
+      "title":"Trichy Circuit",
+      "slug":"trichy",
+      "summary":"Srirangam, Rockfort — Divya Desam & Moksha",
+      "image":"assets/srirangam.jpg",
+      "temples":[{"name":"Srirangam","slug":"srirangam","purpose":["moksha"]}]
+    }
+  ],
+  "parihara":[
+    {
+      "id":"garbarakshambigai",
+      "temple":"Garbarakshambigai",
+      "focus":"Safe pregnancy & fertility",
+      "guide":"Visit with clean cloth, offer lamps, chant short prayer. Context: cultural guidance only."
+    },
+    {
+      "id":"immayilum",
+      "temple":"Immayilum Kali Amman",
+      "focus":"Protection, family-health",
+      "guide":"Offer red flowers, visit at morning mangala arathi. Context: cultural guidance only."
+    }
+  ]
+}
