@@ -1,5 +1,5 @@
 // Panchang loader
-document.addEventListener("DOMContentLoaded", async () => {
+ document.addEventListener("DOMContentLoaded", async () => {
   const panel = document.getElementById("panchang-panel");
   if(!panel) return;
 
@@ -19,4 +19,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       Nalla Neram: 7:30 — 9:00 AM
     `;
   },800);
-});
+}); 
+
+function playAudio(id) {
+  const audio = document.getElementById(id);
+  audio.currentTime = 0;
+  audio.play();
+}
+
