@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aru Padai Veedu — The Six Abodes of Muruga</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#fbf9f7;
+  --card:#ffffff;
+  --peacock-1:#0f6674;   /* deep teal */
+  --peacock-2:#1a9aa6;   /* bright peacock */
+  --gold:#caa84b;
+  --stone:#6e5e57;
+  --muted:#7a6e6a;
+  --accent:#a7d7d4;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--stone);
+  font-family:Poppins, sans-serif;line-height:1.6;
+}
+
+/* Top nav / brand */
+.header {
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;background:linear-gradient(90deg,var(--peacock-1),var(--peacock-2));
+  color:#fff;
+}
+.brand {font-family:"Playfair Display"; font-size:20px; font-weight:700;}
+.nav-links a{
+  color:rgba(255,255,255,0.95); text-decoration:none; margin-left:16px; font-weight:600; font-size:14px;
+}
+
+/* Hero */
+.hero {
+  background:linear-gradient(rgba(10,40,50,0.12), rgba(10,40,50,0.06));
+  padding:58px 20px;
+}
+.hero-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:center; }
+.hero h1{ font-family:"Playfair Display"; color:var(--peacock-1); margin:0; font-size:34px; }
+.hero p{ margin:8px 0 0; color:var(--muted); font-size:15px; }
+
+/* Right hero card (quick facts) */
+.quick-card {
+  background:var(--card); border-radius:10px; padding:16px; box-shadow:0 6px 18px rgba(14,40,44,0.06);
+  border-left:4px solid var(--gold);
+}
+.quick-card h4{ margin:0 0 8px; color:var(--peacock-1); font-family:"Playfair Display"; }
+.quick-card p{ margin:6px 0; font-size:14px; color:var(--muted); }
+
+/* Layout */
+.container{ max-width:1100px; margin:24px auto; padding:0 18px; }
+.section-title{ font-family:"Playfair Display"; color:var(--peacock-1); font-size:22px; margin:20px 0 12px; border-bottom:2px solid rgba(169,215,212,0.18); padding-bottom:8px; }
+
+/* grid for six abodes */
+.abode-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+/* card */
+.abode {
+  background:var(--card); border-radius:10px; padding:14px; box-shadow:0 6px 16px rgba(10,20,22,0.04);
+  border:1px solid #efe6e0;
+  overflow:hidden;
+}
+.abode img{ width:100%; height:170px; object-fit:cover; border-radius:8px; display:block; margin-bottom:10px; }
+.abode h3{ margin:0 0 6px; font-family:"Playfair Display"; color:var(--peacock-1); font-size:18px; }
+.meta { font-size:13px; color:var(--muted); margin-bottom:8px; }
+
+/* textual blocks (Varalaru / Parihara / Rituals) */
+.block { background:linear-gradient(180deg,#fff, #fbfbfb); padding:10px; border-radius:8px; border:1px dashed rgba(122,110,106,0.06); margin-top:8px; }
+.block strong{ color:var(--peacock-1); font-size:13px; display:block; margin-bottom:6px; }
+
+/* extra panels */
+.circuit {
+  margin-top:22px; padding:14px; background:linear-gradient(180deg,#f5fbfa,#f3f9f9);
+  border-radius:8px; border:1px solid rgba(167,215,212,0.18);
+}
+
+/* footer */
+.footer { margin-top:28px; padding:26px 18px; text-align:center; color:var(--muted); border-top:1px solid rgba(122,110,106,0.06); background:transparent; }
+
+/* responsive tweaks */
+@media (max-width:900px){
+  .hero-inner{ grid-template-columns:1fr; text-align:left; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header" role="banner">
+  <div class="brand">Moksha Yatra</div>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="divyadesam.html">Divya Desam</a>
+    <a href="aru-padai-veedu.html">Aru Padai Veedu</a>
+    <a href="pancha-bootha.html">Pancha Bootha</a>
+  </nav>
+</header>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner container">
+    <div>
+      <h1 id="hero-title">Aru Padai Veedu — The Six Abodes of Muruga</h1>
+      <p>Vel-adorned, hill-scented — Muruga’s six abodes form a devotional axis across Tamil Nadu. Each shrine carries a living story (*sthala varalaru*), local remedies (*pariharam*), and distinctive rituals.</p>
+    </div>
+
+    <aside class="quick-card" aria-label="Quick facts">
+      <h4>Quick Facts</h4>
+      <p><strong>Region:</strong> Tamil Nadu — temple hills & coastal prakaram</p>
+      <p><strong>Deity:</strong> Kartikeya / Skanda / Muruga</p>
+      <p><strong>Best visit:</strong> Early morning abhishekam & bonfire in Palani (cool season)</p>
+    </aside>
+  </div>
+</section>
+
+<main class="container" role="main">
+
+  <h2 class="section-title">Six Sacred Abodes — Cards & Notes</h2>
+
+  <div class="abode-grid" role="list">
+
+    <!-- Palani -->
+    <article class="abode" role="listitem" aria-labelledby="palani-title">
+      <img src="images/palani.jpg" alt="Palani hill temple">
+      <h3 id="palani-title">Palani — Hill of Wisdom</h3>
+      <div class="meta">Dindigul district · Hill shrine famed for the golden dhoti and saffron prasadam</div>
+
+      <div class="block">
+        <strong>Sthala Varalaru</strong>
+        Palani is linked to the tale of Muruga renouncing a contest with his brother, choosing asceticism. The hill became a seat of tapas and public devotion.
+      </div>
+
+      <div class="block">
+        <strong>Parihara</strong>
+        Relief from family disputes, delays in marriage, and mental agitation. Devotees offer saffron, milk abhishekam, and perform pradakshina.
+      </div>
+
+      <div class="block">
+        <strong>Special Rituals</strong>
+        Golden dhoti (oonjal) offerings, tonsuring, prasadam of palm jaggery.
+      </div>
+    </article>
+
+    <!-- Thiruparamkundram -->
+    <article class="abode" role="listitem" aria-labelledby="param-title">
+      <img src="images/thiruparamkundram.jpg" alt="Thiruparamkundram temple">
+      <h3 id="param-title">Thiruparamkundram — Cosmic Marriage</h3>
+      <div class="meta">Madurai district · site of Muruga’s divine wedding</div>
+
+      <div class="block">
+        <strong>Sthala Varalaru</strong>
+        Celebrated as the site where Muruga took consort Deivanai — the temple preserves royal wedding lore and early Sangam references.
+      </div>
+
+      <div class="block">
+        <strong>Parihara</strong>
+        Suitable for resolving marriage delays, strengthening household bonds, and blessing marital life.
+      </div>
+
+      <div class="block">
+        <strong>Special Rituals</strong>
+        Kalyana utsavam reenactments, floral abhishekam, and wedding-season processions.
+      </div>
+    </article>
+
+    <!-- Thiruchendur -->
+    <article class="abode" role="listitem" aria-labelledby="chendur-title">
+      <img src="images/thiruchendur.jpg" alt="Thiruchendur Murugan Temple">
+      <h3 id="chendur-title">Thiruchendur — Ocean Victory</h3>
+      <div class="meta">Tuticorin coast · Muruga’s victory shrine by the sea</div>
+
+      <div class="block">
+        <strong>Sthala Varalaru</strong>
+        A battlefield-to-shrine narrative: Muruga’s triumph over the demon Surapadman, commemorated by seaside processions and vel worship.
+      </div>
+
+      <div class="block">
+        <strong>Parihara</strong>
+        Protection from enemies, career obstacles, and travel safety. Devotees perform sea-shore pradakshina and vel archana.
+      </div>
+
+      <div class="block">
+        <strong>Special Rituals</strong>
+        Seaside abhishekam, temple chariot during festival days, and mass vel-circuits.
+      </div>
+    </article>
+
+    <!-- Swamimalai -->
+    <article class="abode" role="listitem" aria-labelledby="swami-title">
+      <img src="images/swamimalai.jpg" alt="Swamimalai Muruga Temple">
+      <h3 id="swami-title">Swamimalai — Sacred Teaching</h3>
+      <div class="meta">Thanjavur region · where Muruga taught Arunagirinathar and the heart of Saiva-Vaishnava dialogues</div>
+
+      <div class="block">
+        <strong>Sthala Varalaru</strong>
+        Tradition tells of Muruga instructing his father Shiva in the meaning of the primal syllable — Swamimalai is therefore a pedagogic hill.
+      </div>
+
+      <div class="block">
+        <strong>Parihara</strong>
+        Learning, education, and clarity in decision-making. Students and teachers seek blessings here.
+      </div>
+
+      <div class="block">
+        <strong>Special Rituals</strong>
+        Vel puja for students, homam for concentration, and morning shloka recitations.
+      </div>
+    </article>
+
+    <!-- Thiruthani -->
+    <article class="abode" role="listitem" aria-labelledby="thiru-title">
+      <img src="images/thiruthani.jpg" alt="Thiruthani Temple">
+      <h3 id="thiru-title">Thiruthani — Peaceful Peak</h3>
+      <div class="meta">Near Chennai · sanctuary of serenity and renunciation</div>
+
+      <div class="block">
+        <strong>Sthala Varalaru</strong>
+        A quiet hill where Muruga chose contemplative life, Thiruthani is associated with inner peace and samadhi-style devotion.
+      </div>
+
+      <div class="block">
+        <strong>Parihara</strong>
+        Relief from anxiety, family imbalance, and karma blocks. Devotees practice silence and meditation on the hill.
+      </div>
+
+      <div class="block">
+        <strong>Special Rituals</strong>
+        Early-morning silence satsangs, lamp offering, and guided pradakshina routes.
+      </div>
+    </article>
+
+    <!-- Pazhamudircholai -->
+    <article class="abode" role="listitem" aria-labelledby="pazham-title">
+      <img src="images/pazhamudircholai.jpg" alt="Pazhamudircholai Murugan">
+      <h3 id="pazham-title">Pazhamudircholai — Forest Grace</h3>
+      <div class="meta">Near Madurai · hill grove with natural springs and peacocks</div>
+
+      <div class="block">
+        <strong>Sthala Varalaru</strong>
+        A pastoral shrine set in a fruit-bearing grove — the name suggests the hill of fruit (pazham) and grace.
+      </div>
+
+      <div class="block">
+        <strong>Parihara</strong>
+        Fertility, family well-being, and agricultural blessings. Village communities traditionally bring harvest offerings.
+      </div>
+
+      <div class="block">
+        <strong>Special Rituals</strong>
+        Forest abhishekam with herbal waters, peacock-feather offerings, and community prasadam.
+      </div>
+    </article>
+
+  </div> <!-- /.abode-grid -->
+
+
+  <!-- Circuit suggestion + parihara index -->
+  <div class="circuit" aria-label="Circuit suggestion">
+    <h3 style="margin-top:0; color:var(--peacock-1); font-family:'Playfair Display'">Suggested Pilgrim Circuit</h3>
+    <p><strong>2–4 day loop:</strong> Palani → Thiruthani → Swamimalai → Thiruparamkundram → Thiruchendur → Pazhamudircholai. Start at sunrise for hill abhishekams; include local parihara rituals where required.</p>
+
+    <h4 style="margin:12px 0 6px; color:var(--peacock-2)">Parihara Index (quick)</h4>
+    <ul style="margin:0 0 0 18px; color:var(--muted);">
+      <li><strong>Marriage / Family:</strong> Thiruparamkundram, Palani</li>
+      <li><strong>Education / Focus:</strong> Swamimalai</li>
+      <li><strong>Protection / Travel:</strong> Thiruchendur</li>
+      <li><strong>Peace / Meditation:</strong> Thiruthani</li>
+      <li><strong>Fertility / Harvest:</strong> Pazhamudircholai</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div style="max-width:1100px;margin:0 auto;padding:18px;">
+    <div style="font-family:'Playfair Display'; color:var(--peacock-1); margin-bottom:6px">Aru Padai Veedu — Notes</div>
+    <div style="color:var(--muted);font-size:14px;">
+      This page offers concise *Sthala Varalaru* and practical parihara notes. For deeper ritual prescriptions (vratas, homams, detailed muhurtham), consult the temple priest or a local panchangam. Replace placeholder images in <code>images/</code> with high-quality temple photography sized ~1200×800px for best results.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
