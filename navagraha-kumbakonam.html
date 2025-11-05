@@ -1,495 +1,306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Navagraha Yatra — Palm-Leaf Grantha • Kumbakonam</title>
-<meta name="description" content="Navagraha pilgrimage: guided yatra with stories, mantras, parihara and practical tips. Palm-leaf grantha aesthetic. Images expected in /images/">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Mukta:wght@300;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navagraha Yatra – Kumbakonam</title>
+
 <style>
-/* ----------------- PALETTE & BASE ----------------- */
-:root{
-  --paper:#f6efe0;
-  --ink:#382f2b;
-  --accent:#b5752d;
-  --muted:#7c6e61;
-  --tile:#fff9ef;
-  --edge:#e7d7be;
-  --shadow: rgba(27,17,11,0.12);
-  --tranq: rgba(59,47,42,0.06);
-  --beeja:#6a3b1e;
+
+/* --- Core Body --- */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #e9dfc5; /* palm leaf warm ivory */
+  color: #3d290f;
 }
 
-*{box-sizing:border-box}
-html,body{ height:100%; }
-body{
-  margin:0;
-  font-family: Mukta, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:var(--ink);
-  background:
-    radial-gradient(circle at 10% 10%, rgba(0,0,0,0.03) 0 1px, transparent 1px),
-    radial-gradient(circle at 60% 40%, rgba(0,0,0,0.02) 0 1px, transparent 1px),
-    linear-gradient(180deg, var(--paper), #efe7d2 60%);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+/* Subtle palm texture background */
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("images/palm-texture.png");
+  background-size: cover;
+  opacity: 0.08;
+  pointer-events: none;
 }
 
-/* container width - wide mandapam */
+/* Container */
 .container {
-  max-width:1400px;
-  margin:24px auto;
-  padding:18px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
 }
 
-/* header */
-.header { display:flex; gap:16px; align-items:center; padding:8px 0 18px; }
-.logo {
-  width:84px; height:84px; border-radius:8px;
-  background:linear-gradient(180deg,#fff6e8,#f0e0bf);
-  border:1px solid var(--edge);
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 8px 26px var(--shadow);
-  font-family:"Playfair Display"; color:var(--accent); font-size:26px;
-}
-.brand {
-  font-family:"Playfair Display"; font-size:22px; color:var(--accent);
-}
-.subtitle { color:var(--muted); font-size:14px; margin-top:6px; }
-
-/* top nav tabs - CSS-only (radios) */
-.inputs { display:none; }
-
-/* tab labels */
-.tab-row {
-  display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;
-}
-.tab-row label {
-  padding:8px 12px; border-radius:8px;
-  background:linear-gradient(180deg,#fff8ec,#f6e4c6);
-  border:1px solid var(--edge); color:var(--accent); cursor:pointer;
-  font-weight:600; font-size:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.04);
-}
-.tab-row label:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,0.06); }
-
-/* slider shell */
-.slider {
-  margin-top:18px;
-  border-radius:12px;
-  background:linear-gradient(180deg,#fffaf0,#fbefe0);
-  border:1px solid var(--edge);
-  box-shadow:0 12px 30px rgba(10,6,6,0.06);
-  padding:18px;
-  overflow:hidden;
+/* Title */
+.page-title {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #4f2e08;
+  font-weight: bold;
+  border-bottom: 2px solid rgba(120,80,30,0.4);
 }
 
-/* slides */
-.slides { position:relative; min-height:240px; }
-.slide { display:none; opacity:0; transform:translateY(8px) scale(.995); transition:all .36s cubic-bezier(.2,.9,.3,1); padding:4px 0; }
-.slide-inner { display:grid; grid-template-columns:360px 1fr; gap:18px; align-items:start; }
-@media (max-width:880px){ .slide-inner { grid-template-columns:1fr; } }
-
-/* show slide when radio checked */
-#g1:checked ~ .slider .s1,
-#g2:checked ~ .slider .s2,
-#g3:checked ~ .slider .s3,
-#g4:checked ~ .slider .s4,
-#g5:checked ~ .slider .s5,
-#g6:checked ~ .slider .s6,
-#g7:checked ~ .slider .s7,
-#g8:checked ~ .slider .s8,
-#g9:checked ~ .slider .s9 {
-  display:block; opacity:1; transform:none;
+/* Radio Hide */
+input[type="radio"][name="graha"] {
+  display: none;
 }
 
-/* left card */
-.left {
-  background:linear-gradient(180deg,#fff8e4,#f7e6cb);
-  border-radius:10px; padding:10px; border:1px solid var(--edge);
-  box-shadow:0 8px 20px rgba(20,16,12,0.06);
+/* --- Hero Section --- */
+.hero {
+  width: 100%;
+  height: 48vh;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-bottom: 2px solid rgba(136, 93, 38, 0.5);
 }
-.left img { width:100%; height:240px; object-fit:cover; border-radius:8px; display:block; }
-.left .meta { color:var(--muted); font-size:13px; margin-top:10px; }
 
-/* right content */
-.right h2 { margin:0; font-family:"Playfair Display"; color:var(--accent); font-size:22px; }
-.right .role { color:var(--muted); font-weight:700; margin:6px 0 12px; font-size:13px; }
-.right p { margin:8px 0; color:var(--ink); }
-.badge { display:inline-block; background:#fff3db; color:var(--accent); padding:6px 10px; border-radius:8px; border:1px solid #ead3a8; font-weight:700; margin-top:8px; }
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top:0;
+  left:0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
 
-/* mantra box */
+/* Show correct hero image */
+#surya:checked ~ .hero .img-surya { opacity: 1; }
+#chandra:checked ~ .hero .img-chandra { opacity: 1; }
+#mangal:checked ~ .hero .img-mangal { opacity: 1; }
+#budh:checked ~ .hero .img-budh { opacity: 1; }
+#guru:checked ~ .hero .img-guru { opacity: 1; }
+#shukra:checked ~ .hero .img-shukra { opacity: 1; }
+#shani:checked ~ .hero .img-shani { opacity: 1; }
+#rahu:checked   ~ .hero .img-rahu { opacity: 1; }
+#ketu:checked   ~ .hero .img-ketu { opacity: 1; }
+
+/* --- Tab Bar --- */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  background: #c8b384;
+  border-radius: 6px;
+  padding: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tabs label {
+  flex: 1;
+  text-align: center;
+  padding: 8px 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #3d2b0c;
+  transition: 0.3s;
+}
+
+/* Active tab highlight */
+#surya:checked ~ .tabs label[for="surya"],
+#chandra:checked ~ .tabs label[for="chandra"],
+#mangal:checked ~ .tabs label[for="mangal"],
+#budh:checked   ~ .tabs label[for="budh"],
+#guru:checked   ~ .tabs label[for="guru"],
+#shukra:checked ~ .tabs label[for="shukra"],
+#shani:checked  ~ .tabs label[for="shani"],
+#rahu:checked   ~ .tabs label[for="rahu"],
+#ketu:checked   ~ .tabs label[for="ketu"] {
+  background: #7b5a2e;
+  color: #ffffff;
+}
+
+/* --- Content Blocks --- */
+.section {
+  display: none;
+  padding: 16px;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #c9b48b;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+/* Show correct content */
+#surya:checked ~ .section-surya,
+#chandra:checked ~ .section-chandra,
+#mangal:checked ~ .section-mangal,
+#budh:checked ~ .section-budh,
+#guru:checked ~ .section-guru,
+#shukra:checked ~ .section-shukra,
+#shani:checked ~ .section-shani,
+#rahu:checked ~ .section-rahu,
+#ketu:checked ~ .section-ketu {
+  display: block;
+}
+
+/* Headings */
+.section h2 {
+  margin-top: 0;
+  color: #4f2e08;
+  font-size: 22px;
+}
+
+/* Mantra */
 .mantra {
-  background:linear-gradient(180deg,#fff6e8,#fff0d2);
-  border-left:4px solid var(--accent); padding:10px; border-radius:8px; margin-top:12px;
-  font-weight:700; color:var(--beeja);
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  background: rgba(255,255,255,0.8);
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 4px solid #7b5a2e;
 }
 
-/* controls: per-slide next/prev mapped to radio inputs */
-.controls { display:flex; justify-content:space-between; gap:12px; margin-top:14px; align-items:center; }
-.btn {
-  background:transparent; border:1px solid var(--edge); padding:8px 12px; border-radius:8px; cursor:pointer; color:var(--ink);
+/* Button Nav (Next) */
+.next-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #7b5a2e;
+  color: #fff;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
 }
-.btn:hover { box-shadow:0 10px 26px rgba(0,0,0,0.06); transform:translateY(-3px); }
 
-/* progress */
-.progress { text-align:center; color:var(--muted); font-size:13px; }
-
-/* read more */
-.read-more { display:inline-block; margin-top:10px; color:var(--accent); font-weight:700; text-decoration:underline; }
-
-/* longform stories below */
-.longform {
-  margin-top:22px; background:linear-gradient(180deg,#fffaf4,#fff5e8);
-  border:1px solid var(--edge); padding:18px; border-radius:10px;
+.next-btn:hover {
+  background: #5b3f1e;
 }
-.longform h3 { font-family:"Playfair Display"; color:var(--accent); margin-top:0; }
-.longform p { color:var(--ink); margin:10px 0; }
-.longform section { padding:12px 0; border-bottom:1px dashed #efe0c9; }
-.longform section:last-child { border-bottom:none; }
 
-/* ticker */
-.ticker { margin:18px 0; text-align:center; }
-.ticker .chip { display:inline-block; padding:8px 14px; border-radius:999px; background:#fff8e8; border:1px solid #eedec4; color:var(--accent); font-weight:700; }
-
-/* focus states */
-label:focus, .btn:focus, a:focus { outline:3px solid rgba(181,128,45,0.12); outline-offset:3px; }
-
-/* accessibility helpers */
-.tab-row label[for="g1"] { /* highlight first as default */ }
-
-/* small screens */
-@media (max-width:520px){
-  .left img { height:180px; }
-  .logo { width:64px; height:64px; font-size:20px; }
-}
 </style>
 </head>
 <body>
 
 <div class="container">
 
-  <!-- header -->
-  <header class="header" role="banner" aria-labelledby="site-title">
-    <div class="logo" aria-hidden="true">ம</div>
-    <div>
-      <div id="site-title" class="brand">Navagraha Yatra — Palm-Leaf Grantha</div>
-      <div class="subtitle">Guided one-graha-at-a-time pilgrimage. Read story → perform parihāram → proceed in yatra.</div>
-    </div>
-  </header>
+<div class="page-title">🌞 Navagraha Yatra – Kumbakonam</div>
 
-  <!-- radios to control slides (CSS only) -->
-  <div class="inputs" aria-hidden="true">
-    <input type="radio" id="g1" name="nav" checked>
-    <input type="radio" id="g2" name="nav">
-    <input type="radio" id="g3" name="nav">
-    <input type="radio" id="g4" name="nav">
-    <input type="radio" id="g5" name="nav">
-    <input type="radio" id="g6" name="nav">
-    <input type="radio" id="g7" name="nav">
-    <input type="radio" id="g8" name="nav">
-    <input type="radio" id="g9" name="nav">
-  </div>
+<!-- RADIO CONTROLS -->
+<input type="radio" name="graha" id="surya" checked>
+<input type="radio" name="graha" id="chandra">
+<input type="radio" name="graha" id="mangal">
+<input type="radio" name="graha" id="budh">
+<input type="radio" name="graha" id="guru">
+<input type="radio" name="graha" id="shukra">
+<input type="radio" name="graha" id="shani">
+<input type="radio" name="graha" id="rahu">
+<input type="radio" name="graha" id="ketu">
 
-  <!-- tab labels -->
-  <nav class="tab-row" role="tablist" aria-label="Graha tabs">
-    <label for="g1" role="tab" aria-selected="true">Sūrya</label>
-    <label for="g2" role="tab">Chandra</label>
-    <label for="g3" role="tab">Maṅgala</label>
-    <label for="g4" role="tab">Budha</label>
-    <label for="g5" role="tab">Guru</label>
-    <label for="g6" role="tab">Śukra</label>
-    <label for="g7" role="tab">Śani</label>
-    <label for="g8" role="tab">Rāhu</label>
-    <label for="g9" role="tab">Ketu</label>
-  </nav>
+<!-- HERO IMAGE -->
+<div class="hero">
+  <img src="images/suriyanar.jpg" class="img-surya">
+  <img src="images/thingaloor.jpg" class="img-chandra">
+  <img src="images/vaitheeswaran.jpg" class="img-mangal">
+  <img src="images/thiruvenkadu.jpg" class="img-budh">
+  <img src="images/alangudi.jpg" class="img-guru">
+  <img src="images/kanjanoor.jpg" class="img-shukra">
+  <img src="images/thirunallar.jpg" class="img-shani">
+  <img src="images/thirunageswaram.jpg" class="img-rahu">
+  <img src="images/keezhaperumpallam.jpg" class="img-ketu">
+</div>
 
-  <!-- slider area -->
-  <div class="slider" role="region" aria-label="Graha slider">
+<!-- TABS -->
+<div class="tabs">
+  <label for="surya">Surya</label>
+  <label for="chandra">Chandra</label>
+  <label for="mangal">Mangala</label>
+  <label for="budh">Budha</label>
+  <label for="guru">Guru</label>
+  <label for="shukra">Shukra</label>
+  <label for="shani">Shani</label>
+  <label for="rahu">Rahu</label>
+  <label for="ketu">Ketu</label>
+</div>
 
-    <div class="slides">
+<!-- CONTENT -->
+<div class="section section-surya">
+<h2>Suriyanar Temple</h2>
+<div><strong>Legend:</strong> A king blinded by ego regained sight through Surya worship.</div>
+<div class="mantra">ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः</div>
+<strong>Pariharam:</strong> Water arghyam at sunrise, wheat offering<br>
+<strong>Blessing:</strong> Vitality, clarity, leadership
+<a class="next-btn" for="chandra" onclick="document.getElementById('chandra').checked=true;">Next →</a>
+</div>
 
-      <!-- SURYA -->
-      <article class="slide s1">
-        <div class="slide-inner">
-          <div class="left" aria-hidden="false">
-            <img src="images/suryanar_kovil.jpg" alt="Suryanar Kovil — sunrise at the Sun shrine">
-            <div class="meta"><strong>Sthalam:</strong> Suryanar Kovil • Best: Sunrise abhishekam</div>
-          </div>
-          <div class="right">
-            <h2>Surya — The Sun</h2>
-            <div class="role">Vitality • Authority • Clarity</div>
-            <p><strong>Mini story:</strong> A proud king lost his sight through arrogance; after sincere Surya japa and water arghya here his sight and clarity returned. The temple teaches humility as solar power.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Hraam Hreem Hraum Sah Sūryāya Namaḥ</em></div>
-            <div class="badge">Parihāra: Sunrise water offering, red lotus or red flowers, wheat/lighting</div>
-            <p class="read-more"><a href="#story-surya">Read full story & ritual notes ↓</a></p>
+<div class="section section-chandra">
+<h2>Thingaloor – Chandra</h2>
+<div><strong>Legend:</strong> Chandra’s pride was dissolved here, restoring balance.</div>
+<div class="mantra">ॐ श्रीं सोमाय नमः</div>
+<strong>Pariharam:</strong> Milk abhishekam, white cloth<br>
+<strong>Blessing:</strong> Peace, family harmony
+<a class="next-btn" onclick="document.getElementById('mangal').checked=true;">Next →</a>
+</div>
 
-            <!-- controls -->
-            <div class="controls" role="navigation">
-              <label class="btn" for="g9" aria-label="Go to last (Ketu)">⟵ Prev</label>
-              <div class="progress">1 / 9</div>
-              <label class="btn" for="g2" aria-label="Next (Chandra)">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
+<div class="section section-mangal">
+<h2>Vaitheeswaran Koil – Mars</h2>
+<div><strong>Legend:</strong> Shiva as healer; Mars anger transforms into healing force.</div>
+<div class="mantra">ॐ क्रां क्रीं क्रौं सः भौमाय नमः</div>
+<strong>Pariharam:</strong> Pepper vibhuti, red lentils<br>
+<strong>Blessing:</strong> Health, enemies removed
+<a class="next-btn" onclick="document.getElementById('budh').checked=true;">Next →</a>
+</div>
 
-      <!-- CHANDRA -->
-      <article class="slide s2">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/thingalur.jpg" alt="Thingalur — Chandra's temple">
-            <div class="meta"><strong>Sthalam:</strong> Thingalur • Best: Moonrise / evening</div>
-          </div>
-          <div class="right">
-            <h2>Chandra — The Moon</h2>
-            <div class="role">Emotions • Family • Mind</div>
-            <p><strong>Mini story:</strong> Chandra's attachment to Rohini led to imbalance and curse; Shiva's grace here restored balance. Thingalur offers emotional steadiness.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Shreeng/Om Chandrāya Namaḥ</em></div>
-            <div class="badge">Parihāra: Milk abhishekam, white flowers, tulasi</div>
-            <p class="read-more"><a href="#story-chandra">Read full story & ritual notes ↓</a></p>
+<div class="section section-budh">
+<h2>Thiruvenkadu – Budhan</h2>
+<div><strong>Legend:</strong> Shiva sanctified Budhan’s intellect.</div>
+<div class="mantra">ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः</div>
+<strong>Pariharam:</strong> Green gram, study donation<br>
+<strong>Blessing:</strong> Intelligence, success
+<a class="next-btn" onclick="document.getElementById('guru').checked=true;">Next →</a>
+</div>
 
-            <div class="controls">
-              <label class="btn" for="g1">⟵ Prev</label>
-              <div class="progress">2 / 9</div>
-              <label class="btn" for="g3">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
+<div class="section section-guru">
+<h2>Alangudi – Guru</h2>
+<div><strong>Legend:</strong> Guru swallowed poison to save world.</div>
+<div class="mantra">ॐ ग्रां ग्रीं ग्रौं सः गुरवे नमः</div>
+<strong>Pariharam:</strong> Channa dal, yellow cloth<br>
+<strong>Blessing:</strong> Children, grace, marriage
+<a class="next-btn" onclick="document.getElementById('shukra').checked=true;">Next →</a>
+</div>
 
-      <!-- MANGALA -->
-      <article class="slide s3">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/vaitheeswaran_koil.jpg" alt="Vaitheeswaran Koil — healing & Mars">
-            <div class="meta"><strong>Sthalam:</strong> Vaitheeswaran Koil • Best: Morning</div>
-          </div>
-          <div class="right">
-            <h2>Maṅgala — Mars (Healing)</h2>
-            <div class="role">Strength • Protection • Cure</div>
-            <p><strong>Mini story:</strong> The hill-temple where Shiva as Vaitheeswaran ministers healing — Mars's warrior force transforms into medicinal vigour here.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Kraam Kreem Kraum Sah Bhaumaya Namaḥ</em></div>
-            <div class="badge">Parihāra: Red cloth, oil lamp with sesame, medicinal offerings; consult temple's traditional remedies.</div>
-            <p class="read-more"><a href="#story-vaithee">Read full story & ritual notes ↓</a></p>
+<div class="section section-shukra">
+<h2>Kanjanoor – Shukra</h2>
+<div><strong>Legend:</strong> Shukra regained sight through Shiva.</div>
+<div class="mantra">ॐ द्रां द्रीं द्रौं सः शुक्राय नमः</div>
+<strong>Pariharam:</strong> Ghee lamp, jasmine<br>
+<strong>Blessing:</strong> Material comfort with dharma
+<a class="next-btn" onclick="document.getElementById('shani').checked=true;">Next →</a>
+</div>
 
-            <div class="controls">
-              <label class="btn" for="g2">⟵ Prev</label>
-              <div class="progress">3 / 9</div>
-              <label class="btn" for="g4">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
+<div class="section section-shani">
+<h2>Thirunallar – Shani</h2>
+<div><strong>Legend:</strong> Shani could not overpower Hanuman & Ganesha.</div>
+<div class="mantra">ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः</div>
+<strong>Pariharam:</strong> Sesame oil lamp, charity<br>
+<strong>Blessing:</strong> Karma cleansing, stability
+<a class="next-btn" onclick="document.getElementById('rahu').checked=true;">Next →</a>
+</div>
 
-      <!-- BUDHA -->
-      <article class="slide s4">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/thiruvenkadu.jpg" alt="Thiruvenkadu — Budha">
-            <div class="meta"><strong>Sthalam:</strong> Thiruvenkadu • Best: Daytime</div>
-          </div>
-          <div class="right">
-            <h2>Budha — Mercury</h2>
-            <div class="role">Speech • Intellect • Commerce</div>
-            <p><strong>Mini story:</strong> Budha found clarity here — Thiruvenkadu's river lore calms quick minds and returns steady speech.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Braam Breem Braum Sah Budhaya Namaḥ</em></div>
-            <div class="badge">Parihāra: Green offerings, donate books or stationery, teach a skill.</div>
-            <p class="read-more"><a href="#story-budha">Read full story & ritual notes ↓</a></p>
+<div class="section section-rahu">
+<h2>Thirunageswaram – Rahu</h2>
+<div><strong>Legend:</strong> Milk turns blue during abhishekam.</div>
+<div class="mantra">ॐ भ्रां भ्रीं भ्रौं सः राहवे नमः</div>
+<strong>Pariharam:</strong> Milk abhishekam, naga worship<br>
+<strong>Blessing:</strong> Breakthroughs, sudden grace
+<a class="next-btn" onclick="document.getElementById('ketu').checked=true;">Next →</a>
+</div>
 
-            <div class="controls">
-              <label class="btn" for="g3">⟵ Prev</label>
-              <div class="progress">4 / 9</div>
-              <label class="btn" for="g5">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
+<div class="section section-ketu">
+<h2>Keezhaperumpallam – Ketu</h2>
+<div><strong>Legend:</strong> Ketu grants moksha and insight.</div>
+<div class="mantra">ॐ स्त्रां स्त्रीं स्त्रौं सः केतवे नमः</div>
+<strong>Pariharam:</strong> Multi-grain charity, deepam<br>
+<strong>Blessing:</strong> Spiritual growth, ending cycles
+</div>
 
-      <!-- GURU -->
-      <article class="slide s5">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/alangudi.jpg" alt="Alangudi — Guru Bhagwan">
-            <div class="meta"><strong>Sthalam:</strong> Alangudi • Best: Thursday / morning</div>
-          </div>
-          <div class="right">
-            <h2>Guru — Jupiter (Alangudi)</h2>
-            <div class="role">Wisdom • Grace • Protection</div>
-            <p><strong>Mini story:</strong> Guru's sacrifice (drinking poison for cosmic order) is celebrated here — devotees receive steady teacher-blessing rather than instant fixes.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Graam Greem Graum Sah Gurave Namaḥ</em></div>
-            <div class="badge">Parihāra: Yellow flowers, turmeric, feeding students, seek teacher's blessing.</div>
-            <p class="read-more"><a href="#story-alangudi">Read full story & ritual notes ↓</a></p>
-
-            <div class="controls">
-              <label class="btn" for="g4">⟵ Prev</label>
-              <div class="progress">5 / 9</div>
-              <label class="btn" for="g6">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SUKRA -->
-      <article class="slide s6">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/kanjanur.jpg" alt="Kanjanur — Shukra">
-            <div class="meta"><strong>Sthalam:</strong> Kanjanur • Best: Daytime / festivities</div>
-          </div>
-          <div class="right">
-            <h2>Śukra — Venus</h2>
-            <div class="role">Beauty • Relationship • Prosperity</div>
-            <p><strong>Mini story:</strong> Shukra's tapas and refinement make him a teacher of sustained beauty — offerings of song and fragrance please him here.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Draum Dreem Droum Sah Shukraya Namaḥ</em></div>
-            <div class="badge">Parihāra: White fragrant flowers, music offerings, ghee lamp on Friday.</div>
-            <p class="read-more"><a href="#story-shukra">Read full story & ritual notes ↓</a></p>
-
-            <div class="controls">
-              <label class="btn" for="g5">⟵ Prev</label>
-              <div class="progress">6 / 9</div>
-              <label class="btn" for="g7">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SANI -->
-      <article class="slide s7">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/thirunallar.jpg" alt="Thirunallar — Shani">
-            <div class="meta"><strong>Sthalam:</strong> Thirunallar • Best: Saturday / morning</div>
-          </div>
-          <div class="right">
-            <h2>Śani — Saturn</h2>
-            <div class="role">Karma • Endurance • Discipline</div>
-            <p><strong>Mini story:</strong> Stories tell how Śani's stern gaze was softened by Vinayaka’s cleverness and Hanuman’s devotion — mercy arrives when firmness meets devotion.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Praam Preem Praum Sah Shanaischaraya Namaḥ</em></div>
-            <div class="badge">Parihāra: Sesame oil lamp, black sesame donation, service to elders / disabled; pair with Hanuman worship for relief.</div>
-            <p class="read-more"><a href="#story-sani">Read full story & ritual notes ↓</a></p>
-
-            <div class="controls">
-              <label class="btn" for="g6">⟵ Prev</label>
-              <div class="progress">7 / 9</div>
-              <label class="btn" for="g8">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- RAHU -->
-      <article class="slide s8">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/thirunageswaram.jpg" alt="Thirunageswaram — Rahu">
-            <div class="meta"><strong>Sthalam:</strong> Thirunageswaram • Best: Special abhishekam days</div>
-          </div>
-          <div class="right">
-            <h2>Rāhu — Ascending Node</h2>
-            <div class="role">Transformation • Sudden Change</div>
-            <p><strong>Mini story:</strong> At Thirunageswaram the milk-abhishekam tale is famous — offerings behave strangely and yet become sanctified. Rahu teaches that hunger can be transformed into insight.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Bhram Bhreem Bhroum Sah Rahave Namaḥ</em></div>
-            <div class="badge">Parihāra: Milk abhishekam, blue/black flowers, priest-guided ritual; caution during Rahu Kalam.</div>
-            <p class="read-more"><a href="#story-rahu">Read full story & ritual notes ↓</a></p>
-
-            <div class="controls">
-              <label class="btn" for="g7">⟵ Prev</label>
-              <div class="progress">8 / 9</div>
-              <label class="btn" for="g9">Next ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- KETU -->
-      <article class="slide s9">
-        <div class="slide-inner">
-          <div class="left">
-            <img src="images/keezhperumpallam.jpg" alt="Keezhperumpallam — Ketu">
-            <div class="meta"><strong>Sthalam:</strong> Keezhperumpallam & other Ketu shrines • Best: meditative hours</div>
-          </div>
-
-          <div class="right">
-            <h2>Ketu — The Tail</h2>
-            <div class="role">Detachment • Insight • Moksha</div>
-            <p><strong>Mini story:</strong> Ketu's presence calms the inner coil of desire. Pilgrims come here to break repetitive karmic loops through patient practice and quiet offering.</p>
-            <div class="mantra">Beeja/Nama: <em>Om Straam Streem Stroum Sah Ketave Namaḥ</em></div>
-            <div class="badge">Parihāra: Mixed grains offering, lamps, meditation; combine with internal practice for lasting effect.</div>
-            <p class="read-more"><a href="#story-ketu">Read full story & ritual notes ↓</a></p>
-
-            <div class="controls">
-              <label class="btn" for="g8">⟵ Prev</label>
-              <div class="progress">9 / 9</div>
-              <label class="btn" for="g1">Finish ⟶</label>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div> <!-- /slides -->
-  </div> <!-- /slider -->
-
-  <!-- mantra ticker -->
-  <div class="ticker"><span class="chip">ॐ नमो नारायणाय • Om Namo Narayanaya</span></div>
-
-  <!-- longform stories -->
-  <article class="longform" aria-live="polite">
-    <section id="story-surya">
-      <h3>Surya — The King's Sight Restored</h3>
-      <p>At Suryanar Kovil a tale circulates about a king blinded by pride. He humbled himself with sunrise arghya, chanting Surya's hymn. His vision — literal and inner — returned. The point of the tale is not miracle alone but a ritual of humility: the sun's strength shines for those who begin with humility.</p>
-      <p><strong>Ritual notes:</strong> Offer water at sunrise facing east; priests advise simple recitations and steady breath.</p>
-    </section>
-
-    <section id="story-chandra">
-      <h3>Chandra — The Moon's Calming</h3>
-      <p>Thingalur's legends speak of Chandra's attachment and Shiva's correction. People come here primarily for emotional steadiness. Milk abhishekam and evening pradakshina under moonlight form the practical cure.</p>
-      <p><strong>Ritual notes:</strong> Carry a small vessel of milk, offer with folded hands; avoid arriving in a rushed state.</p>
-    </section>
-
-    <section id="story-vaithee">
-      <h3>Vaitheeswaran Koil — The Physician's Hand</h3>
-      <p>Vaitheeswaran Koil binds healing and Mars-energy. Massive folk trust is placed in the temple's simple bedside rites: tying threads, applying sesame oil, and petitioning the temple physician's lineage. The temple never promises a cure; it guides a disciplined path for recovery.</p>
-      <p><strong>Ritual notes:</strong> Ask the priest for customary local remedies; if your complaint is medical, combine temple rites with proper medical care.</p>
-    </section>
-
-    <section id="story-budha">
-      <h3>Budha & Thiruvenkadu — Speech That Serves</h3>
-      <p>Thiruvenkadu emphasizes correct speech — Budha's blessing is practical. Students and traders chant here before important beginnings. The temple prescribes donations to teachers and small acts of instruction as parihāra.</p>
-    </section>
-
-    <section id="story-alangudi">
-      <h3>Alangudi — Guru’s Quiet Strength</h3>
-      <p>Alangudi's warm stories of protection come as a “steadying hand” rather than theatrical miracles. Seek blessings here for long-term decisions: marriage, education, and family prosperity.</p>
-    </section>
-
-    <section id="story-shukra">
-      <h3>Śukra — Refinement, Not Folly</h3>
-      <p>Kanjanur's Shukra traditions reward disciplined artistry and household refinement. Offer music or a small composition if you are artistically inclined; otherwise, keep offerings fragrant and tidy.</p>
-    </section>
-
-    <section id="story-sani">
-      <h3>Śani — The Slow Teacher</h3>
-      <p>Shani tests to refine. Thirunallar is the place where people come to do the slow work: oil lamps, service, repeated vows. Stories of Hanuman and Ganesha remind us devotion and cleverness together release stuck burdens.</p>
-      <p><strong>Practical tip:</strong> Saturdays get crowded — plan early or contact local temple timings. Pair Hanuman recitation with Shani offerings.</p>
-    </section>
-
-    <section id="story-rahu">
-      <h3>Rāhu — The Strange Abhishekam</h3>
-      <p>Thirunageswaram's most famous oddity — milk seeming to change color during abhishekam — is a pilgrim story that points to transformation. Rahu's remedies are priest-intensive; do not improvise without guidance.</p>
-    </section>
-
-    <section id="story-ketu">
-      <h3>Ketu — Tail of Insight</h3>
-      <p>Ketu's shrines are quiet; remedial work is about patience and inner practice. Make a small vow and return to it daily — that's the real parihāra, not a single rushed ritual.</p>
-    </section>
-  </article>
-
-  <footer style="text-align:center;color:var(--muted);margin-top:22px;padding-bottom:24px;">
-    © 2025 Moksha Yatra — Navagraha Palm-Leaf Grantha. For formal homam and muhurtham consult the local archakar/priest.
-  </footer>
-
-</div> <!-- /container -->
+</div>
 
 </body>
 </html>
