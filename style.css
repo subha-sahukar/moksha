@@ -285,3 +285,40 @@ nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:cen
 /* responsive */
 @media (max-width:960px){.grid{grid-template-columns:1fr}.hero h1{font-size:2rem}.hero{height:54vh}}
 @media (max-width:560px){.nav-links{display:none}.hamburger{display:block}}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  height: 55vh;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(136, 93, 38, 0.6);
+}
+
+/* Hero images default hidden */
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Show correct image when radio checked */
+#surya:checked ~ .hero .img-surya { opacity: 1; }
+#chandra:checked ~ .hero .img-chandra { opacity: 1; }
+#mangal:checked ~ .hero .img-mangal { opacity: 1; }
+#budh:checked ~ .hero .img-budh { opacity: 1; }
+#guru:checked ~ .hero .img-guru { opacity: 1; }
+#shukra:checked ~ .hero .img-shukra { opacity: 1; }
+#shani:checked ~ .hero .img-shani { opacity: 1; }
+#rahu:checked ~ .hero .img-rahu { opacity: 1; }
+#ketu:checked ~ .hero .img-ketu { opacity: 1; }
+
+/* Hide Inputs */
+input[type="radio"][name="graha"] {
+  display: none;
+}
