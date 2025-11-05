@@ -1,239 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Divya Desams — Sri Vaishnava Sacred Abodes</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Divya Desams — Eternal Vaishnava Sacred Circuit</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-:root {
-  --lotus:#faf5ef;
-  --cream:#fffdf8;
-  --gold:#c9a158;
-  --rose:#924343;
-  --rose-soft:#b76b5c;
-  --ink:#3d2e2e;
-  --muted:#7c6f67;
-  --stone:#8b776e;
-  --accent:#d3bfa6;
-  --leaf:#a8c4a7;
-}
-* { box-sizing: border-box; }
-
-body {
-  margin:0; background:var(--lotus); color:var(--ink);
-  font-family:Poppins, sans-serif; line-height:1.65;
+/* Layout widening */
+.main-wrap {
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  padding: 40px 0;
 }
 
-/* Header / Hero */
-.hero {
-  background:url('images/srirangam-aarti.jpg') center/cover no-repeat;
-  padding:150px 20px; position:relative; text-align:center;
+/* Sidebar */
+.ds-side {
+  background:#fffdf5;
+  border:1px solid #f5e9c9;
+  border-radius:12px;
+  padding:20px;
+  font-size:14px;
+  line-height:1.6;
+  position:sticky; top:20px;
 }
-.hero:before {
-  content:""; position:absolute; inset:0;
-  background:rgba(255,248,240,0.86); backdrop-filter:blur(3px);
-}
-.hero-content { position:relative; max-width:850px; margin:auto; }
-.hero h1 {
-  font-family:"Playfair Display"; font-size:46px;
-  color:var(--rose); margin:0;
-}
-.hero p { font-size:18px; color:var(--stone); margin-top:12px; }
-
-/* Layout */
-.page { display:flex; gap:30px; max-width:1300px; margin:40px auto; padding:0 25px; }
-.sidebar {
-  width:260px; flex-shrink:0; background:var(--cream); border:1px solid #f2e6d8;
-  padding:18px; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.06);
-}
-.main { flex:1; }
-
-/* Sidebar blocks */
-.sidebar h3 { font-family:"Playfair Display"; font-size:20px; color:var(--rose); margin-top:0; }
-.sidebar .tag { font-size:13px; background:#ffe9d7; padding:4px 10px; display:inline-block; border-radius:6px; color:var(--rose-soft); font-weight:500; margin-bottom:6px; }
-.side-box { margin-bottom:20px; }
-.side-box ul{ padding-left:16px; margin:8px 0; }
-.side-box li { font-size:14px; margin:4px 0; }
-.tip { background:#fff3e8; padding:10px; border-radius:8px; font-size:13px; border-left:3px solid var(--gold); }
-
-/* Section */
-.section-title {
-  font-family:"Playfair Display"; font-size:26px; color:var(--rose);
-  margin:30px 0 12px; border-bottom:2px solid rgba(120,90,70,0.12); padding-bottom:8px;
+.ds-side h3 {font-family:"Playfair Display"; font-size:20px; color:#8a4b13; margin-bottom:10px;}
+.ds-side small {color:#a27d52;}
+.festival { margin:12px 0; }
+.mantra {
+  background:#fff7e0; padding:12px; border-radius:8px;
+  font-style:italic; font-size:14px; margin-top:12px;
 }
 
-/* Temple grid */
-.temple-grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:22px;
+/* Section titles */
+.section-title h2 {
+  font-family:"Playfair Display";
+  font-size:32px; color:#8b461a;
+  margin-bottom:16px;
+}
+
+/* Cards */
+.grid-3 {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
 }
 .card {
-  background:var(--cream); border:1px solid #efdcd0; border-radius:10px;
-  padding:14px; box-shadow:0 6px 16px rgba(0,0,0,0.05);
-  transition:.3s ease;
+  background:#fffdf8; border:1px solid #f2dfc5;
+  border-radius:12px; overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  transition:0.3s ease;
 }
-.card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.12); }
-.card img { width:100%; height:175px; object-fit:cover; border-radius:8px; }
-.card h4 { font-family:"Playfair Display"; margin:8px 0 2px; font-size:18px; color:var(--rose-soft); }
-.card .loc { font-size:13px; color:var(--muted); margin-bottom:8px; }
-.card p { font-size:13px; margin:4px 0; }
-.bold { color:var(--rose); font-weight:600; }
+.card:hover { transform:translateY(-4px); }
+.card img { width:100%; height:180px; object-fit:cover; }
+.card .inner { padding:16px; }
+
+/* Quotes */
+.quote-box {
+  margin:40px auto; padding:20px;
+  background:#fcf3e4; border-left:6px solid #b77a3b;
+  border-radius:8px;
+  text-align:center;
+  font-style:italic; color:#6b4d36;
+}
 
 /* Alwars grid */
-.alwars {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:18px; margin-top:5px;
+.alwar-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px; margin-top:25px;
 }
 .alwar-card {
-  background:var(--cream); border:1px solid #eddccc; border-radius:10px;
-  padding:14px; font-size:13.5px; line-height:1.55;
+  background:#fffdf8; padding:16px;
+  border:1px solid #f3e2c6; border-radius:10px;
+  font-size:14px;
 }
-.alwar-card strong {
-  display:block; font-family:"Playfair Display"; color:var(--rose-soft);
-  font-size:17px; margin-bottom:6px;
-}
+.alwar-card strong {color:#8a4b13;}
 
-/* Quote */
-.quote {
-  text-align:center; padding:18px 10px; background:#fcf3e8;
-  border-radius:10px; font-style:italic; color:var(--muted);
-  border-left:4px solid var(--gold); margin:30px 0;
-}
+/* Yatra guide */
+.steps { margin-top:15px; line-height:1.7; }
 
-/* Yatra checklist */
-.yatra ul{ padding-left:18px; }
-.yatra li { margin:6px 0; }
-
-/* Footer */
-footer {
-  margin-top:40px; padding:22px; text-align:center; font-size:14px;
-  color:var(--muted); background:var(--cream); border-top:1px solid #ead9c5;
-}
-.mantra { font-family:"Playfair Display"; font-size:20px; color:var(--rose-soft); margin-bottom:4px; }
+/* Dividers */
+.divider { height:1px; background:#eadcc5; margin:40px 0; }
 </style>
 </head>
 
 <body>
+<nav>
+  <div class="brand">Moksha Yatra</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a class="active" href="divyadesam.html">Divya Desam</a>
+    <a href="tamilnadu.html">Tamil Nadu</a>
+    <a href="andhra.html">Andhra</a>
+    <a href="karnataka.html">Karnataka</a>
+    <a href="kerala.html">Kerala</a>
+  </div>
+</nav>
 
-<!-------------------------------- HERO --------------------------------------->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Divya Desams</h1>
-    <p>108 sacred Vishnu temples sung by the Alwars — devotion, poetry, and timeless grace guiding the soul to Vaikuntam.</p>
+<header class="hero" style="padding:120px 20px; text-align:center;">
+  <h1 style="font-family:Playfair Display; font-size:48px; color:#8c4510;">Divya Desams</h1>
+  <p style="font-size:18px; max-width:750px; margin:auto; color:#6c5544;">
+    108 sacred Vishnu shrines sung by the Azhwars — where devotion becomes poetry, and temples become the path to liberation.
+  </p>
+</header>
+
+<div class="main-wrap">
+
+<!-- SIDEBAR -->
+<aside class="ds-side">
+  <h3>Vaishnava Calendar</h3>
+  <div class="festival">
+    <strong>Next Ekadasi:</strong><br>Vaikunta Ekadasi — gateway to Paramapadam
+  </div>
+  <div class="festival">
+    <strong>Upcoming:</strong><br>
+    Brahmotsavam (Garuda Seva)<br>
+    Panguni Uthiram (Divine Wedding)<br>
+    Thiruvadipuram — Andal
+  </div>
+  <hr>
+  <h3>Daily Chant</h3>
+  <div class="mantra">Om Namo Narayanaya — 108 times</div>
+  <small>Recite with Tulasi, offer silent prayer.</small>
+</aside>
+
+<!-- MAIN -->
+<main>
+
+<section>
+  <div class="section-title"><h2>Featured Divya Desams</h2></div>
+  <div class="grid-3">
+
+    <article class="card">
+      <img src="images/srirangam.jpg" alt="Srirangam">
+      <div class="inner">
+      <h3>Srirangam — Ranganathaswamy</h3>
+      <p>Cosmic reclining Vishnu — Bhooloka Vaikuntam. Moksha blessings, Vaikunta Dwara.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="images/tirumala.jpg" alt="Tirupati">
+      <div class="inner">
+      <h3>Tirumala — Srinivasa</h3>
+      <p>Kaliyuga deity; debt-relief, career growth, ancestral uplift.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="images/oppiliappan.jpg" alt="Oppiliappan">
+      <div class="inner">
+      <h3>Oppiliappan — Thirunageswaram</h3>
+      <p>Saltless prasadam vow — sweet devotion, marriage boons.</p>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<!------------------------------- BODY ---------------------------------------->
-<div class="page">
+<div class="quote-box">
+  “Where devotion flows, the Divine dwells.” — Vaishnava wisdom
+</div>
 
-<!--------------------------- SIDEBAR ----------------------------------------->
-<aside class="sidebar">
+<section>
+  <div class="section-title"><h2>The Twelve Azhwars</h2></div>
 
-  <h3>Vaishnava Calendar</h3>
-  <div class="side-box">
-    <span class="tag">Upcoming Ekadasi</span><br>
-    <strong>Vaikunta Ekadasi</strong><br>
-    Path to Paramapadam — fast, chant Vishnu Nama, visit temple early.
+  <div class="alwar-grid">
+    <div class="alwar-card"><strong>Poigai Azhwar</strong><br>Mystical devotion; rain-water pond birth.</div>
+    <div class="alwar-card"><strong>Bhoodath Azhwar</strong><br>Fire-born; divine inner light.</div>
+    <div class="alwar-card"><strong>Pey Azhwar</strong><br>Seen Vishnu & Thayar together — ecstatic vision.</div>
+    <div class="alwar-card"><strong>Thirumazhisai Azhwar</strong><br>Uncompromising devotion; lived in surrender.</div>
+    <div class="alwar-card"><strong>Nammalvar</strong><br>“Vedam Tamil Seidha” poet — heart-melting hymns.</div>
+    <div class="alwar-card"><strong>Madhurakavi Azhwar</strong><br>Guru devotion — Nammalvar centric.</div>
+    <div class="alwar-card"><strong>Kulashekara Azhwar</strong><br>King-devotee; yearning for servant-life.</div>
+    <div class="alwar-card"><strong>Periyalvar</strong><br>Praise of Baby Krishna — protective psalms.</div>
+    <div class="alwar-card"><strong>Andal</strong><br>Only woman Azhwar — divine bridal mysticism (Thiruppavai).</div>
+    <div class="alwar-card"><strong>Thondaradippodi</strong><br>Garden-servant of Ranganatha.</div>
+    <div class="alwar-card"><strong>Thirumangai Azhwar</strong><br>Warrior-saint; fierce protector of temples.</div>
+    <div class="alwar-card"><strong>Tōṉdaradippodi</strong><br>Flower devotee offering garlands.</div>
   </div>
+</section>
 
-  <div class="side-box">
-    <h4>Major Festivals</h4>
-    <ul>
-      <li>Brahmotsavam — Garuda Sevai</li>
-      <li>Panguni Uttiram — Divine Wedding</li>
-      <li>Govinda Namam Margazhi</li>
-      <li>Thiruadhyayana Utsavam</li>
-    </ul>
+<div class="divider"></div>
+
+<section>
+  <div class="section-title"><h2>Divya Desam Yatra Guide</h2></div>
+  <div class="steps">
+    • Begin before sunrise, chant Govinda<br>
+    • Avoid onion/garlic on darshan day<br>
+    • Offer Tulasi, walk pradakshina calmly<br>
+    • Visit Vaishnava Mutts when possible<br>
+    • Read one Pasuram daily (Thiruppavai in Margazhi)<br>
   </div>
-
-  <div class="tip">Today’s Devotion: Chant <em>Om Namo Narayanaya</em> 108 times.</div>
-
-</aside>
-
-
-<!------------------------------- MAIN ---------------------------------------->
-<main class="main">
-
-  <h2 class="section-title">Featured Divine Shrines</h2>
-
-  <div class="temple-grid">
-    <!-- Srirangam -->
-    <div class="card">
-      <img src="images/srirangam.jpg">
-      <h4>Srirangam — Ranganathaswamy</h4>
-      <div class="loc">Tiruchirapalli, Tamil Nadu</div>
-      <p><span class="bold">Sthala Varalaru:</span> Bhuloka Vaikuntam — reclining Vishnu on Adisesha.</p>
-      <p><span class="bold">Pariharam:</span> Moksha blessings, family harmony.</p>
-      <p><span class="bold">Special:</span> Vaikunta Ekadasi Paramapada Vasal.</p>
-    </div>
-
-    <!-- Tirupati -->
-    <div class="card">
-      <img src="images/tirupati.jpg">
-      <h4>Tirumala — Srinivasa</h4>
-      <div class="loc">Andhra Pradesh</div>
-      <p><span class="bold">Sthala Varalaru:</span> Lord appeared in Kali-yuga for upliftment.</p>
-      <p><span class="bold">Pariharam:</span> Debts, career, prosperity.</p>
-      <p><span class="bold">Special:</span> Hair offering, Kalyanotsavam.</p>
-    </div>
-
-    <!-- Oppiliappan -->
-    <div class="card">
-      <img src="images/oppiliappan.jpg">
-      <h4>Oppiliappan — Thirunageswaram</h4>
-      <div class="loc">Kumbakonam</div>
-      <p><span class="bold">Sthala Varalaru:</span> Perumal vows never to take salt.</p>
-      <p><span class="bold">Pariharam:</span> Marriage, family peace.</p>
-      <p><span class="bold">Special:</span> Salt-free prasadam.</p>
-    </div>
-  </div>
-
-  <div class="quote">
-    “Where devotion flows, the Divine dwells.” — Vaishnava teaching
-  </div>
-
-  <!----------------- ALWARS ------------------>
-  <h2 class="section-title">The Twelve Alwars</h2>
-
-  <div class="alwars">
-    <div class="alwar-card"><strong>Poigai Alwar</strong> First among Alwars — mystical devotion in rain-water pond.</div>
-    <div class="alwar-card"><strong>Bhuthath Alwar</strong> Deep yogic insight, celebrated for inner light.</div>
-    <div class="alwar-card"><strong>Pey Alwar</strong> Saw Perumal & Thayar together — ecstatic divine vision.</div>
-    <div class="alwar-card"><strong>Thirumazhisai Alwar</strong> Worship of Naranan — emphasized true surrender.</div>
-    <div class="alwar-card"><strong>Nammalwar</strong> “Bhagavad Vishayam” poet — heart melts for Perumal.</div>
-    <div class="alwar-card"><strong>Madhurakavi Alwar</strong> Devotion to Nammalwar — guru bhakti ideal.</div>
-    <div class="alwar-card"><strong>Kulashekara Alwar</strong> King-saint — yearning to serve at Lord’s feet.</div>
-    <div class="alwar-card"><strong>Periyalwar</strong> Witnessed baby Krishna — composed protective praise.</div>
-    <div class="alwar-card"><strong>Andal</strong> Divine heroine, Margazhi devotion queen.</div>
-    <div class="alwar-card"><strong>Thondaradipodi Alwar</strong> Simple flower-servant — pure bhakti path.</div>
-    <div class="alwar-card"><strong>Thiruppan Alwar</strong> Sang of Ranganatha’s beauty limb-by-limb.</div>
-    <div class="alwar-card"><strong>Thirumangai Alwar</strong> Warrior-saint — protector of Divya Desams.</div>
-  </div>
-
-  <!--------------- YATRA GUIDE --------------->
-  <h2 class="section-title">Divya Desam Yatra Guide</h2>
-
-  <section class="yatra">
-    <ul>
-      <li>Start before sunrise — Suprabhata Seva</li>
-      <li>Chant Govinda Nama while walking prakaram</li>
-      <li>Offer tulasi & milk prasad</li>
-      <li>Avoid onion/garlic on temple days</li>
-      <li>Read at least one Alwar pasuram daily (English meaning fine)</li>
-    </ul>
-  </section>
+</section>
 
 </main>
 </div>
 
-<!---------------------------- FOOTER ----------------------------------------->
-<footer>
-  <div class="mantra">Om Namo Narayanaya</div>
-  May Vishnu bless your journey with clarity, grace, and moksha.
-</footer>
+<div class="footer container">
+  <p>Om Namo Narayanaya ✨ May the Lord guide your steps.</p>
+</div>
 
 </body>
 </html>
