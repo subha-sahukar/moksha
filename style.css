@@ -1,0 +1,145 @@
+/* Base responsive fixes for all pages */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Container expands properly on all resolutions */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 1.2rem;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Hero section now scales beautifully on all devices */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.65);
+  z-index: -2;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
+  z-index: -1;
+}
+.hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Navigation fully responsive */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #4b2e15;
+  color: #fff;
+}
+nav .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav .hamburger {
+  display: none;
+}
+
+/* Grid scaling */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Tabs responsive */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.tab {
+  padding: 0.7rem 1.2rem;
+  background: #6a3d1a;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.tab:hover {
+  background: #8d5430;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.4rem;
+  background: #6a3d1a;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 1rem;
+  font-size: 1.05rem;
+}
+.btn.secondary {
+  background: #555;
+}
+.btn:hover {
+  background: #8d5430;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero { padding: 1rem; min-height: 60vh; }
+  h1 { font-size: 1.8rem; }
+  p { font-size: 1rem; }
+  nav .nav-links { display: none; }
+  nav .hamburger { display: block; color: #fff; background: none; border: none; font-size: 1.6rem; }
+}
+
+/* Extra large screen support */
+@media (min-width: 1500px) {
+  .container { max-width: 1400px; }
+  .hero-inner { max-width: 1400px; }
+}
