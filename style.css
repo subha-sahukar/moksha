@@ -1,41 +1,37 @@
-/* Restore original pink-maroon theme */
-body {
-  background: #3a0f22; /* deep maroon */
-  color: #f8e8ef; /* light pinkish text */
-}
+/* =========================================================
+   MOKSHA YATRA — UNIVERSAL RESPONSIVE STYLE SHEET
+   Lotus‑Pink Sacred Theme • Royal Temple Glow • Fully Adaptive
+   ========================================================= */
 
-.section-title h2,
-h1, h2, h3, p {
-  color: #f8e8ef; /* restore readable pink */
-}
-
-.card {
-  background: #4a152d;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-/* Base responsive fixes */ for all pages */
+/* ---------- GLOBAL ---------- */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   font-family: 'Poppins', sans-serif;
+  background: #4b1634;          /* Pleasant lotus‑deep pink */
+  color: #fbe9f2;               /* Soft lotus‑light */
+  font-size: 1.12rem;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
-/* Container expands properly on all resolutions */
+h1, h2, h3, h4, p, .text-body {
+  color: #fdeefa;
+  margin: 0 0 1rem 0;
+}
+
+/* ---------- CONTAINER ---------- */
 .container {
-  max-width: 1200px;
+  max-width: 1250px;
   width: 100%;
-  padding: 1.2rem;
+  padding: 1.3rem;
   margin: auto;
   box-sizing: border-box;
 }
 
-/* Hero section now scales beautifully on all devices */
+/* ---------- HERO SECTION ---------- */
 .hero {
   position: relative;
   width: 100%;
@@ -43,42 +39,38 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2.2rem;
   text-align: center;
-  padding: 2rem;
 }
 .hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.65);
+  filter: brightness(0.63);
   z-index: -2;
 }
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.25);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.28);
   z-index: -1;
 }
 .hero-inner {
-  max-width: 1200px;
+  max-width: 1250px;
   width: 100%;
   padding: 1rem;
 }
 
-/* Navigation fully responsive */
+/* ---------- NAVIGATION ---------- */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background: #4b2e15;
+  padding: 1rem 1.8rem;
+  background: #5d2a39;
   color: #fff;
 }
 nav .nav-links {
@@ -86,102 +78,112 @@ nav .nav-links {
   flex-wrap: wrap;
   gap: 1rem;
 }
-nav a {
+nav .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 nav .hamburger {
   display: none;
 }
 
-/* Grid scaling */
+/* ---------- GRID & CARDS ---------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
 }
+
+.card, .glow-card {
+  background: #5a1c3f;
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.35);
+  transition: 0.25s ease;
+}
+.glow-card {
+  background: linear-gradient(145deg, #5a1c3f, #742652);
+  border: 1px solid rgba(255, 225, 210, 0.35);
+  box-shadow:
+    0 0 22px rgba(255, 210, 200, 0.28),
+    inset 0 0 14px rgba(255, 235, 215, 0.18);
+}
+.card:hover, .glow-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 26px rgba(255,180,210,0.42);
+}
+
 .card img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
-/* Tabs responsive */
+/* ---------- TABS ---------- */
 .tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
   justify-content: center;
-  margin-top: 1rem;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
 }
 .tab {
-  padding: 0.7rem 1.2rem;
   background: #6a3d1a;
   color: #fff;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
-  font-size: 1rem;
+  padding: 0.75rem 1.3rem;
+  font-size: 1.05rem;
   cursor: pointer;
   transition: 0.2s ease;
 }
-.tab:hover {
-  background: #8d5430;
-}
+.tab:hover { background: #944d24; }
 
-/* Buttons */
+/* ---------- BUTTONS ---------- */
 .btn {
-  padding: 0.75rem 1.4rem;
+  padding: 0.85rem 1.5rem;
   background: #6a3d1a;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   color: #fff;
   cursor: pointer;
+  font-size: 1.1rem;
   margin-right: 1rem;
-  font-size: 1.05rem;
+  transition: 0.2s ease;
 }
-.btn.secondary {
-  background: #555;
-}
-.btn:hover {
-  background: #8d5430;
-}
+.btn.secondary { background: #555; }
+.btn:hover { background: #8d5430; }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .hero { padding: 1rem; min-height: 60vh; }
-  h1 { font-size: 1.8rem; }
-  p { font-size: 1rem; }
-  nav .nav-links { display: none; }
-  nav .hamburger { display: block; color: #fff; background: none; border: none; font-size: 1.6rem; }
-}
-
-/* Ultra‑wide font scaling */
-@media (min-width: 1600px) {
-  h1 { font-size: 3.2rem; }
-  h2 { font-size: 2.4rem; }
-  p, .meta { font-size: 1.25rem; }
-  .container { max-width: 1500px; }
-  .hero-inner { max-width: 1500px; }
-}
-
-/* Divya Desam highlight color */
+/* ---------- DIVYA DESAM HIGHLIGHT ---------- */
 .dd-highlight {
-  color: #ffdca8; /* warm golden glow */
-  text-shadow: 0 0 12px rgba(255, 215, 140, 0.55);
+  color: #ffe6c4;
+  text-shadow: 0 0 16px rgba(255, 228, 190, 0.7);
+  font-weight: 600;
 }
 
-/* Royal‑temple glow effects */
-.glow-card {
-  background: linear-gradient(145deg, #4a152d, #5a1b38);
-  border: 1px solid rgba(255, 215, 180, 0.25);
-  box-shadow:
-    0 0 15px rgba(255, 210, 160, 0.25),
-    inset 0 0 10px rgba(255, 230, 200, 0.15);
+/* ---------- MOBILE RESPONSIVENESS ---------- */
+@media (max-width: 768px) {
+  .hero { padding: 1rem; min-height: 58vh; }
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.65rem; }
+  p { font-size: 1.15rem; }
+
+  nav .nav-links { display: none; }
+  nav .hamburger {
+    display: block;
+    font-size: 1.9rem;
+    background: none;
+    border: none;
+    color: #fff;
+  }
 }
 
-/* Extra large screen support */ */
-@media (min-width: 1500px) {
-  .container { max-width: 1400px; }
-  .hero-inner { max-width: 1400px; }
+/* ---------- ULTRA-WIDE SCREENS ---------- */
+@media (min-width: 1600px) {
+  h1 { font-size: 4rem; }
+  h2 { font-size: 2.9rem; }
+  p, .meta { font-size: 1.35rem; }
+  .container { max-width: 1650px; }
+  .hero-inner { max-width: 1650px; }
 }
