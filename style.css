@@ -1,4 +1,22 @@
-/* Base responsive fixes for all pages */
+/* Restore original pink-maroon theme */
+body {
+  background: #3a0f22; /* deep maroon */
+  color: #f8e8ef; /* light pinkish text */
+}
+
+.section-title h2,
+h1, h2, h3, p {
+  color: #f8e8ef; /* restore readable pink */
+}
+
+.card {
+  background: #4a152d;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Base responsive fixes */ for all pages */
 html, body {
   margin: 0;
   padding: 0;
@@ -138,7 +156,31 @@ nav .hamburger {
   nav .hamburger { display: block; color: #fff; background: none; border: none; font-size: 1.6rem; }
 }
 
-/* Extra large screen support */
+/* Ultra‑wide font scaling */
+@media (min-width: 1600px) {
+  h1 { font-size: 3.2rem; }
+  h2 { font-size: 2.4rem; }
+  p, .meta { font-size: 1.25rem; }
+  .container { max-width: 1500px; }
+  .hero-inner { max-width: 1500px; }
+}
+
+/* Divya Desam highlight color */
+.dd-highlight {
+  color: #ffdca8; /* warm golden glow */
+  text-shadow: 0 0 12px rgba(255, 215, 140, 0.55);
+}
+
+/* Royal‑temple glow effects */
+.glow-card {
+  background: linear-gradient(145deg, #4a152d, #5a1b38);
+  border: 1px solid rgba(255, 215, 180, 0.25);
+  box-shadow:
+    0 0 15px rgba(255, 210, 160, 0.25),
+    inset 0 0 10px rgba(255, 230, 200, 0.15);
+}
+
+/* Extra large screen support */ */
 @media (min-width: 1500px) {
   .container { max-width: 1400px; }
   .hero-inner { max-width: 1400px; }
