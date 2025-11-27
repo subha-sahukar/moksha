@@ -68,9 +68,8 @@ h1, h2, h3, h4, p, .text-body {
   max-width: 1250px;
   width: 100%;
   padding: 1rem;
-position: relative;
-z-index: 2;
-
+  position: relative; /* ensure text is on top */
+  z-index: 2; /* ABOVE overlay + bg */
 }
 
 /* ---------- NAVIGATION ---------- */
