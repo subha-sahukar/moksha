@@ -20,13 +20,14 @@
 
 /* Sidebar */
 .ds-side {
-  background:#fffdf5;
-  border:1px solid #f5e9c9;
-  border-radius:12px;
-  padding:20px;
-  font-size:14px;
-  line-height:1.6;
-  position:sticky; top:20px;
+  background: rgba(255, 240, 245, 0.12); /* subtle lotus-pink translucent */
+  border: 1px solid rgba(255, 220, 235, 0.18);
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  position: sticky; top: 20px;
+  color: #f7e8ef;
 }
 .ds-side h3 {font-family:"Playfair Display"; font-size:20px; color:#8a4b13; margin-bottom:10px;}
 .ds-side small {color:#a27d52;}
@@ -49,10 +50,12 @@
   gap:28px;
 }
 .card {
-  background:#fffdf8; border:1px solid #f2dfc5;
+  background:rgba(255, 240, 245, 0.18); /* softer lotus-pink glass */
+  border:1px solid rgba(255, 220, 235, 0.25);
   border-radius:12px; overflow:hidden;
-  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
   transition:0.3s ease;
+  backdrop-filter:blur(6px);
 }
 .card:hover { transform:translateY(-4px); }
 .card img { width:100%; height:180px; object-fit:cover; }
@@ -84,6 +87,26 @@
 
 /* Dividers */
 .divider { height:1px; background:#eadcc5; margin:40px 0; }
+nav {height:60px; background:#f2d7dd; backdrop-filter:blur(6px);} nav .logo {font-size:22px; font-family:"Playfair Display"; color:#8a4b13;} nav .nav-links a {color:#8a4b13;} /* Mobile responsiveness */
+@media (max-width: 900px) {
+  .main-wrap {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 20px 0;
+  }
+  .ds-side {
+    position: static;
+    margin-bottom: 20px;
+  }
+  nav .nav-links { display:none; }
+  nav .hamburger { display:block; }
+}
+
+@media (max-width: 500px) {
+  .card img { height:140px; }
+  .section-title h2 { font-size:26px; }
+  .card .inner { font-size:14px; }
+}
 </style>
 </head>
 <body>
