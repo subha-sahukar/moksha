@@ -107,6 +107,54 @@ nav {height:60px; background:#f2d7dd; backdrop-filter:blur(6px);} nav .logo {fon
   .section-title h2 { font-size:26px; }
   .card .inner { font-size:14px; }
 }
+/* Hero fine‑tuning */
+.hero {
+  position: relative;
+  height: 55vh;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--temple-text-light);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  filter: brightness(0.78) saturate(1.15);
+  transform: scale(1.04);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(rgba(85,20,40,0.45), rgba(40,10,25,0.68));
+  backdrop-filter: blur(1px);
+}
+.hero-inner {
+  position: relative;
+  max-width: 760px;
+  padding: 0 24px;
+}
+.hero-inner h1 {
+  font-family: "Playfair Display";
+  font-size: 42px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.45);
+}
+.hero-inner p {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.95;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.38);
+}
+
+@media(max-width:700px){
+  .hero{height: 45vh; min-height:300px;}
+  .hero-inner h1{font-size:30px;}
+  .hero-inner p{font-size:15px;}
+}
 </style>
 </head>
 <body>
